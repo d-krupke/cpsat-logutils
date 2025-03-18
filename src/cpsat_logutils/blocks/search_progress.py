@@ -33,7 +33,6 @@ Starting search at 16.85s with 14 workers.
 """
 
 import logging
-import math
 import re
 import typing
 from typing import Optional
@@ -267,7 +266,7 @@ class SearchProgressBlock(LogBlock):
             return False
         return lines[0].strip().lower().startswith("Starting search".lower())
 
-    def _parse_events(
+    def get_events(
         self,
     ) -> typing.List[typing.Union[BoundEvent, ObjEvent, ModelEvent]]:
         """
