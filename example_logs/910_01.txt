@@ -26,9 +26,9 @@ Initial optimization model '': (model_fingerprint: 0x1d316fc2ae4c02b1)
 #kLinearN: 94 (#terms: 1'392)
 
 Starting presolve at 0.00s
-  3.26e-04s  0.00e+00d  [DetectDominanceRelations] 
-  6.60e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=4 #num_dual_strengthening=3 
-  2.69e-05s  0.00e+00d  [ExtractEncodingFromLinear] #potential_supersets=44 #potential_subsets=12 
+  3.26e-04s  0.00e+00d  [DetectDominanceRelations]
+  6.60e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=4 #num_dual_strengthening=3
+  2.69e-05s  0.00e+00d  [ExtractEncodingFromLinear] #potential_supersets=44 #potential_subsets=12
 [Symmetry] Graph for symmetry has 2'224 nodes and 5'046 arcs.
 [Symmetry] Symmetry computation done. time: 0.000374304 dtime: 0.00068988
 [Symmetry] #generators: 2, average support size: 12
@@ -39,24 +39,24 @@ Starting presolve at 0.00s
 [SAT presolve] [0s] clauses:570 literals:1152 vars:303 one_side_vars:268 simple_definition:35 singleton_clauses:0
 [SAT presolve] [3.0778e-05s] clauses:570 literals:1152 vars:303 one_side_vars:268 simple_definition:35 singleton_clauses:0
 [SAT presolve] [4.6758e-05s] clauses:570 literals:1152 vars:303 one_side_vars:268 simple_definition:35 singleton_clauses:0
-  1.10e-02s  9.68e-03d  [Probe] #probed=1'738 #new_bounds=12 #new_binary_clauses=1'111 
-  2.34e-03s  0.00e+00d  [MaxClique] Merged 602(1374 literals) into 506(1960 literals) at_most_ones. 
-  3.31e-04s  0.00e+00d  [DetectDominanceRelations] 
-  1.89e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1 
-  5.45e-04s  0.00e+00d  [ProcessAtMostOneAndLinear] 
-  8.19e-04s  0.00e+00d  [DetectDuplicateConstraints] #without_enforcements=306 
-  8.62e-05s  7.21e-06d  [DetectDominatedLinearConstraints] #relevant_constraints=114 #num_inclusions=42 
-  1.94e-05s  0.00e+00d  [DetectDifferentVariables] 
-  1.90e-04s  8.39e-06d  [ProcessSetPPC] #relevant_constraints=560 #num_inclusions=24 
-  2.01e-05s  0.00e+00d  [FindAlmostIdenticalLinearConstraints] 
-  3.11e-04s  3.99e-04d  [FindBigAtMostOneAndLinearOverlap] 
-  9.85e-05s  1.96e-04d  [FindBigVerticalLinearOverlap] 
-  1.61e-05s  5.11e-06d  [FindBigHorizontalLinearOverlap] #linears=42 
-  2.88e-05s  1.80e-07d  [MergeClauses] 
-  3.51e-04s  0.00e+00d  [DetectDominanceRelations] 
-  1.79e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
-  3.21e-04s  0.00e+00d  [DetectDominanceRelations] 
-  1.74e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
+  1.10e-02s  9.68e-03d  [Probe] #probed=1'738 #new_bounds=12 #new_binary_clauses=1'111
+  2.34e-03s  0.00e+00d  [MaxClique] Merged 602(1374 literals) into 506(1960 literals) at_most_ones.
+  3.31e-04s  0.00e+00d  [DetectDominanceRelations]
+  1.89e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=2 #num_dual_strengthening=1
+  5.45e-04s  0.00e+00d  [ProcessAtMostOneAndLinear]
+  8.19e-04s  0.00e+00d  [DetectDuplicateConstraints] #without_enforcements=306
+  8.62e-05s  7.21e-06d  [DetectDominatedLinearConstraints] #relevant_constraints=114 #num_inclusions=42
+  1.94e-05s  0.00e+00d  [DetectDifferentVariables]
+  1.90e-04s  8.39e-06d  [ProcessSetPPC] #relevant_constraints=560 #num_inclusions=24
+  2.01e-05s  0.00e+00d  [FindAlmostIdenticalLinearConstraints]
+  3.11e-04s  3.99e-04d  [FindBigAtMostOneAndLinearOverlap]
+  9.85e-05s  1.96e-04d  [FindBigVerticalLinearOverlap]
+  1.61e-05s  5.11e-06d  [FindBigHorizontalLinearOverlap] #linears=42
+  2.88e-05s  1.80e-07d  [MergeClauses]
+  3.51e-04s  0.00e+00d  [DetectDominanceRelations]
+  1.79e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1
+  3.21e-04s  0.00e+00d  [DetectDominanceRelations]
+  1.74e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1
 [Symmetry] Graph for symmetry has 2'198 nodes and 5'096 arcs.
 [Symmetry] Symmetry computation done. time: 0.000366519 dtime: 0.0006864
 [Symmetry] #generators: 2, average support size: 12
@@ -67,23 +67,23 @@ Starting presolve at 0.00s
 [SAT presolve] [0s] clauses:66 literals:144 vars:92 one_side_vars:64 simple_definition:28 singleton_clauses:0
 [SAT presolve] [1.3465e-05s] clauses:66 literals:144 vars:92 one_side_vars:64 simple_definition:28 singleton_clauses:0
 [SAT presolve] [2.8313e-05s] clauses:66 literals:144 vars:92 one_side_vars:64 simple_definition:28 singleton_clauses:0
-  1.14e-02s  1.01e-02d  [Probe] #probed=1'738 #new_binary_clauses=1'111 
-  2.62e-03s  0.00e+00d  [MaxClique] Merged 506(1858 literals) into 506(1960 literals) at_most_ones. 
-  3.29e-04s  0.00e+00d  [DetectDominanceRelations] 
-  1.76e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
-  5.23e-04s  0.00e+00d  [ProcessAtMostOneAndLinear] 
-  8.19e-04s  0.00e+00d  [DetectDuplicateConstraints] #without_enforcements=306 
-  8.59e-05s  7.21e-06d  [DetectDominatedLinearConstraints] #relevant_constraints=114 #num_inclusions=42 
-  1.99e-05s  0.00e+00d  [DetectDifferentVariables] 
-  1.88e-04s  8.39e-06d  [ProcessSetPPC] #relevant_constraints=560 #num_inclusions=24 
-  1.90e-05s  0.00e+00d  [FindAlmostIdenticalLinearConstraints] 
-  3.09e-04s  4.00e-04d  [FindBigAtMostOneAndLinearOverlap] 
-  9.79e-05s  1.96e-04d  [FindBigVerticalLinearOverlap] 
-  1.69e-05s  5.11e-06d  [FindBigHorizontalLinearOverlap] #linears=42 
-  3.05e-05s  1.80e-07d  [MergeClauses] 
-  3.76e-04s  0.00e+00d  [DetectDominanceRelations] 
-  1.80e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1 
-  1.93e-04s  0.00e+00d  [ExpandObjective] #entries=321 #tight_variables=42 #tight_constraints=30 
+  1.14e-02s  1.01e-02d  [Probe] #probed=1'738 #new_binary_clauses=1'111
+  2.62e-03s  0.00e+00d  [MaxClique] Merged 506(1858 literals) into 506(1960 literals) at_most_ones.
+  3.29e-04s  0.00e+00d  [DetectDominanceRelations]
+  1.76e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1
+  5.23e-04s  0.00e+00d  [ProcessAtMostOneAndLinear]
+  8.19e-04s  0.00e+00d  [DetectDuplicateConstraints] #without_enforcements=306
+  8.59e-05s  7.21e-06d  [DetectDominatedLinearConstraints] #relevant_constraints=114 #num_inclusions=42
+  1.99e-05s  0.00e+00d  [DetectDifferentVariables]
+  1.88e-04s  8.39e-06d  [ProcessSetPPC] #relevant_constraints=560 #num_inclusions=24
+  1.90e-05s  0.00e+00d  [FindAlmostIdenticalLinearConstraints]
+  3.09e-04s  4.00e-04d  [FindBigAtMostOneAndLinearOverlap]
+  9.79e-05s  1.96e-04d  [FindBigVerticalLinearOverlap]
+  1.69e-05s  5.11e-06d  [FindBigHorizontalLinearOverlap] #linears=42
+  3.05e-05s  1.80e-07d  [MergeClauses]
+  3.76e-04s  0.00e+00d  [DetectDominanceRelations]
+  1.80e-03s  0.00e+00d  [PresolveToFixPoint] #num_loops=1 #num_dual_strengthening=1
+  1.93e-04s  0.00e+00d  [ExpandObjective] #entries=321 #tight_variables=42 #tight_constraints=30
 
 Presolve summary:
   - 54 affine relations were detected.
@@ -314,28 +314,28 @@ Starting search at 0.05s with 16 workers.
 #Bound   4.61s best:1449  next:[1450,1536] lb_tree_search
 #Bound   4.80s best:1449  next:[1450,1534] lb_tree_search
 #Bound   5.10s best:1449  next:[1450,1533] lb_tree_search
-#Bound   5.33s best:1449  next:[1450,1532] lb_tree_search (nodes=12/14 rc=0 decisions=108 @root=21 restarts=0) 
+#Bound   5.33s best:1449  next:[1450,1532] lb_tree_search (nodes=12/14 rc=0 decisions=108 @root=21 restarts=0)
 #Bound   5.62s best:1449  next:[1450,1531] lb_tree_search
-#Bound   6.31s best:1449  next:[1450,1530] lb_tree_search (nodes=14/16 rc=0 decisions=117 @root=24 restarts=0) 
+#Bound   6.31s best:1449  next:[1450,1530] lb_tree_search (nodes=14/16 rc=0 decisions=117 @root=24 restarts=0)
 #Model   6.53s var:393/405 constraints:1295/1468
-#Bound   6.73s best:1449  next:[1450,1529] lb_tree_search (nodes=14/16 rc=0 decisions=118 @root=25 restarts=0) 
+#Bound   6.73s best:1449  next:[1450,1529] lb_tree_search (nodes=14/16 rc=0 decisions=118 @root=25 restarts=0)
 #Model   7.31s var:392/405 constraints:1294/1468
 #Model   7.80s var:391/405 constraints:1293/1468
-#Bound   8.73s best:1449  next:[1450,1528] lb_tree_search (nodes=13/18 rc=0 decisions=133 @root=28 restarts=0) 
+#Bound   8.73s best:1449  next:[1450,1528] lb_tree_search (nodes=13/18 rc=0 decisions=133 @root=28 restarts=0)
 #Model   8.99s var:390/405 constraints:1292/1468
-#Bound   9.37s best:1449  next:[1450,1527] lb_tree_search (nodes=15/20 rc=0 decisions=152 @root=28 restarts=0) 
-#Bound  11.79s best:1449  next:[1450,1526] lb_tree_search (nodes=78/83 rc=0 decisions=327 @root=28 restarts=0) 
-#Bound  12.40s best:1449  next:[1450,1525] lb_tree_search (nodes=96/104 rc=0 decisions=445 @root=28 restarts=0) 
-#Bound  13.50s best:1449  next:[1450,1524] lb_tree_search (nodes=123/138 rc=0 decisions=624 @root=28 restarts=0) 
-#Bound  15.71s best:1449  next:[1450,1523] lb_tree_search (nodes=164/180 rc=0 decisions=847 @root=29 restarts=0) 
+#Bound   9.37s best:1449  next:[1450,1527] lb_tree_search (nodes=15/20 rc=0 decisions=152 @root=28 restarts=0)
+#Bound  11.79s best:1449  next:[1450,1526] lb_tree_search (nodes=78/83 rc=0 decisions=327 @root=28 restarts=0)
+#Bound  12.40s best:1449  next:[1450,1525] lb_tree_search (nodes=96/104 rc=0 decisions=445 @root=28 restarts=0)
+#Bound  13.50s best:1449  next:[1450,1524] lb_tree_search (nodes=123/138 rc=0 decisions=624 @root=28 restarts=0)
+#Bound  15.71s best:1449  next:[1450,1523] lb_tree_search (nodes=164/180 rc=0 decisions=847 @root=29 restarts=0)
 #132    16.69s best:1450  next:[1451,1523] rnd_var_lns (d=0.88 s=657 t=0.10 p=0.54 stall=53 h=folio_rnd)
-#Bound  17.13s best:1450  next:[1451,1522] lb_tree_search (nodes=176/192 rc=0 decisions=1001 @root=30 restarts=0) 
+#Bound  17.13s best:1450  next:[1451,1522] lb_tree_search (nodes=176/192 rc=0 decisions=1001 @root=30 restarts=0)
 #Model  17.85s var:389/405 constraints:1289/1468
-#Bound  19.35s best:1450  next:[1451,1521] lb_tree_search (nodes=44/44 rc=0 decisions=1112 @root=33 restarts=1) 
-#Bound  20.12s best:1450  next:[1451,1520] lb_tree_search (nodes=53/53 rc=0 decisions=1176 @root=34 restarts=1) 
-#Bound  22.08s best:1450  next:[1451,1519] lb_tree_search (nodes=114/114 rc=0 decisions=1369 @root=35 restarts=1) 
-#Bound  23.92s best:1450  next:[1451,1518] lb_tree_search (nodes=131/131 rc=0 decisions=1517 @root=36 restarts=1) 
-#Bound  25.84s best:1450  next:[1451,1517] lb_tree_search (nodes=174/174 rc=0 decisions=1754 @root=36 restarts=1) 
+#Bound  19.35s best:1450  next:[1451,1521] lb_tree_search (nodes=44/44 rc=0 decisions=1112 @root=33 restarts=1)
+#Bound  20.12s best:1450  next:[1451,1520] lb_tree_search (nodes=53/53 rc=0 decisions=1176 @root=34 restarts=1)
+#Bound  22.08s best:1450  next:[1451,1519] lb_tree_search (nodes=114/114 rc=0 decisions=1369 @root=35 restarts=1)
+#Bound  23.92s best:1450  next:[1451,1518] lb_tree_search (nodes=131/131 rc=0 decisions=1517 @root=36 restarts=1)
+#Bound  25.84s best:1450  next:[1451,1517] lb_tree_search (nodes=174/174 rc=0 decisions=1754 @root=36 restarts=1)
 #Bound  29.35s best:1450  next:[1451,1515] objective_lb_search
 
 Task timing                          n [     min,      max]      avg      dev     time         n [     min,      max]      avg      dev    dtime
@@ -570,4 +570,3 @@ usertime: 30.4515
 deterministic_time: 306.548
 gap_integral: 1292.47
 solution_fingerprint: 0xf10c47f1901c2c16
-

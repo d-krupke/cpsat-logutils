@@ -314,5 +314,3 @@ Events labeled `#Model` signal modifications to the model, such as fixing certai
 
 To fully grasp the nuances, zooming into the plot is necessary, especially since the initial values can be quite large. A thorough examination of which sections of the process converge quickest is crucial for a comprehensive understanding.
         """
-
-    

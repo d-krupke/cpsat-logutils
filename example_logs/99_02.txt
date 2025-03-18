@@ -7,7 +7,7 @@ Initial optimization model '': (model_fingerprint: 0x7b9b5fdec7699737)
 #Variables: 79'004 (#ints: 103 in objective)
   - 78'660 Booleans in [0,1]
   - 132 different domains in [0,12864] with a largest complexity of 1.
-  - 37 constants in {-975,-700,-675,-629,-601,-355 ... 3,591,639,669,793,1582,1765,1979,2281,2383,3449} 
+  - 37 constants in {-975,-700,-675,-629,-601,-355 ... 3,591,639,669,793,1582,1765,1979,2281,2383,3449}
 #kBoolOr: 1 (#literals: 1)
 #kLinear1: 3'036 (#enforced: 2'980)
 #kLinear2: 370'440 (#enforced: 109'032)
@@ -17,7 +17,7 @@ Initial optimization model '': (model_fingerprint: 0x7b9b5fdec7699737)
 Starting presolve at 0.58s
 INFEASIBLE: 'var #274 as empty domain after intersecting with [0]'
 Unsat after presolving constraint #2298 (warning, dump might be inconsistent): bool_and { literals: -275 }
-  2.16e-01s  0.00e+00d  [operations_research::sat::CpModelPresolver::PresolveToFixPoint] 
+  2.16e-01s  0.00e+00d  [operations_research::sat::CpModelPresolver::PresolveToFixPoint]
 
 Presolve summary:
   - 274 affine relations were detected.
