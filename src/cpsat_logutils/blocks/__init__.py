@@ -2,7 +2,7 @@
 This folder contains the logic for parsing individual blocks from the log.
 """
 
-from .search_progress import SearchProgressBlock
+from .search_progress import SearchProgressBlock, BoundEvent, ObjEvent, ModelEvent
 from .search_stats import SearchStatsBlock
 from .lns_stats import LnsStatsBlock
 from .solution_repositories import SolutionRepositoriesBlock
@@ -84,4 +84,7 @@ __all__ = [
     "SequentialSearchProgressBlock",
     "TableBlock",
     "LogBlock",
+    "BoundEvent", 
+    "ObjEvent", 
+    "ModelEvent",
 ]
