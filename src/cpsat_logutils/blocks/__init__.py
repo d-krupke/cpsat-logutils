@@ -84,7 +84,7 @@ __all__ = [
     "SequentialSearchProgressBlock",
     "TableBlock",
     "LogBlock",
-    "BoundEvent", 
-    "ObjEvent", 
+    "BoundEvent",
+    "ObjEvent",
     "ModelEvent",
 ]
