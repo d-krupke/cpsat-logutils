@@ -5,6 +5,8 @@ The solver block is the first part of the log.
 from .log_block import LogBlock
 import typing
 import re
+from pydantic import BaseModel, Field, ConfigDict
+from typing import Dict, Any, Tuple
 
 
 def _convert_value(value):
@@ -60,6 +62,35 @@ def parse_parameters_line(line: str) -> typing.Dict:
     tokens.pop(0)  # remove "Parameters:" token
 
     return _parse_block(tokens)
+
+
+class SolverInfo(BaseModel):
+    """Structured information about the CP-SAT solver configuration.
+
+    Attributes:
+        version: Version string (e.g., "v9.7.2996")
+        version_tuple: Parsed version as (major, minor, patch)
+        num_workers: Number of parallel workers
+        parameters: Dictionary of solver parameters
+    """
+    version: str = Field(..., description="Solver version string")
+    version_tuple: Tuple[int, int, int] = Field(..., description="Parsed version as (major, minor, patch)")
+    num_workers: int = Field(..., description="Number of parallel workers")
+    parameters: Dict[str, Any] = Field(default_factory=dict, description="Dictionary of solver parameters")
+
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "version": "v9.7.2996",
+                "version_tuple": [9, 7, 2996],
+                "num_workers": 16,
+                "parameters": {
+                    "log_search_progress": True,
+                    "use_timetabling_in_no_overlap_2d": True
+                }
+            }
+        }
+    )
 
 
 class SolverBlock(LogBlock):
@@ -124,3 +155,21 @@ class SolverBlock(LogBlock):
         version = self.get_version()[1:]
         major, minor, patch = version.split(".")
         return int(major), int(minor), int(patch)
+
+    def to_model(self) -> SolverInfo:
+        """Convert the SolverBlock to a structured SolverInfo Pydantic model.
+
+        Returns:
+            SolverInfo: A Pydantic model with structured solver information
+        """
+        try:
+            parameters = self.get_parameters()
+        except ValueError:
+            parameters = {}
+
+        return SolverInfo(
+            version=self.get_version(),
+            version_tuple=self.get_parsed_version(),
+            num_workers=self.get_number_of_workers(),
+            parameters=parameters,
+        )

@@ -2,15 +2,15 @@
 This folder contains the logic for parsing individual blocks from the log.
 """
 
-from .search_progress import SearchProgressBlock, BoundEvent, ObjEvent, ModelEvent
+from .search_progress import SearchProgressBlock, BoundEvent, ObjEvent, ModelEvent, SearchProgress
 from .search_stats import SearchStatsBlock
 from .lns_stats import LnsStatsBlock
 from .solution_repositories import SolutionRepositoriesBlock
 from .solutions import SolutionsBlock
 from .objective_bounds import ObjectiveBoundsBlock
 from .log_block import LogBlock
-from .solver import SolverBlock
-from .solver_response import ResponseBlock
+from .solver import SolverBlock, SolverInfo
+from .solver_response import ResponseBlock, SolverResponse
 from .presolve_log import PresolveLogBlock
 from .initial_model import InitialModelBlock
 from .presolved_model import PresolvedModelBlock
@@ -84,7 +84,11 @@ __all__ = [
     "SequentialSearchProgressBlock",
     "TableBlock",
     "LogBlock",
+    # Pydantic models for structured data
     "BoundEvent",
     "ObjEvent",
     "ModelEvent",
+    "SearchProgress",
+    "SolverInfo",
+    "SolverResponse",
 ]
