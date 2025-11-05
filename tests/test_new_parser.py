@@ -10,6 +10,19 @@ import json
 import pytest
 from cpsat_logutils.parser_new import LogParser
 from cpsat_logutils.models import CPSATLog
+from cpsat_logutils.parsers import (
+    SolverInfoParser,
+    InitialModelParser,
+    PresolvedModelParser,
+    PresolveLogParser,
+    PresolveSummaryParser,
+    SearchInfoParser,
+    SearchEventsParser,
+    SearchStatsParser,
+    SolutionRepositoriesParser,
+    ObjectiveBoundsParser,
+    ResponseParser,
+)
 
 
 EXAMPLE_DIR = os.path.join(os.path.dirname(__file__), "../example_logs")
@@ -61,15 +74,17 @@ class TestSolverInfo:
     def test_parse_version(self):
         """Test version parsing."""
         log_content = "Starting CP-SAT solver v9.8.3296\n"
-        parser = LogParser(log_content)
-        solver_info = parser._parse_solver_info()
+        lines = log_content.split("\n")
+        component = SolverInfoParser(lines)
+        solver_info = component.parse()
         assert solver_info.version == "9.8.3296"
 
     def test_parse_version_without_v_prefix(self):
         """Test version parsing without 'v' prefix."""
         log_content = "Starting CP-SAT solver 9.8.3296\n"
-        parser = LogParser(log_content)
-        solver_info = parser._parse_solver_info()
+        lines = log_content.split("\n")
+        component = SolverInfoParser(lines)
+        solver_info = component.parse()
         assert solver_info.version == "9.8.3296"
 
     def test_parse_parameters(self):
@@ -77,8 +92,9 @@ class TestSolverInfo:
         log_content = """Starting CP-SAT solver v9.8.3296
 Parameters: max_time_in_seconds: 90 log_search_progress: true relative_gap_limit: 0.25
 """
-        parser = LogParser(log_content)
-        solver_info = parser._parse_solver_info()
+        lines = log_content.split("\n")
+        component = SolverInfoParser(lines)
+        solver_info = component.parse()
         assert solver_info.parameters["max_time_in_seconds"] == 90
         assert solver_info.parameters["log_search_progress"] is True
         assert solver_info.parameters["relative_gap_limit"] == 0.25
@@ -88,8 +104,9 @@ Parameters: max_time_in_seconds: 90 log_search_progress: true relative_gap_limit
         log_content = """Starting CP-SAT solver v9.8.3296
 Setting number of workers to 24
 """
-        parser = LogParser(log_content)
-        solver_info = parser._parse_solver_info()
+        lines = log_content.split("\n")
+        component = SolverInfoParser(lines)
+        solver_info = component.parse()
         assert solver_info.num_workers == 24
 
 
@@ -106,8 +123,9 @@ class TestModelStatistics:
 #kLinear1: 1
 #kLinear2: 9'801 (#enforced: 9'801)
 """
-        parser = LogParser(log_content)
-        model = parser._parse_initial_model()
+        lines = log_content.split("\n")
+        component = InitialModelParser(lines)
+        model = component.parse()
 
         assert model is not None
         assert model.is_optimization is True
@@ -126,8 +144,9 @@ class TestModelStatistics:
   - 468 Booleans in [0,1]
   - 39 in [0,20]
 """
-        parser = LogParser(log_content)
-        model = parser._parse_initial_model()
+        lines = log_content.split("\n")
+        component = InitialModelParser(lines)
+        model = component.parse()
 
         assert model is not None
         assert model.is_optimization is False
@@ -141,8 +160,9 @@ class TestModelStatistics:
   - 99 in [1,99]
 #kBoolAnd: 9'702 (#enforced: 9'702) (#literals: 19'404)
 """
-        parser = LogParser(log_content)
-        model = parser._parse_presolved_model()
+        lines = log_content.split("\n")
+        component = PresolvedModelParser(lines)
+        model = component.parse()
 
         assert model is not None
         assert model.is_optimization is True
@@ -161,8 +181,9 @@ class TestPresolve:
 
 Presolve summary:
 """
-        parser = LogParser(log_content)
-        entries = parser._parse_presolve_log()
+        lines = log_content.split("\n")
+        component = PresolveLogParser(lines)
+        entries = component.parse()
 
         assert len(entries) >= 2
         assert entries[0].operation == "DetectDominanceRelations"
@@ -178,8 +199,9 @@ Presolve summary:
   - rule 'exactly_one: simplified objective' was applied 136 times.
   - rule 'linear: empty' was applied 1 time.
 """
-        parser = LogParser(log_content)
-        summary = parser._parse_presolve_summary()
+        lines = log_content.split("\n")
+        component = PresolveSummaryParser(lines)
+        summary = component.parse()
 
         assert summary is not None
         assert summary.affine_relations == 0
@@ -198,8 +220,9 @@ class TestSearchInfo:
 10 incomplete subsolvers: [feasibility_pump, graph_arc_lns]
 3 helper subsolvers: [neighborhood_helper, synchronization_agent]
 """
-        parser = LogParser(log_content)
-        search_info = parser._parse_search_info()
+        lines = log_content.split("\n")
+        component = SearchInfoParser(lines)
+        search_info = component.parse()
 
         assert search_info is not None
         assert search_info.start_time == 0.68
@@ -212,8 +235,9 @@ class TestSearchInfo:
         """Test parsing sequential search information."""
         log_content = """Starting sequential search at 0.01s
 """
-        parser = LogParser(log_content)
-        search_info = parser._parse_search_info()
+        lines = log_content.split("\n")
+        component = SearchInfoParser(lines)
+        search_info = component.parse()
 
         # Sequential search may not parse workers the same way
         # This is just to ensure no crashes
@@ -226,8 +250,9 @@ class TestSearchEvents:
     def test_parse_bound_event(self):
         """Test parsing bound events."""
         log_content = "Starting search at 0.68s with 24 workers.\n#Bound   0.73s best:inf   next:[48676021,3.15794931e+11] objective_shaving_search_no_lp (vars=9999 csts=19704)"
-        parser = LogParser(log_content)
-        events = parser._parse_search_events()
+        lines = log_content.split("\n")
+        component = SearchEventsParser(lines)
+        events = component.parse()
 
         assert len(events) >= 1
         bound_event = events[0]
@@ -240,8 +265,9 @@ class TestSearchEvents:
     def test_parse_objective_event(self):
         """Test parsing objective events."""
         log_content = "Starting search at 0.68s with 24 workers.\n#1       1.52s best:3.15168966e+09 next:[65445416,3.15168966e+09] quick_restart_no_lp (fixed_bools=0/9999)\n#2       1.59s best:2.03193872e+09 next:[65445416,2.03193872e+09] core (fixed_bools=0/10035)"
-        parser = LogParser(log_content)
-        events = parser._parse_search_events()
+        lines = log_content.split("\n")
+        component = SearchEventsParser(lines)
+        events = component.parse()
 
         assert len(events) >= 2
         obj_event1 = events[0]
@@ -254,8 +280,9 @@ class TestSearchEvents:
     def test_parse_model_event(self):
         """Test parsing model events."""
         log_content = "Starting search at 0.68s with 24 workers.\n#Model   4.63s var:9993/9999 constraints:19691/19703\n#Model   4.74s var:9987/9999 constraints:19679/19703"
-        parser = LogParser(log_content)
-        events = parser._parse_search_events()
+        lines = log_content.split("\n")
+        component = SearchEventsParser(lines)
+        events = component.parse()
 
         assert len(events) >= 2
         model_event = events[0]
@@ -275,8 +302,9 @@ class TestStatistics:
         log_content = """Search stats    Bools  Conflicts   Branches  Restarts  BoolPropag  IntegerPropag
     'default':    642    918'873  1'780'404       944  65'749'379     36'871'867
 """
-        parser = LogParser(log_content)
-        stats = parser._parse_search_stats()
+        lines = log_content.split("\n")
+        component = SearchStatsParser(lines)
+        stats = component.parse()
 
         assert len(stats) == 1
         assert stats[0].subsolver == "default"
@@ -290,8 +318,9 @@ class TestStatistics:
   'feasible solutions':    222      731        0      209
         'lp solutions':     42        0        0       37
 """
-        parser = LogParser(log_content)
-        repos = parser._parse_solution_repositories()
+        lines = log_content.split("\n")
+        component = SolutionRepositoriesParser(lines)
+        repos = component.parse()
 
         assert repos is not None
         assert "feasible solutions" in repos.repositories
@@ -305,8 +334,9 @@ class TestStatistics:
                    'initial_domain':    1
                            'max_lp':    6
 """
-        parser = LogParser(log_content)
-        bounds = parser._parse_objective_bounds()
+        lines = log_content.split("\n")
+        component = ObjectiveBoundsParser(lines)
+        bounds = component.parse()
 
         assert len(bounds) == 3
         assert bounds[0].subsolver == "am1_presolve"
@@ -338,8 +368,9 @@ deterministic_time: 65.5825
 gap_integral: 1167.26
 solution_fingerprint: 0x3f5c435d9453c6d6
 """
-        parser = LogParser(log_content)
-        response = parser._parse_response()
+        lines = log_content.split("\n")
+        component = ResponseParser(lines)
+        response = component.parse()
 
         assert response.status == "OPTIMAL"
         assert response.objective == 91326902
@@ -356,8 +387,9 @@ status: UNKNOWN
 objective: NA
 best_bound: NA
 """
-        parser = LogParser(log_content)
-        response = parser._parse_response()
+        lines = log_content.split("\n")
+        component = ResponseParser(lines)
+        response = component.parse()
 
         assert response.status == "UNKNOWN"
         assert response.objective is None
