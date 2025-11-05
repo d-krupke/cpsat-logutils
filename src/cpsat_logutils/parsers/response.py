@@ -65,6 +65,9 @@ class ResponseParser(ParserComponent):
             # Return a minimal response if not found
             return CPSolverResponse(status="UNKNOWN")
 
+        # Track the response section start
+        end_idx = start_idx + 1
+
         # Parse response fields
         response_data = {}
         for i in range(start_idx + 1, len(self.lines)):
@@ -72,7 +75,11 @@ class ResponseParser(ParserComponent):
 
             # Stop at empty line
             if not line.strip():
+                end_idx = i
                 break
+
+            # Track this line as part of the response
+            end_idx = i + 1
 
             # Parse key: value lines
             if ":" in line:
@@ -120,5 +127,8 @@ class ResponseParser(ParserComponent):
         # Ensure status is present
         if "status" not in response_data:
             response_data["status"] = "UNKNOWN"
+
+        # Track the entire response section
+        self.track_lines(start_idx, end_idx)
 
         return CPSolverResponse(**response_data)

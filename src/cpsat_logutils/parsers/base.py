@@ -4,7 +4,7 @@ Base classes for parser components and the parser registry.
 This module provides the foundation for the extensible parser architecture.
 """
 
-from typing import List, Dict, Any, Optional, Type, Callable
+from typing import List, Dict, Any, Optional, Type, Callable, Tuple
 from abc import ABC, abstractmethod
 
 
@@ -30,11 +30,33 @@ class ParserComponent(ABC):
             lines: List of log lines to parse
         """
         self.lines = lines
+        self.line_references: List[Tuple[int, int]] = []  # List of (start, end) line ranges
+
+    def track_lines(self, start: int, end: int) -> None:
+        """
+        Track a range of lines that were used during parsing.
+
+        Args:
+            start: Starting line number (0-indexed)
+            end: Ending line number (0-indexed, exclusive)
+        """
+        self.line_references.append((start, end))
+
+    def get_line_ranges(self) -> List[Tuple[int, int]]:
+        """
+        Get all line ranges that were used during parsing.
+
+        Returns:
+            List of (start, end) tuples representing line ranges
+        """
+        return self.line_references
 
     @abstractmethod
     def parse(self) -> Any:
         """
         Parse the log lines and return structured data.
+
+        Components should call track_lines() to record which lines they parse.
 
         Returns:
             The parsed data structure (model, list, dict, etc.)

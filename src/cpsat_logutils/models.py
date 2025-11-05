@@ -9,6 +9,45 @@ from typing import Optional, List, Dict, Any, Literal, Union
 from pydantic import BaseModel, Field, ConfigDict
 
 
+class LineReference(BaseModel):
+    """Reference to lines in the original log that correspond to a semantic block."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    start_line: int = Field(..., description="Starting line number (0-indexed)")
+    end_line: int = Field(..., description="Ending line number (0-indexed, exclusive)")
+    section_name: str = Field(..., description="Name of the semantic section")
+    field_name: Optional[str] = Field(
+        None, description="Field name in CPSATLog model"
+    )
+
+
+class LogMetadata(BaseModel):
+    """Metadata about the parsed log, including completeness and line references."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    is_complete: bool = Field(
+        ...,
+        description="Whether the log appears to be complete (has solver info and response)",
+    )
+    total_lines: int = Field(..., description="Total number of lines in the log")
+    has_solver_info: bool = Field(
+        ..., description="Whether solver information was found"
+    )
+    has_response: bool = Field(
+        ..., description="Whether final response was found"
+    )
+    missing_sections: List[str] = Field(
+        default_factory=list,
+        description="List of expected sections that appear to be missing",
+    )
+    line_references: List[LineReference] = Field(
+        default_factory=list,
+        description="References to line ranges for each parsed section",
+    )
+
+
 class SolverInfo(BaseModel):
     """Information about the CP-SAT solver configuration."""
 
@@ -345,6 +384,7 @@ class CPSATLog(BaseModel):
 
     model_config = ConfigDict(extra="forbid")
 
+    metadata: LogMetadata = Field(..., description="Log metadata including completeness and line references")
     solver_info: SolverInfo = Field(..., description="Solver configuration")
     initial_model: Optional[ModelStatistics] = Field(
         None, description="Initial model statistics"

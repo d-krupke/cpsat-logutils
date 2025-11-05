@@ -1,5 +1,7 @@
 from .parser import LogParser
 from .models import (
+    LineReference,
+    LogMetadata,
     CPSATLog,
     SolverInfo,
     ModelStatistics,
@@ -29,6 +31,8 @@ from .models import (
 
 __all__ = [
     "LogParser",
+    "LineReference",
+    "LogMetadata",
     "CPSATLog",
     "SolverInfo",
     "ModelStatistics",

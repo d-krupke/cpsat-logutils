@@ -35,7 +35,7 @@ Example:
 """
 
 from typing import List, Union, Optional
-from .models import CPSATLog
+from .models import CPSATLog, LogMetadata, LineReference
 from .parsers.base import ParserRegistry, default_registry
 from .parsers import (
     CommentsParser,
@@ -123,16 +123,22 @@ class LogParser:
         order and collects their parsed results into a CPSATLog model.
 
         Returns:
-            CPSATLog: Structured log data
+            CPSATLog: Structured log data with metadata including line references
 
         Example:
             >>> parser = LogParser(log_content)
             >>> result = parser.parse()
             >>> print(result.solver_info.version)
             '9.8.3296'
+            >>> print(f"Log is complete: {result.metadata.is_complete}")
+            >>> for ref in result.metadata.line_references:
+            >>>     print(f"{ref.section_name}: lines {ref.start_line}-{ref.end_line}")
         """
         # Dictionary to store parsed results
         parsed_data = {}
+
+        # List to collect line references from all components
+        all_line_references: List[LineReference] = []
 
         # Get all components sorted by priority
         components = self.registry.get_sorted_components()
@@ -146,10 +152,78 @@ class LogParser:
                 # Parse and store result
                 result = component.parse()
                 parsed_data[field_name] = result
+
+                # Collect line references from this component
+                for start, end in component.get_line_ranges():
+                    line_ref = LineReference(
+                        start_line=start,
+                        end_line=end,
+                        section_name=component_class.__name__.replace("Parser", ""),
+                        field_name=field_name
+                    )
+                    all_line_references.append(line_ref)
+
             except Exception as e:
                 # Log error but continue parsing other components
                 print(f"Warning: Failed to parse {field_name}: {e}")
                 parsed_data[field_name] = None
 
+        # Build metadata
+        metadata = self._build_metadata(parsed_data, all_line_references)
+        parsed_data["metadata"] = metadata
+
         # Create and return CPSATLog model
         return CPSATLog(**parsed_data)
+
+    def _build_metadata(
+        self,
+        parsed_data: dict,
+        line_references: List[LineReference]
+    ) -> LogMetadata:
+        """
+        Build metadata about the parsed log including completeness information.
+
+        Args:
+            parsed_data: Dictionary of parsed fields
+            line_references: List of line references collected from components
+
+        Returns:
+            LogMetadata with completeness and line reference information
+        """
+        # Check if we have solver info
+        solver_info = parsed_data.get("solver_info")
+        has_solver_info = (
+            solver_info is not None and
+            solver_info.version is not None and
+            solver_info.version != "unknown"
+        )
+
+        # Check if we have response
+        response = parsed_data.get("response")
+        has_response = (
+            response is not None and
+            response.status is not None and
+            response.status != "UNKNOWN"
+        )
+
+        # Determine completeness - log is complete if it has both start and end markers
+        is_complete = has_solver_info and has_response
+
+        # Identify missing sections
+        missing_sections = []
+        if not has_solver_info:
+            missing_sections.append("solver_info (log start)")
+        if not has_response:
+            missing_sections.append("response (log end)")
+
+        # Sort line references by start line
+        sorted_refs = sorted(line_references, key=lambda r: r.start_line)
+
+        return LogMetadata(
+            is_complete=is_complete,
+            total_lines=len(self.lines),
+            has_solver_info=has_solver_info,
+            has_response=has_response,
+            missing_sections=missing_sections,
+            line_references=sorted_refs
+        )

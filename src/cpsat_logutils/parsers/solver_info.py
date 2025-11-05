@@ -37,18 +37,21 @@ class SolverInfoParser(ParserComponent):
         parameters = {}
         num_workers = None
 
-        for line in self.lines:
+        for i, line in enumerate(self.lines):
             # Version line
             if match := re.match(r"Starting CP-SAT solver v?([\d.]+)", line, re.IGNORECASE):
                 version = match.group(1)
+                self.track_lines(i, i + 1)
 
             # Parameters line
             elif line.startswith("Parameters:"):
                 parameters = parse_parameters(line)
+                self.track_lines(i, i + 1)
 
             # Workers line
             elif match := re.match(r"Setting number of workers to (\d+)", line):
                 num_workers = int(match.group(1))
+                self.track_lines(i, i + 1)
 
         # Extract num_workers from parameters if not in separate line
         if num_workers is None and "num_workers" in parameters:
