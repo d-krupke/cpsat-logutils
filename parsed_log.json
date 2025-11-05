@@ -1,0 +1,2866 @@
+{
+  "solver_info": {
+    "version": "9.8.3296",
+    "parameters": {
+      "max_time_in_seconds": 90,
+      "log_search_progress": true,
+      "relative_gap_limit": 0.25
+    },
+    "num_workers": 24
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0xa2a90169c5e94a12",
+    "num_variables": 10000,
+    "num_booleans_in_objective": 9900,
+    "variable_domains": [
+      {
+        "count": 9900,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      },
+      {
+        "count": 100,
+        "type": "in",
+        "min_value": 0,
+        "max_value": 99
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kExactlyOne",
+        "count": 200,
+        "additional_info": {
+          "literals": 19800
+        }
+      },
+      {
+        "type": "kLinear1",
+        "count": 1,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinear2",
+        "count": 9801,
+        "additional_info": {
+          "enforced": 9801
+        }
+      }
+    ]
+  },
+  "presolve_log": [
+    {
+      "wall_time": 0.0023,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.019,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 2,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0000669,
+      "deterministic_time": 0.0,
+      "operation": "ExtractEncodingFromLinear",
+      "details": {
+        "potential_supersets": 200
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 20'099 nodes and 49'202 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.00169353 dtime: 0.00499563"
+      }
+    },
+    {
+      "wall_time": 0.146,
+      "deterministic_time": 0.213,
+      "operation": "Probe",
+      "details": {
+        "probed": 20196,
+        "new_bounds": 99,
+        "new_binary_clauses": 14554
+      }
+    },
+    {
+      "wall_time": 0.0000332,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00206,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0173,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 2,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00405,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00155,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000027,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00148,
+      "deterministic_time": 0.0000594,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 200
+      }
+    },
+    {
+      "wall_time": 0.000028,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000215,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00114,
+      "deterministic_time": 0.000973,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000374,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00229,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0109,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00227,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0108,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 39'503 nodes and 78'308 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.00305173 dtime: 0.00995105"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 0 / 9900"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:4851 literals:9702 vars:9702 one_side_vars:9702 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.00015094s] clauses:4851 literals:9702 vars:9702 one_side_vars:9702 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.00022489s] clauses:4851 literals:9702 vars:9702 one_side_vars:9702 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.148,
+      "deterministic_time": 0.219,
+      "operation": "Probe",
+      "details": {
+        "probed": 19998,
+        "new_binary_clauses": 9801
+      }
+    },
+    {
+      "wall_time": 0.0094,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00233,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0117,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0053,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00143,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000447,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00202,
+      "deterministic_time": 0.000105,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 5051
+      }
+    },
+    {
+      "wall_time": 0.0000424,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000366,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00113,
+      "deterministic_time": 0.00102,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000685,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00256,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0119,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00255,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0117,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 39'503 nodes and 78'308 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.00307274 dtime: 0.00995105"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 0 / 9900"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:4851 literals:9702 vars:9702 one_side_vars:9702 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.00015513s] clauses:4851 literals:9702 vars:9702 one_side_vars:9702 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.00023439s] clauses:4851 literals:9702 vars:9702 one_side_vars:9702 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.149,
+      "deterministic_time": 0.219,
+      "operation": "Probe",
+      "details": {
+        "probed": 19998,
+        "new_binary_clauses": 9801
+      }
+    },
+    {
+      "wall_time": 0.00935,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00262,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0126,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00531,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00153,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000823,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0021,
+      "deterministic_time": 0.000105,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 5051
+      }
+    },
+    {
+      "wall_time": 0.000068,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0000607,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00113,
+      "deterministic_time": 0.00102,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000101,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00265,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0123,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00827,
+      "deterministic_time": 0.0,
+      "operation": "ExpandObjective",
+      "details": {
+        "entries": 1940400,
+        "tight_variables": 19800,
+        "tight_constraints": 200
+      }
+    }
+  ],
+  "presolve_summary": {
+    "affine_relations": 0,
+    "rules_applied": {
+      "deductions: 19503 stored": 1,
+      "exactly_one: simplified objective": 136,
+      "incompatible linear: add implication": 14553,
+      "linear: empty": 1,
+      "linear: fixed or dup variables": 100,
+      "linear: reduced variable domains": 1,
+      "objective: shifted cost with exactly ones": 114,
+      "presolve: 1 unused variables removed.": 1,
+      "presolve: iteration": 3,
+      "variables: detect half reified value encoding": 99
+    },
+    "solved_during_presolve": false
+  },
+  "presolved_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x76bff0c14238d173",
+    "num_variables": 9999,
+    "num_booleans_in_objective": 9740,
+    "variable_domains": [
+      {
+        "count": 9900,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      },
+      {
+        "count": 99,
+        "type": "in",
+        "min_value": 1,
+        "max_value": 99
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kBoolAnd",
+        "count": 9702,
+        "additional_info": {
+          "enforced": 9702,
+          "literals": 19404
+        }
+      },
+      {
+        "type": "kExactlyOne",
+        "count": 200,
+        "additional_info": {
+          "literals": 19800
+        }
+      },
+      {
+        "type": "kLinear1",
+        "count": 99,
+        "additional_info": {
+          "enforced": 99
+        }
+      },
+      {
+        "type": "kLinear2",
+        "count": 9702,
+        "additional_info": {
+          "enforced": 9702
+        }
+      }
+    ]
+  },
+  "preloading_info": {
+    "symmetry_info": {
+      "time": 0.00298601,
+      "dtime": 0.00995433
+    },
+    "encoding_info": {}
+  },
+  "search_info": {
+    "start_time": 0.68,
+    "num_workers": 24,
+    "subsolvers": {
+      "full_problem": [
+        "core",
+        "default_lp",
+        "lb_tree_search",
+        "max_lp",
+        "no_lp",
+        "objective_lb_search",
+        "objective_lb_search_no_lp",
+        "objective_shaving_search_max_lp",
+        "objective_shaving_search_no_lp",
+        "probing",
+        "probing_max_lp",
+        "pseudo_costs",
+        "quick_restart",
+        "quick_restart_no_lp",
+        "reduced_costs"
+      ],
+      "first_solution": [
+        "fj_long_default",
+        "fj_long_lin_default",
+        "fj_short_default",
+        "fj_short_lin_default",
+        "fs_random(2)",
+        "fs_random_quick_restart"
+      ],
+      "incomplete": [
+        "feasibility_pump",
+        "graph_arc_lns",
+        "graph_cst_lns",
+        "graph_dec_lns",
+        "graph_var_lns",
+        "rins/rens",
+        "rnd_cst_lns",
+        "rnd_var_lns",
+        "violation_ls(2)"
+      ],
+      "helper": [
+        "neighborhood_helper",
+        "synchronization_agent",
+        "update_gap_integral"
+      ],
+      "interleaved": []
+    },
+    "search_type": "parallel"
+  },
+  "search_events": [
+    {
+      "event_type": "bound",
+      "time": 0.73,
+      "best_objective": null,
+      "bound": 48676021.0,
+      "lower_bound": 48676021.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.78,
+      "best_objective": null,
+      "bound": 48676022.0,
+      "lower_bound": 48676022.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.82,
+      "best_objective": null,
+      "bound": 48676023.0,
+      "lower_bound": 48676023.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.86,
+      "best_objective": null,
+      "bound": 48676024.0,
+      "lower_bound": 48676024.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.89,
+      "best_objective": null,
+      "bound": 48676025.0,
+      "lower_bound": 48676025.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.92,
+      "best_objective": null,
+      "bound": 48676026.0,
+      "lower_bound": 48676026.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.96,
+      "best_objective": null,
+      "bound": 48676027.0,
+      "lower_bound": 48676027.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 0.99,
+      "best_objective": null,
+      "bound": 48676028.0,
+      "lower_bound": 48676028.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.03,
+      "best_objective": null,
+      "bound": 48676029.0,
+      "lower_bound": 48676029.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.06,
+      "best_objective": null,
+      "bound": 48676030.0,
+      "lower_bound": 48676030.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.09,
+      "best_objective": null,
+      "bound": 48676031.0,
+      "lower_bound": 48676031.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.13,
+      "best_objective": null,
+      "bound": 48676032.0,
+      "lower_bound": 48676032.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.16,
+      "best_objective": null,
+      "bound": 48676033.0,
+      "lower_bound": 48676033.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.19,
+      "best_objective": null,
+      "bound": 48676034.0,
+      "lower_bound": 48676034.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.23,
+      "best_objective": null,
+      "bound": 48676035.0,
+      "lower_bound": 48676035.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.27,
+      "best_objective": null,
+      "bound": 48676036.0,
+      "lower_bound": 48676036.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.3,
+      "best_objective": null,
+      "bound": 48676037.0,
+      "lower_bound": 48676037.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.34,
+      "best_objective": null,
+      "bound": 48676038.0,
+      "lower_bound": 48676038.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.38,
+      "best_objective": null,
+      "bound": 48676039.0,
+      "lower_bound": 48676039.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.41,
+      "best_objective": null,
+      "bound": 48676040.0,
+      "lower_bound": 48676040.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.45,
+      "best_objective": null,
+      "bound": 48676041.0,
+      "lower_bound": 48676041.0,
+      "upper_bound": 315794931000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=9999 csts=19704)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 1,
+      "time": 1.52,
+      "objective": 3151689660.0,
+      "bound": 6.544541631516896e17,
+      "lower_bound": 6.544541631516896e17,
+      "upper_bound": null,
+      "gap_percent": 20765184094.934017,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=0/9999)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 2,
+      "time": 1.59,
+      "objective": 2031938720.0,
+      "bound": 6.544541620319387e17,
+      "lower_bound": 6.544541620319387e17,
+      "upper_bound": null,
+      "gap_percent": 32208361086.79498,
+      "subsolver": "core",
+      "additional_info": "core (fixed_bools=0/10035)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 3,
+      "time": 1.74,
+      "objective": 2026627530.0,
+      "bound": 6.600813320266276e17,
+      "lower_bound": 6.600813320266276e17,
+      "upper_bound": null,
+      "gap_percent": 32570431429.992466,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.50 s=511 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 4,
+      "time": 1.78,
+      "objective": 1970360830.0,
+      "bound": 6.600813319703608e17,
+      "lower_bound": 6.600813319703608e17,
+      "upper_bound": null,
+      "gap_percent": 33500530458.677456,
+      "subsolver": "core",
+      "additional_info": "core (fixed_bools=0/10035)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 5,
+      "time": 1.8,
+      "objective": 1908109780.0,
+      "bound": 6.600813319081098e17,
+      "lower_bound": 6.600813319081098e17,
+      "upper_bound": null,
+      "gap_percent": 34593467153.65611,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=0/10000)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 6,
+      "time": 1.88,
+      "objective": 1719057850.0,
+      "bound": 6.600813317190578e17,
+      "lower_bound": 6.600813317190578e17,
+      "upper_bound": null,
+      "gap_percent": 38397854382.85279,
+      "subsolver": "quick_restart",
+      "additional_info": "quick_restart (fixed_bools=0/10001)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 7,
+      "time": 1.98,
+      "objective": 1664765790.0,
+      "bound": 6.614713716647658e17,
+      "lower_bound": 6.614713716647658e17,
+      "upper_bound": null,
+      "gap_percent": 39733599403.192924,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:3 #solutions_imported:3 #lin_moves:21 #lin_evals:159'974 #gen_moves:1'386 #gen_evals:0 #comp_moves:10 #backtracks:688 #weight_updates:9)"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.9,
+      "best_objective": 1719057850.0,
+      "bound": 66147137.0,
+      "lower_bound": 66147137.0,
+      "upper_bound": 1719057850.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs [skipped_logs=3]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 8,
+      "time": 2.06,
+      "objective": 1486417990.0,
+      "bound": 6.61471371486418e17,
+      "lower_bound": 6.61471371486418e17,
+      "upper_bound": null,
+      "gap_percent": 44501033656.084854,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.50 s=514 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 9,
+      "time": 2.12,
+      "objective": 1274853350.0,
+      "bound": 6.614713712748534e17,
+      "lower_bound": 6.614713712748534e17,
+      "upper_bound": null,
+      "gap_percent": 51886075367.02162,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.50 s=512 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 10,
+      "time": 2.19,
+      "objective": 1238028910.0,
+      "bound": 6.614713712380289e17,
+      "lower_bound": 6.614713712380289e17,
+      "upper_bound": null,
+      "gap_percent": 53429396087.366005,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.19 s=533 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 11,
+      "time": 2.22,
+      "objective": 1227164780.0,
+      "bound": 6.636658412271648e17,
+      "lower_bound": 6.636658412271648e17,
+      "upper_bound": null,
+      "gap_percent": 54081232676.83742,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.19 s=536 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 12,
+      "time": 2.34,
+      "objective": 1109378950.0,
+      "bound": 6.63665841109379e17,
+      "lower_bound": 6.63665841109379e17,
+      "upper_bound": null,
+      "gap_percent": 59823186657.72413,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.28 s=535 t=0.10 p=0.33 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 13,
+      "time": 2.37,
+      "objective": 1063875340.0,
+      "bound": 6.636658410638753e17,
+      "lower_bound": 6.636658410638753e17,
+      "upper_bound": null,
+      "gap_percent": 62381917791.23295,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.29 s=530 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 14,
+      "time": 2.49,
+      "objective": 1063841320.0,
+      "bound": 6.636658410638413e17,
+      "lower_bound": 6.636658410638413e17,
+      "upper_bound": null,
+      "gap_percent": 62383912668.479546,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=0/10169)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 15,
+      "time": 2.5,
+      "objective": 920856694.0,
+      "bound": 6.6366584920856696e16,
+      "lower_bound": 6.6366584920856696e16,
+      "upper_bound": null,
+      "gap_percent": 7207048005.669381,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.28 s=542 t=0.10 p=0.33 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 16,
+      "time": 2.56,
+      "objective": 913552772.0,
+      "bound": 6.636658491355277e16,
+      "lower_bound": 6.636658491355277e16,
+      "upper_bound": null,
+      "gap_percent": 7264668887.677569,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.29 s=546 t=0.10 p=0.40 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 17,
+      "time": 2.6,
+      "objective": 900852126.0,
+      "bound": 6.648314790085213e16,
+      "lower_bound": 6.648314790085213e16,
+      "upper_bound": null,
+      "gap_percent": 7380028872.796377,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.20 s=548 t=0.10 p=0.33 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 18,
+      "time": 2.73,
+      "objective": 697993284.0,
+      "bound": 6.684633669799328e16,
+      "lower_bound": 6.684633669799328e16,
+      "upper_bound": null,
+      "gap_percent": 9576931115.572166,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.29 s=553 t=0.10 p=0.40 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 19,
+      "time": 2.84,
+      "objective": 610094256.0,
+      "bound": 6.684633661009426e16,
+      "lower_bound": 6.684633661009426e16,
+      "upper_bound": null,
+      "gap_percent": 10956722726.463434,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.22 s=559 t=0.10 p=0.38 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 20,
+      "time": 2.95,
+      "objective": 593439332.0,
+      "bound": 6.684633659343933e16,
+      "lower_bound": 6.684633659343933e16,
+      "upper_bound": null,
+      "gap_percent": 11264224057.19478,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.28 s=564 t=0.10 p=0.44 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 2.97,
+      "best_objective": 593439332.0,
+      "bound": 67230757.0,
+      "lower_bound": 67230757.0,
+      "upper_bound": 593439331.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs [skipped_logs=4]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 21,
+      "time": 3.06,
+      "objective": 577161054.0,
+      "bound": 6.723075757716106e16,
+      "lower_bound": 6.723075757716106e16,
+      "upper_bound": null,
+      "gap_percent": 11648526270.797197,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.28 s=560 t=0.10 p=0.43 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 22,
+      "time": 3.14,
+      "objective": 543044880.0,
+      "bound": 6.731597954304488e16,
+      "lower_bound": 6.731597954304488e16,
+      "upper_bound": null,
+      "gap_percent": 12396024984.159689,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.35 s=561 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 23,
+      "time": 3.24,
+      "objective": 508399152.0,
+      "bound": 6.731597950839915e16,
+      "lower_bound": 6.731597950839915e16,
+      "upper_bound": null,
+      "gap_percent": 13240773265.491205,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.35 s=567 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 24,
+      "time": 3.26,
+      "objective": 488337764.0,
+      "bound": 6.740874248833776e16,
+      "lower_bound": 6.740874248833776e16,
+      "upper_bound": null,
+      "gap_percent": 13803712710.614779,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.27 s=578 t=0.10 p=0.45 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 25,
+      "time": 3.38,
+      "objective": 472253366.0,
+      "bound": 6.740874247225337e16,
+      "lower_bound": 6.740874247225337e16,
+      "upper_bound": null,
+      "gap_percent": 14273851041.222647,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.37 s=570 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 26,
+      "time": 3.51,
+      "objective": 425787288.0,
+      "bound": 6.740874242578729e16,
+      "lower_bound": 6.740874242578729e16,
+      "upper_bound": null,
+      "gap_percent": 15831553430.500725,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.35 s=584 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 27,
+      "time": 3.52,
+      "objective": 350188702.0,
+      "bound": 6.74087423501887e16,
+      "lower_bound": 6.74087423501887e16,
+      "upper_bound": null,
+      "gap_percent": 19249262359.126595,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.29 s=588 t=0.10 p=0.45 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 28,
+      "time": 3.7,
+      "objective": 337332658.0,
+      "bound": 6.740874233733266e16,
+      "lower_bound": 6.740874233733266e16,
+      "upper_bound": null,
+      "gap_percent": 19982868661.35564,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.29 s=594 t=0.10 p=0.46 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 29,
+      "time": 3.77,
+      "objective": 332078716.0,
+      "bound": 6.740874233207871e16,
+      "lower_bound": 6.740874233207871e16,
+      "upper_bound": null,
+      "gap_percent": 20299025126.319748,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.28 s=600 t=0.10 p=0.47 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 30,
+      "time": 3.89,
+      "objective": 319651804.0,
+      "bound": 6.74087423196518e16,
+      "lower_bound": 6.74087423196518e16,
+      "upper_bound": null,
+      "gap_percent": 21088178185.285637,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.27 s=603 t=0.10 p=0.47 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 3.97,
+      "best_objective": 319651804.0,
+      "bound": 68338551.0,
+      "lower_bound": 68338551.0,
+      "upper_bound": 319651803.0,
+      "subsolver": "max_lp",
+      "additional_info": "max_lp [skipped_logs=3]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 31,
+      "time": 4.07,
+      "objective": 312916728.0,
+      "bound": 6.833855131291673e16,
+      "lower_bound": 6.833855131291673e16,
+      "upper_bound": null,
+      "gap_percent": 21839213082.913227,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.35 s=607 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 32,
+      "time": 4.09,
+      "objective": 251896766.0,
+      "bound": 6.833855125189677e16,
+      "lower_bound": 6.833855125189677e16,
+      "upper_bound": null,
+      "gap_percent": 27129586490.999252,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.34 s=610 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 33,
+      "time": 4.15,
+      "objective": 236209704.0,
+      "bound": 6.8338551236209704e16,
+      "lower_bound": 6.8338551236209704e16,
+      "upper_bound": null,
+      "gap_percent": 28931305464.063408,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.35 s=615 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 34,
+      "time": 4.16,
+      "objective": 235573026.0,
+      "bound": 6.833855123557302e16,
+      "lower_bound": 6.833855123557302e16,
+      "upper_bound": null,
+      "gap_percent": 29009497462.583004,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:7 #solutions_imported:7 #lin_moves:10'275 #lin_evals:294'025 #gen_moves:2'363 #gen_evals:0 #comp_moves:13 #backtracks:1'175 #weight_updates:385)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 35,
+      "time": 4.21,
+      "objective": 226067840.0,
+      "bound": 6.833855122606784e16,
+      "lower_bound": 6.833855122606784e16,
+      "upper_bound": null,
+      "gap_percent": 30229222785.514294,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.30 s=622 t=0.10 p=0.47 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 36,
+      "time": 4.39,
+      "objective": 221120050.0,
+      "bound": 6.833855122112005e16,
+      "lower_bound": 6.833855122112005e16,
+      "upper_bound": null,
+      "gap_percent": 30905632935.593132,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.29 s=631 t=0.10 p=0.47 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 37,
+      "time": 4.56,
+      "objective": 206431872.0,
+      "bound": 6.833855120643187e16,
+      "lower_bound": 6.833855120643187e16,
+      "upper_bound": null,
+      "gap_percent": 33104651107.363884,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.34 s=638 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 4.63,
+      "vars_remaining": 9993,
+      "vars_total": 9999,
+      "constraints_remaining": 19691,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 38,
+      "time": 4.67,
+      "objective": 189844120.0,
+      "bound": 6.833855118984412e16,
+      "lower_bound": 6.833855118984412e16,
+      "upper_bound": null,
+      "gap_percent": 35997191274.609924,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.42 s=625 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 39,
+      "time": 4.68,
+      "objective": 185494724.0,
+      "bound": 6.833855118549472e16,
+      "lower_bound": 6.833855118549472e16,
+      "upper_bound": null,
+      "gap_percent": 36841237058.5807,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.42 s=643 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 4.74,
+      "vars_remaining": 9987,
+      "vars_total": 9999,
+      "constraints_remaining": 19679,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 40,
+      "time": 4.75,
+      "objective": 185322316.0,
+      "bound": 6.833855118532231e16,
+      "lower_bound": 6.833855118532231e16,
+      "upper_bound": null,
+      "gap_percent": 36875510988.11003,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=12/10286)"
+    },
+    {
+      "event_type": "model",
+      "time": 4.9,
+      "vars_remaining": 9957,
+      "vars_total": 9999,
+      "constraints_remaining": 19619,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 41,
+      "time": 4.96,
+      "objective": 179493134.0,
+      "bound": 6.852742917949314e16,
+      "lower_bound": 6.852742917949314e16,
+      "upper_bound": null,
+      "gap_percent": 38178301015.12407,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.28 s=652 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 4.93,
+      "best_objective": 185322316.0,
+      "bound": 68527429.0,
+      "lower_bound": 68527429.0,
+      "upper_bound": 185322315.0,
+      "subsolver": "max_lp",
+      "additional_info": "max_lp [skipped_logs=0]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 42,
+      "time": 5.03,
+      "objective": 178338394.0,
+      "bound": 6.852742917833839e16,
+      "lower_bound": 6.852742917833839e16,
+      "upper_bound": null,
+      "gap_percent": 38425505278.465164,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.30 s=657 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 5.05,
+      "vars_remaining": 9921,
+      "vars_total": 9999,
+      "constraints_remaining": 19547,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 5.1,
+      "vars_remaining": 9913,
+      "vars_total": 9999,
+      "constraints_remaining": 19531,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 43,
+      "time": 5.17,
+      "objective": 177901308.0,
+      "bound": 6.8527429177901304e16,
+      "lower_bound": 6.8527429177901304e16,
+      "upper_bound": null,
+      "gap_percent": 38519912962.07895,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=86/10423)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 44,
+      "time": 5.27,
+      "objective": 158243428.0,
+      "bound": 6.852742915824342e16,
+      "lower_bound": 6.852742915824342e16,
+      "upper_bound": null,
+      "gap_percent": 43305071095.906746,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.34 s=666 t=0.10 p=0.50 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 5.29,
+      "vars_remaining": 9911,
+      "vars_total": 9999,
+      "constraints_remaining": 19527,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 5.32,
+      "vars_remaining": 9897,
+      "vars_total": 9999,
+      "constraints_remaining": 19499,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 5.39,
+      "vars_remaining": 9713,
+      "vars_total": 9999,
+      "constraints_remaining": 19131,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 45,
+      "time": 5.58,
+      "objective": 151244404.0,
+      "bound": 6.85274291512444e16,
+      "lower_bound": 6.85274291512444e16,
+      "upper_bound": null,
+      "gap_percent": 45309067434.98424,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.51 s=659 t=0.10 p=0.55 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 5.65,
+      "vars_remaining": 9549,
+      "vars_total": 9999,
+      "constraints_remaining": 18803,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 46,
+      "time": 5.7,
+      "objective": 147619104.0,
+      "bound": 6.85274291476191e16,
+      "lower_bound": 6.85274291476191e16,
+      "upper_bound": null,
+      "gap_percent": 46421789011.80704,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.43 s=679 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 5.79,
+      "vars_remaining": 9437,
+      "vars_total": 9999,
+      "constraints_remaining": 18579,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 47,
+      "time": 5.81,
+      "objective": 146520392.0,
+      "bound": 6.852742914652039e16,
+      "lower_bound": 6.852742914652039e16,
+      "upper_bound": null,
+      "gap_percent": 46769891934.22305,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.42 s=684 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 5.86,
+      "vars_remaining": 9409,
+      "vars_total": 9999,
+      "constraints_remaining": 18523,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 48,
+      "time": 5.9,
+      "objective": 145450612.0,
+      "bound": 6.852742914545061e16,
+      "lower_bound": 6.852742914545061e16,
+      "upper_bound": null,
+      "gap_percent": 47113881514.64086,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:6 #solutions_imported:6 #lin_moves:28'990 #lin_evals:256'786 #gen_moves:1'462 #gen_evals:0 #comp_moves:16 #backtracks:723 #weight_updates:1'563)"
+    },
+    {
+      "event_type": "model",
+      "time": 5.99,
+      "vars_remaining": 9377,
+      "vars_total": 9999,
+      "constraints_remaining": 18459,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "bound",
+      "time": 6.12,
+      "best_objective": 145450612.0,
+      "bound": 68638117.0,
+      "lower_bound": 68638117.0,
+      "upper_bound": 145450611.0,
+      "subsolver": "max_lp",
+      "additional_info": "max_lp"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 49,
+      "time": 6.17,
+      "objective": 138538594.0,
+      "bound": 6.863811713853859e16,
+      "lower_bound": 6.863811713853859e16,
+      "upper_bound": null,
+      "gap_percent": 49544401324.00939,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.41 s=696 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 6.26,
+      "vars_remaining": 9115,
+      "vars_total": 9999,
+      "constraints_remaining": 17935,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 50,
+      "time": 6.31,
+      "objective": 137698830.0,
+      "bound": 6.863811713769883e16,
+      "lower_bound": 6.863811713769883e16,
+      "upper_bound": null,
+      "gap_percent": 49846550620.655235,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.50 s=703 t=0.10 p=0.54 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 6.43,
+      "vars_remaining": 9083,
+      "vars_total": 9999,
+      "constraints_remaining": 17871,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 51,
+      "time": 6.53,
+      "objective": 135971378.0,
+      "bound": 6.863811713597138e16,
+      "lower_bound": 6.863811713597138e16,
+      "upper_bound": null,
+      "gap_percent": 50479827453.09825,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.41 s=710 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 52,
+      "time": 6.66,
+      "objective": 135717614.0,
+      "bound": 6.863811713571762e16,
+      "lower_bound": 6.863811713571762e16,
+      "upper_bound": null,
+      "gap_percent": 50574214338.8993,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.50 s=707 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 53,
+      "time": 6.68,
+      "objective": 134955496.0,
+      "bound": 6.8638117134955496e16,
+      "lower_bound": 6.8638117134955496e16,
+      "upper_bound": null,
+      "gap_percent": 50859816038.91108,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.44 s=714 t=0.10 p=0.52 stall=3 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 6.68,
+      "vars_remaining": 9013,
+      "vars_total": 9999,
+      "constraints_remaining": 17731,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 54,
+      "time": 6.7,
+      "objective": 130954598.0,
+      "bound": 6.86381171309546e16,
+      "lower_bound": 6.86381171309546e16,
+      "upper_bound": null,
+      "gap_percent": 52413674699.684845,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.48 s=716 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 6.82,
+      "vars_remaining": 8745,
+      "vars_total": 9999,
+      "constraints_remaining": 17195,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 55,
+      "time": 7.16,
+      "objective": 130948048.0,
+      "bound": 6.863811713094805e16,
+      "lower_bound": 6.863811713094805e16,
+      "upper_bound": null,
+      "gap_percent": 52416296423.14332,
+      "subsolver": "quick_restart",
+      "additional_info": "quick_restart (fixed_bools=1254/10195)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 56,
+      "time": 7.18,
+      "objective": 129150738.0,
+      "bound": 6.863811712915074e16,
+      "lower_bound": 6.863811712915074e16,
+      "upper_bound": null,
+      "gap_percent": 53145741219.070694,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.51 s=720 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 7.28,
+      "vars_remaining": 8633,
+      "vars_total": 9999,
+      "constraints_remaining": 16971,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 57,
+      "time": 7.34,
+      "objective": 129144188.0,
+      "bound": 6.8638117129144184e16,
+      "lower_bound": 6.8638117129144184e16,
+      "upper_bound": null,
+      "gap_percent": 53148436691.55286,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=1366/10692)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 58,
+      "time": 7.45,
+      "objective": 128952846.0,
+      "bound": 6.863811712895285e16,
+      "lower_bound": 6.863811712895285e16,
+      "upper_bound": null,
+      "gap_percent": 53227299070.23533,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.48 s=722 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 59,
+      "time": 7.55,
+      "objective": 126342124.0,
+      "bound": 6.863811712634212e16,
+      "lower_bound": 6.863811712634212e16,
+      "upper_bound": null,
+      "gap_percent": 54327183069.99493,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.42 s=733 t=0.10 p=0.52 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 7.57,
+      "vars_remaining": 8621,
+      "vars_total": 9999,
+      "constraints_remaining": 16947,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 60,
+      "time": 7.66,
+      "objective": 125227864.0,
+      "bound": 6.8638117125227864e16,
+      "lower_bound": 6.8638117125227864e16,
+      "upper_bound": null,
+      "gap_percent": 54810578738.29102,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.41 s=736 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 7.69,
+      "vars_remaining": 8467,
+      "vars_total": 9999,
+      "constraints_remaining": 16639,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 7.71,
+      "vars_remaining": 8381,
+      "vars_total": 9999,
+      "constraints_remaining": 16467,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 61,
+      "time": 7.78,
+      "objective": 124811500.0,
+      "bound": 6.8638117124811496e16,
+      "lower_bound": 6.8638117124811496e16,
+      "upper_bound": null,
+      "gap_percent": 54993423682.91383,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.42 s=739 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 62,
+      "time": 7.8,
+      "objective": 124247732.0,
+      "bound": 6.863811712424773e16,
+      "lower_bound": 6.863811712424773e16,
+      "upper_bound": null,
+      "gap_percent": 55242953650.05133,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.44 s=740 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 7.93,
+      "vars_remaining": 8323,
+      "vars_total": 9999,
+      "constraints_remaining": 16351,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 63,
+      "time": 8.13,
+      "objective": 121938002.0,
+      "bound": 6.8638117121938e16,
+      "lower_bound": 6.8638117121938e16,
+      "upper_bound": null,
+      "gap_percent": 56289356783.12984,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.44 s=747 t=0.10 p=0.51 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 64,
+      "time": 8.2,
+      "objective": 121866400.0,
+      "bound": 6.86381171218664e16,
+      "lower_bound": 6.86381171218664e16,
+      "upper_bound": null,
+      "gap_percent": 56322429316.03789,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=1676/10823)"
+    },
+    {
+      "event_type": "model",
+      "time": 8.24,
+      "vars_remaining": 8149,
+      "vars_total": 9999,
+      "constraints_remaining": 16003,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 65,
+      "time": 8.25,
+      "objective": 121440424.0,
+      "bound": 6.8638117121440424e16,
+      "lower_bound": 6.8638117121440424e16,
+      "upper_bound": null,
+      "gap_percent": 56519991234.549706,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.56 s=749 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 8.32,
+      "vars_remaining": 8145,
+      "vars_total": 9999,
+      "constraints_remaining": 15998,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 8.34,
+      "vars_remaining": 8115,
+      "vars_total": 9999,
+      "constraints_remaining": 15938,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 66,
+      "time": 8.39,
+      "objective": 121351828.0,
+      "bound": 6.863811712135182e16,
+      "lower_bound": 6.863811712135182e16,
+      "upper_bound": null,
+      "gap_percent": 56561255097.039,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.44 s=753 t=0.10 p=0.51 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 8.46,
+      "vars_remaining": 8113,
+      "vars_total": 9999,
+      "constraints_remaining": 15934,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 67,
+      "time": 8.48,
+      "objective": 120991856.0,
+      "bound": 6.863811712099186e16,
+      "lower_bound": 6.863811712099186e16,
+      "upper_bound": null,
+      "gap_percent": 56729534754.80201,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:13 #solutions_imported:13 #lin_moves:40'048 #lin_evals:520'153 #gen_moves:3'757 #gen_evals:0 #comp_moves:24 #backtracks:1'866 #weight_updates:1'256)"
+    },
+    {
+      "event_type": "model",
+      "time": 8.63,
+      "vars_remaining": 8093,
+      "vars_total": 9999,
+      "constraints_remaining": 15894,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 68,
+      "time": 8.78,
+      "objective": 119763212.0,
+      "bound": 6.863811711976321e16,
+      "lower_bound": 6.863811711976321e16,
+      "upper_bound": null,
+      "gap_percent": 57311519834.65507,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.51 s=760 t=0.10 p=0.53 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 8.85,
+      "vars_remaining": 7987,
+      "vars_total": 9999,
+      "constraints_remaining": 15682,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 69,
+      "time": 8.91,
+      "objective": 119014486.0,
+      "bound": 6.863811711901449e16,
+      "lower_bound": 6.863811711901449e16,
+      "upper_bound": null,
+      "gap_percent": 57672069431.95133,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.56 s=756 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 70,
+      "time": 8.99,
+      "objective": 118947234.0,
+      "bound": 6.863811711894723e16,
+      "lower_bound": 6.863811711894723e16,
+      "upper_bound": null,
+      "gap_percent": 57704676848.559586,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.56 s=759 t=0.10 p=0.54 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 9.0,
+      "vars_remaining": 7937,
+      "vars_total": 9999,
+      "constraints_remaining": 15582,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 71,
+      "time": 9.01,
+      "objective": 117068772.0,
+      "bound": 6.863811711706877e16,
+      "lower_bound": 6.863811711706877e16,
+      "upper_bound": null,
+      "gap_percent": 58630594502.1786,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.49 s=767 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 9.04,
+      "vars_remaining": 7933,
+      "vars_total": 9999,
+      "constraints_remaining": 15574,
+      "constraints_total": 19703,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 72,
+      "time": 9.2,
+      "objective": 116981288.0,
+      "bound": 6.863811711698129e16,
+      "lower_bound": 6.863811711698129e16,
+      "upper_bound": null,
+      "gap_percent": 58674441163.615845,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.42 s=778 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 9.37,
+      "best_objective": 116981288.0,
+      "bound": 68676546.0,
+      "lower_bound": 68676546.0,
+      "upper_bound": 116981287.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 73,
+      "time": 9.43,
+      "objective": 116696412.0,
+      "bound": 6.867654611669641e16,
+      "lower_bound": 6.867654611669641e16,
+      "upper_bound": null,
+      "gap_percent": 58850606306.55894,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.51 s=782 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 74,
+      "time": 9.56,
+      "objective": 115610112.0,
+      "bound": 6.867654611561011e16,
+      "lower_bound": 6.867654611561011e16,
+      "upper_bound": null,
+      "gap_percent": 59403580544.92673,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:12 #solutions_imported:12 #lin_moves:48'536 #lin_evals:636'137 #gen_moves:6'103 #gen_evals:0 #comp_moves:84 #backtracks:3'004 #weight_updates:2'034)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 75,
+      "time": 9.57,
+      "objective": 115114460.0,
+      "bound": 6.8676546115114456e16,
+      "lower_bound": 6.8676546115114456e16,
+      "upper_bound": null,
+      "gap_percent": 59659356435.325325,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:13 #solutions_imported:13 #lin_moves:48'570 #lin_evals:643'717 #gen_moves:6'103 #gen_evals:0 #comp_moves:84 #backtracks:3'004 #weight_updates:2'049)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 76,
+      "time": 9.61,
+      "objective": 115042858.0,
+      "bound": 6.8676546115042856e16,
+      "lower_bound": 6.8676546115042856e16,
+      "upper_bound": null,
+      "gap_percent": 59696488068.820404,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:14 #solutions_imported:14 #lin_moves:48'929 #lin_evals:652'198 #gen_moves:6'103 #gen_evals:0 #comp_moves:84 #backtracks:3'004 #weight_updates:2'191)"
+    },
+    {
+      "event_type": "bound",
+      "time": 9.87,
+      "best_objective": 115042858.0,
+      "bound": 68713039.0,
+      "lower_bound": 68713039.0,
+      "upper_bound": 115042857.0,
+      "subsolver": "probing_max_lp",
+      "additional_info": "probing_max_lp"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 77,
+      "time": 9.97,
+      "objective": 114697374.0,
+      "bound": 6.871303911469738e16,
+      "lower_bound": 6.871303911469738e16,
+      "upper_bound": null,
+      "gap_percent": 59908118733.389656,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.56 s=790 t=0.10 p=0.54 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 78,
+      "time": 10.01,
+      "objective": 108776558.0,
+      "bound": 6.871303910877656e16,
+      "lower_bound": 6.871303910877656e16,
+      "upper_bound": null,
+      "gap_percent": 63168977087.87586,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.44 s=803 t=0.10 p=0.51 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 10.01,
+      "vars_remaining": 7631,
+      "vars_total": 9999,
+      "constraints_remaining": 14973,
+      "constraints_total": 19703,
+      "additional_info": "[skipped_logs=5]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 79,
+      "time": 10.2,
+      "objective": 107683170.0,
+      "bound": 6.871303910768317e16,
+      "lower_bound": 6.871303910768317e16,
+      "upper_bound": null,
+      "gap_percent": 63810379096.380615,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.44 s=811 t=0.10 p=0.51 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 80,
+      "time": 10.31,
+      "objective": 106870358.0,
+      "bound": 6.871303910687036e16,
+      "lower_bound": 6.871303910687036e16,
+      "upper_bound": null,
+      "gap_percent": 64295694602.23947,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.51 s=816 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 81,
+      "time": 10.41,
+      "objective": 102749702.0,
+      "bound": 6.8713039102749704e16,
+      "lower_bound": 6.8713039102749704e16,
+      "upper_bound": null,
+      "gap_percent": 66874197844.38888,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.56 s=819 t=0.10 p=0.51 stall=6 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 82,
+      "time": 10.48,
+      "objective": 102581072.0,
+      "bound": 6.871303910258107e16,
+      "lower_bound": 6.871303910258107e16,
+      "upper_bound": null,
+      "gap_percent": 66984130366.662575,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:17 #solutions_imported:16 #lin_moves:49'303 #lin_evals:834'509 #gen_moves:9'811 #gen_evals:0 #comp_moves:213 #backtracks:4'791 #weight_updates:2'407)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 83,
+      "time": 10.58,
+      "objective": 102244224.0,
+      "bound": 6.871303910224422e16,
+      "lower_bound": 6.871303910224422e16,
+      "upper_bound": null,
+      "gap_percent": 67204812469.406586,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.42 s=824 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 84,
+      "time": 10.69,
+      "objective": 101457802.0,
+      "bound": 6.87130391014578e16,
+      "lower_bound": 6.87130391014578e16,
+      "upper_bound": null,
+      "gap_percent": 67725731925.47578,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.51 s=830 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 10.81,
+      "best_objective": 101457802.0,
+      "bound": 68738201.0,
+      "lower_bound": 68738201.0,
+      "upper_bound": 101457801.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 85,
+      "time": 10.83,
+      "objective": 100478688.0,
+      "bound": 6.873820110047869e16,
+      "lower_bound": 6.873820110047869e16,
+      "upper_bound": null,
+      "gap_percent": 68410727058.8565,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.62 s=829 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 10.9,
+      "vars_remaining": 6309,
+      "vars_total": 9999,
+      "constraints_remaining": 12353,
+      "constraints_total": 19703,
+      "additional_info": "[skipped_logs=7]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 86,
+      "time": 11.12,
+      "objective": 99193120.0,
+      "bound": 6873820199193119.0,
+      "lower_bound": 6873820199193119.0,
+      "upper_bound": null,
+      "gap_percent": 6929734743.6999655,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.61 s=841 t=0.10 p=0.54 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 87,
+      "time": 11.28,
+      "objective": 98429590.0,
+      "bound": 6873820198429589.0,
+      "lower_bound": 6873820198429589.0,
+      "upper_bound": null,
+      "gap_percent": 6983489517.735469,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.57 s=839 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 88,
+      "time": 11.34,
+      "objective": 98067102.0,
+      "bound": 6873820198067101.0,
+      "lower_bound": 6873820198067101.0,
+      "upper_bound": null,
+      "gap_percent": 7009302773.115493,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=3851/11384)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 89,
+      "time": 11.72,
+      "objective": 97363570.0,
+      "bound": 6873820197363569.0,
+      "lower_bound": 6873820197363569.0,
+      "upper_bound": null,
+      "gap_percent": 7059950759.817043,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.66 s=852 t=0.10 p=0.55 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 90,
+      "time": 11.85,
+      "objective": 97245190.0,
+      "bound": 6873820197245189.0,
+      "lower_bound": 6873820197245189.0,
+      "upper_bound": null,
+      "gap_percent": 7068545086.908668,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.70 s=865 t=0.10 p=0.54 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 91,
+      "time": 11.92,
+      "objective": 96882702.0,
+      "bound": 6873820196882701.0,
+      "lower_bound": 6873820196882701.0,
+      "upper_bound": null,
+      "gap_percent": 7094992148.34037,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.44 s=867 t=0.10 p=0.51 stall=3 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 12.01,
+      "best_objective": 96882702.0,
+      "bound": 68751309.0,
+      "lower_bound": 68751309.0,
+      "upper_bound": 96882701.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "model",
+      "time": 11.94,
+      "vars_remaining": 5877,
+      "vars_total": 9999,
+      "constraints_remaining": 11501,
+      "constraints_total": 19703,
+      "additional_info": "[skipped_logs=4]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 92,
+      "time": 12.12,
+      "objective": 96687138.0,
+      "bound": 6875130996687137.0,
+      "lower_bound": 6875130996687137.0,
+      "upper_bound": null,
+      "gap_percent": 7110698529.518992,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.44 s=875 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 93,
+      "time": 12.4,
+      "objective": 94414282.0,
+      "bound": 6875130994414281.0,
+      "lower_bound": 6875130994414281.0,
+      "upper_bound": null,
+      "gap_percent": 7281875956.0126705,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.49 s=877 t=0.10 p=0.52 stall=3 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 94,
+      "time": 12.53,
+      "objective": 91860110.0,
+      "bound": 6875130991860109.0,
+      "lower_bound": 6875130991860109.0,
+      "upper_bound": null,
+      "gap_percent": 7484348647.089579,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.55 s=883 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 95,
+      "time": 12.59,
+      "objective": 91734908.0,
+      "bound": 6875130991734907.0,
+      "lower_bound": 6875130991734907.0,
+      "upper_bound": null,
+      "gap_percent": 7494563465.414931,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.50 s=889 t=0.10 p=0.52 stall=4 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 96,
+      "time": 12.85,
+      "objective": 91326902.0,
+      "bound": 6875130991326901.0,
+      "lower_bound": 6875130991326901.0,
+      "upper_bound": null,
+      "gap_percent": 7528045679.2457485,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.66 s=891 t=0.10 p=0.53 stall=6 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 12.95,
+      "vars_remaining": 4721,
+      "vars_total": 9999,
+      "constraints_remaining": 9225,
+      "constraints_total": 19703,
+      "additional_info": "[skipped_logs=5]"
+    }
+  ],
+  "task_timing": [
+    {
+      "task_name": "core",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "default_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "feasibility_pump",
+      "num_runs": 188,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_default",
+      "num_runs": 8,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_lin_default",
+      "num_runs": 19,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_default",
+      "num_runs": 20,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_lin_default",
+      "num_runs": 19,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random_quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_arc_lns",
+      "num_runs": 57,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_cst_lns",
+      "num_runs": 57,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_dec_lns",
+      "num_runs": 57,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_var_lns",
+      "num_runs": 58,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "lb_tree_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_max_lp",
+      "num_runs": 29,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_no_lp",
+      "num_runs": 29,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing_max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "pseudo_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "reduced_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rins/rens",
+      "num_runs": 188,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_cst_lns",
+      "num_runs": 58,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_var_lns",
+      "num_runs": 58,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 20,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 21,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    }
+  ],
+  "search_stats": [
+    {
+      "subsolver": "core",
+      "booleans": 10035,
+      "conflicts": 1940,
+      "branches": 547766,
+      "restarts": 20585,
+      "bool_propagations": 6562328,
+      "integer_propagations": 8265776
+    },
+    {
+      "subsolver": "default_lp",
+      "booleans": 9999,
+      "conflicts": 9445,
+      "branches": 48152,
+      "restarts": 20000,
+      "bool_propagations": 2404835,
+      "integer_propagations": 5441214
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 9999,
+      "conflicts": 0,
+      "branches": 19998,
+      "restarts": 19998,
+      "bool_propagations": 1999008,
+      "integer_propagations": 2011172
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 9999,
+      "conflicts": 0,
+      "branches": 23607,
+      "restarts": 19998,
+      "bool_propagations": 2000795,
+      "integer_propagations": 2016550
+    },
+    {
+      "subsolver": "fs_random_quick_restart",
+      "booleans": 9999,
+      "conflicts": 0,
+      "branches": 19998,
+      "restarts": 19998,
+      "bool_propagations": 1999008,
+      "integer_propagations": 2011172
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "booleans": 9999,
+      "conflicts": 0,
+      "branches": 20049,
+      "restarts": 19999,
+      "bool_propagations": 2003939,
+      "integer_propagations": 2053361
+    },
+    {
+      "subsolver": "max_lp",
+      "booleans": 10069,
+      "conflicts": 20,
+      "branches": 20181,
+      "restarts": 19999,
+      "bool_propagations": 2052153,
+      "integer_propagations": 2110885
+    },
+    {
+      "subsolver": "no_lp",
+      "booleans": 9999,
+      "conflicts": 6905,
+      "branches": 57797,
+      "restarts": 20002,
+      "bool_propagations": 2441438,
+      "integer_propagations": 4976543
+    },
+    {
+      "subsolver": "objective_lb_search",
+      "booleans": 10005,
+      "conflicts": 9708,
+      "branches": 47581,
+      "restarts": 20003,
+      "bool_propagations": 3825013,
+      "integer_propagations": 7340458
+    },
+    {
+      "subsolver": "objective_lb_search_no_lp",
+      "booleans": 10051,
+      "conflicts": 10273,
+      "branches": 47284,
+      "restarts": 20052,
+      "bool_propagations": 4480343,
+      "integer_propagations": 9210014
+    },
+    {
+      "subsolver": "probing",
+      "booleans": 10098,
+      "conflicts": 0,
+      "branches": 134492,
+      "restarts": 21508,
+      "bool_propagations": 3196496,
+      "integer_propagations": 4049603
+    },
+    {
+      "subsolver": "probing_max_lp",
+      "booleans": 10000,
+      "conflicts": 0,
+      "branches": 20002,
+      "restarts": 20004,
+      "bool_propagations": 2007253,
+      "integer_propagations": 2060024
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "booleans": 10191,
+      "conflicts": 155,
+      "branches": 21991,
+      "restarts": 20001,
+      "bool_propagations": 2091458,
+      "integer_propagations": 2133080
+    },
+    {
+      "subsolver": "quick_restart",
+      "booleans": 10490,
+      "conflicts": 779,
+      "branches": 177473,
+      "restarts": 20073,
+      "bool_propagations": 2629111,
+      "integer_propagations": 3744498
+    },
+    {
+      "subsolver": "quick_restart_no_lp",
+      "booleans": 11543,
+      "conflicts": 1839,
+      "branches": 350944,
+      "restarts": 20175,
+      "bool_propagations": 3539371,
+      "integer_propagations": 5641346
+    },
+    {
+      "subsolver": "reduced_costs",
+      "booleans": 9999,
+      "conflicts": 50,
+      "branches": 51565,
+      "restarts": 20003,
+      "bool_propagations": 2005721,
+      "integer_propagations": 2161644
+    }
+  ],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": {
+    "repositories": {
+      "feasible solutions": {
+        "added": 222,
+        "queried": 731,
+        "ignored": 0,
+        "synchro": 209
+      },
+      "lp solutions": {
+        "added": 42,
+        "queried": 0,
+        "ignored": 0,
+        "synchro": 37
+      }
+    }
+  },
+  "objective_bounds": [
+    {
+      "subsolver": "am1_presolve",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "initial_domain",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "num_bounds": 4
+    },
+    {
+      "subsolver": "max_lp",
+      "num_bounds": 6
+    },
+    {
+      "subsolver": "objective_shaving_search_max_lp",
+      "num_bounds": 19
+    },
+    {
+      "subsolver": "objective_shaving_search_no_lp",
+      "num_bounds": 2
+    },
+    {
+      "subsolver": "probing_max_lp",
+      "num_bounds": 4
+    },
+    {
+      "subsolver": "reduced_costs",
+      "num_bounds": 4
+    }
+  ],
+  "improving_bounds_shared": {
+    "bounds_by_subsolver": {
+      "core": 4886,
+      "probing": 20,
+      "probing_max_lp": 431
+    }
+  },
+  "clauses_shared": {
+    "clauses_by_subsolver": {
+      "quick_restart": 5,
+      "quick_restart_no_lp": 11
+    }
+  },
+  "response": {
+    "status": "OPTIMAL",
+    "objective": 91326902.0,
+    "best_bound": 68751309.0,
+    "num_integers": 9939,
+    "num_booleans": 9999,
+    "conflicts": 0,
+    "branches": 23607,
+    "propagations": 2000795,
+    "integer_propagations": 2016550,
+    "restarts": 19998,
+    "lp_iterations": 0,
+    "walltime": 13.017,
+    "usertime": 13.017,
+    "deterministic_time": 65.5825,
+    "gap_integral": 1167.26,
+    "solution_fingerprint": "0x3f5c435d9453c6d6",
+    "additional_fields": {}
+  },
+  "comments": []
+}

@@ -7,6 +7,34 @@ Utilities to parse and work with the logs of
 > presolve stats, subsolver activity, search progress, conflicts, etc.) and
 > exposes them in structured Python objects you can analyze or visualize.
 
+## 🆕 New Pydantic-Based Parser
+
+We've added a **new parser** that produces clean, structured Pydantic models perfect for web frontends and data analysis:
+
+```python
+from cpsat_logutils import LogParserNew
+
+parser = LogParserNew(log_content)
+parsed_log = parser.parse()
+
+# Access structured data
+print(f"Version: {parsed_log.solver_info.version}")
+print(f"Status: {parsed_log.response.status}")
+
+# Export directly to JSON for frontends
+json_data = parsed_log.model_dump_json(indent=2)
+```
+
+**Key Features:**
+- ✅ **Type-safe** Pydantic models with validation
+- ✅ **JSON-serializable** for easy frontend integration
+- ✅ **Clean API** with intuitive access to all log data
+- ✅ **Robust parsing** handles variations across CP-SAT versions
+
+See [PYDANTIC_PARSER.md](PYDANTIC_PARSER.md) for full documentation and [example_usage.py](example_usage.py) for a complete working example.
+
+The original block-based parser is still available and fully supported.
+
 ## Installation
 
 ```bash
