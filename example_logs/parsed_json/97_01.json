@@ -7,6 +7,18 @@
     "missing_sections": [],
     "line_references": [
       {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
         "start_line": 2,
         "end_line": 3,
         "section_name": "SolverInfo",
@@ -37,16 +49,70 @@
         "field_name": "presolve_log"
       },
       {
+        "start_line": 60,
+        "end_line": 71,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
+      },
+      {
         "start_line": 72,
         "end_line": 77,
         "section_name": "PresolvedModel",
         "field_name": "presolved_model"
       },
       {
+        "start_line": 78,
+        "end_line": 87,
+        "section_name": "PreloadingInfo",
+        "field_name": "preloading_info"
+      },
+      {
+        "start_line": 87,
+        "end_line": 92,
+        "section_name": "SearchInfo",
+        "field_name": "search_info"
+      },
+      {
         "start_line": 87,
         "end_line": 116,
         "section_name": "SearchEvents",
         "field_name": "search_events"
+      },
+      {
+        "start_line": 116,
+        "end_line": 141,
+        "section_name": "TaskTiming",
+        "field_name": "task_timing"
+      },
+      {
+        "start_line": 142,
+        "end_line": 155,
+        "section_name": "SearchStats",
+        "field_name": "search_stats"
+      },
+      {
+        "start_line": 156,
+        "end_line": 164,
+        "section_name": "LNSStats",
+        "field_name": "lns_stats"
+      },
+      {
+        "start_line": 165,
+        "end_line": 174,
+        "section_name": "Solutions",
+        "field_name": "solutions"
+      },
+      {
+        "start_line": 175,
+        "end_line": 180,
+        "section_name": "ObjectiveBounds",
+        "field_name": "objective_bounds"
+      },
+      {
+        "start_line": 181,
+        "end_line": 185,
+        "section_name": "SolutionRepositories",
+        "field_name": "solution_repositories"
       },
       {
         "start_line": 186,
@@ -908,6 +974,72 @@
       }
     }
   },
+  "solutions": [
+    {
+      "subsolver": "graph_arc_lns",
+      "num_solutions": 1,
+      "rank_range": [
+        6,
+        6
+      ]
+    },
+    {
+      "subsolver": "graph_cst_lns",
+      "num_solutions": 2,
+      "rank_range": [
+        9,
+        10
+      ]
+    },
+    {
+      "subsolver": "graph_var_lns",
+      "num_solutions": 1,
+      "rank_range": [
+        5,
+        5
+      ]
+    },
+    {
+      "subsolver": "jump",
+      "num_solutions": 1,
+      "rank_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "subsolver": "no_lp",
+      "num_solutions": 1,
+      "rank_range": [
+        2,
+        2
+      ]
+    },
+    {
+      "subsolver": "rens_pump_lns",
+      "num_solutions": 1,
+      "rank_range": [
+        7,
+        7
+      ]
+    },
+    {
+      "subsolver": "rnd_cst_lns",
+      "num_solutions": 3,
+      "rank_range": [
+        3,
+        11
+      ]
+    },
+    {
+      "subsolver": "rnd_var_lns",
+      "num_solutions": 1,
+      "rank_range": [
+        4,
+        4
+      ]
+    }
+  ],
   "objective_bounds": [
     {
       "subsolver": "initial_domain",

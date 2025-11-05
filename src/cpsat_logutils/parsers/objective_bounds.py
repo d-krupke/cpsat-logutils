@@ -46,9 +46,11 @@ class ObjectiveBoundsParser(ParserComponent):
 
         for i, line in enumerate(self.lines):
             if re.match(r"Objective bounds\s+Num", line, re.IGNORECASE):
+                section_start = i
                 in_section = True
                 continue
             elif in_section and (not line.strip() or not line.startswith(" ")):
+                section_end = i
                 break
 
             if not in_section or not line.strip():
@@ -62,5 +64,10 @@ class ObjectiveBoundsParser(ParserComponent):
                 entries.append(
                     ObjectiveBoundEntry(subsolver=subsolver, num_bounds=num_bounds)
                 )
+                section_end = i + 1
+
+        # Track the objective bounds section
+        if section_start is not None and section_end is not None:
+            self.track_lines(section_start, section_end)
 
         return entries

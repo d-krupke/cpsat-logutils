@@ -37,16 +37,64 @@
         "field_name": "presolve_log"
       },
       {
+        "start_line": 29,
+        "end_line": 37,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
+      },
+      {
         "start_line": 38,
         "end_line": 40,
         "section_name": "PresolvedModel",
         "field_name": "presolved_model"
       },
       {
+        "start_line": 42,
+        "end_line": 47,
+        "section_name": "PreloadingInfo",
+        "field_name": "preloading_info"
+      },
+      {
+        "start_line": 47,
+        "end_line": 52,
+        "section_name": "SearchInfo",
+        "field_name": "search_info"
+      },
+      {
         "start_line": 47,
         "end_line": 56,
         "section_name": "SearchEvents",
         "field_name": "search_events"
+      },
+      {
+        "start_line": 56,
+        "end_line": 67,
+        "section_name": "TaskTiming",
+        "field_name": "task_timing"
+      },
+      {
+        "start_line": 68,
+        "end_line": 74,
+        "section_name": "SearchStats",
+        "field_name": "search_stats"
+      },
+      {
+        "start_line": 76,
+        "end_line": 77,
+        "section_name": "LNSStats",
+        "field_name": "lns_stats"
+      },
+      {
+        "start_line": 79,
+        "end_line": 80,
+        "section_name": "Solutions",
+        "field_name": "solutions"
+      },
+      {
+        "start_line": 82,
+        "end_line": 83,
+        "section_name": "ObjectiveBounds",
+        "field_name": "objective_bounds"
       },
       {
         "start_line": 90,
@@ -317,6 +365,7 @@
   "ls_stats": [],
   "lp_stats": [],
   "solution_repositories": null,
+  "solutions": [],
   "objective_bounds": [],
   "improving_bounds_shared": null,
   "clauses_shared": null,

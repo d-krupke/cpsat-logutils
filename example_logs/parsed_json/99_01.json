@@ -9,6 +9,18 @@
     ],
     "line_references": [
       {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
         "start_line": 3,
         "end_line": 4,
         "section_name": "SolverInfo",
@@ -39,10 +51,34 @@
         "field_name": "presolve_log"
       },
       {
+        "start_line": 67,
+        "end_line": 80,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
+      },
+      {
         "start_line": 81,
         "end_line": 111,
         "section_name": "PresolvedModel",
         "field_name": "presolved_model"
+      },
+      {
+        "start_line": 112,
+        "end_line": 117,
+        "section_name": "PreloadingInfo",
+        "field_name": "preloading_info"
+      },
+      {
+        "start_line": 128,
+        "end_line": 130,
+        "section_name": "SearchStats",
+        "field_name": "search_stats"
+      },
+      {
+        "start_line": 131,
+        "end_line": 133,
+        "section_name": "SATStats",
+        "field_name": "sat_stats"
       },
       {
         "start_line": 134,
@@ -677,6 +713,7 @@
   "ls_stats": [],
   "lp_stats": [],
   "solution_repositories": null,
+  "solutions": [],
   "objective_bounds": [],
   "improving_bounds_shared": null,
   "clauses_shared": null,

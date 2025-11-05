@@ -7,6 +7,54 @@
     "missing_sections": [],
     "line_references": [
       {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 2,
+        "end_line": 3,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 3,
+        "end_line": 4,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 4,
+        "end_line": 5,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 5,
+        "end_line": 6,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 6,
+        "end_line": 7,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 7,
+        "end_line": 8,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
         "start_line": 8,
         "end_line": 9,
         "section_name": "SolverInfo",
@@ -37,16 +85,70 @@
         "field_name": "presolve_log"
       },
       {
+        "start_line": 56,
+        "end_line": 63,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
+      },
+      {
         "start_line": 64,
         "end_line": 82,
         "section_name": "PresolvedModel",
         "field_name": "presolved_model"
       },
       {
+        "start_line": 83,
+        "end_line": 90,
+        "section_name": "PreloadingInfo",
+        "field_name": "preloading_info"
+      },
+      {
+        "start_line": 90,
+        "end_line": 95,
+        "section_name": "SearchInfo",
+        "field_name": "search_info"
+      },
+      {
         "start_line": 90,
         "end_line": 100,
         "section_name": "SearchEvents",
         "field_name": "search_events"
+      },
+      {
+        "start_line": 100,
+        "end_line": 118,
+        "section_name": "TaskTiming",
+        "field_name": "task_timing"
+      },
+      {
+        "start_line": 119,
+        "end_line": 131,
+        "section_name": "SearchStats",
+        "field_name": "search_stats"
+      },
+      {
+        "start_line": 132,
+        "end_line": 144,
+        "section_name": "LPStats",
+        "field_name": "lp_stats"
+      },
+      {
+        "start_line": 144,
+        "end_line": 146,
+        "section_name": "LNSStats",
+        "field_name": "lns_stats"
+      },
+      {
+        "start_line": 147,
+        "end_line": 152,
+        "section_name": "LSStats",
+        "field_name": "ls_stats"
+      },
+      {
+        "start_line": 153,
+        "end_line": 157,
+        "section_name": "SolutionRepositories",
+        "field_name": "solution_repositories"
       },
       {
         "start_line": 158,
@@ -715,8 +817,93 @@
   ],
   "sat_stats": [],
   "lns_stats": [],
-  "ls_stats": [],
-  "lp_stats": [],
+  "ls_stats": [
+    {
+      "subsolver": "fj_long_default",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    },
+    {
+      "subsolver": "fj_long_lin_default",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    },
+    {
+      "subsolver": "fj_short_default",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    },
+    {
+      "subsolver": "fj_short_lin_default",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    }
+  ],
+  "lp_stats": [
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 1,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 12,
+        "DUAL_F.": 1,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 0
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 0,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 0,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    }
+  ],
   "solution_repositories": {
     "repositories": {
       "feasible solutions": {
@@ -733,6 +920,7 @@
       }
     }
   },
+  "solutions": [],
   "objective_bounds": [],
   "improving_bounds_shared": null,
   "clauses_shared": null,

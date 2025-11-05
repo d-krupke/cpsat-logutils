@@ -20,6 +20,7 @@ from .lns_stats import LNSStatsParser
 from .ls_stats import LSStatsParser
 from .lp_stats import LPStatsParser
 from .solution_repositories import SolutionRepositoriesParser
+from .solutions import SolutionsParser
 from .objective_bounds import ObjectiveBoundsParser
 from .improving_bounds_shared import ImprovingBoundsSharedParser
 from .clauses_shared import ClausesSharedParser
@@ -45,6 +46,7 @@ __all__ = [
     "LSStatsParser",
     "LPStatsParser",
     "SolutionRepositoriesParser",
+    "SolutionsParser",
     "ObjectiveBoundsParser",
     "ImprovingBoundsSharedParser",
     "ClausesSharedParser",

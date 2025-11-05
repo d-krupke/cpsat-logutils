@@ -22,6 +22,7 @@ from .statistics import (
     LSStatEntry,
     LPStatEntry,
     SolutionRepositories,
+    SolutionEntry,
     ObjectiveBoundEntry,
     ImprovingBoundsShared,
     ClausesShared,
@@ -223,6 +224,13 @@ class CPSATLog(BaseModel):
         description=(
             "Statistics about solution repositories: how many solutions "
             "were added, queried, and synchronized between workers"
+        )
+    )
+
+    solutions: List[SolutionEntry] = Field(
+        default_factory=list,
+        description=(
+            "Solutions found by each subsolver with quality rankings"
         )
     )
 

@@ -48,9 +48,11 @@ class PreloadingInfoParser(ParserComponent):
         for i, line in enumerate(self.lines):
             if "Preloading model" in line:
                 in_preloading = True
+                section_start = i
                 continue
             elif re.match(r"Starting", line):
                 if in_preloading:
+                    section_end = i
                     break
 
             if not in_preloading:
@@ -77,8 +79,14 @@ class PreloadingInfoParser(ParserComponent):
                     value = match.group(2).strip()
                     encoding_info[key] = value
 
+            section_end = i + 1
+
         if not symmetry_info and not encoding_info:
             return None
+
+        # Track preloading section
+        if section_start is not None and section_end is not None:
+            self.track_lines(section_start, section_end)
 
         return PreloadingInfo(
             symmetry_info=symmetry_info, encoding_info=encoding_info

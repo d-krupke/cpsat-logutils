@@ -50,6 +50,7 @@ class TaskTimingParser(ParserComponent):
                 in_section = True
                 continue
             elif in_section and (not line.strip() or line[0] not in " '"):
+                section_end = i
                 break
 
             if not in_section or not line.strip():
@@ -63,5 +64,10 @@ class TaskTimingParser(ParserComponent):
                 entries.append(
                     TaskTimingEntry(task_name=task_name, num_runs=num_runs)
                 )
+                section_end = i + 1
+
+        # Track the entire task timing section
+        if section_start is not None and section_end is not None:
+            self.track_lines(section_start, section_end)
 
         return entries

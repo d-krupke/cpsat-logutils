@@ -52,6 +52,7 @@ class PresolveSummaryParser(ParserComponent):
         affine_relations = 0
         rules_applied = {}
         solved_during_presolve = False
+        end_idx = start_idx + 1
 
         for i in range(start_idx + 1, len(self.lines)):
             line = self.lines[i]
@@ -60,6 +61,7 @@ class PresolveSummaryParser(ParserComponent):
             if not line.strip() or re.match(
                 r"(Presolved|Preloading|Starting)", line
             ):
+                end_idx = i
                 break
 
             # Affine relations
@@ -77,6 +79,11 @@ class PresolveSummaryParser(ParserComponent):
             # Check for solved during presolve
             elif "Problem closed by presolve" in line or "solved by presolve" in line.lower():
                 solved_during_presolve = True
+
+            end_idx = i + 1
+
+        # Track the presolve summary section
+        self.track_lines(start_idx, end_idx)
 
         return PresolveSummary(
             affine_relations=affine_relations,

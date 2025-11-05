@@ -7,6 +7,30 @@
     "missing_sections": [],
     "line_references": [
       {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 2,
+        "end_line": 3,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 3,
+        "end_line": 4,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
         "start_line": 4,
         "end_line": 5,
         "section_name": "SolverInfo",
@@ -31,16 +55,82 @@
         "field_name": "presolve_log"
       },
       {
+        "start_line": 102,
+        "end_line": 161,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
+      },
+      {
         "start_line": 162,
         "end_line": 169,
         "section_name": "PresolvedModel",
         "field_name": "presolved_model"
       },
       {
+        "start_line": 170,
+        "end_line": 178,
+        "section_name": "PreloadingInfo",
+        "field_name": "preloading_info"
+      },
+      {
+        "start_line": 178,
+        "end_line": 183,
+        "section_name": "SearchInfo",
+        "field_name": "search_info"
+      },
+      {
         "start_line": 178,
         "end_line": 185,
         "section_name": "SearchEvents",
         "field_name": "search_events"
+      },
+      {
+        "start_line": 185,
+        "end_line": 209,
+        "section_name": "TaskTiming",
+        "field_name": "task_timing"
+      },
+      {
+        "start_line": 210,
+        "end_line": 222,
+        "section_name": "SearchStats",
+        "field_name": "search_stats"
+      },
+      {
+        "start_line": 223,
+        "end_line": 247,
+        "section_name": "LPStats",
+        "field_name": "lp_stats"
+      },
+      {
+        "start_line": 247,
+        "end_line": 255,
+        "section_name": "LNSStats",
+        "field_name": "lns_stats"
+      },
+      {
+        "start_line": 256,
+        "end_line": 260,
+        "section_name": "LSStats",
+        "field_name": "ls_stats"
+      },
+      {
+        "start_line": 261,
+        "end_line": 263,
+        "section_name": "Solutions",
+        "field_name": "solutions"
+      },
+      {
+        "start_line": 264,
+        "end_line": 266,
+        "section_name": "ObjectiveBounds",
+        "field_name": "objective_bounds"
+      },
+      {
+        "start_line": 267,
+        "end_line": 271,
+        "section_name": "SolutionRepositories",
+        "field_name": "solution_repositories"
       },
       {
         "start_line": 272,
@@ -1180,8 +1270,199 @@
   ],
   "sat_stats": [],
   "lns_stats": [],
-  "ls_stats": [],
-  "lp_stats": [],
+  "ls_stats": [
+    {
+      "subsolver": "fj_long_default",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    },
+    {
+      "subsolver": "fj_short_default",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    },
+    {
+      "subsolver": "violation_ls",
+      "stats": {
+        "Batches": 0,
+        "Restarts": 0,
+        "LinMoves": 0,
+        "GenMoves": 0,
+        "CompoundMoves": 0,
+        "WeightUpdates": 0
+      }
+    }
+  ],
+  "lp_stats": [
+    {
+      "subsolver": "lb_tree_search",
+      "stats": {
+        "Component": 1,
+        "Iterations": 254,
+        "AddedCuts": 0,
+        "OPTIMAL": 1,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 1,
+        "Iterations": 254,
+        "AddedCuts": 0,
+        "OPTIMAL": 1,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "stats": {
+        "Component": 1,
+        "Iterations": 174,
+        "AddedCuts": 0,
+        "OPTIMAL": 2,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "reduced_costs",
+      "stats": {
+        "Component": 1,
+        "Iterations": 174,
+        "AddedCuts": 0,
+        "OPTIMAL": 2,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "stats": {
+        "Component": 1636
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 1636
+      }
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "stats": {
+        "Component": 196
+      }
+    },
+    {
+      "subsolver": "reduced_costs",
+      "stats": {
+        "Component": 196
+      }
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "stats": {
+        "Component": 0,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 0,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "stats": {
+        "Component": 0,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "reduced_costs",
+      "stats": {
+        "Component": 0,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "stats": {
+        "Component": 1636,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "max_lp",
+      "stats": {
+        "Component": 1636,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "stats": {
+        "Component": 1636,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    },
+    {
+      "subsolver": "reduced_costs",
+      "stats": {
+        "Component": 1636,
+        "Iterations": 0,
+        "AddedCuts": 0,
+        "OPTIMAL": 0,
+        "DUAL_F.": 0,
+        "DUAL_U.": 0
+      }
+    }
+  ],
   "solution_repositories": {
     "repositories": {
       "feasible solutions": {
@@ -1198,6 +1479,16 @@
       }
     }
   },
+  "solutions": [
+    {
+      "subsolver": "objective_shaving_search_no_lp",
+      "num_solutions": 1,
+      "rank_range": [
+        1,
+        1
+      ]
+    }
+  ],
   "objective_bounds": [
     {
       "subsolver": "initial_domain",

@@ -244,7 +244,7 @@ class LSStatEntry(BaseModel):
     Example:
         >>> # Compare LS performance
         >>> for ls_stat in result.ls_stats:
-        ...     print(f"{ls_stat.subsolver}: {ls_stat.num_solutions} solutions")
+        ...     print(f"{ls_stat.subsolver}: {ls_stat.stats}")
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -255,15 +255,12 @@ class LSStatEntry(BaseModel):
         min_length=1
     )
 
-    num_solutions: Optional[int] = Field(
-        None,
-        description="Number of solutions found by this LS subsolver",
-        ge=0
-    )
-
-    improvement_range: Optional[List[int]] = Field(
-        None,
-        description="Range of solution improvements as [min, max]"
+    stats: Dict[str, Any] = Field(
+        default_factory=dict,
+        description=(
+            "LS-specific statistics. "
+            "May include Batches, Restarts, LinMoves, GenMoves, CompoundMoves, WeightUpdates, etc."
+        )
     )
 
 
@@ -398,4 +395,31 @@ class ClausesShared(BaseModel):
     clauses_by_subsolver: Dict[str, int] = Field(
         default_factory=dict,
         description="Number of clauses shared by each subsolver"
+    )
+
+
+class SolutionEntry(BaseModel):
+    """
+    Entry for a subsolver that found solutions.
+    
+    Shows which subsolver found solutions and their quality ranking.
+    """
+    
+    model_config = ConfigDict(extra="forbid")
+    
+    subsolver: str = Field(
+        ...,
+        description="Name of the subsolver",
+        min_length=1
+    )
+    
+    num_solutions: int = Field(
+        ...,
+        description="Number of solutions found by this subsolver",
+        ge=0
+    )
+    
+    rank_range: Optional[List[int]] = Field(
+        None,
+        description="Quality rank range as [min, max]"
     )

@@ -48,6 +48,7 @@ class LNSStatsParser(ParserComponent):
                 in_section = True
                 continue
             elif in_section and (not line.strip() or not line.startswith(" ")):
+                section_end = i
                 break
 
             if not in_section or not line.strip():
@@ -69,5 +70,10 @@ class LNSStatsParser(ParserComponent):
                         improvement_range=[min_improvement, max_improvement],
                     )
                 )
+                section_end = i + 1
+
+        # Track the LNS stats section
+        if section_start is not None and section_end is not None:
+            self.track_lines(section_start, section_end)
 
         return entries

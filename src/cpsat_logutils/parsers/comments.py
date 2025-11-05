@@ -30,7 +30,9 @@ class CommentsParser(ParserComponent):
             List of comment strings (without the // prefix)
         """
         comments = []
-        for line in self.lines:
+        for i, line in enumerate(self.lines):
             if line.startswith("//"):
                 comments.append(line[2:].strip())
+                # Track each comment line
+                self.track_lines(i, i + 1)
         return comments

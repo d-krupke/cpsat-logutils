@@ -54,6 +54,7 @@ from .parsers import (
     LSStatsParser,
     LPStatsParser,
     SolutionRepositoriesParser,
+    SolutionsParser,
     ObjectiveBoundsParser,
     ImprovingBoundsSharedParser,
     ClausesSharedParser,
@@ -77,6 +78,7 @@ default_registry.register(LNSStatsParser)
 default_registry.register(LSStatsParser)
 default_registry.register(LPStatsParser)
 default_registry.register(SolutionRepositoriesParser)
+default_registry.register(SolutionsParser)
 default_registry.register(ObjectiveBoundsParser)
 default_registry.register(ImprovingBoundsSharedParser)
 default_registry.register(ClausesSharedParser)

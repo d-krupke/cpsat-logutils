@@ -7,6 +7,18 @@
     "missing_sections": [],
     "line_references": [
       {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
         "start_line": 2,
         "end_line": 3,
         "section_name": "SolverInfo",
@@ -37,10 +49,22 @@
         "field_name": "presolve_log"
       },
       {
+        "start_line": 29,
+        "end_line": 37,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
+      },
+      {
         "start_line": 38,
         "end_line": 47,
         "section_name": "PresolvedModel",
         "field_name": "presolved_model"
+      },
+      {
+        "start_line": 51,
+        "end_line": 54,
+        "section_name": "SearchInfo",
+        "field_name": "search_info"
       },
       {
         "start_line": 51,
@@ -251,6 +275,7 @@
   "ls_stats": [],
   "lp_stats": [],
   "solution_repositories": null,
+  "solutions": [],
   "objective_bounds": [],
   "improving_bounds_shared": null,
   "clauses_shared": null,

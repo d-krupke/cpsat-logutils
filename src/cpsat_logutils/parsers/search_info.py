@@ -52,6 +52,7 @@ class SearchInfoParser(ParserComponent):
                 # Parse subsolvers from following lines
                 subsolvers = SubsolverInfo()
                 search_type = "parallel"
+                section_end = i + 1
 
                 # Check for sequential search
                 for j in range(i, min(i + 10, len(self.lines))):
@@ -72,6 +73,7 @@ class SearchInfoParser(ParserComponent):
                         subsolvers.full_problem = [
                             s.strip() for s in match.group(2).split(",")
                         ]
+                        section_end = j + 1
 
                     # First solution subsolvers
                     elif match := re.match(
@@ -82,6 +84,7 @@ class SearchInfoParser(ParserComponent):
                         subsolvers.first_solution = [
                             s.strip() for s in match.group(2).split(",")
                         ]
+                        section_end = j + 1
 
                     # Incomplete subsolvers
                     elif match := re.match(
@@ -92,6 +95,7 @@ class SearchInfoParser(ParserComponent):
                         subsolvers.incomplete = [
                             s.strip() for s in match.group(2).split(",")
                         ]
+                        section_end = j + 1
 
                     # Helper subsolvers
                     elif match := re.match(
@@ -102,6 +106,7 @@ class SearchInfoParser(ParserComponent):
                         subsolvers.helper = [
                             s.strip() for s in match.group(2).split(",")
                         ]
+                        section_end = j + 1
 
                     # Interleaved subsolvers (older versions)
                     elif match := re.match(
@@ -112,6 +117,10 @@ class SearchInfoParser(ParserComponent):
                         subsolvers.interleaved = [
                             s.strip() for s in match.group(1).split(",")
                         ]
+                        section_end = j + 1
+
+                # Track the search info section
+                self.track_lines(i, section_end)
 
                 return SearchInfo(
                     start_time=start_time,

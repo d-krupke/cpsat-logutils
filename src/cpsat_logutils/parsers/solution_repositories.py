@@ -44,9 +44,11 @@ class SolutionRepositoriesParser(ParserComponent):
 
         for i, line in enumerate(self.lines):
             if re.match(r"Solution repositories\s+Added", line, re.IGNORECASE):
+                section_start = i
                 in_section = True
                 continue
             elif in_section and (not line.strip() or not line.startswith(" ")):
+                section_end = i
                 break
 
             if not in_section or not line.strip():
@@ -70,8 +72,13 @@ class SolutionRepositoriesParser(ParserComponent):
                 }
                 if synchro is not None:
                     repositories[repo_name]["synchro"] = synchro
+                section_end = i + 1
 
         if not repositories:
             return None
+
+        # Track the solution repositories section
+        if section_start is not None and section_end is not None:
+            self.track_lines(section_start, section_end)
 
         return SolutionRepositories(repositories=repositories)

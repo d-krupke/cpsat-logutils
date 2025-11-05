@@ -7,6 +7,12 @@
     "missing_sections": [],
     "line_references": [
       {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "Comments",
+        "field_name": "comments"
+      },
+      {
         "start_line": 2,
         "end_line": 3,
         "section_name": "SolverInfo",
@@ -29,6 +35,12 @@
         "end_line": 21,
         "section_name": "PresolveLog",
         "field_name": "presolve_log"
+      },
+      {
+        "start_line": 21,
+        "end_line": 78,
+        "section_name": "PresolveSummary",
+        "field_name": "presolve_summary"
       },
       {
         "start_line": 62,
@@ -167,6 +179,7 @@
   "ls_stats": [],
   "lp_stats": [],
   "solution_repositories": null,
+  "solutions": [],
   "objective_bounds": [],
   "improving_bounds_shared": null,
   "clauses_shared": null,

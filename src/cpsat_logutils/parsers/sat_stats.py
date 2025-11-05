@@ -50,6 +50,7 @@ class SATStatsParser(ParserComponent):
                 header_fields = re.findall(r"(\w+)", line)[2:]  # Skip "SAT stats"
                 continue
             elif in_section and (not line.strip() or not line.startswith(" ")):
+                section_end = i
                 break
 
             if not in_section or not line.strip():
@@ -68,5 +69,10 @@ class SATStatsParser(ParserComponent):
                         stats[field] = values[i]
 
                 entries.append(SATStatEntry(subsolver=subsolver, stats=stats))
+                section_end = i + 1
+
+        # Track the SAT stats section
+        if section_start is not None and section_end is not None:
+            self.track_lines(section_start, section_end)
 
         return entries
