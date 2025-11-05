@@ -1,0 +1,1234 @@
+{
+  "metadata": {
+    "is_complete": true,
+    "total_lines": 290,
+    "has_solver_info": true,
+    "has_response": true,
+    "missing_sections": [],
+    "line_references": [
+      {
+        "start_line": 4,
+        "end_line": 5,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 5,
+        "end_line": 6,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 7,
+        "end_line": 15,
+        "section_name": "InitialModel",
+        "field_name": "initial_model"
+      },
+      {
+        "start_line": 16,
+        "end_line": 102,
+        "section_name": "PresolveLog",
+        "field_name": "presolve_log"
+      },
+      {
+        "start_line": 162,
+        "end_line": 169,
+        "section_name": "PresolvedModel",
+        "field_name": "presolved_model"
+      },
+      {
+        "start_line": 178,
+        "end_line": 185,
+        "section_name": "SearchEvents",
+        "field_name": "search_events"
+      },
+      {
+        "start_line": 272,
+        "end_line": 289,
+        "section_name": "Response",
+        "field_name": "response"
+      }
+    ]
+  },
+  "solver_info": {
+    "version": "9.8.3296",
+    "parameters": {
+      "max_time_in_seconds": 24.145278453826904,
+      "log_search_progress": true,
+      "num_search_workers": 15,
+      "log_to_stdout": false
+    },
+    "num_workers": 15
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x1d7dfb3f1a9d8e32",
+    "num_variables": 885104,
+    "num_booleans_in_objective": 107,
+    "variable_domains": [
+      {
+        "count": 885104,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kBoolOr",
+        "count": 2265364,
+        "additional_info": {
+          "literals": 7226566
+        }
+      },
+      {
+        "type": "kLinear1",
+        "count": 4707,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinear2",
+        "count": 30067,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinear3",
+        "count": 3103,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinearN",
+        "count": 4387,
+        "additional_info": {
+          "terms": 39483
+        }
+      }
+    ]
+  },
+  "presolve_log": [
+    {
+      "wall_time": 0.401,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.349,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 4.76,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 22,
+        "num_dual_strengthening": 6
+      }
+    },
+    {
+      "wall_time": 0.0142,
+      "deterministic_time": 0.0,
+      "operation": "ExtractEncodingFromLinear",
+      "details": {
+        "potential_supersets": 3480
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 1'556'155 nodes and 1'966'045 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph too large. Skipping. You can use symmetry_level:3 or more to force it."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 33134 / 47263"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:631514 literals:1863694 vars:47263 one_side_vars:5026 simple_definition:35324 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.65774s] clauses:619048 literals:1267005 vars:47263 one_side_vars:7372 simple_definition:33893 singleton_clauses:107"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.754693s] clauses:13521 literals:33944 vars:12321 one_side_vars:10047 simple_definition:1675 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.622,
+      "deterministic_time": 0.174,
+      "operation": "Probe",
+      "details": {
+        "probed": 252342,
+        "fixed_bools": 432,
+        "equiv": 2513,
+        "new_binary_clauses": 3802
+      }
+    },
+    {
+      "wall_time": 0.397,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.191,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.188,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.99,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 18,
+        "num_dual_strengthening": 8
+      }
+    },
+    {
+      "wall_time": 0.027,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {
+        "duplicates": 110
+      }
+    },
+    {
+      "wall_time": 0.014,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0218,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0559,
+      "deterministic_time": 0.00276,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 2079,
+        "num_inclusions": 87
+      }
+    },
+    {
+      "wall_time": 0.0169,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0141,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0156,
+      "deterministic_time": 0.000278,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0345,
+      "deterministic_time": 5.8e-6,
+      "operation": "MergeClauses",
+      "details": {
+        "num_collisions": 31,
+        "num_merges": 31,
+        "num_saved_literals": 81
+      }
+    },
+    {
+      "wall_time": 0.225,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.187,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.66,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 3,
+        "num_dual_strengthening": 3
+      }
+    },
+    {
+      "wall_time": 0.217,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.33,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 887'777 nodes and 55'754 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.0396658 dtime: 0.0574362"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "#generators: 26, average support size: 6.38462"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "The model contains 2 duplicate constraints !"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "48 orbits with sizes: 9,9,9,7,3,3,3,3,3,3,..."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by intersecting at_most_one with orbits: 1 largest_orbit: 9"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Found orbitope of size 5 x 3"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 30 / 1045"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:490 literals:1786 vars:980 one_side_vars:676 simple_definition:294 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000229781s] clauses:490 literals:1774 vars:980 one_side_vars:686 simple_definition:285 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000350899s] clauses:474 literals:1724 vars:953 one_side_vars:662 simple_definition:284 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.446,
+      "deterministic_time": 0.144,
+      "operation": "Probe",
+      "details": {
+        "probed": 236372,
+        "equiv": 18,
+        "new_binary_clauses": 110
+      }
+    },
+    {
+      "wall_time": 1.29,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.187,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.169,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.651,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 4,
+        "num_dual_strengthening": 4
+      }
+    },
+    {
+      "wall_time": 0.0255,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.013,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0211,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0547,
+      "deterministic_time": 0.00197,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 1651,
+        "num_inclusions": 10
+      }
+    },
+    {
+      "wall_time": 0.0172,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0147,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0157,
+      "deterministic_time": 0.000244,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0341,
+      "deterministic_time": 5.59e-6,
+      "operation": "MergeClauses",
+      "details": {
+        "num_collisions": 26,
+        "num_merges": 26,
+        "num_saved_literals": 69
+      }
+    },
+    {
+      "wall_time": 0.168,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.264,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.17,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.265,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 887'354 nodes and 49'595 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.0385819 dtime: 0.056673"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "#generators: 20, average support size: 7.7"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "47 orbits with sizes: 9,9,9,3,3,3,3,3,3,3,..."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by intersecting at_most_one with orbits: 1 largest_orbit: 9"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Found orbitope of size 5 x 3"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 4 / 978"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:401 literals:1578 vars:931 one_side_vars:701 simple_definition:223 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000169018s] clauses:401 literals:1578 vars:931 one_side_vars:701 simple_definition:223 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000255741s] clauses:401 literals:1578 vars:931 one_side_vars:701 simple_definition:223 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.444,
+      "deterministic_time": 0.136,
+      "operation": "Probe",
+      "details": {
+        "probed": 236298,
+        "equiv": 3,
+        "new_binary_clauses": 75
+      }
+    },
+    {
+      "wall_time": 0.601,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.168,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.263,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0251,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0131,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0209,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0549,
+      "deterministic_time": 0.00197,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 1636
+      }
+    },
+    {
+      "wall_time": 0.0171,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0144,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0156,
+      "deterministic_time": 0.000244,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0337,
+      "deterministic_time": 5.59e-6,
+      "operation": "MergeClauses",
+      "details": {
+        "num_collisions": 26,
+        "num_merges": 26,
+        "num_saved_literals": 69
+      }
+    },
+    {
+      "wall_time": 0.168,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.262,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0293,
+      "deterministic_time": 0.0,
+      "operation": "ExpandObjective",
+      "details": {
+        "entries": 2074,
+        "tight_variables": 159,
+        "tight_constraints": 13
+      }
+    }
+  ],
+  "presolve_summary": {
+    "affine_relations": 58444,
+    "rules_applied": {
+      "TODO dual: only one blocking constraint?": 1523796,
+      "TODO dual: only one unspecified blocking constraint?": 26,
+      "TODO dual: tighten at most one": 12540,
+      "TODO linear2: contains a Boolean.": 2274,
+      "TODO symmetry: add symmetry breaking inequalities?": 2,
+      "affine: fixed": 2975,
+      "affine: new relation": 58444,
+      "at_most_one: dominated singleton": 5436,
+      "at_most_one: empty or all false": 878,
+      "at_most_one: removed literals": 10277,
+      "at_most_one: resolved two constraints with opposite literal": 228,
+      "at_most_one: satisfied": 589,
+      "at_most_one: singleton": 2238,
+      "at_most_one: size one": 1127,
+      "at_most_one: transformed into max clique.": 3,
+      "at_most_one: x and not(x)": 212,
+      "bool_and: always false": 37022,
+      "bool_and: fixed literals": 6,
+      "bool_and: non-reified.": 3574,
+      "bool_and: x => x": 61970,
+      "bool_or: always true": 769483,
+      "bool_or: fixed literals": 1411,
+      "bool_or: implications": 851226,
+      "bool_or: only one literal": 39125,
+      "bool_or: singleton": 67153,
+      "domination: added implications": 16,
+      "domination: in at most one": 347,
+      "domination: in exactly one": 4702,
+      "domination: in implication": 1,
+      "dual: enforced equivalence": 56017,
+      "dual: fix variable": 561698,
+      "duplicate: removed constraint": 110,
+      "enforcement: false literal": 55298,
+      "enforcement: literal not used": 5753,
+      "enforcement: true literal": 3574,
+      "exactly_one: removed literals": 3126,
+      "exactly_one: satisfied": 105,
+      "exactly_one: singleton": 654,
+      "exactly_one: size one": 110,
+      "exactly_one: size two": 2226,
+      "linear1: always true": 1070,
+      "linear: always true": 29680,
+      "linear: empty": 5346,
+      "linear: fixed or dup variables": 38343,
+      "linear: negative clause": 856,
+      "linear: positive at most one": 1280,
+      "linear: positive clause": 281,
+      "linear: positive equal one": 3109,
+      "linear: reduced variable domains": 5025,
+      "linear: simplified rhs": 387,
+      "linear: singleton column": 9843,
+      "objective: variable not used elsewhere": 106,
+      "presolve: 814960 unused variables removed.": 1,
+      "presolve: iteration": 3,
+      "probing: bool_or reduced to implication": 266,
+      "probing: simplified clauses.": 2,
+      "setppc: removed dominated constraints": 96
+    },
+    "solved_during_presolve": false
+  },
+  "presolved_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x8e2b2b239393081a",
+    "num_variables": 975,
+    "num_booleans_in_objective": 1,
+    "variable_domains": [
+      {
+        "count": 975,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kAtMostOne",
+        "count": 1228,
+        "additional_info": {
+          "literals": 47063
+        }
+      },
+      {
+        "type": "kBoolAnd",
+        "count": 197,
+        "additional_info": {
+          "enforced": 197,
+          "multi": 22,
+          "literals": 505
+        }
+      },
+      {
+        "type": "kBoolOr",
+        "count": 123,
+        "additional_info": {
+          "literals": 943
+        }
+      },
+      {
+        "type": "kExactlyOne",
+        "count": 13,
+        "additional_info": {
+          "literals": 159
+        }
+      }
+    ]
+  },
+  "preloading_info": {
+    "symmetry_info": {
+      "time": 0.00127015,
+      "dtime": 0.00362265,
+      "generators": 20
+    },
+    "encoding_info": {}
+  },
+  "search_info": {
+    "start_time": 16.34,
+    "num_workers": 15,
+    "subsolvers": {
+      "full_problem": [
+        "default_lp",
+        "lb_tree_search",
+        "max_lp",
+        "no_lp",
+        "objective_lb_search",
+        "objective_shaving_search_no_lp",
+        "probing",
+        "pseudo_costs",
+        "quick_restart",
+        "quick_restart_no_lp",
+        "reduced_costs"
+      ],
+      "first_solution": [
+        "fj_long_default",
+        "fj_short_default",
+        "fs_random"
+      ],
+      "incomplete": [
+        "feasibility_pump",
+        "graph_arc_lns",
+        "graph_cst_lns",
+        "graph_dec_lns",
+        "graph_var_lns",
+        "rins/rens",
+        "rnd_cst_lns",
+        "rnd_var_lns",
+        "violation_ls"
+      ],
+      "helper": [
+        "neighborhood_helper",
+        "synchronization_agent",
+        "update_gap_integral"
+      ],
+      "interleaved": []
+    },
+    "search_type": "parallel"
+  },
+  "search_events": [
+    {
+      "event_type": "objective",
+      "solution_number": 1,
+      "time": 16.37,
+      "objective": 106.0,
+      "proven_bound": 106.0,
+      "next_min": null,
+      "next_max": null,
+      "gap_percent": null,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=36 csts=21)"
+    }
+  ],
+  "task_timing": [
+    {
+      "task_name": "default_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "feasibility_pump",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_default",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_default",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_arc_lns",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_cst_lns",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_dec_lns",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_var_lns",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "lb_tree_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "pseudo_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "reduced_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rins/rens",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_cst_lns",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_var_lns",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    }
+  ],
+  "search_stats": [
+    {
+      "subsolver": "default_lp",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 85144
+    },
+    {
+      "subsolver": "max_lp",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 85144
+    },
+    {
+      "subsolver": "no_lp",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "objective_lb_search",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "probing",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 85144
+    },
+    {
+      "subsolver": "quick_restart",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "quick_restart_no_lp",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 248
+    },
+    {
+      "subsolver": "reduced_costs",
+      "booleans": 975,
+      "conflicts": 0,
+      "branches": 1950,
+      "restarts": 1950,
+      "bool_propagations": 83194,
+      "integer_propagations": 85144
+    }
+  ],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": {
+    "repositories": {
+      "feasible solutions": {
+        "added": 1,
+        "queried": 0,
+        "ignored": 0,
+        "synchro": 1
+      },
+      "lp solutions": {
+        "added": 0,
+        "queried": 0,
+        "ignored": 0,
+        "synchro": 0
+      }
+    }
+  },
+  "objective_bounds": [
+    {
+      "subsolver": "initial_domain",
+      "num_bounds": 1
+    }
+  ],
+  "improving_bounds_shared": null,
+  "clauses_shared": null,
+  "response": {
+    "status": "OPTIMAL",
+    "objective": 106.0,
+    "best_bound": 106.0,
+    "num_integers": 1,
+    "num_booleans": 975,
+    "conflicts": 0,
+    "branches": 1950,
+    "propagations": 83194,
+    "integer_propagations": 248,
+    "restarts": 1950,
+    "lp_iterations": 0,
+    "walltime": 16.901,
+    "usertime": 16.901,
+    "deterministic_time": 0.461404,
+    "gap_integral": 8.92912e-6,
+    "solution_fingerprint": "0x239120b96f6b6eaf",
+    "additional_fields": {}
+  },
+  "comments": [
+    "This is a huge model with nearly a million variables that is essentially solved during presolve.",
+    "It originates from a problem were the same boolean formula is used multiple times, leading to",
+    "a high degree of redundancy that can be detected by CP-SAT. In this case, it could have been useful",
+    "to use a SAT-presolver on that formula before building the model."
+  ]
+}

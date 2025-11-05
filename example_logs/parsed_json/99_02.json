@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "is_complete": true,
+    "total_lines": 79,
+    "has_solver_info": true,
+    "has_response": true,
+    "missing_sections": [],
+    "line_references": [
+      {
+        "start_line": 2,
+        "end_line": 3,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 3,
+        "end_line": 4,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 5,
+        "end_line": 15,
+        "section_name": "InitialModel",
+        "field_name": "initial_model"
+      },
+      {
+        "start_line": 16,
+        "end_line": 21,
+        "section_name": "PresolveLog",
+        "field_name": "presolve_log"
+      },
+      {
+        "start_line": 62,
+        "end_line": 78,
+        "section_name": "Response",
+        "field_name": "response"
+      }
+    ]
+  },
+  "solver_info": {
+    "version": "9.9.3963",
+    "parameters": {
+      "max_time_in_seconds": 60,
+      "log_search_progress": true,
+      "num_search_workers": 4,
+      "log_to_stdout": false
+    },
+    "num_workers": 4
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x7b9b5fdec7699737",
+    "num_variables": 79004,
+    "num_booleans_in_objective": null,
+    "variable_domains": [
+      {
+        "count": 78660,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      },
+      {
+        "count": 37,
+        "type": "constants",
+        "min_value": -975,
+        "max_value": 3449
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kBoolOr",
+        "count": 1,
+        "additional_info": {
+          "literals": 1
+        }
+      },
+      {
+        "type": "kLinear1",
+        "count": 3036,
+        "additional_info": {
+          "enforced": 2980
+        }
+      },
+      {
+        "type": "kLinear2",
+        "count": 370440,
+        "additional_info": {
+          "enforced": 109032
+        }
+      },
+      {
+        "type": "kLinear3",
+        "count": 61325,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinearN",
+        "count": 20633,
+        "additional_info": {
+          "terms": 132914
+        }
+      }
+    ]
+  },
+  "presolve_log": [
+    {
+      "wall_time": 0.216,
+      "deterministic_time": 0.0,
+      "operation": "operations_research::sat::CpModelPresolver::PresolveToFixPoint",
+      "details": {}
+    }
+  ],
+  "presolve_summary": {
+    "affine_relations": 274,
+    "rules_applied": {
+      "TODO linear2: contains a Boolean.": 3267,
+      "affine: new relation": 274,
+      "bool_and: always false": 7,
+      "bool_and: non-reified.": 4,
+      "bool_or: always true": 2870,
+      "bool_or: implications": 579,
+      "bool_or: only one literal": 49273,
+      "bool_or: removed enforcement literal": 59,
+      "bool_or: singleton": 12958,
+      "enforcement: false literal": 1649,
+      "enforcement: literal not used": 2124,
+      "enforcement: true literal": 4,
+      "exactly_one: removed literals": 46,
+      "exactly_one: size one": 9,
+      "exactly_one: size two": 21,
+      "linear1: always true": 633,
+      "linear2: contains a Boolean.": 62,
+      "linear2: implied ax + by = cte has only one solution": 14,
+      "linear: all booleans and trivially true": 394,
+      "linear: always true": 381068,
+      "linear: empty": 377,
+      "linear: fixed or dup variables": 5700,
+      "linear: infeasible": 3973,
+      "linear: negative clause": 2585,
+      "linear: positive at most one": 34,
+      "linear: positive clause": 248,
+      "linear: positive equal one": 82,
+      "linear: reduced variable domains": 364,
+      "linear: remapped using affine relations": 6678,
+      "linear: simplified rhs": 5260,
+      "linear: singleton column": 2425,
+      "linear: small Boolean expression": 12,
+      "linear: tightened into equality": 88,
+      "objective: variable not used elsewhere": 26,
+      "presolve: iteration": 1,
+      "variables with 2 values: create encoding literal": 126,
+      "variables with 2 values: new affine relation": 126,
+      "variables: detect half reified value encoding": 179
+    },
+    "solved_during_presolve": true
+  },
+  "presolved_model": null,
+  "preloading_info": null,
+  "search_info": null,
+  "search_events": [],
+  "task_timing": [],
+  "search_stats": [],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": null,
+  "objective_bounds": [],
+  "improving_bounds_shared": null,
+  "clauses_shared": null,
+  "response": {
+    "status": "INFEASIBLE",
+    "objective": null,
+    "best_bound": null,
+    "num_integers": 0,
+    "num_booleans": 0,
+    "conflicts": 0,
+    "branches": 0,
+    "propagations": 0,
+    "integer_propagations": 0,
+    "restarts": 0,
+    "lp_iterations": 0,
+    "walltime": 3.04408,
+    "usertime": 3.04408,
+    "deterministic_time": 0.0,
+    "gap_integral": 0.0,
+    "solution_fingerprint": null,
+    "additional_fields": {}
+  },
+  "comments": [
+    "A log with infeasibility detected in presolve. Such a log has little to analyze."
+  ]
+}

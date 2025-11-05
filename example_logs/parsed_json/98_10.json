@@ -1,0 +1,1414 @@
+{
+  "metadata": {
+    "is_complete": true,
+    "total_lines": 311,
+    "has_solver_info": true,
+    "has_response": true,
+    "missing_sections": [],
+    "line_references": [
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 2,
+        "end_line": 3,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 3,
+        "end_line": 4,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 5,
+        "end_line": 9,
+        "section_name": "InitialModel",
+        "field_name": "initial_model"
+      },
+      {
+        "start_line": 10,
+        "end_line": 91,
+        "section_name": "PresolveLog",
+        "field_name": "presolve_log"
+      },
+      {
+        "start_line": 104,
+        "end_line": 109,
+        "section_name": "PresolvedModel",
+        "field_name": "presolved_model"
+      },
+      {
+        "start_line": 119,
+        "end_line": 146,
+        "section_name": "SearchEvents",
+        "field_name": "search_events"
+      },
+      {
+        "start_line": 293,
+        "end_line": 310,
+        "section_name": "Response",
+        "field_name": "response"
+      }
+    ]
+  },
+  "solver_info": {
+    "version": "9.8.3296",
+    "parameters": {
+      "max_time_in_seconds": 60,
+      "log_search_progress": true
+    },
+    "num_workers": 24
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0xff057a3642ad2180",
+    "num_variables": 62923,
+    "num_booleans_in_objective": 62923,
+    "variable_domains": [
+      {
+        "count": 62923,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kLinearN",
+        "count": 1500,
+        "additional_info": {
+          "terms": 251692
+        }
+      }
+    ]
+  },
+  "presolve_log": [
+    {
+      "wall_time": 0.0141,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0752,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 2,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00117,
+      "deterministic_time": 0.0,
+      "operation": "ExtractEncodingFromLinear",
+      "details": {
+        "potential_supersets": 1000
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 126'370 nodes and 313'639 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "GraphSymmetryFinder error: Some automorphisms were found, but probably not all."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.582544 dtime: 1.00018"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "#generators: 196, average support size: 477.867"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "6990 orbits with sizes: 224,224,176,176,176,143,140,140,112,112,..."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by binary propagation in orbit: 28 / 224"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by intersecting at_most_one with orbits: 180 largest_orbit: 224"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Found orbitope of size 255 x 16"
+      }
+    },
+    {
+      "wall_time": 0.0188,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0123,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0454,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0125,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0002,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00163,
+      "deterministic_time": 0.000428,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {
+        "relevant_constraints": 500
+      }
+    },
+    {
+      "wall_time": 0.025,
+      "deterministic_time": 0.0013,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 1500,
+        "num_inclusions": 1000
+      }
+    },
+    {
+      "wall_time": 0.000438,
+      "deterministic_time": 1.1e-6,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {
+        "num_tested_pairs": 1
+      }
+    },
+    {
+      "wall_time": 0.0757,
+      "deterministic_time": 0.313,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {
+        "linears": 500
+      }
+    },
+    {
+      "wall_time": 0.0166,
+      "deterministic_time": 0.175,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000156,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0121,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0386,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0119,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0382,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 126'190 nodes and 312'739 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "GraphSymmetryFinder error: Some automorphisms were found, but probably not all."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.582718 dtime: 1.00003"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "#generators: 182, average support size: 478.242"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "5858 orbits with sizes: 195,195,150,150,150,135,135,135,120,120,..."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by binary propagation in orbit: 26 / 195"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by intersecting at_most_one with orbits: 145 largest_orbit: 195"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Found orbitope of size 254 x 15"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 0 / 62743"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:60 literals:120 vars:61 one_side_vars:61 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[7.2105e-05s] clauses:60 literals:120 vars:61 one_side_vars:61 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000483035s] clauses:60 literals:120 vars:61 one_side_vars:61 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.0185,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0121,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0448,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.012,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00021,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00167,
+      "deterministic_time": 0.000427,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {
+        "relevant_constraints": 500
+      }
+    },
+    {
+      "wall_time": 0.0249,
+      "deterministic_time": 0.0013,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 1515,
+        "num_inclusions": 1000
+      }
+    },
+    {
+      "wall_time": 0.000435,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.077,
+      "deterministic_time": 0.313,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {
+        "linears": 500
+      }
+    },
+    {
+      "wall_time": 0.0161,
+      "deterministic_time": 0.174,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000162,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0123,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0396,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.012,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0385,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 126'060 nodes and 312'159 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "GraphSymmetryFinder error: Some automorphisms were found, but probably not all."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.580598 dtime: 1.00009"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "#generators: 178, average support size: 470.73"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "5956 orbits with sizes: 224,224,224,192,176,168,168,168,144,144,..."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by binary propagation in orbit: 28 / 224"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Num fixable by intersecting at_most_one with orbits: 134 largest_orbit: 224"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Found orbitope of size 263 x 2"
+      }
+    },
+    {
+      "wall_time": 0.0181,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0123,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0467,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0121,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000209,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00167,
+      "deterministic_time": 0.000427,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {
+        "relevant_constraints": 500
+      }
+    },
+    {
+      "wall_time": 0.0249,
+      "deterministic_time": 0.00129,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 1515,
+        "num_inclusions": 1000
+      }
+    },
+    {
+      "wall_time": 0.000407,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0774,
+      "deterministic_time": 0.312,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {
+        "linears": 500
+      }
+    },
+    {
+      "wall_time": 0.0165,
+      "deterministic_time": 0.173,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000129,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0122,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0387,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0074,
+      "deterministic_time": 0.0,
+      "operation": "ExpandObjective",
+      "details": {}
+    }
+  ],
+  "presolve_summary": {
+    "affine_relations": 0,
+    "rules_applied": {
+      "at_most_one: removed literals": 462,
+      "at_most_one: transformed into max clique.": 1,
+      "linear: fixed or dup variables": 462,
+      "linear: positive at most one": 1000,
+      "linear: simplified rhs": 1000,
+      "objective: variable not used elsewhere": 459,
+      "presolve: 459 unused variables removed.": 1,
+      "presolve: iteration": 3,
+      "symmetry: added orbit symmetry breaking implications": 1,
+      "symmetry: fixed to false in general orbit": 459
+    },
+    "solved_during_presolve": false
+  },
+  "presolved_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x1ccae97f66b4d56c",
+    "num_variables": 62464,
+    "num_booleans_in_objective": 62464,
+    "variable_domains": [
+      {
+        "count": 62464,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kAtMostOne",
+        "count": 1015,
+        "additional_info": {
+          "literals": 125073
+        }
+      },
+      {
+        "type": "kLinearN",
+        "count": 500,
+        "additional_info": {
+          "terms": 124928
+        }
+      }
+    ]
+  },
+  "preloading_info": {
+    "symmetry_info": {
+      "time": 0.583086,
+      "dtime": 1.00002,
+      "generators": 176
+    },
+    "encoding_info": {}
+  },
+  "search_info": {
+    "start_time": 5.78,
+    "num_workers": 24,
+    "subsolvers": {
+      "full_problem": [
+        "core",
+        "default_lp",
+        "lb_tree_search",
+        "max_lp",
+        "no_lp",
+        "objective_lb_search",
+        "objective_lb_search_no_lp",
+        "objective_shaving_search_max_lp",
+        "objective_shaving_search_no_lp",
+        "probing",
+        "probing_max_lp",
+        "pseudo_costs",
+        "quick_restart",
+        "quick_restart_no_lp",
+        "reduced_costs"
+      ],
+      "first_solution": [
+        "fj_long_default",
+        "fj_long_lin_default",
+        "fj_short_default",
+        "fj_short_lin_default",
+        "fs_random(2)",
+        "fs_random_quick_restart"
+      ],
+      "incomplete": [
+        "feasibility_pump",
+        "graph_arc_lns",
+        "graph_cst_lns",
+        "graph_dec_lns",
+        "graph_var_lns",
+        "rins/rens",
+        "rnd_cst_lns",
+        "rnd_var_lns",
+        "violation_ls(2)"
+      ],
+      "helper": [
+        "neighborhood_helper",
+        "synchronization_agent",
+        "update_gap_integral"
+      ],
+      "interleaved": []
+    },
+    "search_type": "parallel"
+  },
+  "search_events": [
+    {
+      "event_type": "objective",
+      "solution_number": 1,
+      "time": 5.93,
+      "objective": 0.0,
+      "proven_bound": 62464.0,
+      "next_min": 1.0,
+      "next_max": 62464.0,
+      "gap_percent": null,
+      "subsolver": "fj_short_default",
+      "additional_info": "fj_short_default(batch:1 #lin_moves:0 #lin_evals:0 #weight_updates:0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.01,
+      "best_objective": 0.0,
+      "proven_bound": 62463.0,
+      "next_min": 1.0,
+      "next_max": 62463.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=62464 csts=1516)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 2,
+      "time": 6.18,
+      "objective": 378.0,
+      "proven_bound": 62463.0,
+      "next_min": 379.0,
+      "next_max": 62463.0,
+      "gap_percent": 16424.603174603173,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:1 #solutions_imported:1 #lin_moves:408 #lin_evals:62'464 #weight_updates:10)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.22,
+      "best_objective": 378.0,
+      "proven_bound": 62460.0,
+      "next_min": 379.0,
+      "next_max": 62460.0,
+      "subsolver": "random_quick_restart",
+      "additional_info": "random_quick_restart (initial_propagation)"
+    },
+    {
+      "event_type": "model",
+      "time": 6.28,
+      "vars_remaining": 62460,
+      "vars_total": 62464,
+      "constraints_remaining": 1515,
+      "constraints_total": 1515,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 3,
+      "time": 6.4,
+      "objective": 396.0,
+      "proven_bound": 62460.0,
+      "next_min": 397.0,
+      "next_max": 62460.0,
+      "gap_percent": 15672.727272727272,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:2 #solutions_imported:2 #lin_moves:444 #lin_evals:124'924 #weight_updates:17)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.42,
+      "best_objective": 396.0,
+      "proven_bound": 62459.0,
+      "next_min": 397.0,
+      "next_max": 62459.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=62464 csts=1516)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 4,
+      "time": 6.63,
+      "objective": 414.0,
+      "proven_bound": 62459.0,
+      "next_min": 415.0,
+      "next_max": 62459.0,
+      "gap_percent": 14986.71497584541,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:2 #solutions_imported:2 #lin_moves:52 #lin_evals:90'723 #gen_moves:122 #gen_evals:0 #comp_moves:2 #backtracks:60 #weight_updates:10)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.33,
+      "best_objective": 414.0,
+      "proven_bound": 62458.0,
+      "next_min": 415.0,
+      "next_max": 62458.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=62464 csts=2532)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 5,
+      "time": 7.35,
+      "objective": 419.0,
+      "proven_bound": 62458.0,
+      "next_min": 420.0,
+      "next_max": 62458.0,
+      "gap_percent": 14806.443914081146,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.50 s=38 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 6,
+      "time": 7.47,
+      "objective": 429.0,
+      "proven_bound": 62458.0,
+      "next_min": 430.0,
+      "next_max": 62458.0,
+      "gap_percent": 14458.97435897436,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.19 s=47 t=0.10 p=0.00 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 7,
+      "time": 7.52,
+      "objective": 451.0,
+      "proven_bound": 62458.0,
+      "next_min": 452.0,
+      "next_max": 62458.0,
+      "gap_percent": 13748.780487804877,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.19 s=46 t=0.10 p=0.00 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.79,
+      "best_objective": 451.0,
+      "proven_bound": 62457.0,
+      "next_min": 452.0,
+      "next_max": 62457.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=62464 csts=2531)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 8,
+      "time": 7.81,
+      "objective": 455.0,
+      "proven_bound": 62457.0,
+      "next_min": 456.0,
+      "next_max": 62457.0,
+      "gap_percent": 13626.813186813188,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.12 s=56 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 9,
+      "time": 8.04,
+      "objective": 458.0,
+      "proven_bound": 62457.0,
+      "next_min": 459.0,
+      "next_max": 62457.0,
+      "gap_percent": 13536.899563318777,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.12 s=61 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 10,
+      "time": 8.08,
+      "objective": 488.0,
+      "proven_bound": 62457.0,
+      "next_min": 489.0,
+      "next_max": 62457.0,
+      "gap_percent": 12698.565573770491,
+      "subsolver": "rens_pump_lns",
+      "additional_info": "rens_pump_lns (d=0.50 s=55 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.29,
+      "best_objective": 488.0,
+      "proven_bound": 62456.0,
+      "next_min": 489.0,
+      "next_max": 62456.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=62464 csts=2531)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 11,
+      "time": 8.46,
+      "objective": 500.0,
+      "proven_bound": 62456.0,
+      "next_min": 501.0,
+      "next_max": 62456.0,
+      "gap_percent": 12391.2,
+      "subsolver": "rens_pump_lns",
+      "additional_info": "rens_pump_lns (d=0.12 s=76 t=0.10 p=0.00 stall=0 h=auto_l0) [presolve]"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.71,
+      "best_objective": 500.0,
+      "proven_bound": 62455.0,
+      "next_min": 501.0,
+      "next_max": 62455.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=62464 csts=2531)"
+    }
+  ],
+  "task_timing": [
+    {
+      "task_name": "core",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "default_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "feasibility_pump",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_default",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_lin_default",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_default",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_lin_default",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random_quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_arc_lns",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_cst_lns",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_dec_lns",
+      "num_runs": 6,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_var_lns",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "lb_tree_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_max_lp",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_no_lp",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing_max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "pseudo_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "reduced_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rins/rens",
+      "num_runs": 6,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_cst_lns",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_var_lns",
+      "num_runs": 7,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 4,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 5,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    }
+  ],
+  "search_stats": [
+    {
+      "subsolver": "core",
+      "booleans": 62964,
+      "conflicts": 106,
+      "branches": 104271,
+      "restarts": 50269,
+      "bool_propagations": 7718598,
+      "integer_propagations": 7807992
+    },
+    {
+      "subsolver": "default_lp",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692106
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 4,
+      "integer_propagations": 5
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 4,
+      "integer_propagations": 5
+    },
+    {
+      "subsolver": "fs_random_quick_restart",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 4,
+      "integer_propagations": 5
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692107
+    },
+    {
+      "subsolver": "max_lp",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692107
+    },
+    {
+      "subsolver": "no_lp",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 47952,
+      "restarts": 47952,
+      "bool_propagations": 7308636,
+      "integer_propagations": 7356594
+    },
+    {
+      "subsolver": "objective_lb_search",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692106
+    },
+    {
+      "subsolver": "objective_lb_search_no_lp",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 46558,
+      "restarts": 46558,
+      "bool_propagations": 7110367,
+      "integer_propagations": 7156931
+    },
+    {
+      "subsolver": "probing",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692106
+    },
+    {
+      "subsolver": "probing_max_lp",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692107
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692106
+    },
+    {
+      "subsolver": "quick_restart",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692106
+    },
+    {
+      "subsolver": "quick_restart_no_lp",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 48642,
+      "restarts": 48642,
+      "bool_propagations": 7405754,
+      "integer_propagations": 7454402
+    },
+    {
+      "subsolver": "reduced_costs",
+      "booleans": 62464,
+      "conflicts": 0,
+      "branches": 50268,
+      "restarts": 50268,
+      "bool_propagations": 7641837,
+      "integer_propagations": 7692106
+    }
+  ],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": {
+    "repositories": {
+      "feasible solutions": {
+        "added": 36,
+        "queried": 106,
+        "ignored": 0,
+        "synchro": 32
+      },
+      "lp solutions": {
+        "added": 0,
+        "queried": 0,
+        "ignored": 0,
+        "synchro": 0
+      }
+    }
+  },
+  "objective_bounds": [
+    {
+      "subsolver": "initial_domain",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "objective_shaving_search_max_lp",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "objective_shaving_search_no_lp",
+      "num_bounds": 5
+    },
+    {
+      "subsolver": "random_quick_restart",
+      "num_bounds": 1
+    }
+  ],
+  "improving_bounds_shared": {
+    "bounds_by_subsolver": {
+      "random_quick_restart": 4
+    }
+  },
+  "clauses_shared": null,
+  "response": {
+    "status": "OPTIMAL",
+    "objective": 500.0,
+    "best_bound": 500.0,
+    "num_integers": 62715,
+    "num_booleans": 62464,
+    "conflicts": 0,
+    "branches": 0,
+    "propagations": 4,
+    "integer_propagations": 5,
+    "restarts": 0,
+    "lp_iterations": 0,
+    "walltime": 10.673,
+    "usertime": 10.673,
+    "deterministic_time": 10.9817,
+    "gap_integral": 45.8227,
+    "solution_fingerprint": "0xbde4d81fa4d74664",
+    "additional_fields": {}
+  },
+  "comments": [
+    "This log for some reason finds an optimal solution, but it does nto show in the search progress."
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "metadata": {
+    "is_complete": true,
+    "total_lines": 108,
+    "has_solver_info": true,
+    "has_response": true,
+    "missing_sections": [],
+    "line_references": [
+      {
+        "start_line": 0,
+        "end_line": 1,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 1,
+        "end_line": 2,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 2,
+        "end_line": 3,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 4,
+        "end_line": 8,
+        "section_name": "InitialModel",
+        "field_name": "initial_model"
+      },
+      {
+        "start_line": 9,
+        "end_line": 29,
+        "section_name": "PresolveLog",
+        "field_name": "presolve_log"
+      },
+      {
+        "start_line": 38,
+        "end_line": 40,
+        "section_name": "PresolvedModel",
+        "field_name": "presolved_model"
+      },
+      {
+        "start_line": 47,
+        "end_line": 56,
+        "section_name": "SearchEvents",
+        "field_name": "search_events"
+      },
+      {
+        "start_line": 90,
+        "end_line": 107,
+        "section_name": "Response",
+        "field_name": "response"
+      }
+    ]
+  },
+  "solver_info": {
+    "version": "9.7.2996",
+    "parameters": {
+      "log_search_progress": true
+    },
+    "num_workers": 16
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0xe6c7f45766634620",
+    "num_variables": 3,
+    "num_booleans_in_objective": 3,
+    "variable_domains": [
+      {
+        "count": 3,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kLinear3",
+        "count": 1,
+        "additional_info": {}
+      }
+    ]
+  },
+  "presolve_log": [
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 3 nodes and 0 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 7.704e-06 dtime: 1.8e-07"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 3 nodes and 0 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 2.585e-06 dtime: 1.8e-07"
+      }
+    }
+  ],
+  "presolve_summary": {
+    "affine_relations": 0,
+    "rules_applied": {
+      "independent linear: solved by DP": 1,
+      "linear: divide by GCD": 1,
+      "linear: simplified rhs": 1,
+      "objective: variable not used elsewhere": 3,
+      "presolve: 3 unused variables removed.": 1,
+      "presolve: iteration": 2
+    },
+    "solved_during_presolve": false
+  },
+  "presolved_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0xff7559ba82d6f157",
+    "num_variables": 0,
+    "num_booleans_in_objective": null,
+    "variable_domains": [],
+    "constraints": []
+  },
+  "preloading_info": {
+    "symmetry_info": {
+      "nodes": 0,
+      "arcs": 0
+    },
+    "encoding_info": {}
+  },
+  "search_info": {
+    "start_time": 0.0,
+    "num_workers": 16,
+    "subsolvers": {
+      "full_problem": [
+        "default_lp",
+        "less_encoding",
+        "max_lp",
+        "no_lp",
+        "quick_restart",
+        "quick_restart_no_lp"
+      ],
+      "first_solution": [
+        "jump",
+        "jump_decay_perturb",
+        "jump_decay_rnd_on_rst",
+        "jump_no_rst",
+        "random(2)",
+        "random_quick_restart(2)"
+      ],
+      "incomplete": [
+        "feasibility_pump",
+        "rins/rens"
+      ],
+      "helper": [
+        "neighborhood_helper",
+        "synchronization_agent"
+      ],
+      "interleaved": []
+    },
+    "search_type": "parallel"
+  },
+  "search_events": [
+    {
+      "event_type": "objective",
+      "solution_number": 1,
+      "time": 0.0,
+      "objective": 50.0,
+      "proven_bound": 50.0,
+      "next_min": null,
+      "next_max": null,
+      "gap_percent": null,
+      "subsolver": "default_lp",
+      "additional_info": "default_lp fixed_bools:0/0"
+    }
+  ],
+  "task_timing": [
+    {
+      "task_name": "synchronization_agent",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "neighborhood_helper",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "default_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "less_encoding",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart_no_lp",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "feasibility_pump",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rins/rens",
+      "num_runs": 0,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    }
+  ],
+  "search_stats": [
+    {
+      "subsolver": "default_lp",
+      "booleans": 0,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 0,
+      "integer_propagations": 1
+    },
+    {
+      "subsolver": "less_encoding",
+      "booleans": 0,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 0,
+      "integer_propagations": 1
+    },
+    {
+      "subsolver": "no_lp",
+      "booleans": 0,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 0,
+      "integer_propagations": 0
+    },
+    {
+      "subsolver": "max_lp",
+      "booleans": 0,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 0,
+      "integer_propagations": 0
+    },
+    {
+      "subsolver": "quick_restart",
+      "booleans": 0,
+      "conflicts": 0,
+      "branches": 0,
+      "restarts": 0,
+      "bool_propagations": 0,
+      "integer_propagations": 0
+    }
+  ],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": null,
+  "objective_bounds": [],
+  "improving_bounds_shared": null,
+  "clauses_shared": null,
+  "response": {
+    "status": "OPTIMAL",
+    "objective": 50.0,
+    "best_bound": 50.0,
+    "num_integers": 0,
+    "num_booleans": 0,
+    "conflicts": 0,
+    "branches": 0,
+    "propagations": 0,
+    "integer_propagations": 0,
+    "restarts": 0,
+    "lp_iterations": 0,
+    "walltime": 0.00280518,
+    "usertime": 0.00280529,
+    "deterministic_time": 0.0,
+    "gap_integral": 0.0,
+    "solution_fingerprint": "0x50a599cdc5daff51",
+    "additional_fields": {}
+  },
+  "comments": []
+}

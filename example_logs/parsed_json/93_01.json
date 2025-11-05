@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "is_complete": true,
+    "total_lines": 171,
+    "has_solver_info": true,
+    "has_response": true,
+    "missing_sections": [],
+    "line_references": [
+      {
+        "start_line": 2,
+        "end_line": 3,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 3,
+        "end_line": 4,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 4,
+        "end_line": 5,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 6,
+        "end_line": 12,
+        "section_name": "InitialModel",
+        "field_name": "initial_model"
+      },
+      {
+        "start_line": 13,
+        "end_line": 29,
+        "section_name": "PresolveLog",
+        "field_name": "presolve_log"
+      },
+      {
+        "start_line": 38,
+        "end_line": 47,
+        "section_name": "PresolvedModel",
+        "field_name": "presolved_model"
+      },
+      {
+        "start_line": 51,
+        "end_line": 155,
+        "section_name": "SearchEvents",
+        "field_name": "search_events"
+      },
+      {
+        "start_line": 155,
+        "end_line": 170,
+        "section_name": "Response",
+        "field_name": "response"
+      }
+    ]
+  },
+  "solver_info": {
+    "version": "9.3.10497",
+    "parameters": {
+      "log_search_progress": true
+    },
+    "num_workers": 16
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": null,
+    "num_variables": 290,
+    "num_booleans_in_objective": null,
+    "variable_domains": [
+      {
+        "count": 290,
+        "type": "in",
+        "min_value": 0,
+        "max_value": 17
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kAllDiff",
+        "count": 34,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinMax",
+        "count": 1,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinear2",
+        "count": 2312,
+        "additional_info": {
+          "complex_domain": 2312
+        }
+      }
+    ]
+  },
+  "presolve_log": [],
+  "presolve_summary": {
+    "affine_relations": 0,
+    "rules_applied": {
+      "all_diff: expanded": 34,
+      "deductions: 10404 stored": 1,
+      "linear: simplified rhs": 7514,
+      "presolve: 0 unused variables removed.": 1,
+      "presolve: iteration": 2,
+      "variables: add encoding constraint": 5202
+    },
+    "solved_during_presolve": false
+  },
+  "presolved_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": null,
+    "num_variables": 5492,
+    "num_booleans_in_objective": null,
+    "variable_domains": [
+      {
+        "count": 5202,
+        "type": "in",
+        "min_value": 0,
+        "max_value": 1
+      },
+      {
+        "count": 289,
+        "type": "in",
+        "min_value": 0,
+        "max_value": 17
+      },
+      {
+        "count": 1,
+        "type": "in",
+        "min_value": 1,
+        "max_value": 17
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kAtMostOne",
+        "count": 612,
+        "additional_info": {
+          "literals": 9792
+        }
+      },
+      {
+        "type": "kLinMax",
+        "count": 1,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinear1",
+        "count": 10404,
+        "additional_info": {
+          "enforced": 10404
+        }
+      },
+      {
+        "type": "kLinear2",
+        "count": 2312,
+        "additional_info": {
+          "complex_domain": 2312
+        }
+      }
+    ]
+  },
+  "preloading_info": null,
+  "search_info": {
+    "start_time": 0.47,
+    "num_workers": 16,
+    "subsolvers": {
+      "full_problem": [
+        "default_lp",
+        "no_lp",
+        "max_lp",
+        "reduced_costs",
+        "pseudo_costs",
+        "quick_restart",
+        "quick_restart_no_lp",
+        "lb_tree_search",
+        "probing"
+      ],
+      "first_solution": [],
+      "incomplete": [],
+      "helper": [],
+      "interleaved": [
+        "feasibility_pump",
+        "rnd_var_lns_default",
+        "rnd_cst_lns_default",
+        "graph_var_lns_default",
+        "graph_cst_lns_default",
+        "rins_lns_default",
+        "rens_lns_default"
+      ]
+    },
+    "search_type": "parallel"
+  },
+  "search_events": [
+    {
+      "event_type": "objective",
+      "solution_number": 1,
+      "time": 0.71,
+      "objective": 17.0,
+      "proven_bound": 1.0,
+      "next_min": 1.0,
+      "next_max": 16.0,
+      "gap_percent": 94.11764705882354,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp fixed_bools:0/11849"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 2,
+      "time": 0.72,
+      "objective": 16.0,
+      "proven_bound": 1.0,
+      "next_min": 1.0,
+      "next_max": 15.0,
+      "gap_percent": 93.75,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp fixed_bools:289/11849"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 3,
+      "time": 0.74,
+      "objective": 15.0,
+      "proven_bound": 1.0,
+      "next_min": 1.0,
+      "next_max": 14.0,
+      "gap_percent": 93.33333333333333,
+      "subsolver": "no_lp",
+      "additional_info": "no_lp fixed_bools:867/11849"
+    },
+    {
+      "event_type": "bound",
+      "time": 1.3,
+      "best_objective": 15.0,
+      "proven_bound": 8.0,
+      "next_min": 8.0,
+      "next_max": 14.0,
+      "subsolver": "max_lp",
+      "additional_info": "max_lp initial_propagation"
+    }
+  ],
+  "task_timing": [],
+  "search_stats": [],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": null,
+  "objective_bounds": [],
+  "improving_bounds_shared": null,
+  "clauses_shared": null,
+  "response": {
+    "status": "OPTIMAL",
+    "objective": 15.0,
+    "best_bound": 15.0,
+    "num_integers": null,
+    "num_booleans": 12138,
+    "conflicts": 0,
+    "branches": 23947,
+    "propagations": 408058,
+    "integer_propagations": 317340,
+    "restarts": 23698,
+    "lp_iterations": 1174,
+    "walltime": 3.5908,
+    "usertime": 3.5908,
+    "deterministic_time": 6.71917,
+    "gap_integral": 11.2892,
+    "solution_fingerprint": null,
+    "additional_fields": {}
+  },
+  "comments": [
+    "This is an example using an older version of CP-SAT.",
+    "You will see a warning about the outdated version."
+  ]
+}

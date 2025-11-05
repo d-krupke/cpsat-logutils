@@ -1,0 +1,3849 @@
+{
+  "metadata": {
+    "is_complete": true,
+    "total_lines": 593,
+    "has_solver_info": true,
+    "has_response": true,
+    "missing_sections": [],
+    "line_references": [
+      {
+        "start_line": 11,
+        "end_line": 12,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 12,
+        "end_line": 13,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 13,
+        "end_line": 14,
+        "section_name": "SolverInfo",
+        "field_name": "solver_info"
+      },
+      {
+        "start_line": 15,
+        "end_line": 22,
+        "section_name": "InitialModel",
+        "field_name": "initial_model"
+      },
+      {
+        "start_line": 23,
+        "end_line": 91,
+        "section_name": "PresolveLog",
+        "field_name": "presolve_log"
+      },
+      {
+        "start_line": 104,
+        "end_line": 112,
+        "section_name": "PresolvedModel",
+        "field_name": "presolved_model"
+      },
+      {
+        "start_line": 119,
+        "end_line": 372,
+        "section_name": "SearchEvents",
+        "field_name": "search_events"
+      },
+      {
+        "start_line": 575,
+        "end_line": 592,
+        "section_name": "Response",
+        "field_name": "response"
+      }
+    ]
+  },
+  "solver_info": {
+    "version": "9.8.3296",
+    "parameters": {
+      "max_time_in_seconds": 90,
+      "log_search_progress": true,
+      "relative_gap_limit": 0.01
+    },
+    "num_workers": 24
+  },
+  "initial_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x6d30d15a5a2f6000",
+    "num_variables": 40000,
+    "num_booleans_in_objective": 39800,
+    "variable_domains": [
+      {
+        "count": 39800,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      },
+      {
+        "count": 200,
+        "type": "in",
+        "min_value": 0,
+        "max_value": 199
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kExactlyOne",
+        "count": 400,
+        "additional_info": {
+          "literals": 79600
+        }
+      },
+      {
+        "type": "kLinear1",
+        "count": 1,
+        "additional_info": {}
+      },
+      {
+        "type": "kLinear2",
+        "count": 39601,
+        "additional_info": {
+          "enforced": 39601
+        }
+      }
+    ]
+  },
+  "presolve_log": [
+    {
+      "wall_time": 0.00883,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0793,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 2,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.000259,
+      "deterministic_time": 0.0,
+      "operation": "ExtractEncodingFromLinear",
+      "details": {
+        "potential_supersets": 400
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 80'199 nodes and 198'402 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.00758242 dtime: 0.0199948"
+      }
+    },
+    {
+      "wall_time": 0.000305,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00856,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0472,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0168,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00763,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000186,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00682,
+      "deterministic_time": 0.000239,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 400
+      }
+    },
+    {
+      "wall_time": 0.000207,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00011,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00495,
+      "deterministic_time": 0.00395,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000176,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00964,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.049,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.00963,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0468,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 159'003 nodes and 316'608 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.013338 dtime: 0.0401049"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 0 / 39800"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:19701 literals:39402 vars:39402 one_side_vars:39402 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000539858s] clauses:19701 literals:39402 vars:39402 one_side_vars:39402 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000794046s] clauses:19701 literals:39402 vars:39402 one_side_vars:39402 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.0687,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00995,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0502,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0222,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00819,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000482,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00985,
+      "deterministic_time": 0.000428,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 20101
+      }
+    },
+    {
+      "wall_time": 0.000562,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000389,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0052,
+      "deterministic_time": 0.00414,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000404,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0117,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0557,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0118,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.056,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Graph for symmetry has 159'003 nodes and 316'608 arcs."
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "Symmetry",
+      "details": {
+        "raw": "Symmetry computation done. time: 0.0129619 dtime: 0.0401049"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num removable Booleans: 0 / 39800"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "num trivial clauses: 0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0s] clauses:19701 literals:39402 vars:39402 one_side_vars:39402 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000583957s] clauses:19701 literals:39402 vars:39402 one_side_vars:39402 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": null,
+      "deterministic_time": null,
+      "operation": "SAT presolve",
+      "details": {
+        "raw": "[0.000845556s] clauses:19701 literals:39402 vars:39402 one_side_vars:39402 simple_definition:0 singleton_clauses:0"
+      }
+    },
+    {
+      "wall_time": 0.0698,
+      "deterministic_time": 0.0,
+      "operation": "MaxClique",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0114,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0545,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0236,
+      "deterministic_time": 0.0,
+      "operation": "DetectDuplicateConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00999,
+      "deterministic_time": 0.0,
+      "operation": "DetectDifferentVariables",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000914,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominatedLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.011,
+      "deterministic_time": 0.000428,
+      "operation": "ProcessSetPPC",
+      "details": {
+        "relevant_constraints": 20101
+      }
+    },
+    {
+      "wall_time": 0.00101,
+      "deterministic_time": 0.0,
+      "operation": "FindAlmostIdenticalLinearConstraints",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000822,
+      "deterministic_time": 0.0,
+      "operation": "FindBigHorizontalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.00535,
+      "deterministic_time": 0.00414,
+      "operation": "FindBigVerticalLinearOverlap",
+      "details": {}
+    },
+    {
+      "wall_time": 0.000749,
+      "deterministic_time": 0.0,
+      "operation": "MergeClauses",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0139,
+      "deterministic_time": 0.0,
+      "operation": "DetectDominanceRelations",
+      "details": {}
+    },
+    {
+      "wall_time": 0.0591,
+      "deterministic_time": 0.0,
+      "operation": "PresolveToFixPoint",
+      "details": {
+        "num_loops": 1,
+        "num_dual_strengthening": 1
+      }
+    },
+    {
+      "wall_time": 0.0682,
+      "deterministic_time": 0.0,
+      "operation": "ExpandObjective",
+      "details": {
+        "entries": 15760800,
+        "tight_variables": 79600,
+        "tight_constraints": 400
+      }
+    }
+  ],
+  "presolve_summary": {
+    "affine_relations": 0,
+    "rules_applied": {
+      "deductions: 79003 stored": 1,
+      "exactly_one: simplified objective": 264,
+      "incompatible linear: add implication": 59103,
+      "linear: empty": 1,
+      "linear: fixed or dup variables": 200,
+      "linear: reduced variable domains": 1,
+      "objective: shifted cost with exactly ones": 228,
+      "presolve: 1 unused variables removed.": 1,
+      "presolve: iteration": 3,
+      "variables: detect half reified value encoding": 199
+    },
+    "solved_during_presolve": false
+  },
+  "presolved_model": {
+    "is_optimization": true,
+    "model_name": "",
+    "model_fingerprint": "0x1eccc4772f681d36",
+    "num_variables": 39999,
+    "num_booleans_in_objective": 39482,
+    "variable_domains": [
+      {
+        "count": 39800,
+        "type": "Booleans",
+        "min_value": 0,
+        "max_value": 1
+      },
+      {
+        "count": 199,
+        "type": "in",
+        "min_value": 0,
+        "max_value": 199
+      }
+    ],
+    "constraints": [
+      {
+        "type": "kBoolAnd",
+        "count": 39402,
+        "additional_info": {
+          "enforced": 39402,
+          "literals": 78804
+        }
+      },
+      {
+        "type": "kExactlyOne",
+        "count": 400,
+        "additional_info": {
+          "literals": 79600
+        }
+      },
+      {
+        "type": "kLinear1",
+        "count": 199,
+        "additional_info": {
+          "enforced": 199
+        }
+      },
+      {
+        "type": "kLinear2",
+        "count": 39402,
+        "additional_info": {
+          "enforced": 39402
+        }
+      }
+    ]
+  },
+  "preloading_info": {
+    "symmetry_info": {
+      "time": 0.0122073,
+      "dtime": 0.0401119
+    },
+    "encoding_info": {}
+  },
+  "search_info": {
+    "start_time": 3.59,
+    "num_workers": 24,
+    "subsolvers": {
+      "full_problem": [
+        "core",
+        "default_lp",
+        "lb_tree_search",
+        "max_lp",
+        "no_lp",
+        "objective_lb_search",
+        "objective_lb_search_no_lp",
+        "objective_shaving_search_max_lp",
+        "objective_shaving_search_no_lp",
+        "probing",
+        "probing_max_lp",
+        "pseudo_costs",
+        "quick_restart",
+        "quick_restart_no_lp",
+        "reduced_costs"
+      ],
+      "first_solution": [
+        "fj_long_default",
+        "fj_long_lin_default",
+        "fj_short_default",
+        "fj_short_lin_default",
+        "fs_random(2)",
+        "fs_random_quick_restart"
+      ],
+      "incomplete": [
+        "feasibility_pump",
+        "graph_arc_lns",
+        "graph_cst_lns",
+        "graph_dec_lns",
+        "graph_var_lns",
+        "rins/rens",
+        "rnd_cst_lns",
+        "rnd_var_lns",
+        "violation_ls(2)"
+      ],
+      "helper": [
+        "neighborhood_helper",
+        "synchronization_agent",
+        "update_gap_integral"
+      ],
+      "interleaved": []
+    },
+    "search_type": "parallel"
+  },
+  "search_events": [
+    {
+      "event_type": "bound",
+      "time": 3.85,
+      "best_objective": null,
+      "proven_bound": 44854519.0,
+      "next_min": 44854519.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 4.12,
+      "best_objective": null,
+      "proven_bound": 44854520.0,
+      "next_min": 44854520.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_no_lp",
+      "additional_info": "objective_shaving_search_no_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 4.35,
+      "best_objective": null,
+      "proven_bound": 44854521.0,
+      "next_min": 44854521.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 4.56,
+      "best_objective": null,
+      "proven_bound": 44854522.0,
+      "next_min": 44854522.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 4.78,
+      "best_objective": null,
+      "proven_bound": 44854523.0,
+      "next_min": 44854523.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 4.99,
+      "best_objective": null,
+      "proven_bound": 44854524.0,
+      "next_min": 44854524.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 5.19,
+      "best_objective": null,
+      "proven_bound": 44854525.0,
+      "next_min": 44854525.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 5.41,
+      "best_objective": null,
+      "proven_bound": 44854526.0,
+      "next_min": 44854526.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 5.61,
+      "best_objective": null,
+      "proven_bound": 44854527.0,
+      "next_min": 44854527.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 5.82,
+      "best_objective": null,
+      "proven_bound": 44854528.0,
+      "next_min": 44854528.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.03,
+      "best_objective": null,
+      "proven_bound": 44854529.0,
+      "next_min": 44854529.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.25,
+      "best_objective": null,
+      "proven_bound": 44854530.0,
+      "next_min": 44854530.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.46,
+      "best_objective": null,
+      "proven_bound": 44854531.0,
+      "next_min": 44854531.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.67,
+      "best_objective": null,
+      "proven_bound": 44854532.0,
+      "next_min": 44854532.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 6.86,
+      "best_objective": null,
+      "proven_bound": 44854533.0,
+      "next_min": 44854533.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.04,
+      "best_objective": null,
+      "proven_bound": 44854534.0,
+      "next_min": 44854534.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.21,
+      "best_objective": null,
+      "proven_bound": 44854535.0,
+      "next_min": 44854535.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.39,
+      "best_objective": null,
+      "proven_bound": 44854536.0,
+      "next_min": 44854536.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.56,
+      "best_objective": null,
+      "proven_bound": 44854537.0,
+      "next_min": 44854537.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.73,
+      "best_objective": null,
+      "proven_bound": 44854538.0,
+      "next_min": 44854538.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 7.9,
+      "best_objective": null,
+      "proven_bound": 44854539.0,
+      "next_min": 44854539.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.07,
+      "best_objective": null,
+      "proven_bound": 44854540.0,
+      "next_min": 44854540.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.24,
+      "best_objective": null,
+      "proven_bound": 44854541.0,
+      "next_min": 44854541.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.41,
+      "best_objective": null,
+      "proven_bound": 44854542.0,
+      "next_min": 44854542.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.58,
+      "best_objective": null,
+      "proven_bound": 44854543.0,
+      "next_min": 44854543.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.75,
+      "best_objective": null,
+      "proven_bound": 44854544.0,
+      "next_min": 44854544.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 8.92,
+      "best_objective": null,
+      "proven_bound": 44854545.0,
+      "next_min": 44854545.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 9.08,
+      "best_objective": null,
+      "proven_bound": 44854546.0,
+      "next_min": 44854546.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 9.25,
+      "best_objective": null,
+      "proven_bound": 44854547.0,
+      "next_min": 44854547.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_shaving_search_max_lp",
+      "additional_info": "objective_shaving_search_max_lp (vars=39999 csts=79404)"
+    },
+    {
+      "event_type": "bound",
+      "time": 9.95,
+      "best_objective": null,
+      "proven_bound": 45252176.0,
+      "next_min": 45252176.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "objective_lb_search",
+      "additional_info": "objective_lb_search [skipped_logs=3]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 1,
+      "time": 10.71,
+      "objective": 7159614430.0,
+      "proven_bound": 61445627.0,
+      "next_min": 61445627.0,
+      "next_max": 7159614430.0,
+      "gap_percent": 99.14177463604,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=199/40198)"
+    },
+    {
+      "event_type": "bound",
+      "time": 10.56,
+      "best_objective": null,
+      "proven_bound": 61445627.0,
+      "next_min": 61445627.0,
+      "next_max": 1311528700000.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs [skipped_logs=1]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 2,
+      "time": 11.29,
+      "objective": 3698853290.0,
+      "proven_bound": 62814427.0,
+      "next_min": 62814427.0,
+      "next_max": 3698853280.0,
+      "gap_percent": 98.30178647069292,
+      "subsolver": "quick_restart_no_lp",
+      "additional_info": "quick_restart_no_lp (fixed_bools=199/40199)"
+    },
+    {
+      "event_type": "bound",
+      "time": 11.53,
+      "best_objective": 3698853290.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 3698853280.0,
+      "subsolver": "probing_max_lp",
+      "additional_info": "probing_max_lp (initial_propagation) [skipped_logs=1]"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 3,
+      "time": 12.77,
+      "objective": 3682302420.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 3682302420.0,
+      "gap_percent": 98.2566044371771,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:2 #solutions_imported:2 #lin_moves:9'915 #lin_evals:93'687 #weight_updates:123)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 4,
+      "time": 12.8,
+      "objective": 2994072790.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2994072790.0,
+      "gap_percent": 97.8558605116611,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.50 s=984 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 5,
+      "time": 12.91,
+      "objective": 2354267560.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2354267560.0,
+      "gap_percent": 97.27316053235683,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.50 s=983 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 6,
+      "time": 13.35,
+      "objective": 2274961500.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2274961500.0,
+      "gap_percent": 97.17810182721773,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.12 s=1003 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 7,
+      "time": 13.48,
+      "objective": 2212252600.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2212252600.0,
+      "gap_percent": 97.09811180694284,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.19 s=1000 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 8,
+      "time": 13.59,
+      "objective": 2189369400.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2189369400.0,
+      "gap_percent": 97.06778138947224,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.12 s=1007 t=0.10 p=0.00 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 9,
+      "time": 13.73,
+      "objective": 2156213420.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2156213420.0,
+      "gap_percent": 97.02269281859863,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.18 s=1004 t=0.10 p=0.25 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 10,
+      "time": 13.77,
+      "objective": 2090862010.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2090862010.0,
+      "gap_percent": 96.92963492124476,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.13 s=1012 t=0.10 p=0.20 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 11,
+      "time": 13.9,
+      "objective": 2030206910.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 2030206900.0,
+      "gap_percent": 96.83790372873867,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.18 s=1011 t=0.10 p=0.25 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 12,
+      "time": 13.94,
+      "objective": 1879432080.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1879432080.0,
+      "gap_percent": 96.5842289443096,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.17 s=1016 t=0.10 p=0.33 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 13,
+      "time": 14.5,
+      "objective": 1791412600.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1791412600.0,
+      "gap_percent": 96.416398042528,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.17 s=1026 t=0.10 p=0.33 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 14,
+      "time": 14.57,
+      "objective": 1517232340.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1517232340.0,
+      "gap_percent": 95.76880248940647,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.24 s=1031 t=0.10 p=0.43 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 15,
+      "time": 14.93,
+      "objective": 1338265010.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1338265010.0,
+      "gap_percent": 95.20296080968298,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.17 s=1038 t=0.10 p=0.38 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 16,
+      "time": 15.14,
+      "objective": 1293954210.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1293954210.0,
+      "gap_percent": 95.03868865653291,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.17 s=1044 t=0.10 p=0.40 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 17,
+      "time": 15.34,
+      "objective": 1260514990.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1260514990.0,
+      "gap_percent": 94.9070738936631,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.17 s=1047 t=0.10 p=0.40 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 18,
+      "time": 15.5,
+      "objective": 1197836970.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1197836960.0,
+      "gap_percent": 94.64058143071006,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.18 s=1049 t=0.10 p=0.40 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 19,
+      "time": 15.85,
+      "objective": 1175255770.0,
+      "proven_bound": 64197097.0,
+      "next_min": 64197097.0,
+      "next_max": 1175255770.0,
+      "gap_percent": 94.5376063118584,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.21 s=1050 t=0.10 p=0.45 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 15.86,
+      "best_objective": 1175255770.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 1175255770.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 20,
+      "time": 16.27,
+      "objective": 1170729950.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 1170729950.0,
+      "gap_percent": 94.4681186297489,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.30 s=1055 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 21,
+      "time": 16.3,
+      "objective": 1163461670.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 1163461670.0,
+      "gap_percent": 94.43356032519748,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.21 s=1056 t=0.10 p=0.45 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 22,
+      "time": 16.38,
+      "objective": 1052486210.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 1052486210.0,
+      "gap_percent": 93.84662797624684,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.22 s=1059 t=0.10 p=0.46 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 23,
+      "time": 16.92,
+      "objective": 956462036.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 956462035.0,
+      "gap_percent": 93.22885911176928,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.23 s=1067 t=0.10 p=0.46 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 24,
+      "time": 17.06,
+      "objective": 897036698.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 897036697.0,
+      "gap_percent": 92.78029626386589,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.17 s=1068 t=0.10 p=0.43 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 25,
+      "time": 17.45,
+      "objective": 837824046.0,
+      "proven_bound": 64763392.0,
+      "next_min": 64763392.0,
+      "next_max": 837824045.0,
+      "gap_percent": 92.27004854907209,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.17 s=1080 t=0.10 p=0.44 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 17.72,
+      "best_objective": 837824046.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 837824045.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 26,
+      "time": 17.94,
+      "objective": 768131024.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 768131023.0,
+      "gap_percent": 91.5143224315335,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.18 s=1089 t=0.10 p=0.44 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 27,
+      "time": 18.28,
+      "objective": 766057816.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 766057815.0,
+      "gap_percent": 91.49135735728855,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.18 s=1095 t=0.10 p=0.44 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 28,
+      "time": 18.39,
+      "objective": 756265080.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 756265079.0,
+      "gap_percent": 91.38118052469116,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.38 s=1094 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 29,
+      "time": 18.47,
+      "objective": 746062390.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 746062389.0,
+      "gap_percent": 91.26331485494129,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.21 s=1092 t=0.10 p=0.47 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 30,
+      "time": 18.48,
+      "objective": 740920516.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 740920515.0,
+      "gap_percent": 91.20268360877728,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.29 s=1091 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 31,
+      "time": 18.69,
+      "objective": 735451762.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 735451761.0,
+      "gap_percent": 91.13726754522345,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.14 s=1105 t=0.10 p=0.42 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 32,
+      "time": 19.01,
+      "objective": 718529248.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 718529247.0,
+      "gap_percent": 90.92853600859961,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.14 s=1112 t=0.10 p=0.43 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 33,
+      "time": 19.08,
+      "objective": 670768368.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 670768367.0,
+      "gap_percent": 90.28261839562477,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.23 s=1103 t=0.10 p=0.47 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 34,
+      "time": 19.35,
+      "objective": 668935794.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 668935793.0,
+      "gap_percent": 90.25599727438116,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.19 s=1117 t=0.10 p=0.45 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 35,
+      "time": 19.44,
+      "objective": 657590192.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 657590191.0,
+      "gap_percent": 90.08788105525758,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.16 s=1119 t=0.10 p=0.45 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 36,
+      "time": 19.66,
+      "objective": 643916040.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 643916039.0,
+      "gap_percent": 89.87738805201995,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.22 s=1122 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 37,
+      "time": 19.85,
+      "objective": 604522066.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 604522065.0,
+      "gap_percent": 89.21774312866853,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.20 s=1125 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 38,
+      "time": 20.2,
+      "objective": 522477206.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 522477205.0,
+      "gap_percent": 87.52459987699444,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.23 s=1130 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 39,
+      "time": 20.69,
+      "objective": 510518712.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 510518711.0,
+      "gap_percent": 87.23237357066748,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.26 s=1134 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 40,
+      "time": 20.74,
+      "objective": 505733012.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 505733011.0,
+      "gap_percent": 87.11155482173665,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.23 s=1137 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 41,
+      "time": 21.0,
+      "objective": 500997902.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 500997901.0,
+      "gap_percent": 86.98974152590364,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.20 s=1144 t=0.10 p=0.48 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 42,
+      "time": 21.06,
+      "objective": 493005446.0,
+      "proven_bound": 65181122.0,
+      "next_min": 65181122.0,
+      "next_max": 493005445.0,
+      "gap_percent": 86.77882312886256,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.23 s=1143 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 21.34,
+      "best_objective": 493005446.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 493005445.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 43,
+      "time": 21.47,
+      "objective": 486686162.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 486686161.0,
+      "gap_percent": 86.56765918074326,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.22 s=1155 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 44,
+      "time": 21.5,
+      "objective": 474289338.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 474289337.0,
+      "gap_percent": 86.2165689248532,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.26 s=1147 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 45,
+      "time": 21.85,
+      "objective": 472456886.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 472456885.0,
+      "gap_percent": 86.16310907150161,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.31 s=1154 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 46,
+      "time": 21.88,
+      "objective": 454467670.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 454467669.0,
+      "gap_percent": 85.61540274140953,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.20 s=1164 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 47,
+      "time": 22.11,
+      "objective": 233965990.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 233965989.0,
+      "gap_percent": 72.05861245046769,
+      "subsolver": "pseudo_costs",
+      "additional_info": "pseudo_costs (fixed_bools=199/40198)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 48,
+      "time": 22.42,
+      "objective": 223443458.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 223443457.0,
+      "gap_percent": 70.7427800369971,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.22 s=1173 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 49,
+      "time": 22.82,
+      "objective": 200921134.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 200921133.0,
+      "gap_percent": 67.46318184726152,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.22 s=1179 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 22.99,
+      "vars_remaining": 39977,
+      "vars_total": 39999,
+      "constraints_remaining": 79359,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 50,
+      "time": 23.22,
+      "objective": 200617698.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 200617697.0,
+      "gap_percent": 67.41396962894072,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.28 s=1181 t=0.10 p=0.50 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 51,
+      "time": 23.24,
+      "objective": 192713920.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 192713919.0,
+      "gap_percent": 66.07751842731443,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.22 s=1185 t=0.10 p=0.48 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 23.48,
+      "vars_remaining": 39949,
+      "vars_total": 39999,
+      "constraints_remaining": 79303,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 52,
+      "time": 23.92,
+      "objective": 187615752.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 187615751.0,
+      "gap_percent": 65.15572743593512,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.25 s=1191 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 24.17,
+      "vars_remaining": 39925,
+      "vars_total": 39999,
+      "constraints_remaining": 79255,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 53,
+      "time": 24.5,
+      "objective": 186747106.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 186747105.0,
+      "gap_percent": 64.99365082530382,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.31 s=1201 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 54,
+      "time": 24.68,
+      "objective": 178565142.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 178565141.0,
+      "gap_percent": 63.38963849954545,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.30 s=1200 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 24.75,
+      "vars_remaining": 39921,
+      "vars_total": 39999,
+      "constraints_remaining": 79247,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 24.87,
+      "vars_remaining": 39873,
+      "vars_total": 39999,
+      "constraints_remaining": 79151,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 24.98,
+      "vars_remaining": 39767,
+      "vars_total": 39999,
+      "constraints_remaining": 78939,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 25.36,
+      "vars_remaining": 39742,
+      "vars_total": 39999,
+      "constraints_remaining": 78888,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 55,
+      "time": 25.46,
+      "objective": 175055216.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 175055215.0,
+      "gap_percent": 62.65558633797007,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.38 s=1210 t=0.10 p=0.53 stall=3 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 25.49,
+      "vars_remaining": 39609,
+      "vars_total": 39999,
+      "constraints_remaining": 78623,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 56,
+      "time": 25.88,
+      "objective": 166031664.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 166031663.0,
+      "gap_percent": 60.62597794598987,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.24 s=1218 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 26.16,
+      "vars_remaining": 39547,
+      "vars_total": 39999,
+      "constraints_remaining": 78499,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 57,
+      "time": 26.26,
+      "objective": 165163018.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 165163017.0,
+      "gap_percent": 60.41889716498157,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:11 #solutions_imported:11 #lin_moves:28'983 #lin_evals:756'217 #gen_moves:1'497 #gen_evals:0 #comp_moves:0 #backtracks:748 #weight_updates:1'205)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 58,
+      "time": 26.47,
+      "objective": 162467956.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 162467955.0,
+      "gap_percent": 59.76231522233221,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.24 s=1225 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 26.59,
+      "vars_remaining": 39221,
+      "vars_total": 39999,
+      "constraints_remaining": 77847,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 59,
+      "time": 26.74,
+      "objective": 159064378.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 159064377.0,
+      "gap_percent": 58.90132987537914,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.31 s=1222 t=0.10 p=0.51 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 26.81,
+      "vars_remaining": 39065,
+      "vars_total": 39999,
+      "constraints_remaining": 77535,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 60,
+      "time": 26.96,
+      "objective": 157599916.0,
+      "proven_bound": 65373344.0,
+      "next_min": 65373344.0,
+      "next_max": 157599915.0,
+      "gap_percent": 58.519429667716324,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.30 s=1229 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 27.16,
+      "best_objective": 157599916.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 157599915.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs"
+    },
+    {
+      "event_type": "model",
+      "time": 27.25,
+      "vars_remaining": 38779,
+      "vars_total": 39999,
+      "constraints_remaining": 76963,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 61,
+      "time": 27.67,
+      "objective": 156230348.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 156230347.0,
+      "gap_percent": 58.08484469355467,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.27 s=1233 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 62,
+      "time": 27.78,
+      "objective": 153300010.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 153300009.0,
+      "gap_percent": 57.28363422807344,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.34 s=1236 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 28.15,
+      "vars_remaining": 38447,
+      "vars_total": 39999,
+      "constraints_remaining": 76299,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 63,
+      "time": 28.58,
+      "objective": 153014814.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 153014813.0,
+      "gap_percent": 57.204017514278064,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.21 s=1248 t=0.10 p=0.49 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 29.05,
+      "vars_remaining": 38427,
+      "vars_total": 39999,
+      "constraints_remaining": 76259,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 64,
+      "time": 29.16,
+      "objective": 152976026.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 152976025.0,
+      "gap_percent": 57.1931663331351,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.32 s=1253 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 65,
+      "time": 29.33,
+      "objective": 150508814.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 150508813.0,
+      "gap_percent": 56.49145637410976,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.24 s=1255 t=0.10 p=0.50 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 66,
+      "time": 29.38,
+      "objective": 149326138.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 149326137.0,
+      "gap_percent": 56.146864924612196,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.39 s=1251 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 29.5,
+      "vars_remaining": 38423,
+      "vars_total": 39999,
+      "constraints_remaining": 76251,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 29.78,
+      "vars_remaining": 38177,
+      "vars_total": 39999,
+      "constraints_remaining": 75759,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 67,
+      "time": 29.99,
+      "objective": 148690344.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 148690343.0,
+      "gap_percent": 55.959350662340256,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.31 s=1260 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 30.08,
+      "vars_remaining": 38073,
+      "vars_total": 39999,
+      "constraints_remaining": 75551,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 68,
+      "time": 30.09,
+      "objective": 148410174.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 148410173.0,
+      "gap_percent": 55.87621034660333,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.27 s=1263 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 69,
+      "time": 30.52,
+      "objective": 147008100.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 147008099.0,
+      "gap_percent": 55.455384431198006,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.36 s=1268 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 30.62,
+      "vars_remaining": 37981,
+      "vars_total": 39999,
+      "constraints_remaining": 75367,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 70,
+      "time": 31.15,
+      "objective": 145539864.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 145539863.0,
+      "gap_percent": 55.00600921270615,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.31 s=1276 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 31.2,
+      "vars_remaining": 37813,
+      "vars_total": 39999,
+      "constraints_remaining": 75031,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 31.61,
+      "vars_remaining": 37613,
+      "vars_total": 39999,
+      "constraints_remaining": 74631,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 71,
+      "time": 31.86,
+      "objective": 145501076.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 145501075.0,
+      "gap_percent": 54.99401461470979,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.42 s=1280 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 72,
+      "time": 32.06,
+      "objective": 142406154.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 142406153.0,
+      "gap_percent": 54.015896672555314,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:15 #solutions_imported:15 #lin_moves:38'929 #lin_evals:1'043'910 #gen_moves:2'077 #gen_evals:0 #comp_moves:0 #backtracks:1'038 #weight_updates:1'384)"
+    },
+    {
+      "event_type": "model",
+      "time": 32.27,
+      "vars_remaining": 37609,
+      "vars_total": 39999,
+      "constraints_remaining": 74623,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 32.51,
+      "vars_remaining": 37193,
+      "vars_total": 39999,
+      "constraints_remaining": 73791,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 73,
+      "time": 32.63,
+      "objective": 141654980.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 141654979.0,
+      "gap_percent": 53.77205023077904,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.34 s=1285 t=0.10 p=0.52 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 74,
+      "time": 32.85,
+      "objective": 138576236.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 138576235.0,
+      "gap_percent": 52.74500528358989,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.38 s=1289 t=0.10 p=0.52 stall=6 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 33.21,
+      "vars_remaining": 37083,
+      "vars_total": 39999,
+      "constraints_remaining": 73571,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 75,
+      "time": 33.51,
+      "objective": 136897946.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 136897945.0,
+      "gap_percent": 52.165686255073545,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.36 s=1296 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 33.58,
+      "vars_remaining": 36639,
+      "vars_total": 39999,
+      "constraints_remaining": 72683,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 76,
+      "time": 34.12,
+      "objective": 134161112.0,
+      "proven_bound": 65484193.0,
+      "next_min": 65484193.0,
+      "next_max": 134161111.0,
+      "gap_percent": 51.189885039116255,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.34 s=1305 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 34.21,
+      "vars_remaining": 36399,
+      "vars_total": 39999,
+      "constraints_remaining": 72203,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "bound",
+      "time": 34.24,
+      "best_objective": 134161112.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 134161111.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 77,
+      "time": 34.55,
+      "objective": 133636448.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 133636447.0,
+      "gap_percent": 50.968051021529696,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.36 s=1302 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 34.64,
+      "vars_remaining": 35885,
+      "vars_total": 39999,
+      "constraints_remaining": 71175,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 78,
+      "time": 35.08,
+      "objective": 132948872.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 132948871.0,
+      "gap_percent": 50.71447089825629,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.32 s=1315 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 35.18,
+      "vars_remaining": 35767,
+      "vars_total": 39999,
+      "constraints_remaining": 70939,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 79,
+      "time": 35.65,
+      "objective": 128744906.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 128744905.0,
+      "gap_percent": 49.105128089495054,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.36 s=1317 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 35.76,
+      "vars_remaining": 35635,
+      "vars_total": 39999,
+      "constraints_remaining": 70675,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 36.18,
+      "vars_remaining": 34751,
+      "vars_total": 39999,
+      "constraints_remaining": 68907,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 80,
+      "time": 36.73,
+      "objective": 127956762.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 127956761.0,
+      "gap_percent": 48.79164338341103,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.39 s=1329 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 81,
+      "time": 37.22,
+      "objective": 125215106.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 125215105.0,
+      "gap_percent": 47.67040727498166,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.36 s=1333 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 37.31,
+      "vars_remaining": 34527,
+      "vars_total": 39999,
+      "constraints_remaining": 68459,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 82,
+      "time": 37.66,
+      "objective": 124472296.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 124472295.0,
+      "gap_percent": 47.358121360595774,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.36 s=1339 t=0.10 p=0.52 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 37.83,
+      "vars_remaining": 33937,
+      "vars_total": 39999,
+      "constraints_remaining": 67279,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 83,
+      "time": 38.35,
+      "objective": 124074164.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 124074163.0,
+      "gap_percent": 47.18920290287026,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.41 s=1347 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 38.48,
+      "vars_remaining": 33761,
+      "vars_total": 39999,
+      "constraints_remaining": 66927,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 84,
+      "time": 38.56,
+      "objective": 122712296.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 122712295.0,
+      "gap_percent": 46.603105690402856,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.38 s=1348 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 39.02,
+      "vars_remaining": 33671,
+      "vars_total": 39999,
+      "constraints_remaining": 66747,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 85,
+      "time": 39.34,
+      "objective": 117595718.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 117595717.0,
+      "gap_percent": 44.27981212717286,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.39 s=1355 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 39.74,
+      "vars_remaining": 33307,
+      "vars_total": 39999,
+      "constraints_remaining": 66019,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 86,
+      "time": 40.04,
+      "objective": 115518012.0,
+      "proven_bound": 65524555.0,
+      "next_min": 65524555.0,
+      "next_max": 115518011.0,
+      "gap_percent": 43.27762929299718,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.38 s=1365 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 40.31,
+      "best_objective": 115518012.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 115518011.0,
+      "subsolver": "reduced_costs",
+      "additional_info": "reduced_costs"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 87,
+      "time": 41.04,
+      "objective": 114884084.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 114884083.0,
+      "gap_percent": 42.95470032210902,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.37 s=1378 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 88,
+      "time": 41.24,
+      "objective": 111405526.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 111405525.0,
+      "gap_percent": 41.173501572983014,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.44 s=1375 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 89,
+      "time": 41.92,
+      "objective": 109842812.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 109842811.0,
+      "gap_percent": 40.336587522905006,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.36 s=1386 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 90,
+      "time": 42.24,
+      "objective": 108818486.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 108818485.0,
+      "gap_percent": 39.774966176243254,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.43 s=1385 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 91,
+      "time": 42.56,
+      "objective": 107634468.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 107634467.0,
+      "gap_percent": 39.11246906520688,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.39 s=1389 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 92,
+      "time": 43.18,
+      "objective": 107237916.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 107237915.0,
+      "gap_percent": 38.88731481876243,
+      "subsolver": "violation_ls",
+      "additional_info": "violation_ls(batch:23 #solutions_imported:23 #lin_moves:58'704 #lin_evals:1'615'894 #gen_moves:3'475 #gen_evals:0 #comp_moves:0 #backtracks:1'737 #weight_updates:2'621)"
+    },
+    {
+      "event_type": "model",
+      "time": 43.79,
+      "vars_remaining": 32071,
+      "vars_total": 39999,
+      "constraints_remaining": 63553,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 93,
+      "time": 44.19,
+      "objective": 104453890.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 104453889.0,
+      "gap_percent": 37.25846878464746,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.50 s=1402 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 44.35,
+      "vars_remaining": 28975,
+      "vars_total": 39999,
+      "constraints_remaining": 57370,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 94,
+      "time": 44.8,
+      "objective": 104057750.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 104057749.0,
+      "gap_percent": 37.019616511023926,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.43 s=1412 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 44.91,
+      "vars_remaining": 27955,
+      "vars_total": 39999,
+      "constraints_remaining": 55336,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 95,
+      "time": 45.47,
+      "objective": 104038090.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 104038089.0,
+      "gap_percent": 37.00771515509368,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.44 s=1416 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 96,
+      "time": 45.47,
+      "objective": 103516522.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 103516521.0,
+      "gap_percent": 36.69032852552755,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.41 s=1417 t=0.10 p=0.52 stall=6 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 97,
+      "time": 45.86,
+      "objective": 102206510.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 102206509.0,
+      "gap_percent": 35.87886916400922,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.36 s=1423 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 45.97,
+      "vars_remaining": 27795,
+      "vars_total": 39999,
+      "constraints_remaining": 55019,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 98,
+      "time": 46.65,
+      "objective": 100132132.0,
+      "proven_bound": 65535970.0,
+      "next_min": 65535970.0,
+      "next_max": 100132131.0,
+      "gap_percent": 34.550509720496116,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.43 s=1424 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 46.69,
+      "best_objective": 100132132.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 100132131.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "model",
+      "time": 46.81,
+      "vars_remaining": 27605,
+      "vars_total": 39999,
+      "constraints_remaining": 54639,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 99,
+      "time": 47.26,
+      "objective": 98163058.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 98163057.0,
+      "gap_percent": 32.79885596066088,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.39 s=1438 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 47.39,
+      "vars_remaining": 26195,
+      "vars_total": 39999,
+      "constraints_remaining": 51825,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 100,
+      "time": 47.78,
+      "objective": 97332264.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 97332263.0,
+      "gap_percent": 32.22525061165741,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.39 s=1446 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 48.13,
+      "vars_remaining": 25429,
+      "vars_total": 39999,
+      "constraints_remaining": 50302,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 101,
+      "time": 48.35,
+      "objective": 96774980.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 96774979.0,
+      "gap_percent": 31.834966021176136,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.45 s=1449 t=0.10 p=0.54 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 102,
+      "time": 48.53,
+      "objective": 96444034.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 96444033.0,
+      "gap_percent": 31.60105891049725,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.44 s=1452 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 103,
+      "time": 48.54,
+      "objective": 96296780.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 96296779.0,
+      "gap_percent": 31.496465406216075,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.41 s=1454 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 48.7,
+      "vars_remaining": 25119,
+      "vars_total": 39999,
+      "constraints_remaining": 49685,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 49.1,
+      "vars_remaining": 24661,
+      "vars_total": 39999,
+      "constraints_remaining": 48775,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 104,
+      "time": 49.22,
+      "objective": 95963290.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 95963289.0,
+      "gap_percent": 31.25840308309563,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.41 s=1460 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 105,
+      "time": 49.59,
+      "objective": 95879010.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 95879009.0,
+      "gap_percent": 31.19797753439465,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.62 s=1465 t=0.10 p=0.53 stall=5 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 49.7,
+      "vars_remaining": 24527,
+      "vars_total": 39999,
+      "constraints_remaining": 48510,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 106,
+      "time": 50.15,
+      "objective": 95839952.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 95839951.0,
+      "gap_percent": 31.169938398967478,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.49 s=1466 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 107,
+      "time": 50.3,
+      "objective": 94265052.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 94265051.0,
+      "gap_percent": 30.019984500724615,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.41 s=1469 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 50.75,
+      "vars_remaining": 24471,
+      "vars_total": 39999,
+      "constraints_remaining": 48398,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 108,
+      "time": 51.38,
+      "objective": 94265032.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 94265031.0,
+      "gap_percent": 30.01996965322199,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.48 s=1480 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 51.48,
+      "vars_remaining": 23755,
+      "vars_total": 39999,
+      "constraints_remaining": 46990,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 109,
+      "time": 52.1,
+      "objective": 94002790.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 94002789.0,
+      "gap_percent": 29.82474456343264,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.51 s=1489 t=0.10 p=0.51 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 110,
+      "time": 52.16,
+      "objective": 93631810.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 93631809.0,
+      "gap_percent": 29.54670213039778,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.54 s=1478 t=0.10 p=0.54 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 111,
+      "time": 52.78,
+      "objective": 93369568.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 93369567.0,
+      "gap_percent": 29.348823805203853,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.54 s=1493 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 112,
+      "time": 53.01,
+      "objective": 93243930.0,
+      "proven_bound": 65966698.0,
+      "next_min": 65966698.0,
+      "next_max": 93243929.0,
+      "gap_percent": 29.253627555166325,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.44 s=1498 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 53.13,
+      "best_objective": 93243930.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 93243929.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "model",
+      "time": 53.46,
+      "vars_remaining": 23475,
+      "vars_total": 39999,
+      "constraints_remaining": 46433,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 113,
+      "time": 53.93,
+      "objective": 93127276.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 93127275.0,
+      "gap_percent": 29.06849653800676,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.50 s=1502 t=0.10 p=0.54 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 114,
+      "time": 54.08,
+      "objective": 92861136.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 92861135.0,
+      "gap_percent": 28.865206861135103,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.45 s=1510 t=0.10 p=0.53 stall=3 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 115,
+      "time": 54.47,
+      "objective": 91989436.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 91989435.0,
+      "gap_percent": 28.191127294225392,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.44 s=1513 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 116,
+      "time": 54.73,
+      "objective": 88825372.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 88825371.0,
+      "gap_percent": 25.633210970397062,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.48 s=1515 t=0.10 p=0.53 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 55.15,
+      "vars_remaining": 23305,
+      "vars_total": 39999,
+      "constraints_remaining": 46093,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 117,
+      "time": 55.61,
+      "objective": 87802270.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 87802269.0,
+      "gap_percent": 24.766663777599373,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.51 s=1523 t=0.10 p=0.51 stall=3 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 55.62,
+      "vars_remaining": 21087,
+      "vars_total": 39999,
+      "constraints_remaining": 41705,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 118,
+      "time": 56.73,
+      "objective": 87474542.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 87474541.0,
+      "gap_percent": 24.484798102743998,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.49 s=1531 t=0.10 p=0.53 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 119,
+      "time": 56.98,
+      "objective": 87424182.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 87424181.0,
+      "gap_percent": 24.44129817537212,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.45 s=1534 t=0.10 p=0.53 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 120,
+      "time": 57.3,
+      "objective": 86665868.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 86665867.0,
+      "gap_percent": 23.780170297261662,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.49 s=1538 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 121,
+      "time": 57.72,
+      "objective": 86186284.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 86186283.0,
+      "gap_percent": 23.356044681077094,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.44 s=1547 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 122,
+      "time": 58.41,
+      "objective": 86127762.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 86127761.0,
+      "gap_percent": 23.303966727940754,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.44 s=1553 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 58.71,
+      "vars_remaining": 20529,
+      "vars_total": 39999,
+      "constraints_remaining": 40607,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 123,
+      "time": 59.18,
+      "objective": 85731652.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 85731651.0,
+      "gap_percent": 22.94960442381304,
+      "subsolver": "graph_arc_lns",
+      "additional_info": "graph_arc_lns (d=0.48 s=1559 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 124,
+      "time": 60.23,
+      "objective": 85541428.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 85541427.0,
+      "gap_percent": 22.778262481192154,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.37 s=1571 t=0.10 p=0.51 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 125,
+      "time": 60.82,
+      "objective": 85305544.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 85305543.0,
+      "gap_percent": 22.5647315489835,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.49 s=1576 t=0.10 p=0.53 stall=5 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 126,
+      "time": 61.41,
+      "objective": 84999548.0,
+      "proven_bound": 66056577.0,
+      "next_min": 66056577.0,
+      "next_max": 84999547.0,
+      "gap_percent": 22.285966744199627,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.41 s=1583 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 61.75,
+      "vars_remaining": 19647,
+      "vars_total": 39999,
+      "constraints_remaining": 38864,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 62.18,
+      "vars_remaining": 18959,
+      "vars_total": 39999,
+      "constraints_remaining": 37500,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "bound",
+      "time": 62.48,
+      "best_objective": 84999548.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 84999547.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 127,
+      "time": 63.04,
+      "objective": 84705970.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 84705969.0,
+      "gap_percent": 21.887084227947568,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.60 s=1594 t=0.10 p=0.52 stall=10 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 128,
+      "time": 63.5,
+      "objective": 84545824.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 84545823.0,
+      "gap_percent": 21.739123389465103,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.62 s=1604 t=0.10 p=0.52 stall=11 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 129,
+      "time": 65.24,
+      "objective": 84233522.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 84233521.0,
+      "gap_percent": 21.44896541308103,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.49 s=1620 t=0.10 p=0.53 stall=5 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 130,
+      "time": 66.17,
+      "objective": 84004386.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 84004385.0,
+      "gap_percent": 21.23470434031861,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.42 s=1632 t=0.10 p=0.52 stall=1 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 66.26,
+      "vars_remaining": 18537,
+      "vars_total": 39999,
+      "constraints_remaining": 36662,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 131,
+      "time": 67.05,
+      "objective": 83335448.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 83335447.0,
+      "gap_percent": 20.602451192198547,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.54 s=1637 t=0.10 p=0.53 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 67.56,
+      "vars_remaining": 18415,
+      "vars_total": 39999,
+      "constraints_remaining": 36418,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 132,
+      "time": 67.73,
+      "objective": 83064468.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 83064467.0,
+      "gap_percent": 20.34343372908859,
+      "subsolver": "rnd_var_lns",
+      "additional_info": "rnd_var_lns (d=0.62 s=1648 t=0.10 p=0.52 stall=4 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 133,
+      "time": 68.49,
+      "objective": 83062368.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 83062367.0,
+      "gap_percent": 20.34141983527366,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.45 s=1656 t=0.10 p=0.52 stall=9 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 134,
+      "time": 69.3,
+      "objective": 82022380.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 82022379.0,
+      "gap_percent": 19.33140320970935,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.55 s=1658 t=0.10 p=0.54 stall=2 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 69.91,
+      "vars_remaining": 18021,
+      "vars_total": 39999,
+      "constraints_remaining": 35636,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 135,
+      "time": 71.5,
+      "objective": 81746960.0,
+      "proven_bound": 66166303.0,
+      "next_min": 66166303.0,
+      "next_max": 81746959.0,
+      "gap_percent": 19.05961640653059,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.60 s=1679 t=0.10 p=0.51 stall=11 h=folio_rnd)"
+    },
+    {
+      "event_type": "bound",
+      "time": 72.83,
+      "best_objective": 81746960.0,
+      "proven_bound": 66166451.0,
+      "next_min": 66166451.0,
+      "next_max": 81746959.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "model",
+      "time": 73.91,
+      "vars_remaining": 17205,
+      "vars_total": 39999,
+      "constraints_remaining": 34013,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 74.4,
+      "vars_remaining": 17033,
+      "vars_total": 39999,
+      "constraints_remaining": 33672,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 136,
+      "time": 76.3,
+      "objective": 81744860.0,
+      "proven_bound": 66166451.0,
+      "next_min": 66166451.0,
+      "next_max": 81744859.0,
+      "gap_percent": 19.05735602214011,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.41 s=1734 t=0.10 p=0.51 stall=10 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 78.27,
+      "vars_remaining": 17031,
+      "vars_total": 39999,
+      "constraints_remaining": 33668,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "model",
+      "time": 78.36,
+      "vars_remaining": 15327,
+      "vars_total": 39999,
+      "constraints_remaining": 30308,
+      "constraints_total": 79403,
+      "additional_info": ""
+    },
+    {
+      "event_type": "bound",
+      "time": 78.6,
+      "best_objective": 81744860.0,
+      "proven_bound": 66167741.0,
+      "next_min": 66167741.0,
+      "next_max": 81744859.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 137,
+      "time": 81.62,
+      "objective": 81586436.0,
+      "proven_bound": 66167741.0,
+      "next_min": 66167741.0,
+      "next_max": 81586435.0,
+      "gap_percent": 18.898600988036787,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.34 s=1796 t=0.10 p=0.50 stall=8 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 138,
+      "time": 83.16,
+      "objective": 80069368.0,
+      "proven_bound": 66167741.0,
+      "next_min": 66167741.0,
+      "next_max": 80069367.0,
+      "gap_percent": 17.36197917785488,
+      "subsolver": "graph_cst_lns",
+      "additional_info": "graph_cst_lns (d=0.51 s=1804 t=0.10 p=0.52 stall=17 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 83.17,
+      "best_objective": 80069368.0,
+      "proven_bound": 66215086.0,
+      "next_min": 66215086.0,
+      "next_max": 80069367.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 139,
+      "time": 84.16,
+      "objective": 79506568.0,
+      "proven_bound": 66215086.0,
+      "next_min": 66215086.0,
+      "next_max": 79506567.0,
+      "gap_percent": 16.717464147112977,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.60 s=1820 t=0.10 p=0.51 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 140,
+      "time": 86.78,
+      "objective": 79336676.0,
+      "proven_bound": 66215086.0,
+      "next_min": 66215086.0,
+      "next_max": 79336675.0,
+      "gap_percent": 16.53912246084018,
+      "subsolver": "graph_var_lns",
+      "additional_info": "graph_var_lns (d=0.38 s=1855 t=0.10 p=0.51 stall=8 h=auto_l0)"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 141,
+      "time": 88.08,
+      "objective": 79274854.0,
+      "proven_bound": 66215086.0,
+      "next_min": 66215086.0,
+      "next_max": 79274853.0,
+      "gap_percent": 16.474036016515402,
+      "subsolver": "graph_dec_lns",
+      "additional_info": "graph_dec_lns (d=0.57 s=1872 t=0.10 p=0.51 stall=7 h=auto_l0)"
+    },
+    {
+      "event_type": "bound",
+      "time": 88.1,
+      "best_objective": 79274854.0,
+      "proven_bound": 66273294.0,
+      "next_min": 66273294.0,
+      "next_max": 79274853.0,
+      "subsolver": "lb_tree_search",
+      "additional_info": "lb_tree_search"
+    },
+    {
+      "event_type": "objective",
+      "solution_number": 142,
+      "time": 88.59,
+      "objective": 78688826.0,
+      "proven_bound": 66273294.0,
+      "next_min": 66273294.0,
+      "next_max": 78688825.0,
+      "gap_percent": 15.778011480308527,
+      "subsolver": "rnd_cst_lns",
+      "additional_info": "rnd_cst_lns (d=0.50 s=1874 t=0.10 p=0.52 stall=0 h=auto_l0)"
+    },
+    {
+      "event_type": "model",
+      "time": 89.78,
+      "vars_remaining": 12642,
+      "vars_total": 39999,
+      "constraints_remaining": 25009,
+      "constraints_total": 79403,
+      "additional_info": ""
+    }
+  ],
+  "task_timing": [
+    {
+      "task_name": "core",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "default_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "feasibility_pump",
+      "num_runs": 326,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_default",
+      "num_runs": 13,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_long_lin_default",
+      "num_runs": 67,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_default",
+      "num_runs": 81,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fj_short_lin_default",
+      "num_runs": 72,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "fs_random_quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_arc_lns",
+      "num_runs": 138,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_cst_lns",
+      "num_runs": 138,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_dec_lns",
+      "num_runs": 138,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "graph_var_lns",
+      "num_runs": 138,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "lb_tree_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_lb_search_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_max_lp",
+      "num_runs": 46,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "objective_shaving_search_no_lp",
+      "num_runs": 46,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "probing_max_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "pseudo_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "quick_restart_no_lp",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "reduced_costs",
+      "num_runs": 1,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rins/rens",
+      "num_runs": 326,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_cst_lns",
+      "num_runs": 138,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "rnd_var_lns",
+      "num_runs": 139,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 42,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    },
+    {
+      "task_name": "violation_ls",
+      "num_runs": 44,
+      "time_spent": null,
+      "deterministic_time": null,
+      "additional_stats": {}
+    }
+  ],
+  "search_stats": [
+    {
+      "subsolver": "core",
+      "booleans": 40267,
+      "conflicts": 13492,
+      "branches": 1037730,
+      "restarts": 36979,
+      "bool_propagations": 14171530,
+      "integer_propagations": 18168105
+    },
+    {
+      "subsolver": "default_lp",
+      "booleans": 40198,
+      "conflicts": 23996,
+      "branches": 153183,
+      "restarts": 36782,
+      "bool_propagations": 13250383,
+      "integer_propagations": 10942054
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 40198,
+      "conflicts": 0,
+      "branches": 50238,
+      "restarts": 36780,
+      "bool_propagations": 7392544,
+      "integer_propagations": 7518363
+    },
+    {
+      "subsolver": "fs_random",
+      "booleans": 40198,
+      "conflicts": 50,
+      "branches": 63728,
+      "restarts": 36781,
+      "bool_propagations": 7406032,
+      "integer_propagations": 7538398
+    },
+    {
+      "subsolver": "fs_random_quick_restart",
+      "booleans": 40198,
+      "conflicts": 2,
+      "branches": 43457,
+      "restarts": 36780,
+      "bool_propagations": 7406389,
+      "integer_propagations": 7526267
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "booleans": 40198,
+      "conflicts": 0,
+      "branches": 36811,
+      "restarts": 36783,
+      "bool_propagations": 7405822,
+      "integer_propagations": 7604472
+    },
+    {
+      "subsolver": "max_lp",
+      "booleans": 40204,
+      "conflicts": 48,
+      "branches": 44100,
+      "restarts": 36781,
+      "bool_propagations": 7413897,
+      "integer_propagations": 7663565
+    },
+    {
+      "subsolver": "no_lp",
+      "booleans": 40198,
+      "conflicts": 80970,
+      "branches": 239297,
+      "restarts": 36782,
+      "bool_propagations": 24821392,
+      "integer_propagations": 11502185
+    },
+    {
+      "subsolver": "objective_lb_search",
+      "booleans": 40202,
+      "conflicts": 5372,
+      "branches": 124306,
+      "restarts": 36783,
+      "bool_propagations": 18122840,
+      "integer_propagations": 29550472
+    },
+    {
+      "subsolver": "objective_lb_search_no_lp",
+      "booleans": 40224,
+      "conflicts": 11044,
+      "branches": 66356,
+      "restarts": 36805,
+      "bool_propagations": 17819531,
+      "integer_propagations": 33527861
+    },
+    {
+      "subsolver": "probing",
+      "booleans": 40397,
+      "conflicts": 0,
+      "branches": 150308,
+      "restarts": 40626,
+      "bool_propagations": 10484608,
+      "integer_propagations": 12723006
+    },
+    {
+      "subsolver": "probing_max_lp",
+      "booleans": 40199,
+      "conflicts": 0,
+      "branches": 36784,
+      "restarts": 36786,
+      "bool_propagations": 7407194,
+      "integer_propagations": 7607009
+    },
+    {
+      "subsolver": "pseudo_costs",
+      "booleans": 40198,
+      "conflicts": 50,
+      "branches": 68069,
+      "restarts": 36782,
+      "bool_propagations": 7499294,
+      "integer_propagations": 7798161
+    },
+    {
+      "subsolver": "quick_restart",
+      "booleans": 40817,
+      "conflicts": 150,
+      "branches": 159095,
+      "restarts": 36795,
+      "bool_propagations": 7949436,
+      "integer_propagations": 8854513
+    },
+    {
+      "subsolver": "quick_restart_no_lp",
+      "booleans": 41156,
+      "conflicts": 388,
+      "branches": 481371,
+      "restarts": 36820,
+      "bool_propagations": 8751701,
+      "integer_propagations": 11053480
+    },
+    {
+      "subsolver": "reduced_costs",
+      "booleans": 40198,
+      "conflicts": 0,
+      "branches": 117836,
+      "restarts": 36787,
+      "bool_propagations": 7403226,
+      "integer_propagations": 7681778
+    }
+  ],
+  "sat_stats": [],
+  "lns_stats": [],
+  "ls_stats": [],
+  "lp_stats": [],
+  "solution_repositories": {
+    "repositories": {
+      "feasible solutions": {
+        "added": 310,
+        "queried": 1744,
+        "ignored": 0,
+        "synchro": 295
+      },
+      "lp solutions": {
+        "added": 372,
+        "queried": 16,
+        "ignored": 0,
+        "synchro": 325
+      }
+    }
+  },
+  "objective_bounds": [
+    {
+      "subsolver": "initial_domain",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "lb_tree_search",
+      "num_bounds": 7
+    },
+    {
+      "subsolver": "objective_lb_search",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "objective_shaving_search_max_lp",
+      "num_bounds": 30
+    },
+    {
+      "subsolver": "objective_shaving_search_no_lp",
+      "num_bounds": 2
+    },
+    {
+      "subsolver": "probing_max_lp",
+      "num_bounds": 1
+    },
+    {
+      "subsolver": "reduced_costs",
+      "num_bounds": 9
+    }
+  ],
+  "improving_bounds_shared": {
+    "bounds_by_subsolver": {
+      "core": 22976,
+      "probing": 325,
+      "probing_max_lp": 2714,
+      "reduced_costs": 1720
+    }
+  },
+  "clauses_shared": {
+    "clauses_by_subsolver": {
+      "quick_restart": 2,
+      "quick_restart_no_lp": 7
+    }
+  },
+  "response": {
+    "status": "FEASIBLE",
+    "objective": 78688826.0,
+    "best_bound": 66273294.0,
+    "num_integers": 39881,
+    "num_booleans": 40198,
+    "conflicts": 0,
+    "branches": 50238,
+    "propagations": 7392544,
+    "integer_propagations": 7518363,
+    "restarts": 36780,
+    "lp_iterations": 0,
+    "walltime": 90.8691,
+    "usertime": 90.8691,
+    "deterministic_time": 461.57,
+    "gap_integral": 7812.55,
+    "solution_fingerprint": "0x6a17e60bdf1221a0",
+    "additional_fields": {}
+  },
+  "comments": [
+    "This is an example from a TSP model on 200 vertices that uses the Miller-Tucker-Zemlin-formulation.",
+    "This formulation is usually not very efficient as it has a very weak linear relaxation.",
+    "",
+    "It takes a while for CP-SAT to even find a feasible solution. Providing a solution hint",
+    "would probably have helped. Whenever it takes CP-SAT a long time to find a reasonably",
+    "good or even feasible solution, you may want to think about a heuristic that you",
+    "could use to compute an initial solution yourself. However, in this case we actually",
+    "know that we should have used `AddCircuit` instead.",
+    "",
+    "In this case, CP-SAT is not able to find an optimal solution but only a solution with",
+    "an optimality gap of <=15.78%."
+  ]
+}
