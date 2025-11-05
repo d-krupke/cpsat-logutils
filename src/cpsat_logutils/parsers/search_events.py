@@ -90,53 +90,52 @@ class SearchEventsParser(ParserComponent):
                 )
 
             # Parse objective events: #1, #2, etc.
+            # Handle both next:[lower,upper] and next:[] formats
             elif match := re.match(
-                r"#(\d+)\s+([\d.]+[smh])\s+best:(\S+)\s+next:\[(\S+)?,?(\S+)?\]\s+(.*)",
+                r"#(\d+)\s+([\d.]+[smh])\s+best:(\S+)\s+next:\[([^\]]*)\]\s+(.*)",
                 line,
             ):
                 solution_num = int(match.group(1))
                 time = parse_time(match.group(2))
                 objective = parse_number(match.group(3))
-                # Handle optional bounds
-                lower_str = match.group(4)
-                upper_str = match.group(5)
+                bounds_str = match.group(4).strip()  # May be empty or "lower,upper"
 
-                # Sometimes the bounds are like [1,2] and sometimes like []
+                # Parse lower and upper bounds from comma-separated string
                 lower_bound = None
                 upper_bound = None
 
-                if lower_str and lower_str.strip() and lower_str != "inf":
-                    # Remove comma if present
-                    lower_str = lower_str.rstrip(',')
-                    if lower_str:
-                        lower_bound = parse_number(lower_str)
+                if bounds_str:  # Non-empty bounds
+                    parts = bounds_str.split(',')
+                    if len(parts) >= 1:
+                        lower_str = parts[0].strip()
+                        if lower_str and lower_str != "inf":
+                            lower_bound = parse_number(lower_str)
 
-                if upper_str and upper_str.strip() and upper_str != "inf":
-                    # Remove closing bracket if present
-                    upper_str = upper_str.rstrip(']')
-                    if upper_str:
-                        upper_bound = parse_number(upper_str)
+                    if len(parts) >= 2:
+                        upper_str = parts[1].strip()
+                        if upper_str and upper_str != "inf":
+                            upper_bound = parse_number(upper_str)
 
-                info = match.group(6).strip()
+                info = match.group(5).strip()
 
                 # Extract subsolver name
                 subsolver = info.split("(")[0].strip() if "(" in info else info.split()[0] if info else ""
 
-                # Determine bound and gap
-                if lower_bound is not None and upper_bound is not None:
-                    # The "next" range shows where we're searching
-                    # For minimization (positive objective), the lower bound is the target
-                    # For maximization (negative objective), the upper bound is the target
-                    if lower_bound <= objective <= upper_bound:
-                        bound = lower_bound if objective >= 0 else upper_bound
-                    else:
-                        bound = lower_bound if abs(objective - lower_bound) < abs(objective - upper_bound) else upper_bound
+                # For minimization: lower_bound is the best known bound
+                # For maximization: upper_bound is the best known bound (but represented as negative)
+                # In CP-SAT logs, minimization is standard, so we use lower_bound as the bound
+                # If next:[] (both bounds are None), use objective as bound (optimal solution)
+                if lower_bound is not None:
+                    bound = lower_bound
+                elif upper_bound is not None:
+                    bound = upper_bound
                 else:
-                    bound = lower_bound if lower_bound is not None else (upper_bound if upper_bound is not None else objective)
+                    bound = objective  # next:[] means optimal, so objective = bound
 
+                # Calculate gap percentage
                 gap = None
-                if bound is not None and objective != 0:
-                    gap = 100 * abs(objective - bound) / max(1, abs(objective))
+                if bound is not None and objective is not None and objective != 0 and bound != objective:
+                    gap = 100 * abs(objective - bound) / abs(objective)
 
                 events.append(
                     ObjectiveEvent(
