@@ -1,5 +1,4 @@
-from .parser import LogParser
-from .parser_new import LogParser as LogParserNew
+from .parser_new import LogParser
 from .models import (
     CPSATLog,
     SolverInfo,
@@ -30,7 +29,6 @@ from .models import (
 
 __all__ = [
     "LogParser",
-    "LogParserNew",
     "CPSATLog",
     "SolverInfo",
     "ModelStatistics",

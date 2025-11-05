@@ -6,8 +6,6 @@ can handle logs from the latest version of OR-Tools.
 """
 
 import pytest
-import io
-import sys
 
 # Try to import ortools
 try:
@@ -58,19 +56,15 @@ def capture_cpsat_log(model, solver_params=None):
         for key, value in solver_params.items():
             setattr(solver.parameters, key, value)
 
-    # Capture stdout
-    old_stdout = sys.stdout
-    sys.stdout = log_buffer = io.StringIO()
+    # Capture log using callback (CP-SAT uses callbacks, not stdout)
+    log_lines = []
+    solver.log_callback = lambda line: log_lines.append(line)
 
-    try:
-        # Solve the model
-        status = solver.Solve(model)
+    # Solve the model
+    status = solver.Solve(model)
 
-        # Get the log
-        log_string = log_buffer.getvalue()
-    finally:
-        # Restore stdout
-        sys.stdout = old_stdout
+    # Get the log
+    log_string = "\n".join(log_lines)
 
     return log_string, status
 

@@ -12,13 +12,7 @@ except ImportError:
     cp_model = None
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from cpsat_logutils import LogParser
-from cpsat_logutils.blocks import (
-    SearchProgressBlock,
-    SequentialSearchProgressBlock,
-    SolverBlock,
-    ResponseBlock,
-)
+from cpsat_logutils.parser_new import LogParser
 
 # Skip all tests if ortools is not available
 pytestmark = pytest.mark.skipif(not ORTOOLS_AVAILABLE, reason="ortools not installed")
@@ -42,12 +36,20 @@ def test_latest_cpsat():
     log = []
     solver.parameters.log_search_progress = True
     solver.log_callback = lambda line: log.append(line)
-    solver.solve(model)
-    print("\n".join(log))
-    parser = LogParser("\n".join(log))
-    parser.get_block_of_type(SolverBlock).get_parameters()
-    try:
-        parser.get_block_of_type(SearchProgressBlock)
-    except KeyError:
-        parser.get_block_of_type(SequentialSearchProgressBlock)
-    parser.get_block_of_type(ResponseBlock)
+    status = solver.solve(model)
+
+    # Parse the log with new parser
+    log_str = "\n".join(log)
+    parser = LogParser(log_str)
+    result = parser.parse()
+
+    # Verify we parsed the key components
+    assert result.solver_info is not None, "Failed to parse solver info"
+    assert result.solver_info.version is not None, "Failed to parse version"
+    assert result.response is not None, "Failed to parse response"
+    assert result.response.status in ["OPTIMAL", "FEASIBLE", "INFEASIBLE", "UNKNOWN"], \
+        f"Unexpected status: {result.response.status}"
+
+    print(f"\nCP-SAT version: {result.solver_info.version}")
+    print(f"Status: {result.response.status}")
+    print(f"Search events: {len(result.search_events)}")
