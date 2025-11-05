@@ -1,28 +1,29 @@
-# New Pydantic-Based Parser
+# Pydantic-Based Parser
 
-This document describes the new Pydantic-based parser for CP-SAT logs, which provides clean, structured, and JSON-serializable models perfect for web frontends and data analysis.
+This document describes the Pydantic-based parser for CP-SAT logs, which provides clean, structured, and JSON-serializable models perfect for web frontends and data analysis.
 
 ## Overview
 
-The new parser (`LogParserNew`) uses regular expressions to extract data from CP-SAT logs and structures it into Pydantic models. This approach offers several advantages:
+The parser (`LogParser`) uses a component-based architecture to extract data from CP-SAT logs and structures it into Pydantic models. This approach offers several advantages:
 
 - **Type Safety**: All fields are strongly typed with Pydantic validation
 - **JSON Serialization**: Direct export to JSON for web frontends
 - **Clean API**: Simple, intuitive access to all log data
 - **Robust Parsing**: Handles variations in log formats across CP-SAT versions
-- **Easy to Extend**: Simple model structure makes it easy to add new fields
+- **Easy to Extend**: Component-based architecture makes it easy to add new parsers
+- **Extensible**: Register custom parser components for domain-specific needs
 
 ## Quick Start
 
 ```python
-from cpsat_logutils import LogParserNew
+from cpsat_logutils import LogParser
 
 # Read your CP-SAT log
 with open("solver_log.txt", "r") as f:
     log_content = f.read()
 
 # Parse it
-parser = LogParserNew(log_content)
+parser = LogParser(log_content)
 parsed_log = parser.parse()
 
 # Access structured data
@@ -70,7 +71,7 @@ CPSATLog
 ### Analyzing Search Progress
 
 ```python
-parser = LogParserNew(log_content)
+parser = LogParser(log_content)
 parsed_log = parser.parse()
 
 # Get all objective improvements
@@ -205,60 +206,59 @@ The parser is designed to handle variations in CP-SAT log formats:
 
 ## Performance
 
-The new parser is efficient:
+The parser is efficient:
 
-- **Fast Parsing**: Regex-based extraction is quick
+- **Fast Parsing**: Component-based extraction is quick
 - **Low Memory**: Structured models are memory-efficient
-- **Incremental Access**: You don't need to parse everything at once
+- **Extensible**: Register only the components you need
 
-## Comparison with Original Parser
+## Extensibility
 
-| Feature | Original Parser | New Pydantic Parser |
-|---------|----------------|---------------------|
-| Type Safety | ❌ | ✅ Strong typing |
-| JSON Export | ⚠️ Via pandas | ✅ Native support |
-| API Style | Block-based | Unified structure |
-| Validation | ❌ | ✅ Pydantic validation |
-| Documentation | Good | Excellent (self-documenting) |
-| Frontend Use | ⚠️ Requires conversion | ✅ Direct JSON export |
+The parser uses a component-based architecture that makes it easy to extend:
 
-## Migration Guide
-
-If you're using the old parser, here's how to migrate:
-
-### Old API:
 ```python
-from cpsat_logutils import LogParser
-from cpsat_logutils.blocks import SolverBlock, ResponseBlock
+from cpsat_logutils.parsers.base import ParserComponent, ParserRegistry
+from typing import Optional
 
+# Create a custom parser component
+class CustomParser(ParserComponent):
+    """Parse custom information from logs."""
+
+    field_name = "my_custom_data"
+    priority = 50  # Controls execution order
+
+    def parse(self) -> Optional[dict]:
+        # Your parsing logic here
+        for line in self.lines:
+            if "MY_CUSTOM_TAG:" in line:
+                return {"value": line.split(":")[1].strip()}
+        return None
+
+# Register your custom component
+from cpsat_logutils.parser import default_registry
+default_registry.register(CustomParser)
+
+# Now parse as usual - your custom data will be included
 parser = LogParser(log_content)
-solver_block = parser.get_block_of_type(SolverBlock)
-version = solver_block.get_version()
-response_block = parser.get_block_of_type(ResponseBlock)
-response_dict = response_block.to_dict()
+result = parser.parse()
+print(result.my_custom_data)  # Access your custom parsed data
 ```
 
-### New API:
-```python
-from cpsat_logutils import LogParserNew
-
-parser = LogParserNew(log_content)
-parsed_log = parser.parse()
-version = parsed_log.solver_info.version
-response = parsed_log.response  # Already structured!
-```
+See [parsers/README.md](src/cpsat_logutils/parsers/README.md) for detailed documentation on creating custom parser components.
 
 ## Contributing
 
 To add new fields or models:
 
 1. Add the field to the appropriate model in `models.py`
-2. Update the parser method in `parser_new.py`
-3. Add tests in `tests/test_new_parser.py`
-4. Update this documentation
+2. Create a new parser component in `src/cpsat_logutils/parsers/`
+3. Register the component in `parser.py`
+4. Add tests in `tests/test_parser.py`
+5. Update this documentation
 
 ## See Also
 
 - [Main README](README.md) - General package information
 - [Example Usage](example_usage.py) - Complete working example
-- [Test Suite](tests/test_new_parser.py) - Comprehensive test examples
+- [Parser Components README](src/cpsat_logutils/parsers/README.md) - Component architecture guide
+- [Test Suite](tests/test_parser.py) - Comprehensive test examples

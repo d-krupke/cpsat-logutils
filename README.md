@@ -7,14 +7,14 @@ Utilities to parse and work with the logs of
 > presolve stats, subsolver activity, search progress, conflicts, etc.) and
 > exposes them in structured Python objects you can analyze or visualize.
 
-## 🆕 New Pydantic-Based Parser
+## Pydantic-Based Parser
 
-We've added a **new parser** that produces clean, structured Pydantic models perfect for web frontends and data analysis:
+The parser produces clean, structured Pydantic models perfect for web frontends and data analysis:
 
 ```python
-from cpsat_logutils import LogParserNew
+from cpsat_logutils import LogParser
 
-parser = LogParserNew(log_content)
+parser = LogParser(log_content)
 parsed_log = parser.parse()
 
 # Access structured data
@@ -30,10 +30,9 @@ json_data = parsed_log.model_dump_json(indent=2)
 - ✅ **JSON-serializable** for easy frontend integration
 - ✅ **Clean API** with intuitive access to all log data
 - ✅ **Robust parsing** handles variations across CP-SAT versions
+- ✅ **Extensible** component-based architecture for custom parsing
 
 See [PYDANTIC_PARSER.md](PYDANTIC_PARSER.md) for full documentation and [example_usage.py](example_usage.py) for a complete working example.
-
-The original block-based parser is still available and fully supported.
 
 ## Installation
 
@@ -65,123 +64,63 @@ raw_log = "\n".join(log_lines)
 
 ### 2) Parse the log with `cpsat-logutils`
 
-Below is a step-by-step parsing workflow. For each block, explore its
-**block-specific methods** in the
-[blocks/ directory](https://github.com/d-krupke/cpsat-logutils/tree/main/src/cpsat_logutils/blocks),
-and adapt the calls shown here to your needs.
-
-#### a) Instantiate the parser
-
-Create the parser instance from the raw log string.
+Create the parser and access structured data through Pydantic models:
 
 ```python
 from cpsat_logutils import LogParser
 
+# Parse the log
 parser = LogParser(raw_log)
+result = parser.parse()
+
+# Access solver information
+print(f"CP-SAT version: {result.solver_info.version}")
+print(f"Workers: {result.solver_info.num_workers}")
+print(f"Parameters: {result.solver_info.parameters}")
+
+# Access model statistics
+if result.initial_model:
+    print(f"Initial model: {result.initial_model.num_variables} vars, "
+          f"{result.initial_model.num_constraints} constraints")
+
+if result.presolved_model:
+    print(f"Presolved model: {result.presolved_model.num_variables} vars, "
+          f"{result.presolved_model.num_constraints} constraints")
+
+# Check presolve outcome
+if result.presolve_summary:
+    print(f"Solved by presolve: {result.presolve_summary.solved_by_presolve}")
+
+# Access search progress
+for event in result.search_events[:5]:  # Show first 5 events
+    print(f"  {event}")
+
+# Access final response
+print(f"Status: {result.response.status}")
+if result.response.objective is not None:
+    print(f"Objective: {result.response.objective}")
 ```
 
-#### b) Retrieve solver-level info
+### 3) Export to JSON
 
-Get high-level solver metadata such as version, number of workers, and
-parameters.
+All data is JSON-serializable for easy integration with web frontends:
 
 ```python
-from cpsat_logutils.blocks import SolverBlock
+# Export to JSON
+json_data = result.model_dump_json(indent=2)
 
-if solver_block := parser.get_block_of_type_or_none(SolverBlock):
-    print("CP-SAT version:", solver_block.get_version())
-    print("Workers:", solver_block.get_number_of_workers())
-    print("Parameters:", solver_block.get_parameters())
+# Or as a Python dict
+data_dict = result.model_dump()
 ```
 
-#### c) Inspect model statistics
-
-Display the number of variables and constraints before and after presolve.
-
-```python
-from cpsat_logutils.blocks import InitialModelBlock, PresolvedModelBlock
-
-if initial := parser.get_block_of_type_or_none(InitialModelBlock):
-    print(
-        "Initial model:",
-        initial.get_num_variables(),
-        "vars,",
-        initial.get_num_constraints(),
-        "constraints",
-    )
-
-if presolved := parser.get_block_of_type_or_none(PresolvedModelBlock):
-    print(
-        "Presolved model:",
-        presolved.get_num_variables(),
-        "vars,",
-        presolved.get_num_constraints(),
-        "constraints",
-    )
-```
-
-#### d) Check presolve outcome
-
-Determine whether the problem was solved during presolve.
-
-```python
-from cpsat_logutils.blocks import PresolveSummaryBlock
-
-solved_by_presolve = False
-if ps := parser.get_block_of_type_or_none(PresolveSummaryBlock):
-    solved_by_presolve = ps.is_solved_by_presolve()
-    print("Solved by presolve:", solved_by_presolve)
-```
-
-#### e) Explore search progress and stats
-
-If presolve did not solve the problem, inspect search progress events, task
-timing, search statistics, and objective bounds.
-
-```python
-from cpsat_logutils.blocks import (
-    SearchProgressBlock,
-    SearchStatsBlock,
-    TaskTimingBlock,
-    ObjectiveBoundsBlock,
-)
-
-if not solved_by_presolve:
-    if sp := parser.get_block_of_type_or_none(SearchProgressBlock):
-        print("Presolve time (s):", sp.get_presolve_time())
-        print(sp.get_events())  # list of events, see BoundEvent, ObjEvent, ModelEvent
-
-    if tt := parser.get_block_of_type_or_none(TaskTimingBlock):
-        print(tt.to_pandas().head())
-
-    if ss := parser.get_block_of_type_or_none(SearchStatsBlock):
-        print(ss.to_pandas().head())
-
-    if ob := parser.get_block_of_type_or_none(ObjectiveBoundsBlock):
-        print(ob.to_pandas().head())
-```
-
-#### f) Get final solver response
-
-Access the solver’s final response, including status and objective value.
-
-```python
-from cpsat_logutils.blocks import ResponseBlock
-
-if resp := parser.get_block_of_type_or_none(ResponseBlock):
-    print(resp.to_dict())
-```
-
-### 3) Save or visualize
+### 4) Visualize or analyze
 
 `cpsat-logutils` focuses on parsing and structuring; you can:
 
-- export DataFrames to
-  [CSV](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)/[JSON](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_json.html)
-  for dashboards,
-- plot progress/bounds over time with
-  [matplotlib](https://matplotlib.org/stable/index.html)/[plotly](https://plotly.com/python/),
-- feed the output into your own analyzers.
+- Export to JSON for web dashboards
+- Plot progress/bounds over time with
+  [matplotlib](https://matplotlib.org/stable/index.html)/[plotly](https://plotly.com/python/)
+- Feed the output into your own analyzers
 
 If you prefer a ready‑made GUI, see the **CP‑SAT Log Analyzer** below.
 

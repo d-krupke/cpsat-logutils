@@ -1,4 +1,4 @@
-from .parser_new import LogParser
+from .parser import LogParser
 from .models import (
     CPSATLog,
     SolverInfo,

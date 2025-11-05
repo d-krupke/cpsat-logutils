@@ -12,7 +12,7 @@ except ImportError:
     cp_model = None
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from cpsat_logutils.parser_new import LogParser
+from cpsat_logutils.parser import LogParser
 
 # Skip all tests if ortools is not available
 pytestmark = pytest.mark.skipif(not ORTOOLS_AVAILABLE, reason="ortools not installed")

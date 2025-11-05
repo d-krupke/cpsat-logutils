@@ -1,5 +1,5 @@
 """
-Comprehensive tests for the new Pydantic-based parser.
+Comprehensive tests for the Pydantic-based parser.
 
 These tests verify that important values are properly parsed from various
 CP-SAT log formats, including different versions and variations.
@@ -8,7 +8,7 @@ CP-SAT log formats, including different versions and variations.
 import os
 import json
 import pytest
-from cpsat_logutils.parser_new import LogParser
+from cpsat_logutils.parser import LogParser
 from cpsat_logutils.models import CPSATLog
 from cpsat_logutils.parsers import (
     SolverInfoParser,

@@ -1,12 +1,12 @@
 """
-Example usage of the new Pydantic-based CP-SAT log parser.
+Example usage of the Pydantic-based CP-SAT log parser.
 
-This script demonstrates how to use the new parser to extract structured
+This script demonstrates how to use the parser to extract structured
 data from CP-SAT logs, which can then be easily used in web frontends,
 data analysis, or exported to JSON.
 """
 
-from cpsat_logutils import LogParserNew
+from cpsat_logutils import LogParser
 import json
 
 
@@ -16,7 +16,7 @@ def main():
         log_content = f.read()
 
     # Parse the log
-    parser = LogParserNew(log_content)
+    parser = LogParser(log_content)
     parsed_log = parser.parse()
 
     # Access solver information

@@ -15,7 +15,7 @@ except ImportError:
     ORTOOLS_AVAILABLE = False
     cp_model = None  # Define cp_model as None when not available
 
-from cpsat_logutils.parser_new import LogParser
+from cpsat_logutils.parser import LogParser
 
 # Skip all tests if ortools is not available
 pytestmark = pytest.mark.skipif(not ORTOOLS_AVAILABLE, reason="ortools not installed")

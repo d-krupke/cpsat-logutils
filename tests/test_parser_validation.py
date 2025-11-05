@@ -7,7 +7,7 @@ specific example logs, ensuring accuracy and consistency across versions.
 
 import os
 import pytest
-from cpsat_logutils.parser_new import LogParser
+from cpsat_logutils.parser import LogParser
 
 EXAMPLE_DIR = os.path.join(os.path.dirname(__file__), "../example_logs")
 

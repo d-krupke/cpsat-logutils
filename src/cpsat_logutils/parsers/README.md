@@ -242,8 +242,8 @@ When adding new parser components:
 1. Create a new file in `src/cpsat_logutils/parsers/`
 2. Implement your component class
 3. Add imports to `__init__.py`
-4. Register in `parser_new.py`
-5. Add tests in `tests/test_new_parser.py`
+4. Register in `parser.py`
+5. Add tests in `tests/test_parser.py`
 6. Update this README
 
 ## Support
