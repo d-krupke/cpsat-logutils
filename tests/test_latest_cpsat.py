@@ -325,6 +325,505 @@ class TestLatestVersionStatistics:
             print(f"Rules applied: {len(result.presolve_summary.rules_applied)}")
 
 
+class TestLatestVersionIntervalVariables:
+    """Test problems with interval variables (scheduling)."""
+
+    def test_simple_scheduling(self):
+        """Test scheduling problem with interval variables."""
+        model = cp_model.CpModel()
+
+        # Create 5 tasks with start, duration, and end
+        horizon = 100
+        num_tasks = 5
+
+        tasks = []
+        for i in range(num_tasks):
+            start_var = model.NewIntVar(0, horizon, f'start_{i}')
+            duration = 10 + i * 2  # Varying durations
+            end_var = model.NewIntVar(0, horizon, f'end_{i}')
+
+            # Create interval variable
+            interval = model.NewIntervalVar(start_var, duration, end_var, f'task_{i}')
+            tasks.append((start_var, duration, end_var, interval))
+
+        # Add NoOverlap constraint (tasks can't overlap)
+        model.AddNoOverlap([task[3] for task in tasks])
+
+        # Objective: minimize makespan
+        makespan = model.NewIntVar(0, horizon, 'makespan')
+        model.AddMaxEquality(makespan, [task[2] for task in tasks])
+        model.Minimize(makespan)
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Verify
+        assert status in [cp_model.OPTIMAL, cp_model.FEASIBLE]
+
+        # Parse the log
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Should have parsed the model
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+
+        # Should have interval variables in the model
+        if result.initial_model:
+            assert result.initial_model.num_variables >= num_tasks * 3  # start, end, and helper vars
+            print(f"\nScheduling: {result.initial_model.num_variables} variables")
+
+    def test_scheduling_with_optional_intervals(self):
+        """Test scheduling with optional interval variables."""
+        model = cp_model.CpModel()
+
+        horizon = 50
+        num_tasks = 8
+
+        intervals = []
+        presences = []
+
+        for i in range(num_tasks):
+            # Optional task - might not be scheduled
+            presence = model.NewBoolVar(f'presence_{i}')
+            start_var = model.NewIntVar(0, horizon, f'start_{i}')
+            duration = 5
+            end_var = model.NewIntVar(0, horizon, f'end_{i}')
+
+            # Optional interval
+            interval = model.NewOptionalIntervalVar(
+                start_var, duration, end_var, presence, f'task_{i}'
+            )
+
+            intervals.append(interval)
+            presences.append(presence)
+
+        # At most 5 tasks can be selected
+        model.Add(sum(presences) <= 5)
+
+        # No overlap for selected tasks
+        model.AddNoOverlap(intervals)
+
+        # Maximize number of tasks
+        model.Maximize(sum(presences))
+
+        # Solve
+        log_string, status = capture_cpsat_log(
+            model,
+            solver_params={'max_time_in_seconds': 5}
+        )
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Should parse successfully
+        assert result.solver_info is not None
+        assert result.response is not None
+        print(f"\nOptional intervals: {result.response.status}")
+
+
+class TestLatestVersionDomainVariables:
+    """Test problems with variables having different domains."""
+
+    def test_mixed_domains(self):
+        """Test model with variables having different domains."""
+        model = cp_model.CpModel()
+
+        # Create variables with very different domains
+        small_var = model.NewIntVar(0, 10, 'small')
+        medium_var = model.NewIntVar(0, 1000, 'medium')
+        large_var = model.NewIntVar(0, 1000000, 'large')
+
+        # Negative domain
+        negative_var = model.NewIntVar(-100, 100, 'negative')
+
+        # Large negative to positive
+        wide_var = model.NewIntVar(-1000000, 1000000, 'wide')
+
+        # Constrained domain (not starting at 0)
+        constrained_var = model.NewIntVar(50, 150, 'constrained')
+
+        # Add some constraints linking them
+        model.Add(medium_var == small_var * 100)
+        model.Add(large_var == medium_var * 1000)
+        model.Add(negative_var + constrained_var >= 0)
+        model.Add(wide_var == negative_var * 1000)
+
+        # Objective
+        model.Maximize(small_var + negative_var + constrained_var)
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify parsing
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+
+        # Should show different variable domains
+        if result.initial_model and result.initial_model.variable_domains:
+            print(f"\nVariable domains found: {len(result.initial_model.variable_domains)}")
+            for domain in result.initial_model.variable_domains[:3]:
+                print(f"  {domain.type}: {domain.count} vars, range [{domain.min_value}, {domain.max_value}]")
+
+    def test_enumerated_domains(self):
+        """Test variables with non-contiguous domains."""
+        model = cp_model.CpModel()
+
+        # Create variables with enumerated domains
+        # Note: CP-SAT will convert these internally
+        x = model.NewIntVarFromDomain(
+            cp_model.Domain.FromValues([1, 3, 5, 7, 9]), 'x'
+        )
+        y = model.NewIntVarFromDomain(
+            cp_model.Domain.FromValues([2, 4, 6, 8, 10]), 'y'
+        )
+        z = model.NewIntVarFromDomain(
+            cp_model.Domain.FromIntervals([[0, 5], [10, 15], [20, 25]]), 'z'
+        )
+
+        # Add constraints
+        model.Add(x + y <= 15)
+        model.Add(z >= x)
+
+        # Objective
+        model.Maximize(x + y + z)
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE", "INFEASIBLE"]
+        print(f"\nEnumerated domains: {result.response.status}")
+
+
+class TestLatestVersionConditionalConstraints:
+    """Test problems with conditional constraints (only_enforce_if)."""
+
+    def test_only_enforce_if_basic(self):
+        """Test basic only_enforce_if constraints."""
+        model = cp_model.CpModel()
+
+        # Create variables
+        x = model.NewIntVar(0, 10, 'x')
+        y = model.NewIntVar(0, 10, 'y')
+        z = model.NewIntVar(0, 10, 'z')
+
+        # Boolean conditions
+        condition_a = model.NewBoolVar('condition_a')
+        condition_b = model.NewBoolVar('condition_b')
+
+        # Conditional constraints
+        # If condition_a is true, then x + y <= 5
+        model.Add(x + y <= 5).OnlyEnforceIf(condition_a)
+
+        # If condition_b is true, then y + z >= 8
+        model.Add(y + z >= 8).OnlyEnforceIf(condition_b)
+
+        # If condition_a is false, then x >= 7
+        model.Add(x >= 7).OnlyEnforceIf(condition_a.Not())
+
+        # At least one condition must be true
+        model.AddBoolOr([condition_a, condition_b])
+
+        # Objective
+        model.Maximize(x + y + z)
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+        print(f"\nConditional constraints: {result.response.status}")
+
+    def test_implication_constraints(self):
+        """Test implication constraints (a => b)."""
+        model = cp_model.CpModel()
+
+        n = 10
+        bools = [model.NewBoolVar(f'b_{i}') for i in range(n)]
+
+        # Chain of implications: b_i => b_{i+1}
+        for i in range(n - 1):
+            model.AddImplication(bools[i], bools[i + 1])
+
+        # If first is true, last must be true
+        # If last is false, first must be false
+
+        # Add some other constraints
+        model.Add(sum(bools) >= 3)
+        model.Add(sum(bools) <= 7)
+
+        # Minimize number of true variables
+        model.Minimize(sum(bools))
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+
+    def test_complex_conditional_with_intervals(self):
+        """Test conditional constraints combined with intervals."""
+        model = cp_model.CpModel()
+
+        horizon = 50
+        num_jobs = 5
+
+        # Each job can be processed on machine A or B
+        # But different processing times
+        intervals_a = []
+        intervals_b = []
+        use_machine_a = []
+
+        for i in range(num_jobs):
+            # Machine A
+            start_a = model.NewIntVar(0, horizon, f'start_a_{i}')
+            duration_a = 10
+            end_a = model.NewIntVar(0, horizon, f'end_a_{i}')
+            present_a = model.NewBoolVar(f'present_a_{i}')
+            interval_a = model.NewOptionalIntervalVar(
+                start_a, duration_a, end_a, present_a, f'interval_a_{i}'
+            )
+            intervals_a.append(interval_a)
+
+            # Machine B
+            start_b = model.NewIntVar(0, horizon, f'start_b_{i}')
+            duration_b = 7  # Faster on machine B
+            end_b = model.NewIntVar(0, horizon, f'end_b_{i}')
+            present_b = model.NewBoolVar(f'present_b_{i}')
+            interval_b = model.NewOptionalIntervalVar(
+                start_b, duration_b, end_b, present_b, f'interval_b_{i}'
+            )
+            intervals_b.append(interval_b)
+
+            # Exactly one machine per job
+            model.AddExactlyOne([present_a, present_b])
+            use_machine_a.append(present_a)
+
+        # No overlap on each machine
+        model.AddNoOverlap(intervals_a)
+        model.AddNoOverlap(intervals_b)
+
+        # Minimize makespan
+        all_ends = [model.NewIntVar(0, horizon, f'end_{i}') for i in range(num_jobs)]
+        for i in range(num_jobs):
+            # Conditional: if on machine A, use end_a, else use end_b
+            start_a_var = intervals_a[i].StartExpr()
+            end_a_var = model.NewIntVar(0, horizon, f'temp_end_a_{i}')
+            model.Add(end_a_var == start_a_var + 10).OnlyEnforceIf(use_machine_a[i])
+
+            start_b_var = intervals_b[i].StartExpr()
+            end_b_var = model.NewIntVar(0, horizon, f'temp_end_b_{i}')
+            model.Add(end_b_var == start_b_var + 7).OnlyEnforceIf(use_machine_a[i].Not())
+
+            # Set all_ends[i] based on which machine
+            model.Add(all_ends[i] == end_a_var).OnlyEnforceIf(use_machine_a[i])
+            model.Add(all_ends[i] == end_b_var).OnlyEnforceIf(use_machine_a[i].Not())
+
+        makespan = model.NewIntVar(0, horizon, 'makespan')
+        model.AddMaxEquality(makespan, all_ends)
+        model.Minimize(makespan)
+
+        # Solve
+        log_string, status = capture_cpsat_log(
+            model,
+            solver_params={'max_time_in_seconds': 10}
+        )
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response is not None
+        print(f"\nComplex conditional+intervals: {result.response.status}")
+
+
+class TestLatestVersionComplexConstraints:
+    """Test other complex constraint types."""
+
+    def test_circuit_constraint(self):
+        """Test circuit constraint (traveling salesman-like)."""
+        model = cp_model.CpModel()
+
+        n = 10  # Number of nodes
+
+        # Create arc variables
+        # arcs[i][j] = 1 if we go from i to j
+        arcs = {}
+        for i in range(n):
+            for j in range(n):
+                if i != j:
+                    arcs[(i, j)] = model.NewBoolVar(f'arc_{i}_{j}')
+
+        # Circuit constraint: forms a single cycle visiting all nodes
+        model.AddCircuit([(i, j, arcs[(i, j)]) for i, j in arcs])
+
+        # Optional: add some costs
+        costs = {(i, j): abs(i - j) for i, j in arcs}
+        total_cost = sum(arcs[(i, j)] * costs[(i, j)] for i, j in arcs)
+        model.Minimize(total_cost)
+
+        # Solve
+        log_string, status = capture_cpsat_log(
+            model,
+            solver_params={'max_time_in_seconds': 10}
+        )
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+        print(f"\nCircuit constraint: {result.response.status}")
+
+    def test_element_constraint(self):
+        """Test element constraint (array indexing)."""
+        model = cp_model.CpModel()
+
+        # Array of values
+        values = [10, 25, 30, 15, 40, 35, 20]
+
+        # Index variable (which element to select)
+        index = model.NewIntVar(0, len(values) - 1, 'index')
+
+        # Target variable (value at the selected index)
+        target = model.NewIntVar(min(values), max(values), 'target')
+
+        # Element constraint: target = values[index]
+        model.AddElement(index, values, target)
+
+        # Additional variables and constraints
+        x = model.NewIntVar(0, 100, 'x')
+        y = model.NewIntVar(0, 100, 'y')
+
+        model.Add(x + y == target)
+        model.Add(x >= y)
+
+        # Maximize target
+        model.Maximize(target)
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+
+    def test_table_constraint(self):
+        """Test table constraint (allowed tuples)."""
+        model = cp_model.CpModel()
+
+        # Variables
+        x = model.NewIntVar(0, 5, 'x')
+        y = model.NewIntVar(0, 5, 'y')
+        z = model.NewIntVar(0, 5, 'z')
+
+        # Allowed tuples (x, y, z)
+        allowed_tuples = [
+            (1, 2, 3),
+            (2, 3, 4),
+            (1, 3, 5),
+            (3, 1, 4),
+            (0, 1, 1),
+            (5, 0, 5),
+        ]
+
+        # Table constraint
+        model.AddAllowedAssignments([x, y, z], allowed_tuples)
+
+        # Additional constraints
+        total = model.NewIntVar(0, 20, 'total')
+        model.Add(total == x + y + z)
+
+        # Maximize total
+        model.Maximize(total)
+
+        # Solve
+        log_string, status = capture_cpsat_log(model)
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+
+    def test_cumulative_constraint(self):
+        """Test cumulative constraint (resource constraint)."""
+        model = cp_model.CpModel()
+
+        horizon = 100
+        capacity = 5  # Maximum resource capacity
+        num_tasks = 10
+
+        intervals = []
+        demands = []
+
+        for i in range(num_tasks):
+            start = model.NewIntVar(0, horizon, f'start_{i}')
+            duration = 10 + i
+            end = model.NewIntVar(0, horizon, f'end_{i}')
+
+            interval = model.NewIntervalVar(start, duration, end, f'task_{i}')
+            intervals.append(interval)
+
+            # Each task demands some resource
+            demand = 1 + (i % 3)  # Demands: 1, 2, or 3
+            demands.append(demand)
+
+        # Cumulative constraint: sum of demands at any time <= capacity
+        model.AddCumulative(intervals, demands, capacity)
+
+        # Minimize makespan
+        makespan = model.NewIntVar(0, horizon, 'makespan')
+        model.AddMaxEquality(makespan, [interval.EndExpr() for interval in intervals])
+        model.Minimize(makespan)
+
+        # Solve
+        log_string, status = capture_cpsat_log(
+            model,
+            solver_params={'max_time_in_seconds': 10}
+        )
+
+        # Parse
+        parser = LogParser(log_string)
+        result = parser.parse()
+
+        # Verify
+        assert result.solver_info is not None
+        assert result.response.status in ["OPTIMAL", "FEASIBLE"]
+        print(f"\nCumulative: {result.response.status}")
+
+
 class TestLatestVersionRegression:
     """Regression tests to catch parsing issues with new CP-SAT versions."""
 
