@@ -41,7 +41,11 @@ class PreloadingInfoParser(ParserComponent):
         encoding_info = {}
 
         in_preloading = False
-        for line in self.lines:
+        section_start = None
+
+        section_end = None
+
+        for i, line in enumerate(self.lines):
             if "Preloading model" in line:
                 in_preloading = True
                 continue

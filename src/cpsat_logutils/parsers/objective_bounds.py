@@ -40,7 +40,11 @@ class ObjectiveBoundsParser(ParserComponent):
 
         # Find section
         in_section = False
-        for line in self.lines:
+        section_start = None
+
+        section_end = None
+
+        for i, line in enumerate(self.lines):
             if re.match(r"Objective bounds\s+Num", line, re.IGNORECASE):
                 in_section = True
                 continue

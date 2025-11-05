@@ -46,11 +46,17 @@ class PresolveLogParser(ParserComponent):
 
         # Find presolve section
         in_presolve = False
-        for line in self.lines:
+        presolve_start = None
+
+        for i, line in enumerate(self.lines):
             if re.match(r"Starting presolve", line, re.IGNORECASE):
                 in_presolve = True
+                presolve_start = i
                 continue
             elif re.match(r"Presolve summary", line, re.IGNORECASE):
+                # Track presolve section
+                if presolve_start is not None:
+                    self.track_lines(presolve_start, i)
                 break
 
             if not in_presolve:

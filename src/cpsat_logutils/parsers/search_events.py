@@ -197,4 +197,16 @@ class SearchEventsParser(ParserComponent):
                     )
                 )
 
+        # Track search events section
+        search_start = None
+        search_end = len(self.lines)
+        for i, line in enumerate(self.lines):
+            if re.match(r"Starting\s+(?:search|Search)", line, re.IGNORECASE):
+                search_start = i
+            elif re.match(r"(Search stats|Task timing|CpSolverResponse)", line, re.IGNORECASE):
+                search_end = i
+                break
+        if search_start is not None:
+            self.track_lines(search_start, search_end)
+
         return events

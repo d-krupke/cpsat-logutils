@@ -40,8 +40,13 @@ class TaskTimingParser(ParserComponent):
 
         # Find task timing section
         in_section = False
-        for line in self.lines:
+        section_start = None
+
+        section_end = None
+
+        for i, line in enumerate(self.lines):
             if re.match(r"Task timing", line, re.IGNORECASE):
+                section_start = i
                 in_section = True
                 continue
             elif in_section and (not line.strip() or line[0] not in " '"):

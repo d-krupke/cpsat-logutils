@@ -35,7 +35,11 @@ class LPStatsParser(ParserComponent):
         entries = []
 
         # Find LP-related sections
-        for line in self.lines:
+        section_start = None
+
+        section_end = None
+
+        for i, line in enumerate(self.lines):
             if re.match(r"LP stats", line, re.IGNORECASE):
                 # Parse LP stats if present
                 pass

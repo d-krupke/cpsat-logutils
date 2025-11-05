@@ -38,7 +38,11 @@ class SearchStatsParser(ParserComponent):
 
         # Find search stats section
         in_section = False
-        for line in self.lines:
+        section_start = None
+
+        section_end = None
+
+        for i, line in enumerate(self.lines):
             if re.match(r"Search stats\s+Bools", line, re.IGNORECASE):
                 in_section = True
                 continue

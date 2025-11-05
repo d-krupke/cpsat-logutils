@@ -38,8 +38,13 @@ class SATStatsParser(ParserComponent):
         # Find SAT stats section
         in_section = False
         header_fields = []
-        for line in self.lines:
+        section_start = None
+
+        section_end = None
+
+        for i, line in enumerate(self.lines):
             if re.match(r"SAT stats", line, re.IGNORECASE):
+                section_start = i
                 in_section = True
                 # Extract header fields
                 header_fields = re.findall(r"(\w+)", line)[2:]  # Skip "SAT stats"

@@ -160,6 +160,9 @@ class ModelStatisticsParser(ParserComponent):
                     )
                 )
 
+        # Track this model block
+        self.track_lines(start_idx, i)
+
         return ModelStatistics(
             is_optimization=is_optimization,
             model_name=model_name,
