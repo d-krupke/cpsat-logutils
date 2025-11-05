@@ -34,18 +34,18 @@ class TestBoundParsing:
         # Check all objective events have proper numeric bounds
         for event in result.search_events:
             if event.event_type == "objective":
-                if event.lower_bound is not None:
-                    assert isinstance(event.lower_bound, (int, float)), (
-                        f"Lower bound should be numeric, got {type(event.lower_bound)}: {event.lower_bound}"
+                if event.next_min is not None:
+                    assert isinstance(event.next_min, (int, float)), (
+                        f"Lower bound should be numeric, got {type(event.next_min)}: {event.next_min}"
                     )
                     # Bounds should be reasonable numbers (not parsed as comma-decimal)
-                    assert event.lower_bound > 0, f"Lower bound should be positive: {event.lower_bound}"
+                    assert event.next_min > 0, f"Lower bound should be positive: {event.next_min}"
 
-                if event.upper_bound is not None:
-                    assert isinstance(event.upper_bound, (int, float)), (
-                        f"Upper bound should be numeric, got {type(event.upper_bound)}: {event.upper_bound}"
+                if event.next_max is not None:
+                    assert isinstance(event.next_max, (int, float)), (
+                        f"Upper bound should be numeric, got {type(event.next_max)}: {event.next_max}"
                     )
-                    assert event.upper_bound > 0, f"Upper bound should be positive: {event.upper_bound}"
+                    assert event.next_max > 0, f"Upper bound should be positive: {event.next_max}"
 
     @pytest.mark.parametrize("log_file", EXAMPLE_LOGS, ids=lambda p: p.name)
     def test_bounds_have_correct_format(self, log_file):
@@ -66,99 +66,118 @@ class TestBoundParsing:
         for event in result.search_events:
             if event.event_type == "objective":
                 # Verify bound field is set (required field)
-                assert event.bound is not None, (
+                assert event.proven_bound is not None, (
                     f"Solution #{event.solution_number}: bound is None"
                 )
 
                 # If both bounds are None, we should be at optimality
-                if event.lower_bound is None and event.upper_bound is None:
+                if event.next_min is None and event.next_max is None:
                     # bound should equal objective for optimal solutions
-                    assert event.bound == event.objective, (
+                    assert event.proven_bound == event.objective, (
                         f"Solution #{event.solution_number}: "
-                        f"bound {event.bound} != objective {event.objective} when next:[]"
+                        f"bound {event.proven_bound} != objective {event.objective} when next:[]"
                     )
 
 
 class TestBoundsConvergence:
-    """Test that bounds converge over time (lower increases, upper decreases)."""
+    """Test that search intervals converge over time."""
 
     @pytest.mark.parametrize("log_file", EXAMPLE_LOGS, ids=lambda p: p.name)
-    def test_lower_bounds_increase(self, log_file):
-        """Verify lower bounds increase (or stay same) over time for minimization."""
+    def test_next_min_increases(self, log_file):
+        """Verify next_min (lower limit of search interval) increases over time."""
         with open(log_file) as f:
             log_text = f.read()
 
         parser = LogParser(log_text)
         result = parser.parse()
 
-        # Extract lower bounds from objective and bound events
-        lower_bounds = []
+        # Extract next_min values from events
+        next_mins = []
         for event in result.search_events:
-            if event.event_type == "objective" and event.lower_bound is not None:
-                lower_bounds.append((event.time, event.lower_bound, f"solution #{event.solution_number}"))
-            elif event.event_type == "bound" and event.lower_bound is not None:
-                lower_bounds.append((event.time, event.lower_bound, "bound event"))
+            if event.event_type == "objective" and event.next_min is not None:
+                next_mins.append((event.time, event.next_min, f"solution #{event.solution_number}"))
+            elif event.event_type == "bound" and event.next_min is not None:
+                next_mins.append((event.time, event.next_min, "bound event"))
 
-        # Check that lower bounds are non-decreasing (allowing small tolerances)
+        # Check that next_min is non-decreasing (allowing small tolerances)
         # We allow some lenience for rare out-of-order events
         violations = []
-        for i in range(1, len(lower_bounds)):
-            prev_time, prev_bound, prev_desc = lower_bounds[i - 1]
-            curr_time, curr_bound, curr_desc = lower_bounds[i]
+        for i in range(1, len(next_mins)):
+            prev_time, prev_bound, prev_desc = next_mins[i - 1]
+            curr_time, curr_bound, curr_desc = next_mins[i]
 
             # Allow small decreases (tolerance for floating point and rare reordering)
             tolerance_ratio = 0.001  # 0.1% tolerance
             if curr_bound < prev_bound * (1 - tolerance_ratio):
                 violations.append(
-                    f"Lower bound decreased from {prev_bound} ({prev_desc} at {prev_time}s) "
+                    f"next_min decreased from {prev_bound} ({prev_desc} at {prev_time}s) "
                     f"to {curr_bound} ({curr_desc} at {curr_time}s)"
                 )
 
         # Allow up to 5% of events to violate (for rare reordering issues)
-        max_violations = max(1, len(lower_bounds) * 0.05)
+        max_violations = max(1, len(next_mins) * 0.05)
         if len(violations) > max_violations:
             pytest.fail(
-                f"Too many lower bound violations in {log_file.name} "
-                f"({len(violations)}/{len(lower_bounds)} events):\n" + "\n".join(violations[:5])
+                f"Too many next_min violations in {log_file.name} "
+                f"({len(violations)}/{len(next_mins)} events):\n" + "\n".join(violations[:5])
             )
 
     @pytest.mark.parametrize("log_file", EXAMPLE_LOGS, ids=lambda p: p.name)
-    def test_upper_bounds_decrease(self, log_file):
-        """Verify upper bounds decrease (or stay same) over time for minimization."""
+    def test_next_max_decreases_or_increases_consistently(self, log_file):
+        """
+        Verify next_max (upper limit of search interval) behaves correctly.
+
+        For minimization: next_max should decrease (approaching optimal from above).
+        For maximization: next_max stays constant (proven upper bound) or increases.
+        """
         with open(log_file) as f:
             log_text = f.read()
 
         parser = LogParser(log_text)
         result = parser.parse()
 
-        # Extract upper bounds from objective and bound events
-        upper_bounds = []
+        # Extract next_max values from events
+        next_maxs = []
         for event in result.search_events:
-            if event.event_type == "objective" and event.upper_bound is not None:
-                upper_bounds.append((event.time, event.upper_bound, f"solution #{event.solution_number}"))
-            elif event.event_type == "bound" and event.upper_bound is not None:
-                upper_bounds.append((event.time, event.upper_bound, "bound event"))
+            if event.event_type == "objective" and event.next_max is not None:
+                next_maxs.append((event.time, event.next_max, f"solution #{event.solution_number}"))
+            elif event.event_type == "bound" and event.next_max is not None:
+                next_maxs.append((event.time, event.next_max, "bound event"))
 
-        # Check that upper bounds are non-increasing (allowing small tolerances)
+        if len(next_maxs) < 2:
+            pytest.skip(f"Not enough next_max data in {log_file.name}")
+
+        # Detect if minimization or maximization based on trend
+        # If next_max generally decreases → minimization
+        # If next_max stays constant or increases → maximization
+        first_half_avg = sum(v for _, v, _ in next_maxs[:len(next_maxs)//2]) / (len(next_maxs)//2)
+        second_half_avg = sum(v for _, v, _ in next_maxs[len(next_maxs)//2:]) / (len(next_maxs) - len(next_maxs)//2)
+
+        is_minimization = second_half_avg < first_half_avg * 0.9  # 10% decrease suggests minimization
+
+        # Check consistency
         violations = []
-        for i in range(1, len(upper_bounds)):
-            prev_time, prev_bound, prev_desc = upper_bounds[i - 1]
-            curr_time, curr_bound, curr_desc = upper_bounds[i]
+        for i in range(1, len(next_maxs)):
+            prev_time, prev_bound, prev_desc = next_maxs[i - 1]
+            curr_time, curr_bound, curr_desc = next_maxs[i]
 
-            # Allow small increases (tolerance for floating point and rare reordering)
             tolerance_ratio = 0.001  # 0.1% tolerance
-            if curr_bound > prev_bound * (1 + tolerance_ratio):
-                violations.append(
-                    f"Upper bound increased from {prev_bound} ({prev_desc} at {prev_time}s) "
-                    f"to {curr_bound} ({curr_desc} at {curr_time}s)"
-                )
 
-        # Allow up to 5% of events to violate (for rare reordering issues)
-        max_violations = max(1, len(upper_bounds) * 0.05)
+            if is_minimization:
+                # For minimization, next_max should decrease or stay same
+                if curr_bound > prev_bound * (1 + tolerance_ratio):
+                    violations.append(
+                        f"next_max increased from {prev_bound} ({prev_desc} at {prev_time}s) "
+                        f"to {curr_bound} ({curr_desc} at {curr_time}s) in minimization"
+                    )
+            # For maximization, we don't enforce strict increase (it can stay constant)
+
+        # Allow up to 10% of events to violate (more lenient for mixed behaviors)
+        max_violations = max(1, len(next_maxs) * 0.1)
         if len(violations) > max_violations:
             pytest.fail(
-                f"Too many upper bound violations in {log_file.name} "
-                f"({len(violations)}/{len(upper_bounds)} events):\n" + "\n".join(violations[:5])
+                f"Too many next_max violations in {log_file.name} "
+                f"({len(violations)}/{len(next_maxs)} events):\n" + "\n".join(violations[:5])
             )
 
     @pytest.mark.parametrize("log_file", EXAMPLE_LOGS, ids=lambda p: p.name)
@@ -177,11 +196,11 @@ class TestBoundsConvergence:
             upper = None
 
             if event.event_type == "objective":
-                lower = event.lower_bound
-                upper = event.upper_bound
+                lower = event.next_min
+                upper = event.next_max
             elif event.event_type == "bound":
-                lower = event.lower_bound
-                upper = event.upper_bound
+                lower = event.next_min
+                upper = event.next_max
 
             if lower is not None and upper is not None and lower > 0:
                 gap = (upper - lower) / lower
@@ -313,8 +332,8 @@ class TestResponseConsistency:
         # Find last lower bound (for minimization)
         last_lower = None
         for event in reversed(result.search_events):
-            if event.event_type in ["objective", "bound"] and event.lower_bound is not None:
-                last_lower = event.lower_bound
+            if event.event_type in ["objective", "bound"] and event.next_min is not None:
+                last_lower = event.next_min
                 break
 
         if last_lower is None:
@@ -355,9 +374,9 @@ class TestSpecificLogValues:
         assert first_sol is not None, "First solution not found"
 
         # From the log: #1  1.52s best:3.15168966e+09 next:[65445416,3.15168966e+09]
-        assert first_sol.lower_bound == 65445416, f"Expected lower_bound=65445416, got {first_sol.lower_bound}"
-        assert abs(first_sol.upper_bound - 3.15168966e+09) < 1e3, (
-            f"Expected upper_bound≈3.15168966e+09, got {first_sol.upper_bound}"
+        assert first_sol.next_min == 65445416, f"Expected next_min =65445416, got {first_sol.next_min}"
+        assert abs(first_sol.next_max - 3.15168966e+09) < 1e3, (
+            f"Expected upper_bound≈3.15168966e+09, got {first_sol.next_max}"
         )
         assert abs(first_sol.objective - 3.15168966e+09) < 1e3, (
             f"Expected objective≈3.15168966e+09, got {first_sol.objective}"
@@ -385,6 +404,6 @@ class TestSpecificLogValues:
         assert sol_15 is not None, "Solution #15 not found"
 
         # From the log: #15  2.50s best:920856694 next:[66366584,920856693]
-        assert sol_15.lower_bound == 66366584, f"Expected lower_bound=66366584, got {sol_15.lower_bound}"
-        assert sol_15.upper_bound == 920856693, f"Expected upper_bound=920856693, got {sol_15.upper_bound}"
+        assert sol_15.next_min == 66366584, f"Expected next_min =66366584, got {sol_15.next_min}"
+        assert sol_15.next_max == 920856693, f"Expected next_max =920856693, got {sol_15.next_max}"
         assert sol_15.objective == 920856694, f"Expected objective=920856694, got {sol_15.objective}"

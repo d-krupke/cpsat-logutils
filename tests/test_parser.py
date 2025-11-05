@@ -259,7 +259,8 @@ class TestSearchEvents:
         assert bound_event.event_type == "bound"
         assert bound_event.time == 0.73
         assert bound_event.best_objective is None  # inf
-        assert bound_event.lower_bound == 48676021
+        assert bound_event.next_min == 48676021
+        assert bound_event.proven_bound == 48676021  # For minimization with no solution yet
         assert "objective_shaving_search_no_lp" in bound_event.subsolver
 
     def test_parse_objective_event(self):

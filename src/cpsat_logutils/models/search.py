@@ -137,23 +137,21 @@ class SearchInfo(BaseModel):
 
 class BoundEvent(BaseModel):
     """
-    Event representing an improvement to the objective bound.
+    Event representing an improvement to the objective bound (without finding a new solution).
 
-    For optimization problems, CP-SAT maintains bounds on the optimal objective:
-    - **Lower bound**: Best proven bound (no better solution can exist)
-    - **Upper bound**: Best solution found so far
+    CP-SAT can improve bounds through techniques like LP relaxation, cutting planes,
+    or domain propagation without finding a complete solution. These prove that
+    no solution better than the bound exists.
 
-    For minimization: lower_bound ≤ optimal ≤ upper_bound
-    For maximization: upper_bound ≥ optimal ≥ lower_bound
-
-    Bound improvements don't find new solutions but prove no better solution
-    exists above/below the bound.
+    The `next:[a,b]` field from the log represents the search interval:
+    - For minimization: [proven_lower_bound, ~current_objective]
+    - For maximization: [~current_objective, proven_upper_bound]
 
     Example:
         >>> # Filter bound events
         >>> bound_events = [e for e in result.search_events if e.event_type == "bound"]
         >>> for event in bound_events[:5]:
-        ...     print(f"{event.time:.2f}s: bound improved to {event.bound}")
+        ...     print(f"{event.time:.2f}s: proven bound {event.proven_bound}")
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -169,41 +167,49 @@ class BoundEvent(BaseModel):
     best_objective: Optional[float] = Field(
         None,
         description=(
-            "Current best objective value (from best solution found). "
-            "None if no solution found yet."
+            "Current best objective value (from best solution found so far). "
+            "None/inf if no solution found yet."
         )
     )
 
-    bound: float = Field(
+    proven_bound: float = Field(
         ...,
         description=(
-            "The new bound value. "
-            "For minimization, this is a lower bound. "
-            "For maximization, this is an upper bound."
+            "The proven bound on the optimal objective. "
+            "For minimization: no solution < proven_bound exists. "
+            "For maximization: no solution > proven_bound exists."
         )
     )
 
-    lower_bound: Optional[float] = Field(
+    next_min: Optional[float] = Field(
         None,
-        description="Lower bound (minimization) or None"
+        description=(
+            "Lower limit of the search interval from next:[min,max]. "
+            "For minimization: this is the proven lower bound. "
+            "For maximization: this is near the current objective."
+        )
     )
 
-    upper_bound: Optional[float] = Field(
+    next_max: Optional[float] = Field(
         None,
-        description="Upper bound (maximization) or None"
+        description=(
+            "Upper limit of the search interval from next:[min,max]. "
+            "For minimization: this is near the current objective. "
+            "For maximization: this is the proven upper bound."
+        )
     )
 
     subsolver: str = Field(
         "",
         description=(
             "Name of the subsolver that found this bound. "
-            "Example: 'default_lp' (linear programming relaxation)"
+            "Example: 'default_lp', 'objective_shaving_search_no_lp'"
         )
     )
 
     additional_info: str = Field(
         "",
-        description="Additional information about the bound (if any)"
+        description="Additional information about the bound event"
     )
 
 
@@ -212,19 +218,27 @@ class ObjectiveEvent(BaseModel):
     Event representing a new solution with its objective value.
 
     Each time CP-SAT finds a solution (feasible or improving), it logs
-    an objective event. These show the optimization progress over time.
+    an objective event showing the solution's objective and the search interval
+    for finding better solutions.
 
-    The gap percentage shows how close we are to optimal:
-    - gap = 0%: Solution is proven optimal
-    - gap < 1%: Very close to optimal
-    - gap > 10%: Significant room for improvement
+    The `next:[a,b]` field represents where CP-SAT will search next:
+    - **Minimization** (objectives decrease over time):
+      - next:[proven_lower, ~objective] where `a` is the proven bound
+      - Gap = (objective - a) / |objective|
+
+    - **Maximization** (objectives increase over time):
+      - next:[~objective, proven_upper] where `b` is the proven bound
+      - Gap = (b - objective) / |objective|
+
+    When next:[], the solution is proven optimal (gap = 0%).
 
     Example:
         >>> # Track solution quality over time
         >>> solutions = [e for e in result.search_events if e.event_type == "objective"]
         >>> for sol in solutions:
+        ...     gap_str = f"{sol.gap_percent:.2f}%" if sol.gap_percent else "optimal"
         ...     print(f"#{sol.solution_number} at {sol.time:.2f}s: "
-        ...           f"obj={sol.objective}, gap={sol.gap_percent:.2f}%")
+        ...           f"obj={sol.objective}, gap={gap_str}")
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -233,10 +247,7 @@ class ObjectiveEvent(BaseModel):
 
     solution_number: int = Field(
         ...,
-        description=(
-            "Sequential solution number (starting from 1). "
-            "Useful for tracking solution progress."
-        ),
+        description="Sequential solution number (starting from 1)",
         ge=1
     )
 
@@ -250,35 +261,47 @@ class ObjectiveEvent(BaseModel):
         ...,
         description=(
             "Objective value of this solution. "
-            "For minimization, lower is better. "
-            "For maximization, higher is better."
+            "For minimization, this decreases over time. "
+            "For maximization, this increases over time."
         )
     )
 
-    bound: float = Field(
+    proven_bound: float = Field(
         ...,
         description=(
-            "Best bound at the time this solution was found. "
-            "Gap between objective and bound shows remaining optimization potential."
+            "Proven bound on the optimal objective at this point in the search. "
+            "For minimization: no solution better than this lower bound exists. "
+            "For maximization: no solution better than this upper bound exists. "
+            "Equal to objective when next:[] (proven optimal)."
         )
     )
 
-    lower_bound: Optional[float] = Field(
+    next_min: Optional[float] = Field(
         None,
-        description="Lower bound if minimization, None otherwise"
+        description=(
+            "Lower limit of search interval from next:[min,max]. "
+            "For minimization: the proven lower bound. "
+            "For maximization: approximately current_objective + ε. "
+            "None when next:[] (optimal)."
+        )
     )
 
-    upper_bound: Optional[float] = Field(
+    next_max: Optional[float] = Field(
         None,
-        description="Upper bound if maximization, None otherwise"
+        description=(
+            "Upper limit of search interval from next:[min,max]. "
+            "For minimization: approximately current_objective - ε. "
+            "For maximization: the proven upper bound. "
+            "None when next:[] (optimal)."
+        )
     )
 
     gap_percent: Optional[float] = Field(
         None,
         description=(
-            "Optimality gap as percentage: 100 * |objective - bound| / |objective|. "
-            "0% means proven optimal. "
-            "None if objective is zero (undefined gap)."
+            "Optimality gap as percentage. "
+            "0% or None means proven optimal. "
+            "Calculated as: 100 * |objective - proven_bound| / |objective|"
         ),
         ge=0.0
     )
@@ -287,13 +310,13 @@ class ObjectiveEvent(BaseModel):
         "",
         description=(
             "Name of the subsolver that found this solution. "
-            "Examples: 'no_lp', 'quick_restart_no_lp', 'rnd_var_lns_default'"
+            "Examples: 'default_lp', 'quick_restart_no_lp', 'rnd_var_lns'"
         )
     )
 
     additional_info: str = Field(
         "",
-        description="Additional information (e.g., 'left', 'right' indicating search direction)"
+        description="Additional information from the log line"
     )
 
 
