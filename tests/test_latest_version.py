@@ -1,7 +1,15 @@
 import random
-from ortools.sat.python import cp_model  # pip install -U ortools
 import os
 import sys
+import pytest
+
+# Try to import ortools - skip tests if not available
+try:
+    from ortools.sat.python import cp_model  # pip install -U ortools
+    ORTOOLS_AVAILABLE = True
+except ImportError:
+    ORTOOLS_AVAILABLE = False
+    cp_model = None
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from cpsat_logutils import LogParser
@@ -11,6 +19,9 @@ from cpsat_logutils.blocks import (
     SolverBlock,
     ResponseBlock,
 )
+
+# Skip all tests if ortools is not available
+pytestmark = pytest.mark.skipif(not ORTOOLS_AVAILABLE, reason="ortools not installed")
 
 
 def test_latest_cpsat():
