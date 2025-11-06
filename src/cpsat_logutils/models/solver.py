@@ -185,7 +185,7 @@ class ModelStatistics(BaseModel):
 
     Example:
         >>> model = result.initial_model
-        >>> print(f"Model: {model.model_name}")
+        >>> print(f"Model: {model.cpsat_model_name}")
         >>> print(f"Type: {'Optimization' if model.is_optimization else 'Satisfaction'}")
         >>> print(f"Variables: {model.num_variables}")
         >>> print(f"Constraints: {sum(c.count for c in model.constraints)}")
@@ -202,7 +202,7 @@ class ModelStatistics(BaseModel):
         )
     )
 
-    model_name: str = Field(
+    cpsat_model_name: str = Field(
         "",
         description=(
             "Model name as it appears in the log. "
@@ -211,7 +211,7 @@ class ModelStatistics(BaseModel):
         )
     )
 
-    model_fingerprint: Optional[str] = Field(
+    cpsat_model_fingerprint: Optional[str] = Field(
         None,
         description=(
             "Unique fingerprint/hash of the model structure. "

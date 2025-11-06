@@ -76,12 +76,12 @@ class ModelStatisticsParser(ParserComponent):
         is_optimization = "optimization" in first_line.lower()
 
         # Extract model name and fingerprint
-        model_name = ""
-        model_fingerprint = None
+        cpsat_model_name = ""
+        cpsat_model_fingerprint = None
         if match := re.search(r"model '([^']*)'", first_line):
-            model_name = match.group(1)
+            cpsat_model_name = match.group(1)
         if match := re.search(r"model_fingerprint:\s*(0x[\da-fA-F]+)", first_line):
-            model_fingerprint = match.group(1)
+            cpsat_model_fingerprint = match.group(1)
 
         # Parse variables and constraints
         num_variables = None
@@ -165,8 +165,8 @@ class ModelStatisticsParser(ParserComponent):
 
         return ModelStatistics(
             is_optimization=is_optimization,
-            model_name=model_name,
-            model_fingerprint=model_fingerprint,
+            cpsat_model_name=cpsat_model_name,
+            cpsat_model_fingerprint=cpsat_model_fingerprint,
             num_variables=num_variables,
             num_booleans_in_objective=num_booleans_in_objective,
             variable_domains=variable_domains,

@@ -129,7 +129,7 @@ class TestModelStatistics:
 
         assert model is not None
         assert model.is_optimization is True
-        assert model.model_fingerprint == "0xa2a90169c5e94a12"
+        assert model.cpsat_model_fingerprint == "0xa2a90169c5e94a12"
         assert model.num_variables == 10000
         assert model.num_booleans_in_objective == 9900
         assert len(model.variable_domains) == 2

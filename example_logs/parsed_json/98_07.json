@@ -192,8 +192,8 @@
   },
   "initial_model": {
     "is_optimization": true,
-    "model_name": "",
-    "model_fingerprint": "0xdd4dd5cf572d8131",
+    "cpsat_model_name": "",
+    "cpsat_model_fingerprint": "0xdd4dd5cf572d8131",
     "num_variables": 10000,
     "num_booleans_in_objective": 10000,
     "variable_domains": [
@@ -771,8 +771,8 @@
   },
   "presolved_model": {
     "is_optimization": true,
-    "model_name": "",
-    "model_fingerprint": "0xbb8f75fded5f92b9",
+    "cpsat_model_name": "",
+    "cpsat_model_fingerprint": "0xbb8f75fded5f92b9",
     "num_variables": 2690,
     "num_booleans_in_objective": 2690,
     "variable_domains": [

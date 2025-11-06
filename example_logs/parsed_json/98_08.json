@@ -218,8 +218,8 @@
   },
   "initial_model": {
     "is_optimization": true,
-    "model_name": "",
-    "model_fingerprint": "0x79cacb3bab6a1c8c",
+    "cpsat_model_name": "",
+    "cpsat_model_fingerprint": "0x79cacb3bab6a1c8c",
     "num_variables": 831937,
     "num_booleans_in_objective": 101,
     "variable_domains": [
@@ -946,8 +946,8 @@
   },
   "presolved_model": {
     "is_optimization": true,
-    "model_name": "",
-    "model_fingerprint": "0x885747d1e59aeb68",
+    "cpsat_model_name": "",
+    "cpsat_model_fingerprint": "0x885747d1e59aeb68",
     "num_variables": 30,
     "num_booleans_in_objective": 1,
     "variable_domains": [

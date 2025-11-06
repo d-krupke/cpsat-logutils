@@ -43,7 +43,7 @@ class TestDetailedParsing:
         # Validate initial model
         assert result.initial_model is not None
         assert result.initial_model.is_optimization is True
-        assert result.initial_model.model_fingerprint == "0xa2a90169c5e94a12"
+        assert result.initial_model.cpsat_model_fingerprint == "0xa2a90169c5e94a12"
         assert result.initial_model.num_variables == 10000
         assert result.initial_model.num_booleans_in_objective == 9900
         assert len(result.initial_model.variable_domains) == 2

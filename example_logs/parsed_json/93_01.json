@@ -89,8 +89,8 @@
   },
   "initial_model": {
     "is_optimization": true,
-    "model_name": "",
-    "model_fingerprint": null,
+    "cpsat_model_name": "",
+    "cpsat_model_fingerprint": null,
     "num_variables": 290,
     "num_booleans_in_objective": null,
     "variable_domains": [
@@ -136,8 +136,8 @@
   },
   "presolved_model": {
     "is_optimization": true,
-    "model_name": "",
-    "model_fingerprint": null,
+    "cpsat_model_name": "",
+    "cpsat_model_fingerprint": null,
     "num_variables": 5492,
     "num_booleans_in_objective": null,
     "variable_domains": [
