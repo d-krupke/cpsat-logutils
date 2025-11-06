@@ -165,8 +165,7 @@ class TestCPSATComplexDomains:
         """Test creating a CP-SAT model with discrete domains."""
         pytest.importorskip("ortools")
         from ortools.sat.python import cp_model
-        from io import StringIO
-        import sys
+        from cpsat_logutils.capture import solve_and_capture
 
         model = cp_model.CpModel()
 
@@ -184,27 +183,17 @@ class TestCPSATComplexDomains:
         # Add a constraint to make the problem non-trivial
         model.Add(x + y <= 30)
 
-        # Create solver and capture log
-        solver = cp_model.CpSolver()
-        solver.parameters.log_search_progress = True
-        solver.parameters.log_to_stdout = True
-        solver.parameters.cp_model_presolve = True
-        solver.parameters.max_time_in_seconds = 1
+        # Solve and capture log using the utility
+        solve_result = solve_and_capture(
+            model,
+            parse=True,
+            solver_params={
+                'cp_model_presolve': True,
+                'max_time_in_seconds': 1
+            }
+        )
 
-        # Capture stdout
-        old_stdout = sys.stdout
-        sys.stdout = log_capture = StringIO()
-
-        try:
-            status = solver.Solve(model)
-        finally:
-            sys.stdout = old_stdout
-
-        log_content = log_capture.getvalue()
-
-        # Parse the log
-        parser = LogParser(log_content)
-        result = parser.parse()
+        result = solve_result.parsed_log
 
         # Skip if no initial model in log (CP-SAT may not log it for trivial models)
         if result.initial_model is None:
@@ -259,8 +248,7 @@ class TestCPSATComplexDomains:
         """Test creating a CP-SAT model with mixed continuous and discrete domains."""
         pytest.importorskip("ortools")
         from ortools.sat.python import cp_model
-        from io import StringIO
-        import sys
+        from cpsat_logutils.capture import solve_and_capture
 
         model = cp_model.CpModel()
 
@@ -276,27 +264,17 @@ class TestCPSATComplexDomains:
         # Add a constraint to make the problem non-trivial
         model.Add(x >= 0).OnlyEnforceIf(b)
 
-        # Create solver and capture log
-        solver = cp_model.CpSolver()
-        solver.parameters.log_search_progress = True
-        solver.parameters.log_to_stdout = True
-        solver.parameters.cp_model_presolve = True
-        solver.parameters.max_time_in_seconds = 1
+        # Solve and capture log using the utility
+        solve_result = solve_and_capture(
+            model,
+            parse=True,
+            solver_params={
+                'cp_model_presolve': True,
+                'max_time_in_seconds': 1
+            }
+        )
 
-        # Capture stdout
-        old_stdout = sys.stdout
-        sys.stdout = log_capture = StringIO()
-
-        try:
-            status = solver.Solve(model)
-        finally:
-            sys.stdout = old_stdout
-
-        log_content = log_capture.getvalue()
-
-        # Parse the log
-        parser = LogParser(log_content)
-        result = parser.parse()
+        result = solve_result.parsed_log
 
         # Skip if no initial model in log (CP-SAT may not log it for simple models)
         if result.initial_model is None:

@@ -16,6 +16,7 @@ except ImportError:
     cp_model = None  # Define cp_model as None when not available
 
 from cpsat_logutils.parser import LogParser
+from cpsat_logutils.capture import solve_and_capture
 
 # Skip all tests if ortools is not available
 pytestmark = pytest.mark.skipif(not ORTOOLS_AVAILABLE, reason="ortools not installed")
@@ -37,36 +38,18 @@ if ORTOOLS_AVAILABLE:
 
 def capture_cpsat_log(model, solver_params=None):
     """
-    Run a CP-SAT model and capture its log output.
-
-    Args:
-        model: CP model to solve
-        solver_params: Optional solver parameters
+    Helper function for backward compatibility.
+    Uses the new solve_and_capture utility.
 
     Returns:
-        tuple: (log_string, solver_response)
+        tuple: (log_string, status)
     """
-    solver = cp_model.CpSolver()
-
-    # Enable logging
-    solver.parameters.log_search_progress = True
-
-    # Set additional parameters if provided
-    if solver_params:
-        for key, value in solver_params.items():
-            setattr(solver.parameters, key, value)
-
-    # Capture log using callback (CP-SAT uses callbacks, not stdout)
-    log_lines = []
-    solver.log_callback = lambda line: log_lines.append(line)
-
-    # Solve the model
-    status = solver.Solve(model)
-
-    # Get the log
-    log_string = "\n".join(log_lines)
-
-    return log_string, status
+    result = solve_and_capture(
+        model,
+        parse=False,
+        solver_params=solver_params
+    )
+    return result.log_string, result.status
 
 
 class TestLatestVersionBasic:
@@ -87,16 +70,15 @@ class TestLatestVersionBasic:
         # Objective: maximize x + 2*y
         model.Maximize(x + 2 * y)
 
-        # Solve and capture log
-        log_string, status = capture_cpsat_log(model)
+        # Solve and capture log using the utility
+        solve_result = solve_and_capture(model, parse=True)
 
         # Verify solve was successful
-        assert status in [cp_model.OPTIMAL, cp_model.FEASIBLE]
-        assert len(log_string) > 0, "No log output captured"
+        assert solve_result.status in [cp_model.OPTIMAL, cp_model.FEASIBLE]
+        assert len(solve_result.log_string) > 0, "No log output captured"
 
-        # Parse the log
-        parser = LogParser(log_string)
-        result = parser.parse()
+        # Get the parsed result
+        result = solve_result.parsed_log
 
         # Validate parsed result
         assert result.solver_info is not None, "Failed to parse solver info"

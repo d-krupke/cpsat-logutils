@@ -13,6 +13,7 @@ except ImportError:
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from cpsat_logutils.parser import LogParser
+from cpsat_logutils.capture import solve_and_capture
 
 # Skip all tests if ortools is not available
 pytestmark = pytest.mark.skipif(not ORTOOLS_AVAILABLE, reason="ortools not installed")
@@ -32,16 +33,11 @@ def test_latest_cpsat():
     model.add(sum(x * w for x, w in zip(xs, weights)) <= capacity)
     model.maximize(sum(x * v for x, v in zip(xs, values)))
 
-    solver = cp_model.CpSolver()
-    log = []
-    solver.parameters.log_search_progress = True
-    solver.log_callback = lambda line: log.append(line)
-    status = solver.solve(model)
+    # Solve and capture log using the utility
+    solve_result = solve_and_capture(model, parse=True)
 
-    # Parse the log with new parser
-    log_str = "\n".join(log)
-    parser = LogParser(log_str)
-    result = parser.parse()
+    # Get the parsed result
+    result = solve_result.parsed_log
 
     # Verify we parsed the key components
     assert result.solver_info is not None, "Failed to parse solver info"
