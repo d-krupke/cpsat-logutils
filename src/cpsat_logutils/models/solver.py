@@ -71,15 +71,19 @@ class VariableDomain(BaseModel):
     CP-SAT groups variables by their domain types and ranges.
     This helps understand the model structure and complexity.
 
-    Domain types include:
-    - 'Booleans': Variables in {0, 1}
-    - 'in': Variables with integer domains (can be complex)
-    - 'constants': Fixed variables
+    Domain types (as they appear in CP-SAT logs):
+    - 'Booleans': Boolean variables in {0, 1}
+    - 'in': Integer variables in domain. The 'in' means "Integer in Domain".
+            These can have complex domains with discrete values and ranges.
+    - 'constants': Fixed variables (constants)
+
+    Note: The type 'in' comes from the CP-SAT log format "N in [domain]" where
+    'in' is shorthand for "integer variables constrained to domain".
 
     The domain can be represented as a list of ranges, where each range is [min, max].
     Single values are represented as [v, v].
 
-    Examples:
+    Domain representation examples:
         - [0,6] → domain_ranges = [[0, 6]] (continuous range {0,1,2,3,4,5,6})
         - [0][10][20] → domain_ranges = [[0,0], [10,10], [20,20]] (discrete {0,10,20})
         - [0,1][34][67][100] → domain_ranges = [[0,1], [34,34], [67,67], [100,100]]
@@ -88,9 +92,9 @@ class VariableDomain(BaseModel):
     Example:
         >>> for domain in result.initial_model.variable_domains:
         ...     if domain.type == 'Booleans':
-        ...         print(f"{domain.count} Booleans")
-        ...     else:
-        ...         print(f"{domain.count} in domain with {len(domain.domain_ranges)} ranges")
+        ...         print(f"{domain.count} Boolean variables")
+        ...     elif domain.type == 'in':
+        ...         print(f"{domain.count} integer variables in domain with {len(domain.domain_ranges)} ranges")
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -104,9 +108,10 @@ class VariableDomain(BaseModel):
     type: str = Field(
         ...,
         description=(
-            "Domain type description. "
-            "Common types: 'Booleans', 'in', 'constants'. "
-            "The exact format depends on CP-SAT version."
+            "Domain type as it appears in the CP-SAT log. "
+            "Common types: 'Booleans' (Boolean variables), "
+            "'in' (integer variables in domain), 'constants' (fixed variables). "
+            "Note: 'in' is shorthand for 'Integer in Domain' from the log format 'N in [domain]'."
         ),
         min_length=1
     )

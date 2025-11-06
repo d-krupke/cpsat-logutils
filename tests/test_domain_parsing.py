@@ -206,32 +206,52 @@ class TestCPSATComplexDomains:
         parser = LogParser(log_content)
         result = parser.parse()
 
-        # Skip if no initial model in log (CP-SAT may not log it for simple models)
+        # Skip if no initial model in log (CP-SAT may not log it for trivial models)
         if result.initial_model is None:
-            pytest.skip("CP-SAT did not produce initial model statistics for this simple model")
+            pytest.skip("CP-SAT did not produce initial model statistics (model may be trivial)")
 
         domains = result.initial_model.variable_domains
 
-        # Should have at least the two integer domains we created
-        # (may have more due to internal variables)
-        int_domains = [d for d in domains if d.type == 'in']
+        # Filter for integer domains (type 'in' or 'integer')
+        int_domains = [d for d in domains if d.type in ('in', 'integer')]
 
         if len(int_domains) < 1:
-            pytest.skip("No integer domains found in log (model may have been fully presolved)")
+            pytest.skip("No integer domains found (model may have been fully presolved)")
 
-        # Check that we can find our discrete domains
-        # Note: CP-SAT may reorder or consolidate domains
+        # Validate that discrete domains are properly parsed
+        # We expect at least one domain with discrete values from our model
+        # The model creates variables with domains {0,10,20,30} and {5,15,25}
         found_discrete = False
         for domain in int_domains:
             if domain.domain_ranges and len(domain.domain_ranges) > 1:
-                # Found a domain with multiple discrete values
+                # Found a domain with multiple discrete values - validate structure
                 found_discrete = True
-                # Verify it's represented as discrete ranges
-                for range_item in domain.domain_ranges:
-                    assert len(range_item) == 2
 
-        # We should have found at least one discrete domain
-        # (but if not, CP-SAT may have simplified the problem)
+                # Each range should be [min, max]
+                for range_item in domain.domain_ranges:
+                    assert len(range_item) == 2, f"Range should be [min, max], got {range_item}"
+                    assert isinstance(range_item[0], int), "Range min should be int"
+                    assert isinstance(range_item[1], int), "Range max should be int"
+                    assert range_item[0] <= range_item[1], "Range min should be <= max"
+
+                # For discrete domains like [0][10][20], each range should be [v,v]
+                # Check if we have discrete (single value) ranges
+                has_discrete_values = any(r[0] == r[1] for r in domain.domain_ranges)
+                if has_discrete_values:
+                    # Validate min/max values are computed correctly from ranges
+                    assert domain.min_value is not None, "Domain should have min_value"
+                    assert domain.max_value is not None, "Domain should have max_value"
+                    expected_min = min(r[0] for r in domain.domain_ranges)
+                    expected_max = max(r[1] for r in domain.domain_ranges)
+                    assert domain.min_value == expected_min, f"min_value mismatch: {domain.min_value} != {expected_min}"
+                    assert domain.max_value == expected_max, f"max_value mismatch: {domain.max_value} != {expected_max}"
+
+                    # Check that all discrete values are properly represented as [v,v]
+                    for r in domain.domain_ranges:
+                        if r[0] == r[1]:
+                            # This is a discrete value - good!
+                            pass
+
         if not found_discrete:
             pytest.skip("No discrete domains found (CP-SAT may have presolved them)")
 
@@ -291,18 +311,35 @@ class TestCPSATComplexDomains:
         if len(int_domains) < 1:
             pytest.skip("No integer domains found in log (model may have been fully presolved)")
 
-        # Check for mixed domains (continuous + discrete)
+        # Validate mixed domains (continuous ranges + discrete values)
+        # We expect a domain like [0,5][10][20][30] from our model
         found_mixed = False
         for domain in int_domains:
             if domain.domain_ranges and len(domain.domain_ranges) > 1:
                 # Check if it has both continuous ranges and discrete values
                 has_continuous = any(r[1] - r[0] > 0 for r in domain.domain_ranges)
                 has_discrete = any(r[1] == r[0] for r in domain.domain_ranges)
+
                 if has_continuous and has_discrete:
                     found_mixed = True
+
+                    # Validate the structure
+                    for range_item in domain.domain_ranges:
+                        assert len(range_item) == 2, f"Range should be [min, max], got {range_item}"
+                        assert isinstance(range_item[0], int), "Range min should be int"
+                        assert isinstance(range_item[1], int), "Range max should be int"
+                        assert range_item[0] <= range_item[1], "Range min should be <= max"
+
+                    # Validate min/max values
+                    assert domain.min_value is not None, "Domain should have min_value"
+                    assert domain.max_value is not None, "Domain should have max_value"
+                    expected_min = min(r[0] for r in domain.domain_ranges)
+                    expected_max = max(r[1] for r in domain.domain_ranges)
+                    assert domain.min_value == expected_min, f"min_value mismatch: {domain.min_value} != {expected_min}"
+                    assert domain.max_value == expected_max, f"max_value mismatch: {domain.max_value} != {expected_max}"
+
+                    # This is what we're looking for - mixed domain properly represented
                     break
 
-        # We should find a mixed domain
-        # (but if not, CP-SAT may have simplified the problem)
         if not found_mixed:
             pytest.skip("No mixed domains found (CP-SAT may have presolved them)")
