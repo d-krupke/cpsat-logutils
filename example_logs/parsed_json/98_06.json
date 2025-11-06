@@ -176,84 +176,168 @@
       {
         "count": 3,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            100000
+          ]
+        ],
         "min_value": 0,
         "max_value": 100000
       },
       {
         "count": 6,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            110000
+          ]
+        ],
         "min_value": 0,
         "max_value": 110000
       },
       {
         "count": 7,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            120000
+          ]
+        ],
         "min_value": 0,
         "max_value": 120000
       },
       {
         "count": 9,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            130000
+          ]
+        ],
         "min_value": 0,
         "max_value": 130000
       },
       {
         "count": 4,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            270000
+          ]
+        ],
         "min_value": 0,
         "max_value": 270000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            280000
+          ]
+        ],
         "min_value": 0,
         "max_value": 280000
       },
       {
         "count": 5,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            290000
+          ]
+        ],
         "min_value": 0,
         "max_value": 290000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            310000
+          ]
+        ],
         "min_value": 0,
         "max_value": 310000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            330000
+          ]
+        ],
         "min_value": 0,
         "max_value": 330000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            340000
+          ]
+        ],
         "min_value": 0,
         "max_value": 340000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            350000
+          ]
+        ],
         "min_value": 0,
         "max_value": 350000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            370000
+          ]
+        ],
         "min_value": 0,
         "max_value": 370000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            380000
+          ]
+        ],
         "min_value": 0,
         "max_value": 380000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            390000
+          ]
+        ],
         "min_value": 0,
         "max_value": 390000
       }
@@ -452,84 +536,168 @@
       {
         "count": 3,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            100000
+          ]
+        ],
         "min_value": 0,
         "max_value": 100000
       },
       {
         "count": 6,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            110000
+          ]
+        ],
         "min_value": 0,
         "max_value": 110000
       },
       {
         "count": 7,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            120000
+          ]
+        ],
         "min_value": 0,
         "max_value": 120000
       },
       {
         "count": 9,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            130000
+          ]
+        ],
         "min_value": 0,
         "max_value": 130000
       },
       {
         "count": 4,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            270000
+          ]
+        ],
         "min_value": 0,
         "max_value": 270000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            280000
+          ]
+        ],
         "min_value": 0,
         "max_value": 280000
       },
       {
         "count": 5,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            290000
+          ]
+        ],
         "min_value": 0,
         "max_value": 290000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            310000
+          ]
+        ],
         "min_value": 0,
         "max_value": 310000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            330000
+          ]
+        ],
         "min_value": 0,
         "max_value": 330000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            340000
+          ]
+        ],
         "min_value": 0,
         "max_value": 340000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            350000
+          ]
+        ],
         "min_value": 0,
         "max_value": 350000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            370000
+          ]
+        ],
         "min_value": 0,
         "max_value": 370000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            380000
+          ]
+        ],
         "min_value": 0,
         "max_value": 380000
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            390000
+          ]
+        ],
         "min_value": 0,
         "max_value": 390000
       }

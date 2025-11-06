@@ -225,6 +225,12 @@
       {
         "count": 9000,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       }
@@ -603,6 +609,12 @@
       {
         "count": 8995,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       }

@@ -153,12 +153,24 @@
       {
         "count": 9900,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       },
       {
         "count": 100,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            99
+          ]
+        ],
         "min_value": 0,
         "max_value": 99
       }
@@ -690,12 +702,24 @@
       {
         "count": 9900,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       },
       {
         "count": 99,
         "type": "in",
+        "domain_ranges": [
+          [
+            1,
+            99
+          ]
+        ],
         "min_value": 1,
         "max_value": 99
       }

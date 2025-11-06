@@ -110,26 +110,56 @@ class ModelStatisticsParser(ParserComponent):
 
             # Variable domain lines
             elif match := re.match(
-                r"\s*-\s*([\d']+)\s+(Booleans?|in|constants)\s+(?:in\s+)?[\[{]([^\]}\n]+)[\]}]",
+                r"\s*-\s*([\d']+)\s+(Booleans?|in|constants)\s+(?:in\s+)?(.+)",
                 line,
             ):
                 count = parse_number(match.group(1))
                 var_type = match.group(2)
-                domain_str = match.group(3)
+                domain_part = match.group(3).strip()
 
-                # Parse domain range
-                min_val, max_val = None, None
-                if "," in domain_str:
-                    # Range like [0,1] or constants like {1,2,3}
-                    parts = domain_str.split(",")
-                    if len(parts) >= 2:
-                        min_val = parse_number(parts[0])
-                        max_val = parse_number(parts[-1])
+                # Parse domain ranges
+                # Format examples:
+                # [0,1] → [[0, 1]]
+                # [0][10][20] → [[0,0], [10,10], [20,20]]
+                # [0,1][34][67][100] → [[0,1], [34,34], [67,67], [100,100]]
+                domain_ranges = []
+                min_val = None
+                max_val = None
+
+                # Extract all bracket contents (handles both [] and {})
+                bracket_pattern = r'[\[{]([^\]\}]+)[\]}]'
+                for bracket_match in re.finditer(bracket_pattern, domain_part):
+                    range_str = bracket_match.group(1)
+
+                    if ',' in range_str:
+                        # Continuous range like [0,6]
+                        parts = range_str.split(',')
+                        if len(parts) >= 2:
+                            range_min = parse_number(parts[0])
+                            range_max = parse_number(parts[-1])
+                            domain_ranges.append([range_min, range_max])
+
+                            # Update overall min/max
+                            if min_val is None or range_min < min_val:
+                                min_val = range_min
+                            if max_val is None or range_max > max_val:
+                                max_val = range_max
+                    else:
+                        # Single value like [10]
+                        val = parse_number(range_str)
+                        domain_ranges.append([val, val])
+
+                        # Update overall min/max
+                        if min_val is None or val < min_val:
+                            min_val = val
+                        if max_val is None or val > max_val:
+                            max_val = val
 
                 variable_domains.append(
                     VariableDomain(
                         count=count,
                         type=var_type,
+                        domain_ranges=domain_ranges if domain_ranges else None,
                         min_value=min_val,
                         max_value=max_val,
                     )

@@ -152,224 +152,446 @@
       {
         "count": 610,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       },
       {
         "count": 20,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            20
+          ]
+        ],
         "min_value": 0,
         "max_value": 20
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            153
+          ]
+        ],
         "min_value": 0,
         "max_value": 153
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            166
+          ]
+        ],
         "min_value": 0,
         "max_value": 166
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            204
+          ]
+        ],
         "min_value": 0,
         "max_value": 204
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            208
+          ]
+        ],
         "min_value": 0,
         "max_value": 208
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            209
+          ]
+        ],
         "min_value": 0,
         "max_value": 209
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            216
+          ]
+        ],
         "min_value": 0,
         "max_value": 216
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            217
+          ]
+        ],
         "min_value": 0,
         "max_value": 217
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            219
+          ]
+        ],
         "min_value": 0,
         "max_value": 219
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            227
+          ]
+        ],
         "min_value": 0,
         "max_value": 227
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            232
+          ]
+        ],
         "min_value": 0,
         "max_value": 232
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            234
+          ]
+        ],
         "min_value": 0,
         "max_value": 234
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            235
+          ]
+        ],
         "min_value": 0,
         "max_value": 235
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            236
+          ]
+        ],
         "min_value": 0,
         "max_value": 236
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            237
+          ]
+        ],
         "min_value": 0,
         "max_value": 237
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            238
+          ]
+        ],
         "min_value": 0,
         "max_value": 238
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            247
+          ]
+        ],
         "min_value": 0,
         "max_value": 247
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            248
+          ]
+        ],
         "min_value": 0,
         "max_value": 248
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            453
+          ]
+        ],
         "min_value": 0,
         "max_value": 453
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            466
+          ]
+        ],
         "min_value": 0,
         "max_value": 466
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            504
+          ]
+        ],
         "min_value": 0,
         "max_value": 504
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            508
+          ]
+        ],
         "min_value": 0,
         "max_value": 508
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            509
+          ]
+        ],
         "min_value": 0,
         "max_value": 509
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            516
+          ]
+        ],
         "min_value": 0,
         "max_value": 516
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            517
+          ]
+        ],
         "min_value": 0,
         "max_value": 517
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            519
+          ]
+        ],
         "min_value": 0,
         "max_value": 519
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            527
+          ]
+        ],
         "min_value": 0,
         "max_value": 527
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            532
+          ]
+        ],
         "min_value": 0,
         "max_value": 532
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            534
+          ]
+        ],
         "min_value": 0,
         "max_value": 534
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            535
+          ]
+        ],
         "min_value": 0,
         "max_value": 535
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            536
+          ]
+        ],
         "min_value": 0,
         "max_value": 536
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            537
+          ]
+        ],
         "min_value": 0,
         "max_value": 537
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            538
+          ]
+        ],
         "min_value": 0,
         "max_value": 538
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            547
+          ]
+        ],
         "min_value": 0,
         "max_value": 547
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            548
+          ]
+        ],
         "min_value": 0,
         "max_value": 548
       },
       {
         "count": 1,
         "type": "constants",
-        "min_value": null,
-        "max_value": null
+        "domain_ranges": [
+          [
+            0,
+            0
+          ]
+        ],
+        "min_value": 0,
+        "max_value": 0
       }
     ],
     "constraints": [
@@ -940,216 +1162,432 @@
       {
         "count": 590,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            150
+          ]
+        ],
         "min_value": 0,
         "max_value": 150
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            153
+          ]
+        ],
         "min_value": 0,
         "max_value": 153
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            163
+          ]
+        ],
         "min_value": 0,
         "max_value": 163
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            165
+          ]
+        ],
         "min_value": 0,
         "max_value": 165
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            166
+          ]
+        ],
         "min_value": 0,
         "max_value": 166
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            167
+          ]
+        ],
         "min_value": 0,
         "max_value": 167
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            171
+          ]
+        ],
         "min_value": 0,
         "max_value": 171
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            181
+          ]
+        ],
         "min_value": 0,
         "max_value": 181
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            195
+          ]
+        ],
         "min_value": 0,
         "max_value": 195
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            209
+          ]
+        ],
         "min_value": 0,
         "max_value": 209
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            216
+          ]
+        ],
         "min_value": 0,
         "max_value": 216
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            217
+          ]
+        ],
         "min_value": 0,
         "max_value": 217
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            219
+          ]
+        ],
         "min_value": 0,
         "max_value": 219
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            227
+          ]
+        ],
         "min_value": 0,
         "max_value": 227
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            235
+          ]
+        ],
         "min_value": 0,
         "max_value": 235
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            238
+          ]
+        ],
         "min_value": 0,
         "max_value": 238
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            247
+          ]
+        ],
         "min_value": 0,
         "max_value": 247
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            451
+          ]
+        ],
         "min_value": 0,
         "max_value": 451
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            453
+          ]
+        ],
         "min_value": 0,
         "max_value": 453
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            464
+          ]
+        ],
         "min_value": 0,
         "max_value": 464
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            484
+          ]
+        ],
         "min_value": 0,
         "max_value": 484
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            487
+          ]
+        ],
         "min_value": 0,
         "max_value": 487
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            488
+          ]
+        ],
         "min_value": 0,
         "max_value": 488
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            489
+          ]
+        ],
         "min_value": 0,
         "max_value": 489
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            499
+          ]
+        ],
         "min_value": 0,
         "max_value": 499
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            504
+          ]
+        ],
         "min_value": 0,
         "max_value": 504
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            507
+          ]
+        ],
         "min_value": 0,
         "max_value": 507
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            508
+          ]
+        ],
         "min_value": 0,
         "max_value": 508
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            516
+          ]
+        ],
         "min_value": 0,
         "max_value": 516
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            532
+          ]
+        ],
         "min_value": 0,
         "max_value": 532
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            534
+          ]
+        ],
         "min_value": 0,
         "max_value": 534
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            536
+          ]
+        ],
         "min_value": 0,
         "max_value": 536
       },
       {
         "count": 2,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            537
+          ]
+        ],
         "min_value": 0,
         "max_value": 537
       },
       {
         "count": 1,
         "type": "in",
+        "domain_ranges": [
+          [
+            0,
+            548
+          ]
+        ],
         "min_value": 0,
         "max_value": 548
       },
       {
         "count": 19,
         "type": "in",
+        "domain_ranges": [
+          [
+            1,
+            20
+          ]
+        ],
         "min_value": 1,
         "max_value": 20
       }

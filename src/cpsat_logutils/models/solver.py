@@ -73,14 +73,24 @@ class VariableDomain(BaseModel):
 
     Domain types include:
     - 'Booleans': Variables in {0, 1}
-    - 'Integers': Variables with integer domains
-    - 'Constants': Fixed variables
+    - 'in': Variables with integer domains (can be complex)
+    - 'constants': Fixed variables
+
+    The domain can be represented as a list of ranges, where each range is [min, max].
+    Single values are represented as [v, v].
+
+    Examples:
+        - [0,6] → domain_ranges = [[0, 6]] (continuous range {0,1,2,3,4,5,6})
+        - [0][10][20] → domain_ranges = [[0,0], [10,10], [20,20]] (discrete {0,10,20})
+        - [0,1][34][67][100] → domain_ranges = [[0,1], [34,34], [67,67], [100,100]]
+          (mixed: {0,1,34,67,100})
 
     Example:
         >>> for domain in result.initial_model.variable_domains:
-        ...     print(f"{domain.count} {domain.type} in [{domain.min_value}, {domain.max_value}]")
-        10 Booleans in [0, 1]
-        5 integers in [0, 100]
+        ...     if domain.type == 'Booleans':
+        ...         print(f"{domain.count} Booleans")
+        ...     else:
+        ...         print(f"{domain.count} in domain with {len(domain.domain_ranges)} ranges")
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -95,20 +105,35 @@ class VariableDomain(BaseModel):
         ...,
         description=(
             "Domain type description. "
-            "Common types: 'Booleans', 'integers in [min..max]', 'constants'. "
+            "Common types: 'Booleans', 'in', 'constants'. "
             "The exact format depends on CP-SAT version."
         ),
         min_length=1
     )
 
+    domain_ranges: Optional[List[List[int]]] = Field(
+        None,
+        description=(
+            "Domain represented as list of [min, max] ranges. "
+            "Each range is inclusive. Single values are [v, v]. "
+            "Example: [[0,1], [34,34], [67,67], [100,100]] for domain {0,1,34,67,100}"
+        )
+    )
+
     min_value: Optional[int] = Field(
         None,
-        description="Minimum value in the domain (None if unbounded or not applicable)"
+        description=(
+            "Minimum value in the domain (derived from domain_ranges if present). "
+            "For backward compatibility."
+        )
     )
 
     max_value: Optional[int] = Field(
         None,
-        description="Maximum value in the domain (None if unbounded or not applicable)"
+        description=(
+            "Maximum value in the domain (derived from domain_ranges if present). "
+            "For backward compatibility."
+        )
     )
 
 

@@ -70,12 +70,24 @@
       {
         "count": 78660,
         "type": "Booleans",
+        "domain_ranges": [
+          [
+            0,
+            1
+          ]
+        ],
         "min_value": 0,
         "max_value": 1
       },
       {
         "count": 37,
         "type": "constants",
+        "domain_ranges": [
+          [
+            -975,
+            3449
+          ]
+        ],
         "min_value": -975,
         "max_value": 3449
       }
