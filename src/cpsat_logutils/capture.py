@@ -63,6 +63,7 @@ class SolveResult:
 def solve_and_capture(
     model,
     parse: bool = True,
+    solver: Optional[Any] = None,
     solver_params: Optional[Dict[str, Any]] = None,
     log_search_progress: bool = True,
 ) -> SolveResult:
@@ -75,9 +76,14 @@ def solve_and_capture(
     Args:
         model: CP-SAT model to solve (ortools.sat.python.cp_model.CpModel)
         parse: If True, automatically parse the log and return parsed result
-        solver_params: Optional dict of solver parameters to set
+        solver: Optional pre-configured solver instance. If provided, this solver
+                will be used instead of creating a new one. In this case,
+                solver_params and log_search_progress are ignored.
+        solver_params: Optional dict of solver parameters to set. Only used if
+                      solver is not provided.
                       (e.g., {'max_time_in_seconds': 10, 'num_search_workers': 4})
-        log_search_progress: If True, enable search progress logging (default: True)
+        log_search_progress: If True, enable search progress logging (default: True).
+                           Only used if solver is not provided.
 
     Returns:
         SolveResult containing:
@@ -86,7 +92,7 @@ def solve_and_capture(
             - parsed_log: Parsed log (CPSATLog) if parse=True, else None
             - solver: The solver instance
 
-    Example:
+    Example with auto-created solver:
         >>> from ortools.sat.python import cp_model
         >>> from cpsat_logutils.capture import solve_and_capture
         >>>
@@ -94,9 +100,20 @@ def solve_and_capture(
         >>> x = model.NewIntVar(0, 10, 'x')
         >>> model.Maximize(x)
         >>>
-        >>> result = solve_and_capture(model)
+        >>> # Let the function create and configure the solver
+        >>> result = solve_and_capture(model, solver_params={'max_time_in_seconds': 10})
         >>> print(result.parsed_log.solver_info.version)
-        >>> print(result.parsed_log.response.status)
+
+    Example with pre-configured solver:
+        >>> # Configure your own solver
+        >>> solver = cp_model.CpSolver()
+        >>> solver.parameters.max_time_in_seconds = 10
+        >>> solver.parameters.num_search_workers = 4
+        >>> solver.parameters.log_search_progress = True
+        >>>
+        >>> # Pass it to solve_and_capture
+        >>> result = solve_and_capture(model, solver=solver)
+        >>> print(result.status)
 
     Raises:
         ImportError: If ortools is not installed
@@ -107,16 +124,17 @@ def solve_and_capture(
             "Install it with: pip install ortools"
         )
 
-    # Create solver
-    solver = cp_model.CpSolver()
+    # Use provided solver or create a new one
+    if solver is None:
+        solver = cp_model.CpSolver()
 
-    # Enable logging
-    solver.parameters.log_search_progress = log_search_progress
+        # Enable logging
+        solver.parameters.log_search_progress = log_search_progress
 
-    # Set additional parameters if provided
-    if solver_params:
-        for key, value in solver_params.items():
-            setattr(solver.parameters, key, value)
+        # Set additional parameters if provided
+        if solver_params:
+            for key, value in solver_params.items():
+                setattr(solver.parameters, key, value)
 
     # Capture log using callback
     # CP-SAT calls this callback for each log line
@@ -145,6 +163,7 @@ def solve_and_capture(
 
 def capture_log(
     model,
+    solver: Optional[Any] = None,
     solver_params: Optional[Dict[str, Any]] = None,
     log_search_progress: bool = True,
 ) -> Tuple[str, int]:
@@ -156,20 +175,22 @@ def capture_log(
 
     Args:
         model: CP-SAT model to solve
-        solver_params: Optional dict of solver parameters
-        log_search_progress: If True, enable search progress logging
+        solver: Optional pre-configured solver instance
+        solver_params: Optional dict of solver parameters (ignored if solver provided)
+        log_search_progress: If True, enable search progress logging (ignored if solver provided)
 
     Returns:
         tuple: (log_string, status)
 
     Example:
-        >>> log, status = capture_log(model)
+        >>> log, status = capture_log(model, solver_params={'max_time_in_seconds': 10})
         >>> parser = LogParser(log)
         >>> result = parser.parse()
     """
     result = solve_and_capture(
         model,
         parse=False,
+        solver=solver,
         solver_params=solver_params,
         log_search_progress=log_search_progress
     )
