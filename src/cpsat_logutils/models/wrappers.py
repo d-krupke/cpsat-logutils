@@ -42,6 +42,10 @@ class SearchEvents(BaseModel):
         description="List of search events (BoundEvent, ObjectiveEvent, ModelEvent)"
     )
 
+    def __len__(self) -> int:
+        """Return the number of events."""
+        return len(self.events)
+
     def bounds_and_solutions_df(self) -> Any:
         """
         Get DataFrame of bound and objective events for convergence analysis.
@@ -151,6 +155,10 @@ class PresolveEntries(BaseModel):
         description="List of presolve operations"
     )
 
+    def __len__(self) -> int:
+        """Return the number of presolve entries."""
+        return len(self.entries)
+
     def to_dataframe(self) -> Any:
         """
         Get DataFrame of presolve operations.
@@ -189,6 +197,10 @@ class TaskTiming(BaseModel):
         default_factory=list,
         description="List of task timing entries"
     )
+
+    def __len__(self) -> int:
+        """Return the number of task timing entries."""
+        return len(self.entries)
 
     def to_dataframe(self) -> Any:
         """
@@ -229,6 +241,10 @@ class SearchStatistics(BaseModel):
         description="List of search statistics entries"
     )
 
+    def __len__(self) -> int:
+        """Return the number of search statistics entries."""
+        return len(self.entries)
+
     def to_dataframe(self) -> Any:
         """
         Get DataFrame of search statistics.
@@ -262,6 +278,10 @@ class SATStatistics(BaseModel):
         description="List of SAT statistics entries"
     )
 
+    def __len__(self) -> int:
+        """Return the number of SAT statistics entries."""
+        return len(self.entries)
+
     def to_dataframe(self) -> Any:
         """Get DataFrame of SAT statistics."""
         _require_pandas()
@@ -284,6 +304,10 @@ class LNSStatistics(BaseModel):
         default_factory=list,
         description="List of LNS statistics entries"
     )
+
+    def __len__(self) -> int:
+        """Return the number of LNS statistics entries."""
+        return len(self.entries)
 
     def to_dataframe(self) -> Any:
         """Get DataFrame of LNS statistics."""
@@ -308,6 +332,10 @@ class LSStatistics(BaseModel):
         description="List of LS statistics entries"
     )
 
+    def __len__(self) -> int:
+        """Return the number of LS statistics entries."""
+        return len(self.entries)
+
     def to_dataframe(self) -> Any:
         """Get DataFrame of LS statistics."""
         _require_pandas()
@@ -331,6 +359,10 @@ class LPStatistics(BaseModel):
         description="List of LP statistics entries"
     )
 
+    def __len__(self) -> int:
+        """Return the number of LP statistics entries."""
+        return len(self.entries)
+
     def to_dataframe(self) -> Any:
         """Get DataFrame of LP statistics."""
         _require_pandas()
@@ -353,6 +385,10 @@ class ObjectiveBoundsTable(BaseModel):
         default_factory=list,
         description="List of objective bound entries"
     )
+
+    def __len__(self) -> int:
+        """Return the number of objective bound entries."""
+        return len(self.entries)
 
     def to_dataframe(self) -> Any:
         """
@@ -388,6 +424,10 @@ class VariableDomains(BaseModel):
         default_factory=list,
         description="List of variable domain descriptions"
     )
+
+    def __len__(self) -> int:
+        """Return the number of variable domain entries."""
+        return len(self.domains)
 
     def to_dataframe(self) -> Any:
         """
