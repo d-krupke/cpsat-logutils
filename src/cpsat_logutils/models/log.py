@@ -12,22 +12,26 @@ from pydantic import BaseModel, Field, ConfigDict
 
 from .metadata import LogMetadata
 from .solver import SolverInfo, ModelStatistics
-from .presolve import PresolveEntry, PresolveSummary, PreloadingInfo
-from .search import SearchInfo, SearchEvent
+from .presolve import PresolveSummary, PreloadingInfo
+from .search import SearchInfo
 from .statistics import (
-    TaskTimingEntry,
-    SearchStatEntry,
-    SATStatEntry,
-    LNSStatEntry,
-    LSStatEntry,
-    LPStatEntry,
     SolutionRepositories,
     SolutionEntry,
-    ObjectiveBoundEntry,
     ImprovingBoundsShared,
     ClausesShared,
 )
 from .response import CPSolverResponse
+from .wrappers import (
+    SearchEvents,
+    PresolveEntries,
+    TaskTiming,
+    SearchStatistics,
+    SATStatistics,
+    LNSStatistics,
+    LSStatistics,
+    LPStatistics,
+    ObjectiveBoundsTable,
+)
 
 
 class CPSATLog(BaseModel):
@@ -122,11 +126,12 @@ class CPSATLog(BaseModel):
         )
     )
 
-    presolve_log: List[PresolveEntry] = Field(
-        default_factory=list,
+    presolve_log: PresolveEntries = Field(
+        default_factory=lambda: PresolveEntries(entries=[]),
         description=(
             "Detailed log of presolve operations. "
-            "Each entry represents a presolve transformation step."
+            "Each entry represents a presolve transformation step. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
@@ -162,60 +167,67 @@ class CPSATLog(BaseModel):
         )
     )
 
-    search_events: List[SearchEvent] = Field(
-        default_factory=list,
+    search_events: SearchEvents = Field(
+        default_factory=lambda: SearchEvents(events=[]),
         description=(
             "Real-time search progress events. "
             "Includes solution improvements, bound updates, and model changes. "
-            "Filter by event_type to get specific event types."
+            "Use .bounds_and_solutions_df() for convergence analysis, "
+            "or .model_events_df() for model changes."
         )
     )
 
-    task_timing: List[TaskTimingEntry] = Field(
-        default_factory=list,
+    task_timing: TaskTiming = Field(
+        default_factory=lambda: TaskTiming(entries=[]),
         description=(
             "Time spent by each subsolver task. "
-            "Useful for understanding which strategies consume the most time."
+            "Useful for understanding which strategies consume the most time. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
-    search_stats: List[SearchStatEntry] = Field(
-        default_factory=list,
+    search_stats: SearchStatistics = Field(
+        default_factory=lambda: SearchStatistics(entries=[]),
         description=(
             "Core search statistics (conflicts, branches, propagations) "
-            "broken down by subsolver"
+            "broken down by subsolver. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
-    sat_stats: List[SATStatEntry] = Field(
-        default_factory=list,
+    sat_stats: SATStatistics = Field(
+        default_factory=lambda: SATStatistics(entries=[]),
         description=(
             "Detailed SAT solver statistics by subsolver. "
-            "Contains low-level metrics like clause learning."
+            "Contains low-level metrics like clause learning. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
-    lns_stats: List[LNSStatEntry] = Field(
-        default_factory=list,
+    lns_stats: LNSStatistics = Field(
+        default_factory=lambda: LNSStatistics(entries=[]),
         description=(
             "Large Neighborhood Search statistics. "
-            "Shows LNS subsolver effectiveness at finding solutions."
+            "Shows LNS subsolver effectiveness at finding solutions. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
-    ls_stats: List[LSStatEntry] = Field(
-        default_factory=list,
+    ls_stats: LSStatistics = Field(
+        default_factory=lambda: LSStatistics(entries=[]),
         description=(
             "Local Search statistics. "
-            "Shows LS subsolver solution improvements."
+            "Shows LS subsolver solution improvements. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
-    lp_stats: List[LPStatEntry] = Field(
-        default_factory=list,
+    lp_stats: LPStatistics = Field(
+        default_factory=lambda: LPStatistics(entries=[]),
         description=(
             "Linear Programming statistics. "
-            "Shows LP relaxation usage and effectiveness."
+            "Shows LP relaxation usage and effectiveness. "
+            "Use .to_dataframe() to export as pandas DataFrame."
         )
     )
 
@@ -234,11 +246,12 @@ class CPSATLog(BaseModel):
         )
     )
 
-    objective_bounds: List[ObjectiveBoundEntry] = Field(
-        default_factory=list,
+    objective_bounds: ObjectiveBoundsTable = Field(
+        default_factory=lambda: ObjectiveBoundsTable(entries=[]),
         description=(
             "Objective bound improvements by subsolver. "
-            "Shows which subsolvers are effective at finding bounds."
+            "Shows which subsolvers are effective at finding bounds. "
+            "Use .to_dataframe() to export as pandas DataFrame for convergence plotting."
         )
     )
 

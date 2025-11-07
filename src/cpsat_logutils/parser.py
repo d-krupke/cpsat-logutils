@@ -174,6 +174,72 @@ class LogParser:
         metadata = self._build_metadata(parsed_data, all_line_references)
         parsed_data["metadata"] = metadata
 
+        # Wrap lists in wrapper models for DataFrame export capability
+        from .models.wrappers import (
+            SearchEvents,
+            PresolveEntries,
+            TaskTiming,
+            SearchStatistics,
+            SATStatistics,
+            LNSStatistics,
+            LSStatistics,
+            LPStatistics,
+            ObjectiveBoundsTable,
+            VariableDomains,
+        )
+
+        # Wrap search_events
+        if "search_events" in parsed_data and parsed_data["search_events"] is not None:
+            if isinstance(parsed_data["search_events"], list):
+                parsed_data["search_events"] = SearchEvents(events=parsed_data["search_events"])
+
+        # Wrap presolve_log
+        if "presolve_log" in parsed_data and parsed_data["presolve_log"] is not None:
+            if isinstance(parsed_data["presolve_log"], list):
+                parsed_data["presolve_log"] = PresolveEntries(entries=parsed_data["presolve_log"])
+
+        # Wrap task_timing
+        if "task_timing" in parsed_data and parsed_data["task_timing"] is not None:
+            if isinstance(parsed_data["task_timing"], list):
+                parsed_data["task_timing"] = TaskTiming(entries=parsed_data["task_timing"])
+
+        # Wrap search_stats
+        if "search_stats" in parsed_data and parsed_data["search_stats"] is not None:
+            if isinstance(parsed_data["search_stats"], list):
+                parsed_data["search_stats"] = SearchStatistics(entries=parsed_data["search_stats"])
+
+        # Wrap sat_stats
+        if "sat_stats" in parsed_data and parsed_data["sat_stats"] is not None:
+            if isinstance(parsed_data["sat_stats"], list):
+                parsed_data["sat_stats"] = SATStatistics(entries=parsed_data["sat_stats"])
+
+        # Wrap lns_stats
+        if "lns_stats" in parsed_data and parsed_data["lns_stats"] is not None:
+            if isinstance(parsed_data["lns_stats"], list):
+                parsed_data["lns_stats"] = LNSStatistics(entries=parsed_data["lns_stats"])
+
+        # Wrap ls_stats
+        if "ls_stats" in parsed_data and parsed_data["ls_stats"] is not None:
+            if isinstance(parsed_data["ls_stats"], list):
+                parsed_data["ls_stats"] = LSStatistics(entries=parsed_data["ls_stats"])
+
+        # Wrap lp_stats
+        if "lp_stats" in parsed_data and parsed_data["lp_stats"] is not None:
+            if isinstance(parsed_data["lp_stats"], list):
+                parsed_data["lp_stats"] = LPStatistics(entries=parsed_data["lp_stats"])
+
+        # Wrap objective_bounds
+        if "objective_bounds" in parsed_data and parsed_data["objective_bounds"] is not None:
+            if isinstance(parsed_data["objective_bounds"], list):
+                parsed_data["objective_bounds"] = ObjectiveBoundsTable(entries=parsed_data["objective_bounds"])
+
+        # Wrap variable_domains in initial_model and presolved_model
+        for model_field in ["initial_model", "presolved_model"]:
+            if model_field in parsed_data and parsed_data[model_field] is not None:
+                model = parsed_data[model_field]
+                if hasattr(model, "variable_domains") and isinstance(model.variable_domains, list):
+                    model.variable_domains = VariableDomains(domains=model.variable_domains)
+
         # Create and return CPSATLog model
         return CPSATLog(**parsed_data)
 

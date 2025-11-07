@@ -65,6 +65,24 @@ from .response import (
     CPSolverResponse,
 )
 
+# Wrapper models with DataFrame export
+from .wrappers import (
+    SearchEvents,
+    PresolveEntries,
+    TaskTiming,
+    SearchStatistics,
+    SATStatistics,
+    LNSStatistics,
+    LSStatistics,
+    LPStatistics,
+    ObjectiveBoundsTable,
+    VariableDomains,
+)
+
+# Now that VariableDomains is defined, rebuild ModelStatistics
+from .solver import ModelStatistics
+ModelStatistics.model_rebuild()
+
 # Main log model
 from .log import (
     CPSATLog,
@@ -101,6 +119,17 @@ __all__ = [
     "ObjectiveBoundEntry",
     "ImprovingBoundsShared",
     "ClausesShared",
+    # Wrappers
+    "SearchEvents",
+    "PresolveEntries",
+    "TaskTiming",
+    "SearchStatistics",
+    "SATStatistics",
+    "LNSStatistics",
+    "LSStatistics",
+    "LPStatistics",
+    "ObjectiveBoundsTable",
+    "VariableDomains",
     # Response
     "CPSolverResponse",
     # Main log
