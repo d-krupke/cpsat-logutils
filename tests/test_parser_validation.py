@@ -46,15 +46,15 @@ class TestDetailedParsing:
         assert result.initial_model.cpsat_model_fingerprint == "0xa2a90169c5e94a12"
         assert result.initial_model.num_variables == 10000
         assert result.initial_model.num_booleans_in_objective == 9900
-        assert len(result.initial_model.variable_domains) == 2
-        assert result.initial_model.variable_domains[0].count == 9900
-        assert result.initial_model.variable_domains[0].type == "Booleans"
-        assert result.initial_model.variable_domains[1].count == 100
+        assert len(result.initial_model.variable_domains.domains) == 2
+        assert result.initial_model.variable_domains.domains[0].count == 9900
+        assert result.initial_model.variable_domains.domains[0].type == "Booleans"
+        assert result.initial_model.variable_domains.domains[1].count == 100
         assert len(result.initial_model.constraints) == 3
 
         # Validate presolve log has entries
-        assert len(result.presolve_log) > 0
-        first_presolve = result.presolve_log[0]
+        assert len(result.presolve_log.entries) > 0
+        first_presolve = result.presolve_log.entries[0]
         assert first_presolve.operation == "DetectDominanceRelations"
         assert first_presolve.wall_time == 0.0023
 
@@ -77,9 +77,9 @@ class TestDetailedParsing:
         assert len(result.search_info.subsolvers.full_problem) > 0
 
         # Validate search events
-        assert len(result.search_events) > 0
+        assert len(result.search_events.events) > 0
         # Check we have objective events
-        objective_events = [e for e in result.search_events if e.event_type == "objective"]
+        objective_events = [e for e in result.search_events.events if e.event_type == "objective"]
         assert len(objective_events) > 0
         # First solution should be present
         first_solution = objective_events[0]
@@ -104,12 +104,12 @@ class TestDetailedParsing:
         assert result.response.solution_fingerprint == "0x3f5c435d9453c6d6"
 
         # Validate statistics sections
-        assert len(result.search_stats) > 0
+        assert len(result.search_stats.entries) > 0
         # LNS stats may or may not be present depending on CP-SAT version format
         # Some versions have LNS stats in different format that parser doesn't capture yet
-        if len(result.lns_stats) > 0:
+        if len(result.lns_stats.entries) > 0:
             # Check specific LNS stats if present
-            lns_graph_var = [s for s in result.lns_stats if s.subsolver == "graph_var_lns"]
+            lns_graph_var = [s for s in result.lns_stats.entries if s.subsolver == "graph_var_lns"]
             if len(lns_graph_var) > 0:
                 assert lns_graph_var[0].num_solutions >= 0
                 # Improvement range should be reasonable if present
@@ -117,8 +117,8 @@ class TestDetailedParsing:
                     assert len(lns_graph_var[0].improvement_range) == 2
 
         # Validate objective bounds
-        assert len(result.objective_bounds) > 0
-        am1_bounds = [b for b in result.objective_bounds if b.subsolver == "am1_presolve"]
+        assert len(result.objective_bounds.entries) > 0
+        am1_bounds = [b for b in result.objective_bounds.entries if b.subsolver == "am1_presolve"]
         assert len(am1_bounds) == 1
         assert am1_bounds[0].num_bounds == 1
 
@@ -202,7 +202,7 @@ class TestSearchProgressValidation:
         result = parser.parse()
 
         # Get all events with time
-        events_with_time = [e for e in result.search_events if hasattr(e, 'time') and e.time is not None]
+        events_with_time = [e for e in result.search_events.events if hasattr(e, 'time') and e.time is not None]
 
         if len(events_with_time) > 1:
             # Check chronological order (allow small deviations due to parallel execution)
@@ -227,7 +227,7 @@ class TestSearchProgressValidation:
         result = parser.parse()
 
         # Get objective events
-        objective_events = [e for e in result.search_events if e.event_type == "objective"]
+        objective_events = [e for e in result.search_events.events if e.event_type == "objective"]
 
         if len(objective_events) > 1:
             # For minimization, objectives should decrease
@@ -249,7 +249,7 @@ class TestSearchProgressValidation:
         result = parser.parse()
 
         # Get objective events
-        objective_events = [e for e in result.search_events if e.event_type == "objective"]
+        objective_events = [e for e in result.search_events.events if e.event_type == "objective"]
 
         if len(objective_events) > 0:
             # Check solution numbers are sequential starting from 1
@@ -307,9 +307,9 @@ class TestStatisticsValidation:
         result = parser.parse()
 
         # Should have search stats
-        assert len(result.search_stats) > 0
+        assert len(result.search_stats.entries) > 0
 
-        for stat in result.search_stats:
+        for stat in result.search_stats.entries:
             # All numeric values should be non-negative
             if stat.booleans is not None:
                 assert stat.booleans >= 0

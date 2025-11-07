@@ -132,9 +132,9 @@ class TestModelStatistics:
         assert model.cpsat_model_fingerprint == "0xa2a90169c5e94a12"
         assert model.num_variables == 10000
         assert model.num_booleans_in_objective == 9900
-        assert len(model.variable_domains) == 2
-        assert model.variable_domains[0].count == 9900
-        assert model.variable_domains[0].type == "Booleans"
+        assert len(model.variable_domains.domains) == 2
+        assert model.variable_domains.domains[0].count == 9900
+        assert model.variable_domains.domains[0].type == "Booleans"
         assert len(model.constraints) == 3
 
     def test_parse_initial_satisfaction_model(self):
@@ -438,7 +438,7 @@ class TestExampleLogs:
 
         # If model exists, should have some statistics
         if result.initial_model is not None:
-            assert result.initial_model.num_variables is not None or len(result.initial_model.variable_domains) > 0
+            assert result.initial_model.num_variables is not None or len(result.initial_model.variable_domains.domains) > 0
 
         # Response should have status
         assert result.response.status in [
@@ -451,7 +451,7 @@ class TestExampleLogs:
 
         # If search happened, should have some events or stats
         if result.search_info is not None:
-            assert len(result.search_events) > 0 or len(result.search_stats) > 0
+            assert len(result.search_events.events) > 0 or len(result.search_stats.entries) > 0
 
 
 class TestJSONSerialization:
@@ -494,7 +494,9 @@ status: OPTIMAL
         result = parser.parse()
 
         json_data = result.model_dump()
-        events = json_data["search_events"]
+        search_events = json_data["search_events"]
+        # search_events is now a dict with "events" key due to wrapper
+        events = search_events["events"]
 
         assert len(events) >= 2
         # Events should have discriminator field

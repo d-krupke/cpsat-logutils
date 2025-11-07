@@ -143,7 +143,8 @@ class TestComplexDomainParsing:
         parser = LogParser(log_content)
         result = parser.parse()
 
-        domains = result.initial_model.variable_domains
+        domains_wrapper = result.initial_model.variable_domains
+        domains = domains_wrapper.domains  # Access the underlying list
         assert len(domains) == 2
 
         # Booleans

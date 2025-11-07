@@ -32,7 +32,7 @@ class TestBoundParsing:
         result = parser.parse()
 
         # Check all objective events have proper numeric bounds
-        for event in result.search_events:
+        for event in result.search_events.events:
             if event.event_type == "objective":
                 if event.next_min is not None:
                     assert isinstance(event.next_min, (int, float)), (
@@ -63,7 +63,7 @@ class TestBoundParsing:
         parser = LogParser(log_text)
         result = parser.parse()
 
-        for event in result.search_events:
+        for event in result.search_events.events:
             if event.event_type == "objective":
                 # Verify bound field is set (required field)
                 assert event.proven_bound is not None, (
@@ -93,7 +93,7 @@ class TestBoundsConvergence:
 
         # Extract next_min values from events
         next_mins = []
-        for event in result.search_events:
+        for event in result.search_events.events:
             if event.event_type == "objective" and event.next_min is not None:
                 next_mins.append((event.time, event.next_min, f"solution #{event.solution_number}"))
             elif event.event_type == "bound" and event.next_min is not None:
@@ -138,7 +138,7 @@ class TestBoundsConvergence:
 
         # Extract next_max values from events
         next_maxs = []
-        for event in result.search_events:
+        for event in result.search_events.events:
             if event.event_type == "objective" and event.next_max is not None:
                 next_maxs.append((event.time, event.next_max, f"solution #{event.solution_number}"))
             elif event.event_type == "bound" and event.next_max is not None:
@@ -191,7 +191,7 @@ class TestBoundsConvergence:
 
         # Calculate gap at different times
         gaps = []
-        for event in result.search_events:
+        for event in result.search_events.events:
             lower = None
             upper = None
 
@@ -243,7 +243,7 @@ class TestTimeConsistency:
         final_walltime = result.response.walltime
         violations = []
 
-        for event in result.search_events:
+        for event in result.search_events.events:
             # Allow 1% tolerance for timing measurement variations
             max_allowed = final_walltime * 1.01
             if event.time > max_allowed:
@@ -263,14 +263,14 @@ class TestTimeConsistency:
         parser = LogParser(log_text)
         result = parser.parse()
 
-        if len(result.search_events) < 2:
+        if len(result.search_events.events) < 2:
             pytest.skip(f"Not enough events in {log_file.name}")
 
         # Check times are mostly increasing
         violations = []
-        for i in range(1, len(result.search_events)):
-            prev_time = result.search_events[i - 1].time
-            curr_time = result.search_events[i].time
+        for i in range(1, len(result.search_events.events)):
+            prev_time = result.search_events.events[i - 1].time
+            curr_time = result.search_events.events[i].time
 
             # Allow small decreases (0.01s) for timing precision
             if curr_time < prev_time - 0.01:
@@ -279,11 +279,11 @@ class TestTimeConsistency:
                 )
 
         # Allow up to 5% violations for rare out-of-order logging
-        max_violations = max(1, len(result.search_events) * 0.05)
+        max_violations = max(1, len(result.search_events.events) * 0.05)
         if len(violations) > max_violations:
             pytest.fail(
                 f"Too many time violations in {log_file.name} "
-                f"({len(violations)}/{len(result.search_events)} events):\n" + "\n".join(violations[:5])
+                f"({len(violations)}/{len(result.search_events.events)} events):\n" + "\n".join(violations[:5])
             )
 
 
@@ -303,7 +303,7 @@ class TestResponseConsistency:
             pytest.skip(f"No objective in response for {log_file.name}")
 
         # Find last objective event
-        objective_events = [e for e in result.search_events if e.event_type == "objective"]
+        objective_events = [e for e in result.search_events.events if e.event_type == "objective"]
         if not objective_events:
             pytest.skip(f"No objective events in {log_file.name}")
 
@@ -366,7 +366,7 @@ class TestSpecificLogValues:
 
         # Find first solution
         first_sol = None
-        for event in result.search_events:
+        for event in result.search_events.events:
             if event.event_type == "objective" and event.solution_number == 1:
                 first_sol = event
                 break
@@ -396,7 +396,7 @@ class TestSpecificLogValues:
 
         # Find solution #15
         sol_15 = None
-        for event in result.search_events:
+        for event in result.search_events.events:
             if event.event_type == "objective" and event.solution_number == 15:
                 sol_15 = event
                 break
