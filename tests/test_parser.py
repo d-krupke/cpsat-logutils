@@ -132,9 +132,9 @@ class TestModelStatistics:
         assert model.cpsat_model_fingerprint == "0xa2a90169c5e94a12"
         assert model.num_variables == 10000
         assert model.num_booleans_in_objective == 9900
-        assert len(model.variable_domains.domains) == 2
-        assert model.variable_domains.domains[0].count == 9900
-        assert model.variable_domains.domains[0].type == "Booleans"
+        assert len(model.variable_domains) == 2
+        assert model.variable_domains[0].count == 9900
+        assert model.variable_domains[0].type == "Booleans"
         assert len(model.constraints) == 3
 
     def test_parse_initial_satisfaction_model(self):
@@ -438,7 +438,7 @@ class TestExampleLogs:
 
         # If model exists, should have some statistics
         if result.initial_model is not None:
-            assert result.initial_model.num_variables is not None or len(result.initial_model.variable_domains.domains) > 0
+            assert result.initial_model.num_variables is not None or len(result.initial_model.variable_domains) > 0
 
         # Response should have status
         assert result.response.status in [

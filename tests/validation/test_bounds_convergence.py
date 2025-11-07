@@ -331,7 +331,7 @@ class TestResponseConsistency:
 
         # Find last lower bound (for minimization)
         last_lower = None
-        for event in reversed(result.search_events):
+        for event in reversed(result.search_events.events):
             if event.event_type in ["objective", "bound"] and event.next_min is not None:
                 last_lower = event.next_min
                 break

@@ -79,10 +79,6 @@ from .wrappers import (
     VariableDomains,
 )
 
-# Now that VariableDomains is defined, rebuild ModelStatistics
-from .solver import ModelStatistics
-ModelStatistics.model_rebuild()
-
 # Main log model
 from .log import (
     CPSATLog,

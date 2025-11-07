@@ -23,8 +23,7 @@ class TestComplexDomainParsing:
         result = parser.parse()
 
         assert result.initial_model is not None
-        domains_wrapper = result.initial_model.variable_domains
-        domains = domains_wrapper.domains  # Access the underlying list
+        domains = result.initial_model.variable_domains
 
         # According to the log:
         # - 342 Booleans in [0,1]
@@ -143,8 +142,7 @@ class TestComplexDomainParsing:
         parser = LogParser(log_content)
         result = parser.parse()
 
-        domains_wrapper = result.initial_model.variable_domains
-        domains = domains_wrapper.domains  # Access the underlying list
+        domains = result.initial_model.variable_domains
         assert len(domains) == 2
 
         # Booleans

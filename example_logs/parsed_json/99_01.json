@@ -190,305 +190,307 @@
       }
     ]
   },
-  "presolve_log": [
-    {
-      "wall_time": 0.000855,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1
+  "presolve_log": {
+    "entries": [
+      {
+        "wall_time": 0.000855,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1
+        }
+      },
+      {
+        "wall_time": 7.44e-6,
+        "deterministic_time": 0.0,
+        "operation": "ExtractEncodingFromLinear",
+        "details": {
+          "potential_supersets": 154
+        }
+      },
+      {
+        "wall_time": 0.00164,
+        "deterministic_time": 0.000412,
+        "operation": "Probe",
+        "details": {
+          "probed": 944,
+          "new_binary_clauses": 525
+        }
+      },
+      {
+        "wall_time": 3.14e-6,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000374,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000894,
+        "deterministic_time": 0.0,
+        "operation": "ProcessAtMostOneAndLinear",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000216,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 2.3e-6,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000661,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000361,
+        "deterministic_time": 1.39e-6,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 154
+        }
+      },
+      {
+        "wall_time": 2.34e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000461,
+        "deterministic_time": 0.0000562,
+        "operation": "FindBigAtMostOneAndLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000627,
+        "deterministic_time": 0.0000439,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 2.18e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 3.89e-6,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000359,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00035,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00155,
+        "deterministic_time": 0.000418,
+        "operation": "Probe",
+        "details": {
+          "probed": 944,
+          "new_binary_clauses": 525
+        }
+      },
+      {
+        "wall_time": 0.000134,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000368,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000102,
+        "deterministic_time": 0.0,
+        "operation": "ProcessAtMostOneAndLinear",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000261,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 3.48e-6,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000773,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000112,
+        "deterministic_time": 4.14e-6,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 307,
+          "num_inclusions": 153
+        }
+      },
+      {
+        "wall_time": 3.88e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000522,
+        "deterministic_time": 0.0000562,
+        "operation": "FindBigAtMostOneAndLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000603,
+        "deterministic_time": 0.0000439,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 4.47e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 4.68e-6,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000363,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000339,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00155,
+        "deterministic_time": 0.000418,
+        "operation": "Probe",
+        "details": {
+          "probed": 944,
+          "new_binary_clauses": 525
+        }
+      },
+      {
+        "wall_time": 0.000133,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000348,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000101,
+        "deterministic_time": 0.0,
+        "operation": "ProcessAtMostOneAndLinear",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000258,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 3.94e-6,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000695,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000106,
+        "deterministic_time": 4.14e-6,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 307,
+          "num_inclusions": 153
+        }
+      },
+      {
+        "wall_time": 6.18e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000055,
+        "deterministic_time": 0.0000562,
+        "operation": "FindBigAtMostOneAndLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000604,
+        "deterministic_time": 0.0000439,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 4.62e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 7.36e-6,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000365,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {}
       }
-    },
-    {
-      "wall_time": 7.44e-6,
-      "deterministic_time": 0.0,
-      "operation": "ExtractEncodingFromLinear",
-      "details": {
-        "potential_supersets": 154
-      }
-    },
-    {
-      "wall_time": 0.00164,
-      "deterministic_time": 0.000412,
-      "operation": "Probe",
-      "details": {
-        "probed": 944,
-        "new_binary_clauses": 525
-      }
-    },
-    {
-      "wall_time": 3.14e-6,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000374,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000894,
-      "deterministic_time": 0.0,
-      "operation": "ProcessAtMostOneAndLinear",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000216,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 2.3e-6,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000661,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000361,
-      "deterministic_time": 1.39e-6,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 154
-      }
-    },
-    {
-      "wall_time": 2.34e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000461,
-      "deterministic_time": 0.0000562,
-      "operation": "FindBigAtMostOneAndLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000627,
-      "deterministic_time": 0.0000439,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 2.18e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 3.89e-6,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000359,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00035,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00155,
-      "deterministic_time": 0.000418,
-      "operation": "Probe",
-      "details": {
-        "probed": 944,
-        "new_binary_clauses": 525
-      }
-    },
-    {
-      "wall_time": 0.000134,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000368,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000102,
-      "deterministic_time": 0.0,
-      "operation": "ProcessAtMostOneAndLinear",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000261,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 3.48e-6,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000773,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000112,
-      "deterministic_time": 4.14e-6,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 307,
-        "num_inclusions": 153
-      }
-    },
-    {
-      "wall_time": 3.88e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000522,
-      "deterministic_time": 0.0000562,
-      "operation": "FindBigAtMostOneAndLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000603,
-      "deterministic_time": 0.0000439,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 4.47e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 4.68e-6,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000363,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000339,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00155,
-      "deterministic_time": 0.000418,
-      "operation": "Probe",
-      "details": {
-        "probed": 944,
-        "new_binary_clauses": 525
-      }
-    },
-    {
-      "wall_time": 0.000133,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000348,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000101,
-      "deterministic_time": 0.0,
-      "operation": "ProcessAtMostOneAndLinear",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000258,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 3.94e-6,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000695,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000106,
-      "deterministic_time": 4.14e-6,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 307,
-        "num_inclusions": 153
-      }
-    },
-    {
-      "wall_time": 6.18e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000055,
-      "deterministic_time": 0.0000562,
-      "operation": "FindBigAtMostOneAndLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000604,
-      "deterministic_time": 0.0000439,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 4.62e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 7.36e-6,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000365,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {}
-    }
-  ],
+    ]
+  },
   "presolve_summary": {
     "affine_relations": 0,
     "rules_applied": {
@@ -834,43 +836,59 @@
     "encoding_info": {}
   },
   "search_info": null,
-  "search_events": [],
-  "task_timing": [],
-  "search_stats": [
-    {
-      "subsolver": "default",
-      "booleans": 642,
-      "conflicts": 918873,
-      "branches": 1780404,
-      "restarts": 944,
-      "bool_propagations": 65749379,
-      "integer_propagations": 36871867
-    }
-  ],
-  "sat_stats": [
-    {
-      "subsolver": "default",
-      "stats": {
-        "ClassicMinim": 751131,
-        "LitRemoved": 7041274,
-        "LitLearned": 20790373,
-        "LitForgotten": 20257738,
-        "Subsumed": 2123,
-        "MClauses": 0,
-        "MDecisions": 0,
-        "MLitTrue": 0,
-        "MSubsumed": 0,
-        "MLitRemoved": 0,
-        "MReused": 0
+  "search_events": {
+    "events": []
+  },
+  "task_timing": {
+    "entries": []
+  },
+  "search_stats": {
+    "entries": [
+      {
+        "subsolver": "default",
+        "booleans": 642,
+        "conflicts": 918873,
+        "branches": 1780404,
+        "restarts": 944,
+        "bool_propagations": 65749379,
+        "integer_propagations": 36871867
       }
-    }
-  ],
-  "lns_stats": [],
-  "ls_stats": [],
-  "lp_stats": [],
+    ]
+  },
+  "sat_stats": {
+    "entries": [
+      {
+        "subsolver": "default",
+        "stats": {
+          "ClassicMinim": 751131,
+          "LitRemoved": 7041274,
+          "LitLearned": 20790373,
+          "LitForgotten": 20257738,
+          "Subsumed": 2123,
+          "MClauses": 0,
+          "MDecisions": 0,
+          "MLitTrue": 0,
+          "MSubsumed": 0,
+          "MLitRemoved": 0,
+          "MReused": 0
+        }
+      }
+    ]
+  },
+  "lns_stats": {
+    "entries": []
+  },
+  "ls_stats": {
+    "entries": []
+  },
+  "lp_stats": {
+    "entries": []
+  },
   "solution_repositories": null,
   "solutions": [],
-  "objective_bounds": [],
+  "objective_bounds": {
+    "entries": []
+  },
   "improving_bounds_shared": null,
   "clauses_shared": null,
   "response": {

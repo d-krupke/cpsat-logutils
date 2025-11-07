@@ -193,17 +193,13 @@ class ModelStatisticsParser(ParserComponent):
         # Track this model block
         self.track_lines(start_idx, i)
 
-        # Wrap variable_domains in VariableDomains for DataFrame export
-        from cpsat_logutils.models.wrappers import VariableDomains
-        wrapped_variable_domains = VariableDomains(domains=variable_domains)
-
         return ModelStatistics(
             is_optimization=is_optimization,
             cpsat_model_name=cpsat_model_name,
             cpsat_model_fingerprint=cpsat_model_fingerprint,
             num_variables=num_variables,
             num_booleans_in_objective=num_booleans_in_objective,
-            variable_domains=wrapped_variable_domains,
+            variable_domains=variable_domains,
             constraints=constraints,
         )
 

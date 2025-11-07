@@ -139,40 +139,42 @@
       }
     ]
   },
-  "presolve_log": [
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Graph for symmetry has 3 nodes and 0 arcs."
+  "presolve_log": {
+    "entries": [
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Graph for symmetry has 3 nodes and 0 arcs."
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Symmetry computation done. time: 7.704e-06 dtime: 1.8e-07"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Graph for symmetry has 3 nodes and 0 arcs."
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Symmetry computation done. time: 2.585e-06 dtime: 1.8e-07"
+        }
       }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Symmetry computation done. time: 7.704e-06 dtime: 1.8e-07"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Graph for symmetry has 3 nodes and 0 arcs."
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Symmetry computation done. time: 2.585e-06 dtime: 1.8e-07"
-      }
-    }
-  ],
+    ]
+  },
   "presolve_summary": {
     "affine_relations": 0,
     "rules_applied": {
@@ -233,146 +235,162 @@
     },
     "search_type": "parallel"
   },
-  "search_events": [
-    {
-      "event_type": "objective",
-      "solution_number": 1,
-      "time": 0.0,
-      "objective": 50.0,
-      "proven_bound": 50.0,
-      "next_min": null,
-      "next_max": null,
-      "gap_percent": null,
-      "subsolver": "default_lp",
-      "additional_info": "default_lp fixed_bools:0/0"
-    }
-  ],
-  "task_timing": [
-    {
-      "task_name": "synchronization_agent",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "neighborhood_helper",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "default_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "less_encoding",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "no_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "max_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "quick_restart",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "quick_restart_no_lp",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "feasibility_pump",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rins/rens",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    }
-  ],
-  "search_stats": [
-    {
-      "subsolver": "default_lp",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 1
-    },
-    {
-      "subsolver": "less_encoding",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 1
-    },
-    {
-      "subsolver": "no_lp",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 0
-    },
-    {
-      "subsolver": "max_lp",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 0
-    },
-    {
-      "subsolver": "quick_restart",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 0
-    }
-  ],
-  "sat_stats": [],
-  "lns_stats": [],
-  "ls_stats": [],
-  "lp_stats": [],
+  "search_events": {
+    "events": [
+      {
+        "event_type": "objective",
+        "solution_number": 1,
+        "time": 0.0,
+        "objective": 50.0,
+        "proven_bound": 50.0,
+        "next_min": null,
+        "next_max": null,
+        "gap_percent": null,
+        "subsolver": "default_lp",
+        "additional_info": "default_lp fixed_bools:0/0"
+      }
+    ]
+  },
+  "task_timing": {
+    "entries": [
+      {
+        "task_name": "synchronization_agent",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "neighborhood_helper",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "default_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "less_encoding",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "no_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "max_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "quick_restart",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "quick_restart_no_lp",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "feasibility_pump",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rins/rens",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      }
+    ]
+  },
+  "search_stats": {
+    "entries": [
+      {
+        "subsolver": "default_lp",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 1
+      },
+      {
+        "subsolver": "less_encoding",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 1
+      },
+      {
+        "subsolver": "no_lp",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 0
+      },
+      {
+        "subsolver": "max_lp",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 0
+      },
+      {
+        "subsolver": "quick_restart",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 0
+      }
+    ]
+  },
+  "sat_stats": {
+    "entries": []
+  },
+  "lns_stats": {
+    "entries": []
+  },
+  "ls_stats": {
+    "entries": []
+  },
+  "lp_stats": {
+    "entries": []
+  },
   "solution_repositories": null,
   "solutions": [],
-  "objective_bounds": [],
+  "objective_bounds": {
+    "entries": []
+  },
   "improving_bounds_shared": null,
   "clauses_shared": null,
   "response": {

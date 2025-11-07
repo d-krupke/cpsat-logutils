@@ -185,7 +185,6 @@ class LogParser:
             LSStatistics,
             LPStatistics,
             ObjectiveBoundsTable,
-            VariableDomains,
         )
 
         # Wrap search_events
@@ -232,13 +231,6 @@ class LogParser:
         if "objective_bounds" in parsed_data and parsed_data["objective_bounds"] is not None:
             if isinstance(parsed_data["objective_bounds"], list):
                 parsed_data["objective_bounds"] = ObjectiveBoundsTable(entries=parsed_data["objective_bounds"])
-
-        # Wrap variable_domains in initial_model and presolved_model
-        for model_field in ["initial_model", "presolved_model"]:
-            if model_field in parsed_data and parsed_data[model_field] is not None:
-                model = parsed_data[model_field]
-                if hasattr(model, "variable_domains") and isinstance(model.variable_domains, list):
-                    model.variable_domains = VariableDomains(domains=model.variable_domains)
 
         # Create and return CPSATLog model
         return CPSATLog(**parsed_data)

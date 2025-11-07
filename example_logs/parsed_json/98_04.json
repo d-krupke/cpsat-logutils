@@ -245,344 +245,346 @@
       }
     ]
   },
-  "presolve_log": [
-    {
-      "wall_time": 0.00456,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0118,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 2,
-        "num_dual_strengthening": 1
+  "presolve_log": {
+    "entries": [
+      {
+        "wall_time": 0.00456,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0118,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 2,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.0000388,
+        "deterministic_time": 0.0,
+        "operation": "ExtractEncodingFromLinear",
+        "details": {
+          "potential_supersets": 300
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Graph for symmetry has 16'260 nodes and 24'930 arcs."
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Symmetry computation done. time: 0.00546832 dtime: 0.00631223"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "#generators: 19, average support size: 202.105"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "1710 orbits with sizes: 4,4,4,4,4,4,4,4,4,4,..."
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Num fixable by binary propagation in orbit: 1 / 4"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Num fixable by intersecting at_most_one with orbits: 5 largest_orbit: 4"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Found orbitope of size 30 x 2"
+        }
+      },
+      {
+        "wall_time": 0.0284,
+        "deterministic_time": 0.0254,
+        "operation": "Probe",
+        "details": {
+          "probed": 17990
+        }
+      },
+      {
+        "wall_time": 0.00136,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00449,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00893,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.00214,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000194,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000148,
+        "deterministic_time": 0.000027,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {
+          "relevant_constraints": 30
+        }
+      },
+      {
+        "wall_time": 0.00266,
+        "deterministic_time": 0.000045,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 330
+        }
+      },
+      {
+        "wall_time": 0.0000147,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000318,
+        "deterministic_time": 0.00135,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {
+          "linears": 30
+        }
+      },
+      {
+        "wall_time": 0.00116,
+        "deterministic_time": 0.0136,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000137,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00449,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00787,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.00447,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00786,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Graph for symmetry has 16'260 nodes and 24'920 arcs."
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Symmetry computation done. time: 0.00263969 dtime: 0.0041113"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "#generators: 14, average support size: 60"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "420 orbits with sizes: 2,2,2,2,2,2,2,2,2,2,..."
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "Symmetry",
+        "details": {
+          "raw": "Found orbitope of size 30 x 2"
+        }
+      },
+      {
+        "wall_time": 0.0282,
+        "deterministic_time": 0.0254,
+        "operation": "Probe",
+        "details": {
+          "probed": 17990
+        }
+      },
+      {
+        "wall_time": 0.00129,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0045,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00844,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.00214,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000196,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000149,
+        "deterministic_time": 0.000027,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {
+          "relevant_constraints": 30
+        }
+      },
+      {
+        "wall_time": 0.00268,
+        "deterministic_time": 0.000045,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 330
+        }
+      },
+      {
+        "wall_time": 0.0000154,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000318,
+        "deterministic_time": 0.00135,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {
+          "linears": 30
+        }
+      },
+      {
+        "wall_time": 0.00116,
+        "deterministic_time": 0.0136,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000142,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00448,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00786,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.00137,
+        "deterministic_time": 0.0,
+        "operation": "ExpandObjective",
+        "details": {}
       }
-    },
-    {
-      "wall_time": 0.0000388,
-      "deterministic_time": 0.0,
-      "operation": "ExtractEncodingFromLinear",
-      "details": {
-        "potential_supersets": 300
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Graph for symmetry has 16'260 nodes and 24'930 arcs."
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Symmetry computation done. time: 0.00546832 dtime: 0.00631223"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "#generators: 19, average support size: 202.105"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "1710 orbits with sizes: 4,4,4,4,4,4,4,4,4,4,..."
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Num fixable by binary propagation in orbit: 1 / 4"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Num fixable by intersecting at_most_one with orbits: 5 largest_orbit: 4"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Found orbitope of size 30 x 2"
-      }
-    },
-    {
-      "wall_time": 0.0284,
-      "deterministic_time": 0.0254,
-      "operation": "Probe",
-      "details": {
-        "probed": 17990
-      }
-    },
-    {
-      "wall_time": 0.00136,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00449,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00893,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.00214,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000194,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000148,
-      "deterministic_time": 0.000027,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {
-        "relevant_constraints": 30
-      }
-    },
-    {
-      "wall_time": 0.00266,
-      "deterministic_time": 0.000045,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 330
-      }
-    },
-    {
-      "wall_time": 0.0000147,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000318,
-      "deterministic_time": 0.00135,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {
-        "linears": 30
-      }
-    },
-    {
-      "wall_time": 0.00116,
-      "deterministic_time": 0.0136,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000137,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00449,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00787,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.00447,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00786,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Graph for symmetry has 16'260 nodes and 24'920 arcs."
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Symmetry computation done. time: 0.00263969 dtime: 0.0041113"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "#generators: 14, average support size: 60"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "420 orbits with sizes: 2,2,2,2,2,2,2,2,2,2,..."
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "Symmetry",
-      "details": {
-        "raw": "Found orbitope of size 30 x 2"
-      }
-    },
-    {
-      "wall_time": 0.0282,
-      "deterministic_time": 0.0254,
-      "operation": "Probe",
-      "details": {
-        "probed": 17990
-      }
-    },
-    {
-      "wall_time": 0.00129,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0045,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00844,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.00214,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000196,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000149,
-      "deterministic_time": 0.000027,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {
-        "relevant_constraints": 30
-      }
-    },
-    {
-      "wall_time": 0.00268,
-      "deterministic_time": 0.000045,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 330
-      }
-    },
-    {
-      "wall_time": 0.0000154,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000318,
-      "deterministic_time": 0.00135,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {
-        "linears": 30
-      }
-    },
-    {
-      "wall_time": 0.00116,
-      "deterministic_time": 0.0136,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000142,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00448,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00786,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.00137,
-      "deterministic_time": 0.0,
-      "operation": "ExpandObjective",
-      "details": {}
-    }
-  ],
+    ]
+  },
   "presolve_summary": {
     "affine_relations": 0,
     "rules_applied": {
@@ -687,926 +689,940 @@
     },
     "search_type": "parallel"
   },
-  "search_events": [
-    {
-      "event_type": "objective",
-      "solution_number": 1,
-      "time": 0.17,
-      "objective": 0.0,
-      "proven_bound": 115405.0,
-      "next_min": 1.0,
-      "next_max": 115405.0,
-      "gap_percent": null,
-      "subsolver": "fj_short_default",
-      "additional_info": "fj_short_default(batch:1 #lin_moves:0 #lin_evals:0 #weight_updates:0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 2,
-      "time": 0.2,
-      "objective": 21.0,
-      "proven_bound": 115405.0,
-      "next_min": 22.0,
-      "next_max": 115405.0,
-      "gap_percent": 549447.619047619,
-      "subsolver": "violation_ls",
-      "additional_info": "violation_ls(batch:1 #solutions_imported:1 #lin_moves:0 #lin_evals:3 #gen_moves:1 #gen_evals:0 #comp_moves:1 #backtracks:0 #weight_updates:0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.24,
-      "best_objective": 21.0,
-      "proven_bound": 6013.0,
-      "next_min": 22.0,
-      "next_max": 6013.0,
-      "subsolver": "am1_presolve",
-      "additional_info": "am1_presolve (num_literals=8995 num_am1=300 increase=109392 work_done=269725)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 3,
-      "time": 0.25,
-      "objective": 3174.0,
-      "proven_bound": 6013.0,
-      "next_min": 3175.0,
-      "next_max": 6013.0,
-      "gap_percent": 89.44549464398236,
-      "subsolver": "no_lp",
-      "additional_info": "no_lp (fixed_bools=0/8995)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 4,
-      "time": 0.29,
-      "objective": 3181.0,
-      "proven_bound": 6013.0,
-      "next_min": 3182.0,
-      "next_max": 6013.0,
-      "gap_percent": 89.0286073561773,
-      "subsolver": "no_lp",
-      "additional_info": "no_lp (fixed_bools=0/8995)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 5,
-      "time": 0.29,
-      "objective": 3285.0,
-      "proven_bound": 6013.0,
-      "next_min": 3286.0,
-      "next_max": 6013.0,
-      "gap_percent": 83.0441400304414,
-      "subsolver": "no_lp",
-      "additional_info": "no_lp (fixed_bools=0/8995)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 6,
-      "time": 0.3,
-      "objective": 4999.0,
-      "proven_bound": 6013.0,
-      "next_min": 5000.0,
-      "next_max": 6013.0,
-      "gap_percent": 20.284056811362273,
-      "subsolver": "quick_restart_no_lp",
-      "additional_info": "quick_restart_no_lp (fixed_bools=0/8995)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.34,
-      "best_objective": 4999.0,
-      "proven_bound": 5273.0,
-      "next_min": 5000.0,
-      "next_max": 5273.0,
-      "subsolver": "probing",
-      "additional_info": "probing (initial_propagation)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 7,
-      "time": 0.86,
-      "objective": 5250.0,
-      "proven_bound": 5273.0,
-      "next_min": 5251.0,
-      "next_max": 5273.0,
-      "gap_percent": 0.4380952380952381,
-      "subsolver": "pseudo_costs",
-      "additional_info": "pseudo_costs (fixed_bools=0/8995)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 8,
-      "time": 0.89,
-      "objective": 5257.0,
-      "proven_bound": 5273.0,
-      "next_min": 5258.0,
-      "next_max": 5273.0,
-      "gap_percent": 0.3043560966330607,
-      "subsolver": "reduced_costs",
-      "additional_info": "reduced_costs (fixed_bools=0/8995)"
-    },
-    {
-      "event_type": "model",
-      "time": 1.13,
-      "vars_remaining": 8566,
-      "vars_total": 8995,
-      "constraints_remaining": 330,
-      "constraints_total": 330,
-      "additional_info": ""
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 9,
-      "time": 1.3,
-      "objective": 5264.0,
-      "proven_bound": 5273.0,
-      "next_min": 5265.0,
-      "next_max": 5273.0,
-      "gap_percent": 0.17097264437689969,
-      "subsolver": "reduced_costs",
-      "additional_info": "reduced_costs (fixed_bools=429/8995)"
-    },
-    {
-      "event_type": "model",
-      "time": 1.61,
-      "vars_remaining": 5217,
-      "vars_total": 8995,
-      "constraints_remaining": 328,
-      "constraints_total": 330,
-      "additional_info": ""
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 10,
-      "time": 5.52,
-      "objective": 5265.0,
-      "proven_bound": 5273.0,
-      "next_min": 5266.0,
-      "next_max": 5273.0,
-      "gap_percent": 0.15194681861348527,
-      "subsolver": "pseudo_costs",
-      "additional_info": "pseudo_costs (fixed_bools=3778/8995)"
-    },
-    {
-      "event_type": "model",
-      "time": 5.82,
-      "vars_remaining": 5161,
-      "vars_total": 8995,
-      "constraints_remaining": 328,
-      "constraints_total": 330,
-      "additional_info": ""
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 11,
-      "time": 11.21,
-      "objective": 5268.0,
-      "proven_bound": 5273.0,
-      "next_min": 5269.0,
-      "next_max": 5273.0,
-      "gap_percent": 0.09491268033409264,
-      "subsolver": "max_lp",
-      "additional_info": "max_lp (fixed_bools=3834/8995)"
-    },
-    {
-      "event_type": "model",
-      "time": 11.46,
-      "vars_remaining": 2971,
-      "vars_total": 8995,
-      "constraints_remaining": 325,
-      "constraints_total": 330,
-      "additional_info": ""
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 12,
-      "time": 12.6,
-      "objective": 5271.0,
-      "proven_bound": 5273.0,
-      "next_min": 5272.0,
-      "next_max": 5273.0,
-      "gap_percent": 0.03794346423828496,
-      "subsolver": "max_lp",
-      "additional_info": "max_lp (fixed_bools=6024/8995)"
-    }
-  ],
-  "task_timing": [
-    {
-      "task_name": "core",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "default_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "feasibility_pump",
-      "num_runs": 37,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fj_long_default",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fj_short_default",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fs_random",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fs_random_quick_restart",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_arc_lns",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_cst_lns",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_dec_lns",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_var_lns",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "lb_tree_search",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "max_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "no_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "objective_lb_search",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "probing",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "pseudo_costs",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "quick_restart",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "quick_restart_no_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "reduced_costs",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rins/rens",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rnd_cst_lns",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rnd_var_lns",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "violation_ls",
-      "num_runs": 36,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    }
-  ],
-  "search_stats": [
-    {
-      "subsolver": "core",
-      "booleans": 9295,
-      "conflicts": 173041,
-      "branches": 211942,
-      "restarts": 17991,
-      "bool_propagations": 22550398,
-      "integer_propagations": 3875483
-    },
-    {
-      "subsolver": "default_lp",
-      "booleans": 8995,
-      "conflicts": 2307,
-      "branches": 38154,
-      "restarts": 17993,
-      "bool_propagations": 323416,
-      "integer_propagations": 447726
-    },
-    {
-      "subsolver": "fs_random",
-      "booleans": 8995,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 1
-    },
-    {
-      "subsolver": "fs_random_quick_restart",
-      "booleans": 8995,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 1
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "booleans": 8995,
-      "conflicts": 0,
-      "branches": 52743,
-      "restarts": 18012,
-      "bool_propagations": 287625,
-      "integer_propagations": 420520
-    },
-    {
-      "subsolver": "max_lp",
-      "booleans": 8995,
-      "conflicts": 1145,
-      "branches": 50976,
-      "restarts": 18002,
-      "bool_propagations": 382225,
-      "integer_propagations": 595689
-    },
-    {
-      "subsolver": "no_lp",
-      "booleans": 8995,
-      "conflicts": 7475,
-      "branches": 30863,
-      "restarts": 17998,
-      "bool_propagations": 414491,
-      "integer_propagations": 932480
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "booleans": 8999,
-      "conflicts": 762,
-      "branches": 46253,
-      "restarts": 18002,
-      "bool_propagations": 334692,
-      "integer_propagations": 497332
-    },
-    {
-      "subsolver": "probing",
-      "booleans": 8995,
-      "conflicts": 0,
-      "branches": 18020,
-      "restarts": 18048,
-      "bool_propagations": 291978,
-      "integer_propagations": 330885
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "booleans": 8995,
-      "conflicts": 1944,
-      "branches": 39762,
-      "restarts": 17994,
-      "bool_propagations": 371042,
-      "integer_propagations": 550761
-    },
-    {
-      "subsolver": "quick_restart",
-      "booleans": 8995,
-      "conflicts": 245,
-      "branches": 54439,
-      "restarts": 18015,
-      "bool_propagations": 354576,
-      "integer_propagations": 540109
-    },
-    {
-      "subsolver": "quick_restart_no_lp",
-      "booleans": 8995,
-      "conflicts": 5603,
-      "branches": 979451,
-      "restarts": 18495,
-      "bool_propagations": 1848621,
-      "integer_propagations": 5595729
-    },
-    {
-      "subsolver": "reduced_costs",
-      "booleans": 8995,
-      "conflicts": 2051,
-      "branches": 36831,
-      "restarts": 17996,
-      "bool_propagations": 406111,
-      "integer_propagations": 665743
-    }
-  ],
-  "sat_stats": [],
-  "lns_stats": [],
-  "ls_stats": [
-    {
-      "subsolver": "fj_long_default",
-      "stats": {
-        "Batches": 0,
-        "Restarts": 0,
-        "LinMoves": 0,
-        "GenMoves": 0,
-        "CompoundMoves": 0,
-        "WeightUpdates": 0
+  "search_events": {
+    "events": [
+      {
+        "event_type": "objective",
+        "solution_number": 1,
+        "time": 0.17,
+        "objective": 0.0,
+        "proven_bound": 115405.0,
+        "next_min": 1.0,
+        "next_max": 115405.0,
+        "gap_percent": null,
+        "subsolver": "fj_short_default",
+        "additional_info": "fj_short_default(batch:1 #lin_moves:0 #lin_evals:0 #weight_updates:0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 2,
+        "time": 0.2,
+        "objective": 21.0,
+        "proven_bound": 115405.0,
+        "next_min": 22.0,
+        "next_max": 115405.0,
+        "gap_percent": 549447.619047619,
+        "subsolver": "violation_ls",
+        "additional_info": "violation_ls(batch:1 #solutions_imported:1 #lin_moves:0 #lin_evals:3 #gen_moves:1 #gen_evals:0 #comp_moves:1 #backtracks:0 #weight_updates:0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.24,
+        "best_objective": 21.0,
+        "proven_bound": 6013.0,
+        "next_min": 22.0,
+        "next_max": 6013.0,
+        "subsolver": "am1_presolve",
+        "additional_info": "am1_presolve (num_literals=8995 num_am1=300 increase=109392 work_done=269725)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 3,
+        "time": 0.25,
+        "objective": 3174.0,
+        "proven_bound": 6013.0,
+        "next_min": 3175.0,
+        "next_max": 6013.0,
+        "gap_percent": 89.44549464398236,
+        "subsolver": "no_lp",
+        "additional_info": "no_lp (fixed_bools=0/8995)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 4,
+        "time": 0.29,
+        "objective": 3181.0,
+        "proven_bound": 6013.0,
+        "next_min": 3182.0,
+        "next_max": 6013.0,
+        "gap_percent": 89.0286073561773,
+        "subsolver": "no_lp",
+        "additional_info": "no_lp (fixed_bools=0/8995)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 5,
+        "time": 0.29,
+        "objective": 3285.0,
+        "proven_bound": 6013.0,
+        "next_min": 3286.0,
+        "next_max": 6013.0,
+        "gap_percent": 83.0441400304414,
+        "subsolver": "no_lp",
+        "additional_info": "no_lp (fixed_bools=0/8995)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 6,
+        "time": 0.3,
+        "objective": 4999.0,
+        "proven_bound": 6013.0,
+        "next_min": 5000.0,
+        "next_max": 6013.0,
+        "gap_percent": 20.284056811362273,
+        "subsolver": "quick_restart_no_lp",
+        "additional_info": "quick_restart_no_lp (fixed_bools=0/8995)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.34,
+        "best_objective": 4999.0,
+        "proven_bound": 5273.0,
+        "next_min": 5000.0,
+        "next_max": 5273.0,
+        "subsolver": "probing",
+        "additional_info": "probing (initial_propagation)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 7,
+        "time": 0.86,
+        "objective": 5250.0,
+        "proven_bound": 5273.0,
+        "next_min": 5251.0,
+        "next_max": 5273.0,
+        "gap_percent": 0.4380952380952381,
+        "subsolver": "pseudo_costs",
+        "additional_info": "pseudo_costs (fixed_bools=0/8995)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 8,
+        "time": 0.89,
+        "objective": 5257.0,
+        "proven_bound": 5273.0,
+        "next_min": 5258.0,
+        "next_max": 5273.0,
+        "gap_percent": 0.3043560966330607,
+        "subsolver": "reduced_costs",
+        "additional_info": "reduced_costs (fixed_bools=0/8995)"
+      },
+      {
+        "event_type": "model",
+        "time": 1.13,
+        "vars_remaining": 8566,
+        "vars_total": 8995,
+        "constraints_remaining": 330,
+        "constraints_total": 330,
+        "additional_info": ""
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 9,
+        "time": 1.3,
+        "objective": 5264.0,
+        "proven_bound": 5273.0,
+        "next_min": 5265.0,
+        "next_max": 5273.0,
+        "gap_percent": 0.17097264437689969,
+        "subsolver": "reduced_costs",
+        "additional_info": "reduced_costs (fixed_bools=429/8995)"
+      },
+      {
+        "event_type": "model",
+        "time": 1.61,
+        "vars_remaining": 5217,
+        "vars_total": 8995,
+        "constraints_remaining": 328,
+        "constraints_total": 330,
+        "additional_info": ""
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 10,
+        "time": 5.52,
+        "objective": 5265.0,
+        "proven_bound": 5273.0,
+        "next_min": 5266.0,
+        "next_max": 5273.0,
+        "gap_percent": 0.15194681861348527,
+        "subsolver": "pseudo_costs",
+        "additional_info": "pseudo_costs (fixed_bools=3778/8995)"
+      },
+      {
+        "event_type": "model",
+        "time": 5.82,
+        "vars_remaining": 5161,
+        "vars_total": 8995,
+        "constraints_remaining": 328,
+        "constraints_total": 330,
+        "additional_info": ""
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 11,
+        "time": 11.21,
+        "objective": 5268.0,
+        "proven_bound": 5273.0,
+        "next_min": 5269.0,
+        "next_max": 5273.0,
+        "gap_percent": 0.09491268033409264,
+        "subsolver": "max_lp",
+        "additional_info": "max_lp (fixed_bools=3834/8995)"
+      },
+      {
+        "event_type": "model",
+        "time": 11.46,
+        "vars_remaining": 2971,
+        "vars_total": 8995,
+        "constraints_remaining": 325,
+        "constraints_total": 330,
+        "additional_info": ""
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 12,
+        "time": 12.6,
+        "objective": 5271.0,
+        "proven_bound": 5273.0,
+        "next_min": 5272.0,
+        "next_max": 5273.0,
+        "gap_percent": 0.03794346423828496,
+        "subsolver": "max_lp",
+        "additional_info": "max_lp (fixed_bools=6024/8995)"
       }
-    },
-    {
-      "subsolver": "fj_short_default",
-      "stats": {
-        "Batches": 1,
-        "Restarts": 1,
-        "LinMoves": 0,
-        "GenMoves": 0,
-        "CompoundMoves": 0,
-        "WeightUpdates": 0
+    ]
+  },
+  "task_timing": {
+    "entries": [
+      {
+        "task_name": "core",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "default_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "feasibility_pump",
+        "num_runs": 37,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fj_long_default",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fj_short_default",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fs_random",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fs_random_quick_restart",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_arc_lns",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_cst_lns",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_dec_lns",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_var_lns",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "lb_tree_search",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "max_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "no_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "objective_lb_search",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "probing",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "pseudo_costs",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "quick_restart",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "quick_restart_no_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "reduced_costs",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rins/rens",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rnd_cst_lns",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rnd_var_lns",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "violation_ls",
+        "num_runs": 36,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
       }
-    },
-    {
-      "subsolver": "violation_ls",
-      "stats": {
-        "Batches": 36,
-        "Restarts": 0,
-        "LinMoves": 9000,
-        "GenMoves": 17911,
-        "CompoundMoves": 4343,
-        "WeightUpdates": 1520
+    ]
+  },
+  "search_stats": {
+    "entries": [
+      {
+        "subsolver": "core",
+        "booleans": 9295,
+        "conflicts": 173041,
+        "branches": 211942,
+        "restarts": 17991,
+        "bool_propagations": 22550398,
+        "integer_propagations": 3875483
+      },
+      {
+        "subsolver": "default_lp",
+        "booleans": 8995,
+        "conflicts": 2307,
+        "branches": 38154,
+        "restarts": 17993,
+        "bool_propagations": 323416,
+        "integer_propagations": 447726
+      },
+      {
+        "subsolver": "fs_random",
+        "booleans": 8995,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 1
+      },
+      {
+        "subsolver": "fs_random_quick_restart",
+        "booleans": 8995,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 1
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "booleans": 8995,
+        "conflicts": 0,
+        "branches": 52743,
+        "restarts": 18012,
+        "bool_propagations": 287625,
+        "integer_propagations": 420520
+      },
+      {
+        "subsolver": "max_lp",
+        "booleans": 8995,
+        "conflicts": 1145,
+        "branches": 50976,
+        "restarts": 18002,
+        "bool_propagations": 382225,
+        "integer_propagations": 595689
+      },
+      {
+        "subsolver": "no_lp",
+        "booleans": 8995,
+        "conflicts": 7475,
+        "branches": 30863,
+        "restarts": 17998,
+        "bool_propagations": 414491,
+        "integer_propagations": 932480
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "booleans": 8999,
+        "conflicts": 762,
+        "branches": 46253,
+        "restarts": 18002,
+        "bool_propagations": 334692,
+        "integer_propagations": 497332
+      },
+      {
+        "subsolver": "probing",
+        "booleans": 8995,
+        "conflicts": 0,
+        "branches": 18020,
+        "restarts": 18048,
+        "bool_propagations": 291978,
+        "integer_propagations": 330885
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "booleans": 8995,
+        "conflicts": 1944,
+        "branches": 39762,
+        "restarts": 17994,
+        "bool_propagations": 371042,
+        "integer_propagations": 550761
+      },
+      {
+        "subsolver": "quick_restart",
+        "booleans": 8995,
+        "conflicts": 245,
+        "branches": 54439,
+        "restarts": 18015,
+        "bool_propagations": 354576,
+        "integer_propagations": 540109
+      },
+      {
+        "subsolver": "quick_restart_no_lp",
+        "booleans": 8995,
+        "conflicts": 5603,
+        "branches": 979451,
+        "restarts": 18495,
+        "bool_propagations": 1848621,
+        "integer_propagations": 5595729
+      },
+      {
+        "subsolver": "reduced_costs",
+        "booleans": 8995,
+        "conflicts": 2051,
+        "branches": 36831,
+        "restarts": 17996,
+        "bool_propagations": 406111,
+        "integer_propagations": 665743
       }
-    }
-  ],
-  "lp_stats": [
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 1,
-        "Iterations": 24974,
-        "AddedCuts": 602,
-        "OPTIMAL": 4580,
-        "DUAL_F.": 1,
-        "DUAL_U.": 0
+    ]
+  },
+  "sat_stats": {
+    "entries": []
+  },
+  "lns_stats": {
+    "entries": []
+  },
+  "ls_stats": {
+    "entries": [
+      {
+        "subsolver": "fj_long_default",
+        "stats": {
+          "Batches": 0,
+          "Restarts": 0,
+          "LinMoves": 0,
+          "GenMoves": 0,
+          "CompoundMoves": 0,
+          "WeightUpdates": 0
+        }
+      },
+      {
+        "subsolver": "fj_short_default",
+        "stats": {
+          "Batches": 1,
+          "Restarts": 1,
+          "LinMoves": 0,
+          "GenMoves": 0,
+          "CompoundMoves": 0,
+          "WeightUpdates": 0
+        }
+      },
+      {
+        "subsolver": "violation_ls",
+        "stats": {
+          "Batches": 36,
+          "Restarts": 0,
+          "LinMoves": 9000,
+          "GenMoves": 17911,
+          "CompoundMoves": 4343,
+          "WeightUpdates": 1520
+        }
       }
-    },
-    {
-      "subsolver": "fs_random",
-      "stats": {
-        "Component": 1,
-        "Iterations": 0,
-        "AddedCuts": 0,
-        "OPTIMAL": 0,
-        "DUAL_F.": 3,
-        "DUAL_U.": 0
+    ]
+  },
+  "lp_stats": {
+    "entries": [
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 1,
+          "Iterations": 24974,
+          "AddedCuts": 602,
+          "OPTIMAL": 4580,
+          "DUAL_F.": 1,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "fs_random",
+        "stats": {
+          "Component": 1,
+          "Iterations": 0,
+          "AddedCuts": 0,
+          "OPTIMAL": 0,
+          "DUAL_F.": 3,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "fs_random_quick_restart",
+        "stats": {
+          "Component": 1,
+          "Iterations": 0,
+          "AddedCuts": 0,
+          "OPTIMAL": 0,
+          "DUAL_F.": 3,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 1,
+          "Iterations": 27702,
+          "AddedCuts": 2260,
+          "OPTIMAL": 610,
+          "DUAL_F.": 1683,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 1,
+          "Iterations": 24088,
+          "AddedCuts": 1278,
+          "OPTIMAL": 2751,
+          "DUAL_F.": 836,
+          "DUAL_U.": 1
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 1,
+          "Iterations": 32908,
+          "AddedCuts": 842,
+          "OPTIMAL": 3655,
+          "DUAL_F.": 10,
+          "DUAL_U.": 1
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 1,
+          "Iterations": 2474,
+          "AddedCuts": 488,
+          "OPTIMAL": 243,
+          "DUAL_F.": 53,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 1,
+          "Iterations": 22777,
+          "AddedCuts": 666,
+          "OPTIMAL": 3435,
+          "DUAL_F.": 650,
+          "DUAL_U.": 1
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 1,
+          "Iterations": 35014,
+          "AddedCuts": 828,
+          "OPTIMAL": 4483,
+          "DUAL_F.": 9,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 1,
+          "Iterations": 24387,
+          "AddedCuts": 600,
+          "OPTIMAL": 2968,
+          "DUAL_F.": 772,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 177
+        }
+      },
+      {
+        "subsolver": "fs_random",
+        "stats": {
+          "Component": 0
+        }
+      },
+      {
+        "subsolver": "fs_random_quick_restart",
+        "stats": {
+          "Component": 0
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 324
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 316
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 299
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 473
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 206
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 276
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 277
+        }
+      },
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 4577,
+          "OPTIMAL": 0,
+          "DUAL_F.": 862,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "fs_random",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 0,
+          "OPTIMAL": 0,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "fs_random_quick_restart",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 0,
+          "OPTIMAL": 0,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 2293,
+          "OPTIMAL": 0,
+          "DUAL_F.": 2577,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 3540,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1701,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 3594,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1035,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 295,
+          "OPTIMAL": 0,
+          "DUAL_F.": 39960,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 4080,
+          "OPTIMAL": 0,
+          "DUAL_F.": 867,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 4480,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1183,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 3602,
+          "OPTIMAL": 0,
+          "DUAL_F.": 778,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 932,
+          "Iterations": 0,
+          "AddedCuts": 1044,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1073,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "fs_random",
+        "stats": {
+          "Component": 330,
+          "Iterations": 0,
+          "AddedCuts": 0,
+          "OPTIMAL": 0,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "fs_random_quick_restart",
+        "stats": {
+          "Component": 330,
+          "Iterations": 0,
+          "AddedCuts": 0,
+          "OPTIMAL": 0,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 2590,
+          "Iterations": 0,
+          "AddedCuts": 3973,
+          "OPTIMAL": 0,
+          "DUAL_F.": 4066,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 1608,
+          "Iterations": 0,
+          "AddedCuts": 3604,
+          "OPTIMAL": 0,
+          "DUAL_F.": 3628,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 1172,
+          "Iterations": 0,
+          "AddedCuts": 2153,
+          "OPTIMAL": 0,
+          "DUAL_F.": 2217,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 818,
+          "Iterations": 0,
+          "AddedCuts": 1534,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1528,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 996,
+          "Iterations": 0,
+          "AddedCuts": 1047,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1073,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 1158,
+          "Iterations": 0,
+          "AddedCuts": 1651,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1646,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 930,
+          "Iterations": 0,
+          "AddedCuts": 1096,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1095,
+          "DUAL_U.": 0
+        }
       }
-    },
-    {
-      "subsolver": "fs_random_quick_restart",
-      "stats": {
-        "Component": 1,
-        "Iterations": 0,
-        "AddedCuts": 0,
-        "OPTIMAL": 0,
-        "DUAL_F.": 3,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 1,
-        "Iterations": 27702,
-        "AddedCuts": 2260,
-        "OPTIMAL": 610,
-        "DUAL_F.": 1683,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 1,
-        "Iterations": 24088,
-        "AddedCuts": 1278,
-        "OPTIMAL": 2751,
-        "DUAL_F.": 836,
-        "DUAL_U.": 1
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 1,
-        "Iterations": 32908,
-        "AddedCuts": 842,
-        "OPTIMAL": 3655,
-        "DUAL_F.": 10,
-        "DUAL_U.": 1
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 1,
-        "Iterations": 2474,
-        "AddedCuts": 488,
-        "OPTIMAL": 243,
-        "DUAL_F.": 53,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 1,
-        "Iterations": 22777,
-        "AddedCuts": 666,
-        "OPTIMAL": 3435,
-        "DUAL_F.": 650,
-        "DUAL_U.": 1
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 1,
-        "Iterations": 35014,
-        "AddedCuts": 828,
-        "OPTIMAL": 4483,
-        "DUAL_F.": 9,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 1,
-        "Iterations": 24387,
-        "AddedCuts": 600,
-        "OPTIMAL": 2968,
-        "DUAL_F.": 772,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 177
-      }
-    },
-    {
-      "subsolver": "fs_random",
-      "stats": {
-        "Component": 0
-      }
-    },
-    {
-      "subsolver": "fs_random_quick_restart",
-      "stats": {
-        "Component": 0
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 324
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 316
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 299
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 473
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 206
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 276
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 277
-      }
-    },
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 4577,
-        "OPTIMAL": 0,
-        "DUAL_F.": 862,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "fs_random",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 0,
-        "OPTIMAL": 0,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "fs_random_quick_restart",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 0,
-        "OPTIMAL": 0,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 2293,
-        "OPTIMAL": 0,
-        "DUAL_F.": 2577,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 3540,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1701,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 3594,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1035,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 295,
-        "OPTIMAL": 0,
-        "DUAL_F.": 39960,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 4080,
-        "OPTIMAL": 0,
-        "DUAL_F.": 867,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 4480,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1183,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 3602,
-        "OPTIMAL": 0,
-        "DUAL_F.": 778,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 932,
-        "Iterations": 0,
-        "AddedCuts": 1044,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1073,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "fs_random",
-      "stats": {
-        "Component": 330,
-        "Iterations": 0,
-        "AddedCuts": 0,
-        "OPTIMAL": 0,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "fs_random_quick_restart",
-      "stats": {
-        "Component": 330,
-        "Iterations": 0,
-        "AddedCuts": 0,
-        "OPTIMAL": 0,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 2590,
-        "Iterations": 0,
-        "AddedCuts": 3973,
-        "OPTIMAL": 0,
-        "DUAL_F.": 4066,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 1608,
-        "Iterations": 0,
-        "AddedCuts": 3604,
-        "OPTIMAL": 0,
-        "DUAL_F.": 3628,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 1172,
-        "Iterations": 0,
-        "AddedCuts": 2153,
-        "OPTIMAL": 0,
-        "DUAL_F.": 2217,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 818,
-        "Iterations": 0,
-        "AddedCuts": 1534,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1528,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 996,
-        "Iterations": 0,
-        "AddedCuts": 1047,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1073,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 1158,
-        "Iterations": 0,
-        "AddedCuts": 1651,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1646,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 930,
-        "Iterations": 0,
-        "AddedCuts": 1096,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1095,
-        "DUAL_U.": 0
-      }
-    }
-  ],
+    ]
+  },
   "solution_repositories": {
     "repositories": {
       "feasible solutions": {
@@ -1681,20 +1697,22 @@
       ]
     }
   ],
-  "objective_bounds": [
-    {
-      "subsolver": "am1_presolve",
-      "num_bounds": 1
-    },
-    {
-      "subsolver": "initial_domain",
-      "num_bounds": 1
-    },
-    {
-      "subsolver": "probing",
-      "num_bounds": 1
-    }
-  ],
+  "objective_bounds": {
+    "entries": [
+      {
+        "subsolver": "am1_presolve",
+        "num_bounds": 1
+      },
+      {
+        "subsolver": "initial_domain",
+        "num_bounds": 1
+      },
+      {
+        "subsolver": "probing",
+        "num_bounds": 1
+      }
+    ]
+  },
   "improving_bounds_shared": {
     "bounds_by_subsolver": {
       "probing": 56,

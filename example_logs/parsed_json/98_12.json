@@ -644,488 +644,490 @@
       }
     ]
   },
-  "presolve_log": [
-    {
-      "wall_time": 0.00019,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0029,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 3,
-        "num_dual_strengthening": 1
+  "presolve_log": {
+    "entries": [
+      {
+        "wall_time": 0.00019,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0029,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 3,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 3.79e-6,
+        "deterministic_time": 0.0,
+        "operation": "ExtractEncodingFromLinear",
+        "details": {}
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "num removable Booleans: 0 / 590"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "num trivial clauses: 0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[0s] clauses:19 literals:38 vars:38 one_side_vars:38 simple_definition:0 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[1.046e-05s] clauses:19 literals:38 vars:38 one_side_vars:38 simple_definition:0 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[2.3093e-05s] clauses:19 literals:38 vars:38 one_side_vars:38 simple_definition:0 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": 0.00423,
+        "deterministic_time": 0.00228,
+        "operation": "Probe",
+        "details": {
+          "probed": 1218,
+          "new_binary_clauses": 1558
+        }
+      },
+      {
+        "wall_time": 0.0000307,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000185,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00112,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 2,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.000471,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {
+          "duplicates": 1
+        }
+      },
+      {
+        "wall_time": 0.0003,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {
+          "different": 171,
+          "cliques": 1,
+          "size": 19
+        }
+      },
+      {
+        "wall_time": 0.0000107,
+        "deterministic_time": 1.74e-7,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {
+          "relevant_constraints": 20
+        }
+      },
+      {
+        "wall_time": 0.0000486,
+        "deterministic_time": 1.54e-7,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 20
+        }
+      },
+      {
+        "wall_time": 9.3e-6,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 4.27e-6,
+        "deterministic_time": 1e-7,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {
+          "linears": 1
+        }
+      },
+      {
+        "wall_time": 0.00013,
+        "deterministic_time": 0.000095,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 3.4e-6,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000196,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00116,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.000184,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00113,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "num removable Booleans: 0 / 590"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "num trivial clauses: 0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[0s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[2.2562e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[3.3282e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": 0.00458,
+        "deterministic_time": 0.00237,
+        "operation": "Probe",
+        "details": {
+          "probed": 1218,
+          "new_binary_clauses": 1387
+        }
+      },
+      {
+        "wall_time": 0.000436,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000199,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00121,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.000558,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000227,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000014,
+        "deterministic_time": 1.74e-7,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {
+          "relevant_constraints": 20
+        }
+      },
+      {
+        "wall_time": 0.000157,
+        "deterministic_time": 3.8e-6,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 533
+        }
+      },
+      {
+        "wall_time": 0.000018,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 6.11e-6,
+        "deterministic_time": 1e-7,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {
+          "linears": 1
+        }
+      },
+      {
+        "wall_time": 0.000137,
+        "deterministic_time": 0.000101,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 6.83e-6,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000227,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00126,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.000222,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00125,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "num removable Booleans: 0 / 590"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "num trivial clauses: 0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[0s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[2.3254e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": null,
+        "deterministic_time": null,
+        "operation": "SAT presolve",
+        "details": {
+          "raw": "[3.3854e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
+        }
+      },
+      {
+        "wall_time": 0.00473,
+        "deterministic_time": 0.00239,
+        "operation": "Probe",
+        "details": {
+          "probed": 1218,
+          "new_binary_clauses": 1387
+        }
+      },
+      {
+        "wall_time": 0.000478,
+        "deterministic_time": 0.0,
+        "operation": "MaxClique",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000205,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00119,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.000563,
+        "deterministic_time": 0.0,
+        "operation": "DetectDuplicateConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000218,
+        "deterministic_time": 0.0,
+        "operation": "DetectDifferentVariables",
+        "details": {}
+      },
+      {
+        "wall_time": 0.0000154,
+        "deterministic_time": 1.74e-7,
+        "operation": "DetectDominatedLinearConstraints",
+        "details": {
+          "relevant_constraints": 20
+        }
+      },
+      {
+        "wall_time": 0.000167,
+        "deterministic_time": 3.8e-6,
+        "operation": "ProcessSetPPC",
+        "details": {
+          "relevant_constraints": 533
+        }
+      },
+      {
+        "wall_time": 0.000012,
+        "deterministic_time": 0.0,
+        "operation": "FindAlmostIdenticalLinearConstraints",
+        "details": {}
+      },
+      {
+        "wall_time": 8.69e-6,
+        "deterministic_time": 1e-7,
+        "operation": "FindBigHorizontalLinearOverlap",
+        "details": {
+          "linears": 1
+        }
+      },
+      {
+        "wall_time": 0.000151,
+        "deterministic_time": 0.000101,
+        "operation": "FindBigVerticalLinearOverlap",
+        "details": {}
+      },
+      {
+        "wall_time": 9.29e-6,
+        "deterministic_time": 0.0,
+        "operation": "MergeClauses",
+        "details": {}
+      },
+      {
+        "wall_time": 0.000236,
+        "deterministic_time": 0.0,
+        "operation": "DetectDominanceRelations",
+        "details": {}
+      },
+      {
+        "wall_time": 0.00129,
+        "deterministic_time": 0.0,
+        "operation": "PresolveToFixPoint",
+        "details": {
+          "num_loops": 1,
+          "num_dual_strengthening": 1
+        }
+      },
+      {
+        "wall_time": 0.000056,
+        "deterministic_time": 0.0,
+        "operation": "ExpandObjective",
+        "details": {}
       }
-    },
-    {
-      "wall_time": 3.79e-6,
-      "deterministic_time": 0.0,
-      "operation": "ExtractEncodingFromLinear",
-      "details": {}
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "num removable Booleans: 0 / 590"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "num trivial clauses: 0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[0s] clauses:19 literals:38 vars:38 one_side_vars:38 simple_definition:0 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[1.046e-05s] clauses:19 literals:38 vars:38 one_side_vars:38 simple_definition:0 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[2.3093e-05s] clauses:19 literals:38 vars:38 one_side_vars:38 simple_definition:0 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": 0.00423,
-      "deterministic_time": 0.00228,
-      "operation": "Probe",
-      "details": {
-        "probed": 1218,
-        "new_binary_clauses": 1558
-      }
-    },
-    {
-      "wall_time": 0.0000307,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000185,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00112,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 2,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.000471,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {
-        "duplicates": 1
-      }
-    },
-    {
-      "wall_time": 0.0003,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {
-        "different": 171,
-        "cliques": 1,
-        "size": 19
-      }
-    },
-    {
-      "wall_time": 0.0000107,
-      "deterministic_time": 1.74e-7,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {
-        "relevant_constraints": 20
-      }
-    },
-    {
-      "wall_time": 0.0000486,
-      "deterministic_time": 1.54e-7,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 20
-      }
-    },
-    {
-      "wall_time": 9.3e-6,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 4.27e-6,
-      "deterministic_time": 1e-7,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {
-        "linears": 1
-      }
-    },
-    {
-      "wall_time": 0.00013,
-      "deterministic_time": 0.000095,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 3.4e-6,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000196,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00116,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.000184,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00113,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "num removable Booleans: 0 / 590"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "num trivial clauses: 0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[0s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[2.2562e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[3.3282e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": 0.00458,
-      "deterministic_time": 0.00237,
-      "operation": "Probe",
-      "details": {
-        "probed": 1218,
-        "new_binary_clauses": 1387
-      }
-    },
-    {
-      "wall_time": 0.000436,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000199,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00121,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.000558,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000227,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000014,
-      "deterministic_time": 1.74e-7,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {
-        "relevant_constraints": 20
-      }
-    },
-    {
-      "wall_time": 0.000157,
-      "deterministic_time": 3.8e-6,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 533
-      }
-    },
-    {
-      "wall_time": 0.000018,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 6.11e-6,
-      "deterministic_time": 1e-7,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {
-        "linears": 1
-      }
-    },
-    {
-      "wall_time": 0.000137,
-      "deterministic_time": 0.000101,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 6.83e-6,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000227,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00126,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.000222,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00125,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "num removable Booleans: 0 / 590"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "num trivial clauses: 0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[0s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[2.3254e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": null,
-      "deterministic_time": null,
-      "operation": "SAT presolve",
-      "details": {
-        "raw": "[3.3854e-05s] clauses:532 literals:1064 vars:551 one_side_vars:380 simple_definition:171 singleton_clauses:0"
-      }
-    },
-    {
-      "wall_time": 0.00473,
-      "deterministic_time": 0.00239,
-      "operation": "Probe",
-      "details": {
-        "probed": 1218,
-        "new_binary_clauses": 1387
-      }
-    },
-    {
-      "wall_time": 0.000478,
-      "deterministic_time": 0.0,
-      "operation": "MaxClique",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000205,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00119,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.000563,
-      "deterministic_time": 0.0,
-      "operation": "DetectDuplicateConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000218,
-      "deterministic_time": 0.0,
-      "operation": "DetectDifferentVariables",
-      "details": {}
-    },
-    {
-      "wall_time": 0.0000154,
-      "deterministic_time": 1.74e-7,
-      "operation": "DetectDominatedLinearConstraints",
-      "details": {
-        "relevant_constraints": 20
-      }
-    },
-    {
-      "wall_time": 0.000167,
-      "deterministic_time": 3.8e-6,
-      "operation": "ProcessSetPPC",
-      "details": {
-        "relevant_constraints": 533
-      }
-    },
-    {
-      "wall_time": 0.000012,
-      "deterministic_time": 0.0,
-      "operation": "FindAlmostIdenticalLinearConstraints",
-      "details": {}
-    },
-    {
-      "wall_time": 8.69e-6,
-      "deterministic_time": 1e-7,
-      "operation": "FindBigHorizontalLinearOverlap",
-      "details": {
-        "linears": 1
-      }
-    },
-    {
-      "wall_time": 0.000151,
-      "deterministic_time": 0.000101,
-      "operation": "FindBigVerticalLinearOverlap",
-      "details": {}
-    },
-    {
-      "wall_time": 9.29e-6,
-      "deterministic_time": 0.0,
-      "operation": "MergeClauses",
-      "details": {}
-    },
-    {
-      "wall_time": 0.000236,
-      "deterministic_time": 0.0,
-      "operation": "DetectDominanceRelations",
-      "details": {}
-    },
-    {
-      "wall_time": 0.00129,
-      "deterministic_time": 0.0,
-      "operation": "PresolveToFixPoint",
-      "details": {
-        "num_loops": 1,
-        "num_dual_strengthening": 1
-      }
-    },
-    {
-      "wall_time": 0.000056,
-      "deterministic_time": 0.0,
-      "operation": "ExpandObjective",
-      "details": {}
-    }
-  ],
+    ]
+  },
   "presolve_summary": {
     "affine_relations": 0,
     "rules_applied": {
@@ -1717,2103 +1719,2117 @@
     },
     "search_type": "parallel"
   },
-  "search_events": [
-    {
-      "event_type": "bound",
-      "time": 0.04,
-      "best_objective": 11671.0,
-      "proven_bound": 1.0,
-      "next_min": 1.0,
-      "next_max": 11670.0,
-      "subsolver": "objective_shaving_search_no_lp",
-      "additional_info": "objective_shaving_search_no_lp (vars=649 csts=2154)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.05,
-      "best_objective": 11671.0,
-      "proven_bound": 294.0,
-      "next_min": 294.0,
-      "next_max": 11670.0,
-      "subsolver": "default_lp",
-      "additional_info": "default_lp (initial_propagation)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 2,
-      "time": 0.05,
-      "objective": 11629.0,
-      "proven_bound": 294.0,
-      "next_min": 294.0,
-      "next_max": 11628.0,
-      "gap_percent": 97.47183764726115,
-      "subsolver": "quick_restart_no_lp",
-      "additional_info": "quick_restart_no_lp (fixed_bools=1/672)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.05,
-      "best_objective": 11629.0,
-      "proven_bound": 335.0,
-      "next_min": 335.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search_no_lp",
-      "additional_info": "objective_lb_search_no_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.06,
-      "best_objective": 11629.0,
-      "proven_bound": 733.0,
-      "next_min": 733.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search_no_lp",
-      "additional_info": "objective_lb_search_no_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.06,
-      "best_objective": 11629.0,
-      "proven_bound": 735.0,
-      "next_min": 735.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search_no_lp",
-      "additional_info": "objective_lb_search_no_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.06,
-      "best_objective": 11629.0,
-      "proven_bound": 872.0,
-      "next_min": 872.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search_no_lp",
-      "additional_info": "objective_lb_search_no_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.06,
-      "best_objective": 11629.0,
-      "proven_bound": 879.0,
-      "next_min": 879.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search_no_lp",
-      "additional_info": "objective_lb_search_no_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.07,
-      "best_objective": 11629.0,
-      "proven_bound": 892.0,
-      "next_min": 892.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search_no_lp",
-      "additional_info": "objective_lb_search_no_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.07,
-      "best_objective": 11629.0,
-      "proven_bound": 937.0,
-      "next_min": 937.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.07,
-      "best_objective": 11629.0,
-      "proven_bound": 1740.0,
-      "next_min": 1740.0,
-      "next_max": 11628.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.09,
-      "best_objective": 11629.0,
-      "proven_bound": 5103.0,
-      "next_min": 5103.0,
-      "next_max": 11628.0,
-      "subsolver": "lb_tree_search",
-      "additional_info": "lb_tree_search (initial_propagation)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.14,
-      "best_objective": 11629.0,
-      "proven_bound": 5318.0,
-      "next_min": 5318.0,
-      "next_max": 11628.0,
-      "subsolver": "lb_tree_search",
-      "additional_info": "lb_tree_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.2,
-      "best_objective": 11629.0,
-      "proven_bound": 5328.0,
-      "next_min": 5328.0,
-      "next_max": 11628.0,
-      "subsolver": "lb_tree_search",
-      "additional_info": "lb_tree_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.25,
-      "best_objective": 11629.0,
-      "proven_bound": 5333.0,
-      "next_min": 5333.0,
-      "next_max": 11628.0,
-      "subsolver": "probing_max_lp",
-      "additional_info": "probing_max_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.28,
-      "best_objective": 11629.0,
-      "proven_bound": 5377.0,
-      "next_min": 5377.0,
-      "next_max": 11628.0,
-      "subsolver": "lb_tree_search",
-      "additional_info": "lb_tree_search"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 3,
-      "time": 0.29,
-      "objective": 11427.0,
-      "proven_bound": 5377.0,
-      "next_min": 5377.0,
-      "next_max": 11426.0,
-      "gap_percent": 52.94477990723725,
-      "subsolver": "packing_rectangles_lns",
-      "additional_info": "packing_rectangles_lns (d=0.50 s=24 t=0.10 p=0.00 stall=0 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.4,
-      "best_objective": 11427.0,
-      "proven_bound": 5382.0,
-      "next_min": 5382.0,
-      "next_max": 11426.0,
-      "subsolver": "max_lp",
-      "additional_info": "max_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.48,
-      "best_objective": 11427.0,
-      "proven_bound": 5390.0,
-      "next_min": 5390.0,
-      "next_max": 11426.0,
-      "subsolver": "probing_max_lp",
-      "additional_info": "probing_max_lp"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.49,
-      "best_objective": 11427.0,
-      "proven_bound": 5407.0,
-      "next_min": 5407.0,
-      "next_max": 11426.0,
-      "subsolver": "max_lp",
-      "additional_info": "max_lp"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 4,
-      "time": 0.57,
-      "objective": 11328.0,
-      "proven_bound": 5407.0,
-      "next_min": 5407.0,
-      "next_max": 11327.0,
-      "gap_percent": 52.268714689265536,
-      "subsolver": "scheduling_precedences_lns",
-      "additional_info": "scheduling_precedences_lns (d=0.50 s=45 t=0.10 p=0.00 stall=0 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.69,
-      "best_objective": 11328.0,
-      "proven_bound": 5413.0,
-      "next_min": 5413.0,
-      "next_max": 11327.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.7,
-      "best_objective": 11328.0,
-      "proven_bound": 5436.0,
-      "next_min": 5436.0,
-      "next_max": 11327.0,
-      "subsolver": "pseudo_costs",
-      "additional_info": "pseudo_costs"
-    },
-    {
-      "event_type": "bound",
-      "time": 0.9,
-      "best_objective": 11328.0,
-      "proven_bound": 5460.0,
-      "next_min": 5460.0,
-      "next_max": 11327.0,
-      "subsolver": "pseudo_costs",
-      "additional_info": "pseudo_costs [skipped_logs=1]"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 5,
-      "time": 1.67,
-      "objective": 11143.0,
-      "proven_bound": 5541.0,
-      "next_min": 5541.0,
-      "next_max": 11142.0,
-      "gap_percent": 50.27371443955847,
-      "subsolver": "rnd_var_lns",
-      "additional_info": "rnd_var_lns (d=0.91 s=109 t=0.10 p=1.00 stall=4 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 6,
-      "time": 1.83,
-      "objective": 11142.0,
-      "proven_bound": 5550.0,
-      "next_min": 5550.0,
-      "next_max": 11141.0,
-      "gap_percent": 50.1884760366182,
-      "subsolver": "packing_rectangles_lns",
-      "additional_info": "packing_rectangles_lns (d=0.04 s=133 t=0.10 p=0.00 stall=4 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 1.95,
-      "best_objective": 11142.0,
-      "proven_bound": 5567.0,
-      "next_min": 5567.0,
-      "next_max": 11141.0,
-      "subsolver": "probing_max_lp",
-      "additional_info": "probing_max_lp [skipped_logs=9]"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 7,
-      "time": 2.42,
-      "objective": 11132.0,
-      "proven_bound": 5576.0,
-      "next_min": 5576.0,
-      "next_max": 11131.0,
-      "gap_percent": 49.9101688825009,
-      "subsolver": "routing_path_lns",
-      "additional_info": "routing_path_lns (d=0.06 s=138 t=0.10 p=0.00 stall=3 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 8,
-      "time": 2.62,
-      "objective": 11131.0,
-      "proven_bound": 5605.0,
-      "next_min": 5605.0,
-      "next_max": 11130.0,
-      "gap_percent": 49.64513520797772,
-      "subsolver": "packing_slice_lns",
-      "additional_info": "packing_slice_lns (d=0.08 s=171 t=0.10 p=0.25 stall=1 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 2.94,
-      "best_objective": 11131.0,
-      "proven_bound": 5628.0,
-      "next_min": 5628.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=7]"
-    },
-    {
-      "event_type": "bound",
-      "time": 4.0,
-      "best_objective": 11131.0,
-      "proven_bound": 5679.0,
-      "next_min": 5679.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=4]"
-    },
-    {
-      "event_type": "bound",
-      "time": 4.35,
-      "best_objective": 11131.0,
-      "proven_bound": 5682.0,
-      "next_min": 5682.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=0]"
-    },
-    {
-      "event_type": "bound",
-      "time": 5.43,
-      "best_objective": 11131.0,
-      "proven_bound": 5704.0,
-      "next_min": 5704.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "bound",
-      "time": 6.43,
-      "best_objective": 11131.0,
-      "proven_bound": 5722.0,
-      "next_min": 5722.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "bound",
-      "time": 7.77,
-      "best_objective": 11131.0,
-      "proven_bound": 5729.0,
-      "next_min": 5729.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "bound",
-      "time": 8.81,
-      "best_objective": 11131.0,
-      "proven_bound": 5763.0,
-      "next_min": 5763.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=2]"
-    },
-    {
-      "event_type": "bound",
-      "time": 9.69,
-      "best_objective": 11131.0,
-      "proven_bound": 5799.0,
-      "next_min": 5799.0,
-      "next_max": 11130.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 9,
-      "time": 10.31,
-      "objective": 10824.0,
-      "proven_bound": 5799.0,
-      "next_min": 5799.0,
-      "next_max": 10823.0,
-      "gap_percent": 46.42461197339246,
-      "subsolver": "rins_lp_lns",
-      "additional_info": "rins_lp_lns (d=0.45 s=548 t=0.10 p=0.50 stall=1 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 10.91,
-      "best_objective": 10824.0,
-      "proven_bound": 5802.0,
-      "next_min": 5802.0,
-      "next_max": 10823.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=0]"
-    },
-    {
-      "event_type": "bound",
-      "time": 12.3,
-      "best_objective": 10824.0,
-      "proven_bound": 5804.0,
-      "next_min": 5804.0,
-      "next_max": 10823.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 12.79,
-      "best_objective": 10824.0,
-      "proven_bound": 5814.0,
-      "next_min": 5814.0,
-      "next_max": 10823.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 10,
-      "time": 13.68,
-      "objective": 10681.0,
-      "proven_bound": 5816.0,
-      "next_min": 5816.0,
-      "next_max": 10680.0,
-      "gap_percent": 45.548169647036794,
-      "subsolver": "routing_path_lns",
-      "additional_info": "routing_path_lns (d=0.06 s=698 t=0.10 p=0.45 stall=4 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 11,
-      "time": 13.94,
-      "objective": 10654.0,
-      "proven_bound": 5816.0,
-      "next_min": 5816.0,
-      "next_max": 10653.0,
-      "gap_percent": 45.4101745823165,
-      "subsolver": "graph_var_lns",
-      "additional_info": "graph_var_lns (d=0.96 s=723 t=0.10 p=0.57 stall=7 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 14.0,
-      "best_objective": 10654.0,
-      "proven_bound": 5817.0,
-      "next_min": 5817.0,
-      "next_max": 10653.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "bound",
-      "time": 14.73,
-      "best_objective": 10654.0,
-      "proven_bound": 5821.0,
-      "next_min": 5821.0,
-      "next_max": 10653.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=0]"
-    },
-    {
-      "event_type": "bound",
-      "time": 15.92,
-      "best_objective": 10654.0,
-      "proven_bound": 5885.0,
-      "next_min": 5885.0,
-      "next_max": 10653.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=2]"
-    },
-    {
-      "event_type": "bound",
-      "time": 17.11,
-      "best_objective": 10654.0,
-      "proven_bound": 5887.0,
-      "next_min": 5887.0,
-      "next_max": 10653.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 17.75,
-      "best_objective": 10654.0,
-      "proven_bound": 5898.0,
-      "next_min": 5898.0,
-      "next_max": 10653.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 12,
-      "time": 18.44,
-      "objective": 10613.0,
-      "proven_bound": 5898.0,
-      "next_min": 5898.0,
-      "next_max": 10612.0,
-      "gap_percent": 44.426646565532835,
-      "subsolver": "quick_restart",
-      "additional_info": "quick_restart (fixed_bools=2/2501)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 13,
-      "time": 18.82,
-      "objective": 10543.0,
-      "proven_bound": 5898.0,
-      "next_min": 5898.0,
-      "next_max": 10542.0,
-      "gap_percent": 44.05766859527649,
-      "subsolver": "graph_var_lns",
-      "additional_info": "graph_var_lns (d=0.96 s=931 t=0.10 p=0.57 stall=10 h=folio_rnd)"
-    },
-    {
-      "event_type": "bound",
-      "time": 19.29,
-      "best_objective": 10543.0,
-      "proven_bound": 5900.0,
-      "next_min": 5900.0,
-      "next_max": 10542.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 19.88,
-      "best_objective": 10543.0,
-      "proven_bound": 5906.0,
-      "next_min": 5906.0,
-      "next_max": 10542.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "bound",
-      "time": 20.28,
-      "best_objective": 10543.0,
-      "proven_bound": 5912.0,
-      "next_min": 5912.0,
-      "next_max": 10542.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=0]"
-    },
-    {
-      "event_type": "bound",
-      "time": 21.64,
-      "best_objective": 10543.0,
-      "proven_bound": 5936.0,
-      "next_min": 5936.0,
-      "next_max": 10542.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search [skipped_logs=1]"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 14,
-      "time": 22.97,
-      "objective": 10204.0,
-      "proven_bound": 5936.0,
-      "next_min": 5936.0,
-      "next_max": 10203.0,
-      "gap_percent": 41.82673461387691,
-      "subsolver": "graph_var_lns",
-      "additional_info": "graph_var_lns (d=0.96 s=1151 t=0.10 p=0.55 stall=11 h=folio_rnd)"
-    },
-    {
-      "event_type": "bound",
-      "time": 26.37,
-      "best_objective": 10204.0,
-      "proven_bound": 5938.0,
-      "next_min": 5938.0,
-      "next_max": 10203.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 27.14,
-      "best_objective": 10204.0,
-      "proven_bound": 5944.0,
-      "next_min": 5944.0,
-      "next_max": 10203.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 15,
-      "time": 27.79,
-      "objective": 10203.0,
-      "proven_bound": 5944.0,
-      "next_min": 5944.0,
-      "next_max": 10202.0,
-      "gap_percent": 41.74262471822013,
-      "subsolver": "rnd_var_lns",
-      "additional_info": "rnd_var_lns (d=0.86 s=1345 t=0.10 p=0.52 stall=1 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 27.84,
-      "best_objective": 10203.0,
-      "proven_bound": 5946.0,
-      "next_min": 5946.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 28.56,
-      "best_objective": 10203.0,
-      "proven_bound": 5950.0,
-      "next_min": 5950.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 29.21,
-      "best_objective": 10203.0,
-      "proven_bound": 5953.0,
-      "next_min": 5953.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 29.84,
-      "best_objective": 10203.0,
-      "proven_bound": 5955.0,
-      "next_min": 5955.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 30.93,
-      "best_objective": 10203.0,
-      "proven_bound": 5957.0,
-      "next_min": 5957.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 31.42,
-      "best_objective": 10203.0,
-      "proven_bound": 5965.0,
-      "next_min": 5965.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 32.23,
-      "best_objective": 10203.0,
-      "proven_bound": 5981.0,
-      "next_min": 5981.0,
-      "next_max": 10202.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 16,
-      "time": 35.56,
-      "objective": 10083.0,
-      "proven_bound": 5981.0,
-      "next_min": 5981.0,
-      "next_max": 10082.0,
-      "gap_percent": 40.682336606168796,
-      "subsolver": "quick_restart_no_lp",
-      "additional_info": "quick_restart_no_lp (fixed_bools=8/2430)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 17,
-      "time": 35.73,
-      "objective": 10076.0,
-      "proven_bound": 5981.0,
-      "next_min": 5981.0,
-      "next_max": 10075.0,
-      "gap_percent": 40.641127431520445,
-      "subsolver": "quick_restart",
-      "additional_info": "quick_restart (fixed_bools=2/4427)"
-    },
-    {
-      "event_type": "bound",
-      "time": 35.75,
-      "best_objective": 10076.0,
-      "proven_bound": 5983.0,
-      "next_min": 5983.0,
-      "next_max": 10075.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 18,
-      "time": 36.01,
-      "objective": 10062.0,
-      "proven_bound": 5983.0,
-      "next_min": 5983.0,
-      "next_max": 10061.0,
-      "gap_percent": 40.538660306102166,
-      "subsolver": "quick_restart",
-      "additional_info": "quick_restart (fixed_bools=2/4443)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 19,
-      "time": 36.02,
-      "objective": 10042.0,
-      "proven_bound": 5983.0,
-      "next_min": 5983.0,
-      "next_max": 10041.0,
-      "gap_percent": 40.420235012945625,
-      "subsolver": "packing_precedences_lns",
-      "additional_info": "packing_precedences_lns (d=0.00 s=1704 t=0.10 p=0.23 stall=44 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 36.42,
-      "best_objective": 10042.0,
-      "proven_bound": 5988.0,
-      "next_min": 5988.0,
-      "next_max": 10041.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 38.93,
-      "best_objective": 10042.0,
-      "proven_bound": 5995.0,
-      "next_min": 5995.0,
-      "next_max": 10041.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 20,
-      "time": 39.42,
-      "objective": 9885.0,
-      "proven_bound": 5995.0,
-      "next_min": 5995.0,
-      "next_max": 9884.0,
-      "gap_percent": 39.35255437531614,
-      "subsolver": "routing_path_lns",
-      "additional_info": "routing_path_lns (d=0.05 s=1822 t=0.10 p=0.48 stall=7 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 21,
-      "time": 39.62,
-      "objective": 9668.0,
-      "proven_bound": 5995.0,
-      "next_min": 5995.0,
-      "next_max": 9667.0,
-      "gap_percent": 37.99131154323542,
-      "subsolver": "packing_rectangles_lns",
-      "additional_info": "packing_rectangles_lns (d=0.12 s=1851 t=0.10 p=0.48 stall=8 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 40.32,
-      "best_objective": 9668.0,
-      "proven_bound": 6000.0,
-      "next_min": 6000.0,
-      "next_max": 9667.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 42.14,
-      "best_objective": 9668.0,
-      "proven_bound": 6010.0,
-      "next_min": 6010.0,
-      "next_max": 9667.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 22,
-      "time": 42.45,
-      "objective": 8972.0,
-      "proven_bound": 6010.0,
-      "next_min": 6010.0,
-      "next_max": 8971.0,
-      "gap_percent": 33.013820775746765,
-      "subsolver": "routing_path_lns",
-      "additional_info": "routing_path_lns (d=0.05 s=1954 t=0.10 p=0.48 stall=7 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 23,
-      "time": 42.7,
-      "objective": 7089.0,
-      "proven_bound": 6010.0,
-      "next_min": 6010.0,
-      "next_max": 7088.0,
-      "gap_percent": 15.220764564818733,
-      "subsolver": "rnd_cst_lns",
-      "additional_info": "rnd_cst_lns (d=0.81 s=1978 t=0.10 p=0.51 stall=11 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 24,
-      "time": 42.86,
-      "objective": 7075.0,
-      "proven_bound": 6010.0,
-      "next_min": 6010.0,
-      "next_max": 7074.0,
-      "gap_percent": 15.053003533568905,
-      "subsolver": "packing_slice_lns",
-      "additional_info": "packing_slice_lns (d=0.06 s=1985 t=0.10 p=0.44 stall=7 h=auto_l0)"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 25,
-      "time": 45.19,
-      "objective": 7060.0,
-      "proven_bound": 6010.0,
-      "next_min": 6010.0,
-      "next_max": 7059.0,
-      "gap_percent": 14.872521246458923,
-      "subsolver": "rnd_var_lns",
-      "additional_info": "rnd_var_lns (d=0.85 s=2073 t=0.10 p=0.51 stall=2 h=auto_l0)"
-    },
-    {
-      "event_type": "bound",
-      "time": 45.37,
-      "best_objective": 7060.0,
-      "proven_bound": 6011.0,
-      "next_min": 6011.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 48.04,
-      "best_objective": 7060.0,
-      "proven_bound": 6013.0,
-      "next_min": 6013.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 50.53,
-      "best_objective": 7060.0,
-      "proven_bound": 6016.0,
-      "next_min": 6016.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 55.21,
-      "best_objective": 7060.0,
-      "proven_bound": 6039.0,
-      "next_min": 6039.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 56.89,
-      "best_objective": 7060.0,
-      "proven_bound": 6040.0,
-      "next_min": 6040.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 58.31,
-      "best_objective": 7060.0,
-      "proven_bound": 6048.0,
-      "next_min": 6048.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 65.52,
-      "best_objective": 7060.0,
-      "proven_bound": 6049.0,
-      "next_min": 6049.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 66.66,
-      "best_objective": 7060.0,
-      "proven_bound": 6052.0,
-      "next_min": 6052.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 67.18,
-      "best_objective": 7060.0,
-      "proven_bound": 6054.0,
-      "next_min": 6054.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 68.03,
-      "best_objective": 7060.0,
-      "proven_bound": 6058.0,
-      "next_min": 6058.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 68.09,
-      "best_objective": 7060.0,
-      "proven_bound": 6060.0,
-      "next_min": 6060.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 68.19,
-      "best_objective": 7060.0,
-      "proven_bound": 6065.0,
-      "next_min": 6065.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 68.29,
-      "best_objective": 7060.0,
-      "proven_bound": 6067.0,
-      "next_min": 6067.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 68.44,
-      "best_objective": 7060.0,
-      "proven_bound": 6074.0,
-      "next_min": 6074.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 70.4,
-      "best_objective": 7060.0,
-      "proven_bound": 6080.0,
-      "next_min": 6080.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 70.51,
-      "best_objective": 7060.0,
-      "proven_bound": 6086.0,
-      "next_min": 6086.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 70.63,
-      "best_objective": 7060.0,
-      "proven_bound": 6087.0,
-      "next_min": 6087.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 72.59,
-      "best_objective": 7060.0,
-      "proven_bound": 6094.0,
-      "next_min": 6094.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 73.92,
-      "best_objective": 7060.0,
-      "proven_bound": 6099.0,
-      "next_min": 6099.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 74.38,
-      "best_objective": 7060.0,
-      "proven_bound": 6103.0,
-      "next_min": 6103.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 74.76,
-      "best_objective": 7060.0,
-      "proven_bound": 6104.0,
-      "next_min": 6104.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 77.65,
-      "best_objective": 7060.0,
-      "proven_bound": 6105.0,
-      "next_min": 6105.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 81.05,
-      "best_objective": 7060.0,
-      "proven_bound": 6107.0,
-      "next_min": 6107.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 82.75,
-      "best_objective": 7060.0,
-      "proven_bound": 6108.0,
-      "next_min": 6108.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 85.09,
-      "best_objective": 7060.0,
-      "proven_bound": 6109.0,
-      "next_min": 6109.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 87.08,
-      "best_objective": 7060.0,
-      "proven_bound": 6110.0,
-      "next_min": 6110.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 87.62,
-      "best_objective": 7060.0,
-      "proven_bound": 6112.0,
-      "next_min": 6112.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 91.54,
-      "best_objective": 7060.0,
-      "proven_bound": 6116.0,
-      "next_min": 6116.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 92.41,
-      "best_objective": 7060.0,
-      "proven_bound": 6135.0,
-      "next_min": 6135.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 94.39,
-      "best_objective": 7060.0,
-      "proven_bound": 6136.0,
-      "next_min": 6136.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 96.76,
-      "best_objective": 7060.0,
-      "proven_bound": 6138.0,
-      "next_min": 6138.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 97.46,
-      "best_objective": 7060.0,
-      "proven_bound": 6140.0,
-      "next_min": 6140.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 97.57,
-      "best_objective": 7060.0,
-      "proven_bound": 6142.0,
-      "next_min": 6142.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 97.66,
-      "best_objective": 7060.0,
-      "proven_bound": 6144.0,
-      "next_min": 6144.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 97.77,
-      "best_objective": 7060.0,
-      "proven_bound": 6148.0,
-      "next_min": 6148.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 98.69,
-      "best_objective": 7060.0,
-      "proven_bound": 6155.0,
-      "next_min": 6155.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 99.89,
-      "best_objective": 7060.0,
-      "proven_bound": 6159.0,
-      "next_min": 6159.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 103.37,
-      "best_objective": 7060.0,
-      "proven_bound": 6161.0,
-      "next_min": 6161.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 109.73,
-      "best_objective": 7060.0,
-      "proven_bound": 6163.0,
-      "next_min": 6163.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 111.95,
-      "best_objective": 7060.0,
-      "proven_bound": 6164.0,
-      "next_min": 6164.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    },
-    {
-      "event_type": "bound",
-      "time": 119.18,
-      "best_objective": 7060.0,
-      "proven_bound": 6169.0,
-      "next_min": 6169.0,
-      "next_max": 7059.0,
-      "subsolver": "objective_lb_search",
-      "additional_info": "objective_lb_search"
-    }
-  ],
-  "task_timing": [
-    {
-      "task_name": "core",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "default_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "feasibility_pump",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fj_long_default",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fj_long_lin_default",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fj_short_default",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fj_short_lin_default",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fs_random",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fs_random",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "fs_random_quick_restart",
-      "num_runs": 0,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_arc_lns",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_cst_lns",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_dec_lns",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "graph_var_lns",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "lb_tree_search",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "max_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "no_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "objective_lb_search",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "objective_lb_search_no_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "objective_shaving_search_max_lp",
-      "num_runs": 101,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "objective_shaving_search_no_lp",
-      "num_runs": 101,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "packing_precedences_lns",
-      "num_runs": 318,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "packing_rectangles_lns",
-      "num_runs": 318,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "packing_slice_lns",
-      "num_runs": 318,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "probing",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "probing_max_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "pseudo_costs",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "quick_restart",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "quick_restart_no_lp",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "reduced_costs",
-      "num_runs": 1,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rins/rens",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rnd_cst_lns",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "rnd_var_lns",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "routing_path_lns",
-      "num_runs": 318,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "routing_random_lns",
-      "num_runs": 318,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "scheduling_precedences_lns",
-      "num_runs": 318,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "violation_ls",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    },
-    {
-      "task_name": "violation_ls",
-      "num_runs": 319,
-      "time_spent": null,
-      "deterministic_time": null,
-      "additional_stats": {}
-    }
-  ],
-  "search_stats": [
-    {
-      "subsolver": "core",
-      "booleans": 5969,
-      "conflicts": 1187322,
-      "branches": 3487436,
-      "restarts": 1221,
-      "bool_propagations": 237349545,
-      "integer_propagations": 112363246
-    },
-    {
-      "subsolver": "default_lp",
-      "booleans": 7520,
-      "conflicts": 420117,
-      "branches": 1074780,
-      "restarts": 2220,
-      "bool_propagations": 230725988,
-      "integer_propagations": 38338069
-    },
-    {
-      "subsolver": "fs_random",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 0
-    },
-    {
-      "subsolver": "fs_random",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 0
-    },
-    {
-      "subsolver": "fs_random_quick_restart",
-      "booleans": 0,
-      "conflicts": 0,
-      "branches": 0,
-      "restarts": 0,
-      "bool_propagations": 0,
-      "integer_propagations": 0
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "booleans": 3172,
-      "conflicts": 4949,
-      "branches": 100805,
-      "restarts": 1242,
-      "bool_propagations": 1503354,
-      "integer_propagations": 788296
-    },
-    {
-      "subsolver": "max_lp",
-      "booleans": 3933,
-      "conflicts": 38454,
-      "branches": 63752,
-      "restarts": 1233,
-      "bool_propagations": 5535226,
-      "integer_propagations": 1053958
-    },
-    {
-      "subsolver": "no_lp",
-      "booleans": 5333,
-      "conflicts": 1217233,
-      "branches": 3653669,
-      "restarts": 8714,
-      "bool_propagations": 255555476,
-      "integer_propagations": 117392693
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "booleans": 7181,
-      "conflicts": 380220,
-      "branches": 753075,
-      "restarts": 2086,
-      "bool_propagations": 125884567,
-      "integer_propagations": 38109407
-    },
-    {
-      "subsolver": "objective_lb_search_no_lp",
-      "booleans": 2425,
-      "conflicts": 1663071,
-      "branches": 5182671,
-      "restarts": 12866,
-      "bool_propagations": 122540201,
-      "integer_propagations": 186583860
-    },
-    {
-      "subsolver": "probing",
-      "booleans": 3739,
-      "conflicts": 48041,
-      "branches": 778785,
-      "restarts": 34735,
-      "bool_propagations": 24761228,
-      "integer_propagations": 15048897
-    },
-    {
-      "subsolver": "probing_max_lp",
-      "booleans": 745,
-      "conflicts": 11,
-      "branches": 1520,
-      "restarts": 1543,
-      "bool_propagations": 27397,
-      "integer_propagations": 35899
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "booleans": 5390,
-      "conflicts": 20728,
-      "branches": 43493,
-      "restarts": 1251,
-      "bool_propagations": 4628158,
-      "integer_propagations": 1139899
-    },
-    {
-      "subsolver": "quick_restart",
-      "booleans": 6423,
-      "conflicts": 165245,
-      "branches": 1862537,
-      "restarts": 16639,
-      "bool_propagations": 83546174,
-      "integer_propagations": 27500951
-    },
-    {
-      "subsolver": "quick_restart_no_lp",
-      "booleans": 3123,
-      "conflicts": 441323,
-      "branches": 5344095,
-      "restarts": 42676,
-      "bool_propagations": 129219846,
-      "integer_propagations": 67566534
-    },
-    {
-      "subsolver": "reduced_costs",
-      "booleans": 3644,
-      "conflicts": 51822,
-      "branches": 91297,
-      "restarts": 1262,
-      "bool_propagations": 14538040,
-      "integer_propagations": 3424952
-    }
-  ],
-  "sat_stats": [],
-  "lns_stats": [],
-  "ls_stats": [
-    {
-      "subsolver": "fj_long_default",
-      "stats": {
-        "Batches": 0,
-        "Restarts": 0,
-        "LinMoves": 0,
-        "GenMoves": 0,
-        "CompoundMoves": 0,
-        "WeightUpdates": 0
+  "search_events": {
+    "events": [
+      {
+        "event_type": "bound",
+        "time": 0.04,
+        "best_objective": 11671.0,
+        "proven_bound": 1.0,
+        "next_min": 1.0,
+        "next_max": 11670.0,
+        "subsolver": "objective_shaving_search_no_lp",
+        "additional_info": "objective_shaving_search_no_lp (vars=649 csts=2154)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.05,
+        "best_objective": 11671.0,
+        "proven_bound": 294.0,
+        "next_min": 294.0,
+        "next_max": 11670.0,
+        "subsolver": "default_lp",
+        "additional_info": "default_lp (initial_propagation)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 2,
+        "time": 0.05,
+        "objective": 11629.0,
+        "proven_bound": 294.0,
+        "next_min": 294.0,
+        "next_max": 11628.0,
+        "gap_percent": 97.47183764726115,
+        "subsolver": "quick_restart_no_lp",
+        "additional_info": "quick_restart_no_lp (fixed_bools=1/672)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.05,
+        "best_objective": 11629.0,
+        "proven_bound": 335.0,
+        "next_min": 335.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search_no_lp",
+        "additional_info": "objective_lb_search_no_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.06,
+        "best_objective": 11629.0,
+        "proven_bound": 733.0,
+        "next_min": 733.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search_no_lp",
+        "additional_info": "objective_lb_search_no_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.06,
+        "best_objective": 11629.0,
+        "proven_bound": 735.0,
+        "next_min": 735.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search_no_lp",
+        "additional_info": "objective_lb_search_no_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.06,
+        "best_objective": 11629.0,
+        "proven_bound": 872.0,
+        "next_min": 872.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search_no_lp",
+        "additional_info": "objective_lb_search_no_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.06,
+        "best_objective": 11629.0,
+        "proven_bound": 879.0,
+        "next_min": 879.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search_no_lp",
+        "additional_info": "objective_lb_search_no_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.07,
+        "best_objective": 11629.0,
+        "proven_bound": 892.0,
+        "next_min": 892.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search_no_lp",
+        "additional_info": "objective_lb_search_no_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.07,
+        "best_objective": 11629.0,
+        "proven_bound": 937.0,
+        "next_min": 937.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.07,
+        "best_objective": 11629.0,
+        "proven_bound": 1740.0,
+        "next_min": 1740.0,
+        "next_max": 11628.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.09,
+        "best_objective": 11629.0,
+        "proven_bound": 5103.0,
+        "next_min": 5103.0,
+        "next_max": 11628.0,
+        "subsolver": "lb_tree_search",
+        "additional_info": "lb_tree_search (initial_propagation)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.14,
+        "best_objective": 11629.0,
+        "proven_bound": 5318.0,
+        "next_min": 5318.0,
+        "next_max": 11628.0,
+        "subsolver": "lb_tree_search",
+        "additional_info": "lb_tree_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.2,
+        "best_objective": 11629.0,
+        "proven_bound": 5328.0,
+        "next_min": 5328.0,
+        "next_max": 11628.0,
+        "subsolver": "lb_tree_search",
+        "additional_info": "lb_tree_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.25,
+        "best_objective": 11629.0,
+        "proven_bound": 5333.0,
+        "next_min": 5333.0,
+        "next_max": 11628.0,
+        "subsolver": "probing_max_lp",
+        "additional_info": "probing_max_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.28,
+        "best_objective": 11629.0,
+        "proven_bound": 5377.0,
+        "next_min": 5377.0,
+        "next_max": 11628.0,
+        "subsolver": "lb_tree_search",
+        "additional_info": "lb_tree_search"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 3,
+        "time": 0.29,
+        "objective": 11427.0,
+        "proven_bound": 5377.0,
+        "next_min": 5377.0,
+        "next_max": 11426.0,
+        "gap_percent": 52.94477990723725,
+        "subsolver": "packing_rectangles_lns",
+        "additional_info": "packing_rectangles_lns (d=0.50 s=24 t=0.10 p=0.00 stall=0 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.4,
+        "best_objective": 11427.0,
+        "proven_bound": 5382.0,
+        "next_min": 5382.0,
+        "next_max": 11426.0,
+        "subsolver": "max_lp",
+        "additional_info": "max_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.48,
+        "best_objective": 11427.0,
+        "proven_bound": 5390.0,
+        "next_min": 5390.0,
+        "next_max": 11426.0,
+        "subsolver": "probing_max_lp",
+        "additional_info": "probing_max_lp"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.49,
+        "best_objective": 11427.0,
+        "proven_bound": 5407.0,
+        "next_min": 5407.0,
+        "next_max": 11426.0,
+        "subsolver": "max_lp",
+        "additional_info": "max_lp"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 4,
+        "time": 0.57,
+        "objective": 11328.0,
+        "proven_bound": 5407.0,
+        "next_min": 5407.0,
+        "next_max": 11327.0,
+        "gap_percent": 52.268714689265536,
+        "subsolver": "scheduling_precedences_lns",
+        "additional_info": "scheduling_precedences_lns (d=0.50 s=45 t=0.10 p=0.00 stall=0 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.69,
+        "best_objective": 11328.0,
+        "proven_bound": 5413.0,
+        "next_min": 5413.0,
+        "next_max": 11327.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.7,
+        "best_objective": 11328.0,
+        "proven_bound": 5436.0,
+        "next_min": 5436.0,
+        "next_max": 11327.0,
+        "subsolver": "pseudo_costs",
+        "additional_info": "pseudo_costs"
+      },
+      {
+        "event_type": "bound",
+        "time": 0.9,
+        "best_objective": 11328.0,
+        "proven_bound": 5460.0,
+        "next_min": 5460.0,
+        "next_max": 11327.0,
+        "subsolver": "pseudo_costs",
+        "additional_info": "pseudo_costs [skipped_logs=1]"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 5,
+        "time": 1.67,
+        "objective": 11143.0,
+        "proven_bound": 5541.0,
+        "next_min": 5541.0,
+        "next_max": 11142.0,
+        "gap_percent": 50.27371443955847,
+        "subsolver": "rnd_var_lns",
+        "additional_info": "rnd_var_lns (d=0.91 s=109 t=0.10 p=1.00 stall=4 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 6,
+        "time": 1.83,
+        "objective": 11142.0,
+        "proven_bound": 5550.0,
+        "next_min": 5550.0,
+        "next_max": 11141.0,
+        "gap_percent": 50.1884760366182,
+        "subsolver": "packing_rectangles_lns",
+        "additional_info": "packing_rectangles_lns (d=0.04 s=133 t=0.10 p=0.00 stall=4 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 1.95,
+        "best_objective": 11142.0,
+        "proven_bound": 5567.0,
+        "next_min": 5567.0,
+        "next_max": 11141.0,
+        "subsolver": "probing_max_lp",
+        "additional_info": "probing_max_lp [skipped_logs=9]"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 7,
+        "time": 2.42,
+        "objective": 11132.0,
+        "proven_bound": 5576.0,
+        "next_min": 5576.0,
+        "next_max": 11131.0,
+        "gap_percent": 49.9101688825009,
+        "subsolver": "routing_path_lns",
+        "additional_info": "routing_path_lns (d=0.06 s=138 t=0.10 p=0.00 stall=3 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 8,
+        "time": 2.62,
+        "objective": 11131.0,
+        "proven_bound": 5605.0,
+        "next_min": 5605.0,
+        "next_max": 11130.0,
+        "gap_percent": 49.64513520797772,
+        "subsolver": "packing_slice_lns",
+        "additional_info": "packing_slice_lns (d=0.08 s=171 t=0.10 p=0.25 stall=1 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 2.94,
+        "best_objective": 11131.0,
+        "proven_bound": 5628.0,
+        "next_min": 5628.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=7]"
+      },
+      {
+        "event_type": "bound",
+        "time": 4.0,
+        "best_objective": 11131.0,
+        "proven_bound": 5679.0,
+        "next_min": 5679.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=4]"
+      },
+      {
+        "event_type": "bound",
+        "time": 4.35,
+        "best_objective": 11131.0,
+        "proven_bound": 5682.0,
+        "next_min": 5682.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=0]"
+      },
+      {
+        "event_type": "bound",
+        "time": 5.43,
+        "best_objective": 11131.0,
+        "proven_bound": 5704.0,
+        "next_min": 5704.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "bound",
+        "time": 6.43,
+        "best_objective": 11131.0,
+        "proven_bound": 5722.0,
+        "next_min": 5722.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "bound",
+        "time": 7.77,
+        "best_objective": 11131.0,
+        "proven_bound": 5729.0,
+        "next_min": 5729.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "bound",
+        "time": 8.81,
+        "best_objective": 11131.0,
+        "proven_bound": 5763.0,
+        "next_min": 5763.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=2]"
+      },
+      {
+        "event_type": "bound",
+        "time": 9.69,
+        "best_objective": 11131.0,
+        "proven_bound": 5799.0,
+        "next_min": 5799.0,
+        "next_max": 11130.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 9,
+        "time": 10.31,
+        "objective": 10824.0,
+        "proven_bound": 5799.0,
+        "next_min": 5799.0,
+        "next_max": 10823.0,
+        "gap_percent": 46.42461197339246,
+        "subsolver": "rins_lp_lns",
+        "additional_info": "rins_lp_lns (d=0.45 s=548 t=0.10 p=0.50 stall=1 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 10.91,
+        "best_objective": 10824.0,
+        "proven_bound": 5802.0,
+        "next_min": 5802.0,
+        "next_max": 10823.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=0]"
+      },
+      {
+        "event_type": "bound",
+        "time": 12.3,
+        "best_objective": 10824.0,
+        "proven_bound": 5804.0,
+        "next_min": 5804.0,
+        "next_max": 10823.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 12.79,
+        "best_objective": 10824.0,
+        "proven_bound": 5814.0,
+        "next_min": 5814.0,
+        "next_max": 10823.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 10,
+        "time": 13.68,
+        "objective": 10681.0,
+        "proven_bound": 5816.0,
+        "next_min": 5816.0,
+        "next_max": 10680.0,
+        "gap_percent": 45.548169647036794,
+        "subsolver": "routing_path_lns",
+        "additional_info": "routing_path_lns (d=0.06 s=698 t=0.10 p=0.45 stall=4 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 11,
+        "time": 13.94,
+        "objective": 10654.0,
+        "proven_bound": 5816.0,
+        "next_min": 5816.0,
+        "next_max": 10653.0,
+        "gap_percent": 45.4101745823165,
+        "subsolver": "graph_var_lns",
+        "additional_info": "graph_var_lns (d=0.96 s=723 t=0.10 p=0.57 stall=7 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 14.0,
+        "best_objective": 10654.0,
+        "proven_bound": 5817.0,
+        "next_min": 5817.0,
+        "next_max": 10653.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "bound",
+        "time": 14.73,
+        "best_objective": 10654.0,
+        "proven_bound": 5821.0,
+        "next_min": 5821.0,
+        "next_max": 10653.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=0]"
+      },
+      {
+        "event_type": "bound",
+        "time": 15.92,
+        "best_objective": 10654.0,
+        "proven_bound": 5885.0,
+        "next_min": 5885.0,
+        "next_max": 10653.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=2]"
+      },
+      {
+        "event_type": "bound",
+        "time": 17.11,
+        "best_objective": 10654.0,
+        "proven_bound": 5887.0,
+        "next_min": 5887.0,
+        "next_max": 10653.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 17.75,
+        "best_objective": 10654.0,
+        "proven_bound": 5898.0,
+        "next_min": 5898.0,
+        "next_max": 10653.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 12,
+        "time": 18.44,
+        "objective": 10613.0,
+        "proven_bound": 5898.0,
+        "next_min": 5898.0,
+        "next_max": 10612.0,
+        "gap_percent": 44.426646565532835,
+        "subsolver": "quick_restart",
+        "additional_info": "quick_restart (fixed_bools=2/2501)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 13,
+        "time": 18.82,
+        "objective": 10543.0,
+        "proven_bound": 5898.0,
+        "next_min": 5898.0,
+        "next_max": 10542.0,
+        "gap_percent": 44.05766859527649,
+        "subsolver": "graph_var_lns",
+        "additional_info": "graph_var_lns (d=0.96 s=931 t=0.10 p=0.57 stall=10 h=folio_rnd)"
+      },
+      {
+        "event_type": "bound",
+        "time": 19.29,
+        "best_objective": 10543.0,
+        "proven_bound": 5900.0,
+        "next_min": 5900.0,
+        "next_max": 10542.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 19.88,
+        "best_objective": 10543.0,
+        "proven_bound": 5906.0,
+        "next_min": 5906.0,
+        "next_max": 10542.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "bound",
+        "time": 20.28,
+        "best_objective": 10543.0,
+        "proven_bound": 5912.0,
+        "next_min": 5912.0,
+        "next_max": 10542.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=0]"
+      },
+      {
+        "event_type": "bound",
+        "time": 21.64,
+        "best_objective": 10543.0,
+        "proven_bound": 5936.0,
+        "next_min": 5936.0,
+        "next_max": 10542.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search [skipped_logs=1]"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 14,
+        "time": 22.97,
+        "objective": 10204.0,
+        "proven_bound": 5936.0,
+        "next_min": 5936.0,
+        "next_max": 10203.0,
+        "gap_percent": 41.82673461387691,
+        "subsolver": "graph_var_lns",
+        "additional_info": "graph_var_lns (d=0.96 s=1151 t=0.10 p=0.55 stall=11 h=folio_rnd)"
+      },
+      {
+        "event_type": "bound",
+        "time": 26.37,
+        "best_objective": 10204.0,
+        "proven_bound": 5938.0,
+        "next_min": 5938.0,
+        "next_max": 10203.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 27.14,
+        "best_objective": 10204.0,
+        "proven_bound": 5944.0,
+        "next_min": 5944.0,
+        "next_max": 10203.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 15,
+        "time": 27.79,
+        "objective": 10203.0,
+        "proven_bound": 5944.0,
+        "next_min": 5944.0,
+        "next_max": 10202.0,
+        "gap_percent": 41.74262471822013,
+        "subsolver": "rnd_var_lns",
+        "additional_info": "rnd_var_lns (d=0.86 s=1345 t=0.10 p=0.52 stall=1 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 27.84,
+        "best_objective": 10203.0,
+        "proven_bound": 5946.0,
+        "next_min": 5946.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 28.56,
+        "best_objective": 10203.0,
+        "proven_bound": 5950.0,
+        "next_min": 5950.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 29.21,
+        "best_objective": 10203.0,
+        "proven_bound": 5953.0,
+        "next_min": 5953.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 29.84,
+        "best_objective": 10203.0,
+        "proven_bound": 5955.0,
+        "next_min": 5955.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 30.93,
+        "best_objective": 10203.0,
+        "proven_bound": 5957.0,
+        "next_min": 5957.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 31.42,
+        "best_objective": 10203.0,
+        "proven_bound": 5965.0,
+        "next_min": 5965.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 32.23,
+        "best_objective": 10203.0,
+        "proven_bound": 5981.0,
+        "next_min": 5981.0,
+        "next_max": 10202.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 16,
+        "time": 35.56,
+        "objective": 10083.0,
+        "proven_bound": 5981.0,
+        "next_min": 5981.0,
+        "next_max": 10082.0,
+        "gap_percent": 40.682336606168796,
+        "subsolver": "quick_restart_no_lp",
+        "additional_info": "quick_restart_no_lp (fixed_bools=8/2430)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 17,
+        "time": 35.73,
+        "objective": 10076.0,
+        "proven_bound": 5981.0,
+        "next_min": 5981.0,
+        "next_max": 10075.0,
+        "gap_percent": 40.641127431520445,
+        "subsolver": "quick_restart",
+        "additional_info": "quick_restart (fixed_bools=2/4427)"
+      },
+      {
+        "event_type": "bound",
+        "time": 35.75,
+        "best_objective": 10076.0,
+        "proven_bound": 5983.0,
+        "next_min": 5983.0,
+        "next_max": 10075.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 18,
+        "time": 36.01,
+        "objective": 10062.0,
+        "proven_bound": 5983.0,
+        "next_min": 5983.0,
+        "next_max": 10061.0,
+        "gap_percent": 40.538660306102166,
+        "subsolver": "quick_restart",
+        "additional_info": "quick_restart (fixed_bools=2/4443)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 19,
+        "time": 36.02,
+        "objective": 10042.0,
+        "proven_bound": 5983.0,
+        "next_min": 5983.0,
+        "next_max": 10041.0,
+        "gap_percent": 40.420235012945625,
+        "subsolver": "packing_precedences_lns",
+        "additional_info": "packing_precedences_lns (d=0.00 s=1704 t=0.10 p=0.23 stall=44 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 36.42,
+        "best_objective": 10042.0,
+        "proven_bound": 5988.0,
+        "next_min": 5988.0,
+        "next_max": 10041.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 38.93,
+        "best_objective": 10042.0,
+        "proven_bound": 5995.0,
+        "next_min": 5995.0,
+        "next_max": 10041.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 20,
+        "time": 39.42,
+        "objective": 9885.0,
+        "proven_bound": 5995.0,
+        "next_min": 5995.0,
+        "next_max": 9884.0,
+        "gap_percent": 39.35255437531614,
+        "subsolver": "routing_path_lns",
+        "additional_info": "routing_path_lns (d=0.05 s=1822 t=0.10 p=0.48 stall=7 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 21,
+        "time": 39.62,
+        "objective": 9668.0,
+        "proven_bound": 5995.0,
+        "next_min": 5995.0,
+        "next_max": 9667.0,
+        "gap_percent": 37.99131154323542,
+        "subsolver": "packing_rectangles_lns",
+        "additional_info": "packing_rectangles_lns (d=0.12 s=1851 t=0.10 p=0.48 stall=8 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 40.32,
+        "best_objective": 9668.0,
+        "proven_bound": 6000.0,
+        "next_min": 6000.0,
+        "next_max": 9667.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 42.14,
+        "best_objective": 9668.0,
+        "proven_bound": 6010.0,
+        "next_min": 6010.0,
+        "next_max": 9667.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 22,
+        "time": 42.45,
+        "objective": 8972.0,
+        "proven_bound": 6010.0,
+        "next_min": 6010.0,
+        "next_max": 8971.0,
+        "gap_percent": 33.013820775746765,
+        "subsolver": "routing_path_lns",
+        "additional_info": "routing_path_lns (d=0.05 s=1954 t=0.10 p=0.48 stall=7 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 23,
+        "time": 42.7,
+        "objective": 7089.0,
+        "proven_bound": 6010.0,
+        "next_min": 6010.0,
+        "next_max": 7088.0,
+        "gap_percent": 15.220764564818733,
+        "subsolver": "rnd_cst_lns",
+        "additional_info": "rnd_cst_lns (d=0.81 s=1978 t=0.10 p=0.51 stall=11 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 24,
+        "time": 42.86,
+        "objective": 7075.0,
+        "proven_bound": 6010.0,
+        "next_min": 6010.0,
+        "next_max": 7074.0,
+        "gap_percent": 15.053003533568905,
+        "subsolver": "packing_slice_lns",
+        "additional_info": "packing_slice_lns (d=0.06 s=1985 t=0.10 p=0.44 stall=7 h=auto_l0)"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 25,
+        "time": 45.19,
+        "objective": 7060.0,
+        "proven_bound": 6010.0,
+        "next_min": 6010.0,
+        "next_max": 7059.0,
+        "gap_percent": 14.872521246458923,
+        "subsolver": "rnd_var_lns",
+        "additional_info": "rnd_var_lns (d=0.85 s=2073 t=0.10 p=0.51 stall=2 h=auto_l0)"
+      },
+      {
+        "event_type": "bound",
+        "time": 45.37,
+        "best_objective": 7060.0,
+        "proven_bound": 6011.0,
+        "next_min": 6011.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 48.04,
+        "best_objective": 7060.0,
+        "proven_bound": 6013.0,
+        "next_min": 6013.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 50.53,
+        "best_objective": 7060.0,
+        "proven_bound": 6016.0,
+        "next_min": 6016.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 55.21,
+        "best_objective": 7060.0,
+        "proven_bound": 6039.0,
+        "next_min": 6039.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 56.89,
+        "best_objective": 7060.0,
+        "proven_bound": 6040.0,
+        "next_min": 6040.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 58.31,
+        "best_objective": 7060.0,
+        "proven_bound": 6048.0,
+        "next_min": 6048.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 65.52,
+        "best_objective": 7060.0,
+        "proven_bound": 6049.0,
+        "next_min": 6049.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 66.66,
+        "best_objective": 7060.0,
+        "proven_bound": 6052.0,
+        "next_min": 6052.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 67.18,
+        "best_objective": 7060.0,
+        "proven_bound": 6054.0,
+        "next_min": 6054.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 68.03,
+        "best_objective": 7060.0,
+        "proven_bound": 6058.0,
+        "next_min": 6058.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 68.09,
+        "best_objective": 7060.0,
+        "proven_bound": 6060.0,
+        "next_min": 6060.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 68.19,
+        "best_objective": 7060.0,
+        "proven_bound": 6065.0,
+        "next_min": 6065.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 68.29,
+        "best_objective": 7060.0,
+        "proven_bound": 6067.0,
+        "next_min": 6067.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 68.44,
+        "best_objective": 7060.0,
+        "proven_bound": 6074.0,
+        "next_min": 6074.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 70.4,
+        "best_objective": 7060.0,
+        "proven_bound": 6080.0,
+        "next_min": 6080.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 70.51,
+        "best_objective": 7060.0,
+        "proven_bound": 6086.0,
+        "next_min": 6086.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 70.63,
+        "best_objective": 7060.0,
+        "proven_bound": 6087.0,
+        "next_min": 6087.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 72.59,
+        "best_objective": 7060.0,
+        "proven_bound": 6094.0,
+        "next_min": 6094.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 73.92,
+        "best_objective": 7060.0,
+        "proven_bound": 6099.0,
+        "next_min": 6099.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 74.38,
+        "best_objective": 7060.0,
+        "proven_bound": 6103.0,
+        "next_min": 6103.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 74.76,
+        "best_objective": 7060.0,
+        "proven_bound": 6104.0,
+        "next_min": 6104.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 77.65,
+        "best_objective": 7060.0,
+        "proven_bound": 6105.0,
+        "next_min": 6105.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 81.05,
+        "best_objective": 7060.0,
+        "proven_bound": 6107.0,
+        "next_min": 6107.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 82.75,
+        "best_objective": 7060.0,
+        "proven_bound": 6108.0,
+        "next_min": 6108.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 85.09,
+        "best_objective": 7060.0,
+        "proven_bound": 6109.0,
+        "next_min": 6109.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 87.08,
+        "best_objective": 7060.0,
+        "proven_bound": 6110.0,
+        "next_min": 6110.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 87.62,
+        "best_objective": 7060.0,
+        "proven_bound": 6112.0,
+        "next_min": 6112.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 91.54,
+        "best_objective": 7060.0,
+        "proven_bound": 6116.0,
+        "next_min": 6116.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 92.41,
+        "best_objective": 7060.0,
+        "proven_bound": 6135.0,
+        "next_min": 6135.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 94.39,
+        "best_objective": 7060.0,
+        "proven_bound": 6136.0,
+        "next_min": 6136.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 96.76,
+        "best_objective": 7060.0,
+        "proven_bound": 6138.0,
+        "next_min": 6138.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 97.46,
+        "best_objective": 7060.0,
+        "proven_bound": 6140.0,
+        "next_min": 6140.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 97.57,
+        "best_objective": 7060.0,
+        "proven_bound": 6142.0,
+        "next_min": 6142.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 97.66,
+        "best_objective": 7060.0,
+        "proven_bound": 6144.0,
+        "next_min": 6144.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 97.77,
+        "best_objective": 7060.0,
+        "proven_bound": 6148.0,
+        "next_min": 6148.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 98.69,
+        "best_objective": 7060.0,
+        "proven_bound": 6155.0,
+        "next_min": 6155.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 99.89,
+        "best_objective": 7060.0,
+        "proven_bound": 6159.0,
+        "next_min": 6159.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 103.37,
+        "best_objective": 7060.0,
+        "proven_bound": 6161.0,
+        "next_min": 6161.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 109.73,
+        "best_objective": 7060.0,
+        "proven_bound": 6163.0,
+        "next_min": 6163.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 111.95,
+        "best_objective": 7060.0,
+        "proven_bound": 6164.0,
+        "next_min": 6164.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
+      },
+      {
+        "event_type": "bound",
+        "time": 119.18,
+        "best_objective": 7060.0,
+        "proven_bound": 6169.0,
+        "next_min": 6169.0,
+        "next_max": 7059.0,
+        "subsolver": "objective_lb_search",
+        "additional_info": "objective_lb_search"
       }
-    },
-    {
-      "subsolver": "fj_long_lin_default",
-      "stats": {
-        "Batches": 0,
-        "Restarts": 0,
-        "LinMoves": 0,
-        "GenMoves": 0,
-        "CompoundMoves": 0,
-        "WeightUpdates": 0
+    ]
+  },
+  "task_timing": {
+    "entries": [
+      {
+        "task_name": "core",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "default_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "feasibility_pump",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fj_long_default",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fj_long_lin_default",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fj_short_default",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fj_short_lin_default",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fs_random",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fs_random",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "fs_random_quick_restart",
+        "num_runs": 0,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_arc_lns",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_cst_lns",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_dec_lns",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "graph_var_lns",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "lb_tree_search",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "max_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "no_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "objective_lb_search",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "objective_lb_search_no_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "objective_shaving_search_max_lp",
+        "num_runs": 101,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "objective_shaving_search_no_lp",
+        "num_runs": 101,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "packing_precedences_lns",
+        "num_runs": 318,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "packing_rectangles_lns",
+        "num_runs": 318,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "packing_slice_lns",
+        "num_runs": 318,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "probing",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "probing_max_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "pseudo_costs",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "quick_restart",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "quick_restart_no_lp",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "reduced_costs",
+        "num_runs": 1,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rins/rens",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rnd_cst_lns",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "rnd_var_lns",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "routing_path_lns",
+        "num_runs": 318,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "routing_random_lns",
+        "num_runs": 318,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "scheduling_precedences_lns",
+        "num_runs": 318,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "violation_ls",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
+      },
+      {
+        "task_name": "violation_ls",
+        "num_runs": 319,
+        "time_spent": null,
+        "deterministic_time": null,
+        "additional_stats": {}
       }
-    },
-    {
-      "subsolver": "fj_short_default",
-      "stats": {
-        "Batches": 0,
-        "Restarts": 0,
-        "LinMoves": 0,
-        "GenMoves": 0,
-        "CompoundMoves": 0,
-        "WeightUpdates": 0
+    ]
+  },
+  "search_stats": {
+    "entries": [
+      {
+        "subsolver": "core",
+        "booleans": 5969,
+        "conflicts": 1187322,
+        "branches": 3487436,
+        "restarts": 1221,
+        "bool_propagations": 237349545,
+        "integer_propagations": 112363246
+      },
+      {
+        "subsolver": "default_lp",
+        "booleans": 7520,
+        "conflicts": 420117,
+        "branches": 1074780,
+        "restarts": 2220,
+        "bool_propagations": 230725988,
+        "integer_propagations": 38338069
+      },
+      {
+        "subsolver": "fs_random",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 0
+      },
+      {
+        "subsolver": "fs_random",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 0
+      },
+      {
+        "subsolver": "fs_random_quick_restart",
+        "booleans": 0,
+        "conflicts": 0,
+        "branches": 0,
+        "restarts": 0,
+        "bool_propagations": 0,
+        "integer_propagations": 0
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "booleans": 3172,
+        "conflicts": 4949,
+        "branches": 100805,
+        "restarts": 1242,
+        "bool_propagations": 1503354,
+        "integer_propagations": 788296
+      },
+      {
+        "subsolver": "max_lp",
+        "booleans": 3933,
+        "conflicts": 38454,
+        "branches": 63752,
+        "restarts": 1233,
+        "bool_propagations": 5535226,
+        "integer_propagations": 1053958
+      },
+      {
+        "subsolver": "no_lp",
+        "booleans": 5333,
+        "conflicts": 1217233,
+        "branches": 3653669,
+        "restarts": 8714,
+        "bool_propagations": 255555476,
+        "integer_propagations": 117392693
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "booleans": 7181,
+        "conflicts": 380220,
+        "branches": 753075,
+        "restarts": 2086,
+        "bool_propagations": 125884567,
+        "integer_propagations": 38109407
+      },
+      {
+        "subsolver": "objective_lb_search_no_lp",
+        "booleans": 2425,
+        "conflicts": 1663071,
+        "branches": 5182671,
+        "restarts": 12866,
+        "bool_propagations": 122540201,
+        "integer_propagations": 186583860
+      },
+      {
+        "subsolver": "probing",
+        "booleans": 3739,
+        "conflicts": 48041,
+        "branches": 778785,
+        "restarts": 34735,
+        "bool_propagations": 24761228,
+        "integer_propagations": 15048897
+      },
+      {
+        "subsolver": "probing_max_lp",
+        "booleans": 745,
+        "conflicts": 11,
+        "branches": 1520,
+        "restarts": 1543,
+        "bool_propagations": 27397,
+        "integer_propagations": 35899
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "booleans": 5390,
+        "conflicts": 20728,
+        "branches": 43493,
+        "restarts": 1251,
+        "bool_propagations": 4628158,
+        "integer_propagations": 1139899
+      },
+      {
+        "subsolver": "quick_restart",
+        "booleans": 6423,
+        "conflicts": 165245,
+        "branches": 1862537,
+        "restarts": 16639,
+        "bool_propagations": 83546174,
+        "integer_propagations": 27500951
+      },
+      {
+        "subsolver": "quick_restart_no_lp",
+        "booleans": 3123,
+        "conflicts": 441323,
+        "branches": 5344095,
+        "restarts": 42676,
+        "bool_propagations": 129219846,
+        "integer_propagations": 67566534
+      },
+      {
+        "subsolver": "reduced_costs",
+        "booleans": 3644,
+        "conflicts": 51822,
+        "branches": 91297,
+        "restarts": 1262,
+        "bool_propagations": 14538040,
+        "integer_propagations": 3424952
       }
-    },
-    {
-      "subsolver": "fj_short_lin_default",
-      "stats": {
-        "Batches": 0,
-        "Restarts": 0,
-        "LinMoves": 0,
-        "GenMoves": 0,
-        "CompoundMoves": 0,
-        "WeightUpdates": 0
+    ]
+  },
+  "sat_stats": {
+    "entries": []
+  },
+  "lns_stats": {
+    "entries": []
+  },
+  "ls_stats": {
+    "entries": [
+      {
+        "subsolver": "fj_long_default",
+        "stats": {
+          "Batches": 0,
+          "Restarts": 0,
+          "LinMoves": 0,
+          "GenMoves": 0,
+          "CompoundMoves": 0,
+          "WeightUpdates": 0
+        }
+      },
+      {
+        "subsolver": "fj_long_lin_default",
+        "stats": {
+          "Batches": 0,
+          "Restarts": 0,
+          "LinMoves": 0,
+          "GenMoves": 0,
+          "CompoundMoves": 0,
+          "WeightUpdates": 0
+        }
+      },
+      {
+        "subsolver": "fj_short_default",
+        "stats": {
+          "Batches": 0,
+          "Restarts": 0,
+          "LinMoves": 0,
+          "GenMoves": 0,
+          "CompoundMoves": 0,
+          "WeightUpdates": 0
+        }
+      },
+      {
+        "subsolver": "fj_short_lin_default",
+        "stats": {
+          "Batches": 0,
+          "Restarts": 0,
+          "LinMoves": 0,
+          "GenMoves": 0,
+          "CompoundMoves": 0,
+          "WeightUpdates": 0
+        }
+      },
+      {
+        "subsolver": "violation_ls",
+        "stats": {
+          "Batches": 319,
+          "Restarts": 0,
+          "LinMoves": 1672905,
+          "GenMoves": 230543,
+          "CompoundMoves": 6824,
+          "WeightUpdates": 198593
+        }
+      },
+      {
+        "subsolver": "violation_ls",
+        "stats": {
+          "Batches": 319,
+          "Restarts": 0,
+          "LinMoves": 2116393,
+          "GenMoves": 75417,
+          "CompoundMoves": 2690,
+          "WeightUpdates": 693330
+        }
       }
-    },
-    {
-      "subsolver": "violation_ls",
-      "stats": {
-        "Batches": 319,
-        "Restarts": 0,
-        "LinMoves": 1672905,
-        "GenMoves": 230543,
-        "CompoundMoves": 6824,
-        "WeightUpdates": 198593
+    ]
+  },
+  "lp_stats": {
+    "entries": [
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 3,
+          "Iterations": 1728817,
+          "AddedCuts": 0,
+          "OPTIMAL": 1151269,
+          "DUAL_F.": 0,
+          "DUAL_U.": 420
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 1,
+          "Iterations": 1188273,
+          "AddedCuts": 9348,
+          "OPTIMAL": 38874,
+          "DUAL_F.": 7377,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 1,
+          "Iterations": 723033,
+          "AddedCuts": 8094,
+          "OPTIMAL": 72858,
+          "DUAL_F.": 5799,
+          "DUAL_U.": 55
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 3,
+          "Iterations": 1877205,
+          "AddedCuts": 8,
+          "OPTIMAL": 697089,
+          "DUAL_F.": 0,
+          "DUAL_U.": 2093
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 3,
+          "Iterations": 2050655,
+          "AddedCuts": 52,
+          "OPTIMAL": 732762,
+          "DUAL_F.": 7024,
+          "DUAL_U.": 232
+        }
+      },
+      {
+        "subsolver": "probing_max_lp",
+        "stats": {
+          "Component": 1,
+          "Iterations": 52900,
+          "AddedCuts": 27604,
+          "OPTIMAL": 1761,
+          "DUAL_F.": 434,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 1,
+          "Iterations": 1126975,
+          "AddedCuts": 12899,
+          "OPTIMAL": 38451,
+          "DUAL_F.": 8300,
+          "DUAL_U.": 132
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 3,
+          "Iterations": 2552773,
+          "AddedCuts": 8,
+          "OPTIMAL": 731801,
+          "DUAL_F.": 3,
+          "DUAL_U.": 1007
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 1,
+          "Iterations": 394878,
+          "AddedCuts": 10875,
+          "OPTIMAL": 64745,
+          "DUAL_F.": 5467,
+          "DUAL_U.": 64
+        }
+      },
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 56
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 1500
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 94
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 47
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 58
+        }
+      },
+      {
+        "subsolver": "probing_max_lp",
+        "stats": {
+          "Component": 4151
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 994
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 72
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 94
+        }
+      },
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 325531,
+          "OPTIMAL": 0,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 18433,
+          "OPTIMAL": 0,
+          "DUAL_F.": 41105,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 16281,
+          "OPTIMAL": 0,
+          "DUAL_F.": 32185,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 318225,
+          "OPTIMAL": 0,
+          "DUAL_F.": 2,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 345418,
+          "OPTIMAL": 0,
+          "DUAL_F.": 75,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "probing_max_lp",
+        "stats": {
+          "Component": 0,
+          "Iterations": 20,
+          "AddedCuts": 2195,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1219958,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 0,
+          "Iterations": 18,
+          "AddedCuts": 23664,
+          "OPTIMAL": 0,
+          "DUAL_F.": 30948,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 0,
+          "Iterations": 0,
+          "AddedCuts": 270030,
+          "OPTIMAL": 0,
+          "DUAL_F.": 1,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 0,
+          "Iterations": 6,
+          "AddedCuts": 10395,
+          "OPTIMAL": 0,
+          "DUAL_F.": 31185,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "default_lp",
+        "stats": {
+          "Component": 232,
+          "Iterations": 0,
+          "AddedCuts": 113,
+          "OPTIMAL": 40,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "stats": {
+          "Component": 11155,
+          "Iterations": 527,
+          "AddedCuts": 41242,
+          "OPTIMAL": 213,
+          "DUAL_F.": 0,
+          "DUAL_U.": 93
+        }
+      },
+      {
+        "subsolver": "max_lp",
+        "stats": {
+          "Component": 9901,
+          "Iterations": 345,
+          "AddedCuts": 44971,
+          "OPTIMAL": 213,
+          "DUAL_F.": 0,
+          "DUAL_U.": 96
+        }
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "stats": {
+          "Component": 240,
+          "Iterations": 3,
+          "AddedCuts": 76,
+          "OPTIMAL": 40,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "probing",
+        "stats": {
+          "Component": 284,
+          "Iterations": 13,
+          "AddedCuts": 1643,
+          "OPTIMAL": 40,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "probing_max_lp",
+        "stats": {
+          "Component": 11411,
+          "Iterations": 892,
+          "AddedCuts": 136704,
+          "OPTIMAL": 213,
+          "DUAL_F.": 0,
+          "DUAL_U.": 1353
+        }
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "stats": {
+          "Component": 11706,
+          "Iterations": 396,
+          "AddedCuts": 82760,
+          "OPTIMAL": 213,
+          "DUAL_F.": 0,
+          "DUAL_U.": 213
+        }
+      },
+      {
+        "subsolver": "quick_restart",
+        "stats": {
+          "Component": 240,
+          "Iterations": 3,
+          "AddedCuts": 637,
+          "OPTIMAL": 40,
+          "DUAL_F.": 0,
+          "DUAL_U.": 0
+        }
+      },
+      {
+        "subsolver": "reduced_costs",
+        "stats": {
+          "Component": 11682,
+          "Iterations": 304,
+          "AddedCuts": 95566,
+          "OPTIMAL": 213,
+          "DUAL_F.": 0,
+          "DUAL_U.": 144
+        }
       }
-    },
-    {
-      "subsolver": "violation_ls",
-      "stats": {
-        "Batches": 319,
-        "Restarts": 0,
-        "LinMoves": 2116393,
-        "GenMoves": 75417,
-        "CompoundMoves": 2690,
-        "WeightUpdates": 693330
-      }
-    }
-  ],
-  "lp_stats": [
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 3,
-        "Iterations": 1728817,
-        "AddedCuts": 0,
-        "OPTIMAL": 1151269,
-        "DUAL_F.": 0,
-        "DUAL_U.": 420
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 1,
-        "Iterations": 1188273,
-        "AddedCuts": 9348,
-        "OPTIMAL": 38874,
-        "DUAL_F.": 7377,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 1,
-        "Iterations": 723033,
-        "AddedCuts": 8094,
-        "OPTIMAL": 72858,
-        "DUAL_F.": 5799,
-        "DUAL_U.": 55
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 3,
-        "Iterations": 1877205,
-        "AddedCuts": 8,
-        "OPTIMAL": 697089,
-        "DUAL_F.": 0,
-        "DUAL_U.": 2093
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 3,
-        "Iterations": 2050655,
-        "AddedCuts": 52,
-        "OPTIMAL": 732762,
-        "DUAL_F.": 7024,
-        "DUAL_U.": 232
-      }
-    },
-    {
-      "subsolver": "probing_max_lp",
-      "stats": {
-        "Component": 1,
-        "Iterations": 52900,
-        "AddedCuts": 27604,
-        "OPTIMAL": 1761,
-        "DUAL_F.": 434,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 1,
-        "Iterations": 1126975,
-        "AddedCuts": 12899,
-        "OPTIMAL": 38451,
-        "DUAL_F.": 8300,
-        "DUAL_U.": 132
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 3,
-        "Iterations": 2552773,
-        "AddedCuts": 8,
-        "OPTIMAL": 731801,
-        "DUAL_F.": 3,
-        "DUAL_U.": 1007
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 1,
-        "Iterations": 394878,
-        "AddedCuts": 10875,
-        "OPTIMAL": 64745,
-        "DUAL_F.": 5467,
-        "DUAL_U.": 64
-      }
-    },
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 56
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 1500
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 94
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 47
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 58
-      }
-    },
-    {
-      "subsolver": "probing_max_lp",
-      "stats": {
-        "Component": 4151
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 994
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 72
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 94
-      }
-    },
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 325531,
-        "OPTIMAL": 0,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 18433,
-        "OPTIMAL": 0,
-        "DUAL_F.": 41105,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 16281,
-        "OPTIMAL": 0,
-        "DUAL_F.": 32185,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 318225,
-        "OPTIMAL": 0,
-        "DUAL_F.": 2,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 345418,
-        "OPTIMAL": 0,
-        "DUAL_F.": 75,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "probing_max_lp",
-      "stats": {
-        "Component": 0,
-        "Iterations": 20,
-        "AddedCuts": 2195,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1219958,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 0,
-        "Iterations": 18,
-        "AddedCuts": 23664,
-        "OPTIMAL": 0,
-        "DUAL_F.": 30948,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 0,
-        "Iterations": 0,
-        "AddedCuts": 270030,
-        "OPTIMAL": 0,
-        "DUAL_F.": 1,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 0,
-        "Iterations": 6,
-        "AddedCuts": 10395,
-        "OPTIMAL": 0,
-        "DUAL_F.": 31185,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "default_lp",
-      "stats": {
-        "Component": 232,
-        "Iterations": 0,
-        "AddedCuts": 113,
-        "OPTIMAL": 40,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "stats": {
-        "Component": 11155,
-        "Iterations": 527,
-        "AddedCuts": 41242,
-        "OPTIMAL": 213,
-        "DUAL_F.": 0,
-        "DUAL_U.": 93
-      }
-    },
-    {
-      "subsolver": "max_lp",
-      "stats": {
-        "Component": 9901,
-        "Iterations": 345,
-        "AddedCuts": 44971,
-        "OPTIMAL": 213,
-        "DUAL_F.": 0,
-        "DUAL_U.": 96
-      }
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "stats": {
-        "Component": 240,
-        "Iterations": 3,
-        "AddedCuts": 76,
-        "OPTIMAL": 40,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "probing",
-      "stats": {
-        "Component": 284,
-        "Iterations": 13,
-        "AddedCuts": 1643,
-        "OPTIMAL": 40,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "probing_max_lp",
-      "stats": {
-        "Component": 11411,
-        "Iterations": 892,
-        "AddedCuts": 136704,
-        "OPTIMAL": 213,
-        "DUAL_F.": 0,
-        "DUAL_U.": 1353
-      }
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "stats": {
-        "Component": 11706,
-        "Iterations": 396,
-        "AddedCuts": 82760,
-        "OPTIMAL": 213,
-        "DUAL_F.": 0,
-        "DUAL_U.": 213
-      }
-    },
-    {
-      "subsolver": "quick_restart",
-      "stats": {
-        "Component": 240,
-        "Iterations": 3,
-        "AddedCuts": 637,
-        "OPTIMAL": 40,
-        "DUAL_F.": 0,
-        "DUAL_U.": 0
-      }
-    },
-    {
-      "subsolver": "reduced_costs",
-      "stats": {
-        "Component": 11682,
-        "Iterations": 304,
-        "AddedCuts": 95566,
-        "OPTIMAL": 213,
-        "DUAL_F.": 0,
-        "DUAL_U.": 144
-      }
-    }
-  ],
+    ]
+  },
   "solution_repositories": {
     "repositories": {
       "feasible solutions": {
@@ -3928,48 +3944,50 @@
       ]
     }
   ],
-  "objective_bounds": [
-    {
-      "subsolver": "default_lp",
-      "num_bounds": 1
-    },
-    {
-      "subsolver": "initial_domain",
-      "num_bounds": 1
-    },
-    {
-      "subsolver": "lb_tree_search",
-      "num_bounds": 4
-    },
-    {
-      "subsolver": "max_lp",
-      "num_bounds": 2
-    },
-    {
-      "subsolver": "objective_lb_search",
-      "num_bounds": 100
-    },
-    {
-      "subsolver": "objective_lb_search_no_lp",
-      "num_bounds": 6
-    },
-    {
-      "subsolver": "objective_shaving_search_no_lp",
-      "num_bounds": 1
-    },
-    {
-      "subsolver": "probing_max_lp",
-      "num_bounds": 12
-    },
-    {
-      "subsolver": "pseudo_costs",
-      "num_bounds": 4
-    },
-    {
-      "subsolver": "reduced_costs",
-      "num_bounds": 1
-    }
-  ],
+  "objective_bounds": {
+    "entries": [
+      {
+        "subsolver": "default_lp",
+        "num_bounds": 1
+      },
+      {
+        "subsolver": "initial_domain",
+        "num_bounds": 1
+      },
+      {
+        "subsolver": "lb_tree_search",
+        "num_bounds": 4
+      },
+      {
+        "subsolver": "max_lp",
+        "num_bounds": 2
+      },
+      {
+        "subsolver": "objective_lb_search",
+        "num_bounds": 100
+      },
+      {
+        "subsolver": "objective_lb_search_no_lp",
+        "num_bounds": 6
+      },
+      {
+        "subsolver": "objective_shaving_search_no_lp",
+        "num_bounds": 1
+      },
+      {
+        "subsolver": "probing_max_lp",
+        "num_bounds": 12
+      },
+      {
+        "subsolver": "pseudo_costs",
+        "num_bounds": 4
+      },
+      {
+        "subsolver": "reduced_costs",
+        "num_bounds": 1
+      }
+    ]
+  },
   "improving_bounds_shared": {
     "bounds_by_subsolver": {
       "probing": 4,

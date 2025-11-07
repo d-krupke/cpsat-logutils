@@ -128,14 +128,16 @@
       }
     ]
   },
-  "presolve_log": [
-    {
-      "wall_time": 0.216,
-      "deterministic_time": 0.0,
-      "operation": "operations_research::sat::CpModelPresolver::PresolveToFixPoint",
-      "details": {}
-    }
-  ],
+  "presolve_log": {
+    "entries": [
+      {
+        "wall_time": 0.216,
+        "deterministic_time": 0.0,
+        "operation": "operations_research::sat::CpModelPresolver::PresolveToFixPoint",
+        "details": {}
+      }
+    ]
+  },
   "presolve_summary": {
     "affine_relations": 274,
     "rules_applied": {
@@ -183,16 +185,32 @@
   "presolved_model": null,
   "preloading_info": null,
   "search_info": null,
-  "search_events": [],
-  "task_timing": [],
-  "search_stats": [],
-  "sat_stats": [],
-  "lns_stats": [],
-  "ls_stats": [],
-  "lp_stats": [],
+  "search_events": {
+    "events": []
+  },
+  "task_timing": {
+    "entries": []
+  },
+  "search_stats": {
+    "entries": []
+  },
+  "sat_stats": {
+    "entries": []
+  },
+  "lns_stats": {
+    "entries": []
+  },
+  "ls_stats": {
+    "entries": []
+  },
+  "lp_stats": {
+    "entries": []
+  },
   "solution_repositories": null,
   "solutions": [],
-  "objective_bounds": [],
+  "objective_bounds": {
+    "entries": []
+  },
   "improving_bounds_shared": null,
   "clauses_shared": null,
   "response": {

@@ -127,7 +127,9 @@
       }
     ]
   },
-  "presolve_log": [],
+  "presolve_log": {
+    "entries": []
+  },
   "presolve_summary": {
     "affine_relations": 0,
     "rules_applied": {
@@ -244,63 +246,79 @@
     },
     "search_type": "parallel"
   },
-  "search_events": [
-    {
-      "event_type": "objective",
-      "solution_number": 1,
-      "time": 0.71,
-      "objective": 17.0,
-      "proven_bound": 1.0,
-      "next_min": 1.0,
-      "next_max": 16.0,
-      "gap_percent": 94.11764705882354,
-      "subsolver": "quick_restart_no_lp",
-      "additional_info": "quick_restart_no_lp fixed_bools:0/11849"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 2,
-      "time": 0.72,
-      "objective": 16.0,
-      "proven_bound": 1.0,
-      "next_min": 1.0,
-      "next_max": 15.0,
-      "gap_percent": 93.75,
-      "subsolver": "quick_restart_no_lp",
-      "additional_info": "quick_restart_no_lp fixed_bools:289/11849"
-    },
-    {
-      "event_type": "objective",
-      "solution_number": 3,
-      "time": 0.74,
-      "objective": 15.0,
-      "proven_bound": 1.0,
-      "next_min": 1.0,
-      "next_max": 14.0,
-      "gap_percent": 93.33333333333333,
-      "subsolver": "no_lp",
-      "additional_info": "no_lp fixed_bools:867/11849"
-    },
-    {
-      "event_type": "bound",
-      "time": 1.3,
-      "best_objective": 15.0,
-      "proven_bound": 8.0,
-      "next_min": 8.0,
-      "next_max": 14.0,
-      "subsolver": "max_lp",
-      "additional_info": "max_lp initial_propagation"
-    }
-  ],
-  "task_timing": [],
-  "search_stats": [],
-  "sat_stats": [],
-  "lns_stats": [],
-  "ls_stats": [],
-  "lp_stats": [],
+  "search_events": {
+    "events": [
+      {
+        "event_type": "objective",
+        "solution_number": 1,
+        "time": 0.71,
+        "objective": 17.0,
+        "proven_bound": 1.0,
+        "next_min": 1.0,
+        "next_max": 16.0,
+        "gap_percent": 94.11764705882354,
+        "subsolver": "quick_restart_no_lp",
+        "additional_info": "quick_restart_no_lp fixed_bools:0/11849"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 2,
+        "time": 0.72,
+        "objective": 16.0,
+        "proven_bound": 1.0,
+        "next_min": 1.0,
+        "next_max": 15.0,
+        "gap_percent": 93.75,
+        "subsolver": "quick_restart_no_lp",
+        "additional_info": "quick_restart_no_lp fixed_bools:289/11849"
+      },
+      {
+        "event_type": "objective",
+        "solution_number": 3,
+        "time": 0.74,
+        "objective": 15.0,
+        "proven_bound": 1.0,
+        "next_min": 1.0,
+        "next_max": 14.0,
+        "gap_percent": 93.33333333333333,
+        "subsolver": "no_lp",
+        "additional_info": "no_lp fixed_bools:867/11849"
+      },
+      {
+        "event_type": "bound",
+        "time": 1.3,
+        "best_objective": 15.0,
+        "proven_bound": 8.0,
+        "next_min": 8.0,
+        "next_max": 14.0,
+        "subsolver": "max_lp",
+        "additional_info": "max_lp initial_propagation"
+      }
+    ]
+  },
+  "task_timing": {
+    "entries": []
+  },
+  "search_stats": {
+    "entries": []
+  },
+  "sat_stats": {
+    "entries": []
+  },
+  "lns_stats": {
+    "entries": []
+  },
+  "ls_stats": {
+    "entries": []
+  },
+  "lp_stats": {
+    "entries": []
+  },
   "solution_repositories": null,
   "solutions": [],
-  "objective_bounds": [],
+  "objective_bounds": {
+    "entries": []
+  },
   "improving_bounds_shared": null,
   "clauses_shared": null,
   "response": {

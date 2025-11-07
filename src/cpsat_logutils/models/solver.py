@@ -7,12 +7,8 @@ This module contains models representing:
 - Statistics about the model before and after presolve
 """
 
-from __future__ import annotations
-from typing import Optional, List, Dict, Any, TYPE_CHECKING
+from typing import Optional, List, Dict, Any
 from pydantic import BaseModel, Field, ConfigDict
-
-if TYPE_CHECKING:
-    from .wrappers import VariableDomains
 
 
 class SolverInfo(BaseModel):
@@ -274,13 +270,12 @@ class ModelStatistics(BaseModel):
         ge=0
     )
 
-    variable_domains: Optional[VariableDomains] = Field(
-        None,  # Will be set by parser
+    variable_domains: List[VariableDomain] = Field(
+        default_factory=list,
         description=(
-            "Variable domain groups. "
+            "List of variable domain groups. "
             "Each entry describes how many variables have a particular domain type. "
-            "Helps understand the variable structure of the model. "
-            "Use .to_dataframe() to export as pandas DataFrame."
+            "Helps understand the variable structure of the model."
         )
     )
 

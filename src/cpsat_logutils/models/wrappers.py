@@ -75,26 +75,26 @@ class SearchEvents(BaseModel):
                 rows.append({
                     'time_seconds': event.time,
                     'event_type': 'bound',
-                    'value': event.bound_value,
-                    'solution_number': event.solution_number,
-                    'num_new_solutions': event.num_new_solutions,
-                    'description': event.description or ''
+                    'value': event.proven_bound,
+                    'subsolver': event.subsolver or '',
+                    'additional_info': event.additional_info or ''
                 })
             elif isinstance(event, ObjectiveEvent):
                 rows.append({
                     'time_seconds': event.time,
                     'event_type': 'objective',
-                    'value': event.objective_value,
+                    'value': event.objective,
                     'solution_number': event.solution_number,
-                    'num_new_solutions': None,
-                    'description': event.description or ''
+                    'gap_percent': event.gap_percent,
+                    'subsolver': event.subsolver or '',
+                    'additional_info': event.additional_info or ''
                 })
 
         if not rows:
             # Return empty DataFrame with proper columns
             return pd.DataFrame(columns=[
                 'time_seconds', 'event_type', 'value', 'solution_number',
-                'num_new_solutions', 'description'
+                'gap_percent', 'subsolver', 'additional_info'
             ])
 
         return pd.DataFrame(rows)
@@ -109,7 +109,11 @@ class SearchEvents(BaseModel):
         Returns:
             pandas.DataFrame with columns:
                 - time_seconds: Time in seconds
-                - description: Event description
+                - vars_remaining: Variables remaining
+                - vars_total: Total variables
+                - constraints_remaining: Constraints remaining
+                - constraints_total: Total constraints
+                - additional_info: Additional event information
 
         Raises:
             ImportError: If pandas is not installed
@@ -123,11 +127,18 @@ class SearchEvents(BaseModel):
             if isinstance(event, ModelEvent):
                 rows.append({
                     'time_seconds': event.time,
-                    'description': event.description or ''
+                    'vars_remaining': event.vars_remaining,
+                    'vars_total': event.vars_total,
+                    'constraints_remaining': event.constraints_remaining,
+                    'constraints_total': event.constraints_total,
+                    'additional_info': event.additional_info or ''
                 })
 
         if not rows:
-            return pd.DataFrame(columns=['time_seconds', 'description'])
+            return pd.DataFrame(columns=[
+                'time_seconds', 'vars_remaining', 'vars_total',
+                'constraints_remaining', 'constraints_total', 'additional_info'
+            ])
 
         return pd.DataFrame(rows)
 
@@ -147,8 +158,9 @@ class PresolveEntries(BaseModel):
         Returns:
             pandas.DataFrame with columns:
                 - operation: Name of the presolve operation
-                - duration_ms: Duration in milliseconds
-                - num_removed: Number of items removed (if applicable)
+                - wall_time_seconds: Wall time in seconds
+                - deterministic_time: Deterministic time
+                - details: Operation details
 
         Raises:
             ImportError: If pandas is not installed
@@ -159,12 +171,13 @@ class PresolveEntries(BaseModel):
         for entry in self.entries:
             rows.append({
                 'operation': entry.operation,
-                'duration_ms': entry.duration_ms if entry.duration_ms is not None else None,
-                'num_removed': entry.num_removed if entry.num_removed is not None else None,
+                'wall_time_seconds': entry.wall_time if entry.wall_time is not None else None,
+                'deterministic_time': entry.deterministic_time if entry.deterministic_time is not None else None,
+                'details': entry.details or '',
             })
 
         if not rows:
-            return pd.DataFrame(columns=['operation', 'duration_ms', 'num_removed'])
+            return pd.DataFrame(columns=['operation', 'wall_time_seconds', 'deterministic_time', 'details'])
 
         return pd.DataFrame(rows)
 
@@ -183,9 +196,10 @@ class TaskTiming(BaseModel):
 
         Returns:
             pandas.DataFrame with columns:
-                - task: Task name
-                - duration_seconds: Duration in seconds
-                - num_calls: Number of times called
+                - task_name: Task name
+                - time_spent_seconds: Time spent in seconds
+                - num_runs: Number of times run
+                - deterministic_time: Deterministic time
 
         Raises:
             ImportError: If pandas is not installed
@@ -195,13 +209,14 @@ class TaskTiming(BaseModel):
         rows = []
         for entry in self.entries:
             rows.append({
-                'task': entry.task,
-                'duration_seconds': entry.duration,
-                'num_calls': entry.num_calls if entry.num_calls is not None else None,
+                'task_name': entry.task_name,
+                'time_spent_seconds': entry.time_spent if entry.time_spent is not None else None,
+                'num_runs': entry.num_runs if entry.num_runs is not None else None,
+                'deterministic_time': entry.deterministic_time if entry.deterministic_time is not None else None,
             })
 
         if not rows:
-            return pd.DataFrame(columns=['task', 'duration_seconds', 'num_calls'])
+            return pd.DataFrame(columns=['task_name', 'time_spent_seconds', 'num_runs', 'deterministic_time'])
 
         return pd.DataFrame(rows)
 
@@ -341,14 +356,12 @@ class ObjectiveBoundsTable(BaseModel):
 
     def to_dataframe(self) -> Any:
         """
-        Get DataFrame of objective bounds over time.
+        Get DataFrame of objective bounds by subsolver.
 
         Returns:
             pandas.DataFrame with columns:
-                - time_seconds: Time in seconds
-                - objective_lb: Lower bound on objective
-                - objective_ub: Upper bound on objective
-                - gap: Optimality gap (if available)
+                - subsolver: Subsolver name
+                - num_bounds: Number of bounds found
 
         Raises:
             ImportError: If pandas is not installed
@@ -358,13 +371,12 @@ class ObjectiveBoundsTable(BaseModel):
         rows = []
         for entry in self.entries:
             rows.append({
-                'time_seconds': entry.time,
-                'objective_lb': entry.objective_lb,
-                'objective_ub': entry.objective_ub,
+                'subsolver': entry.subsolver,
+                'num_bounds': entry.num_bounds,
             })
 
         if not rows:
-            return pd.DataFrame(columns=['time_seconds', 'objective_lb', 'objective_ub'])
+            return pd.DataFrame(columns=['subsolver', 'num_bounds'])
 
         return pd.DataFrame(rows)
 
