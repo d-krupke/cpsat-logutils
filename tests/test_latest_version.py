@@ -1,42 +1,50 @@
-import random
-from ortools.sat.python import cp_model  # pip install -U ortools
-import os
-import sys
+"""Smoke test against the OR-Tools version installed in the dev environment.
 
-sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from cpsat_logutils import LogParser
-from cpsat_logutils.blocks import (
-    SearchProgressBlock,
-    SequentialSearchProgressBlock,
-    SolverBlock,
-    ResponseBlock,
-)
+Generates a small knapsack log with the installed ``ortools`` and checks that the
+parser recognizes the version, the response and at least one solution event.
+This catches format changes as soon as a new OR-Tools release is installed.
+"""
+
+from __future__ import annotations
+
+import pytest
+
+from cpsat_logutils import parse_log
+
+ortools = pytest.importorskip("ortools")
 
 
-def test_latest_cpsat():
-    # Specifying the input
-    n = 5_000
-    weights = [random.randint(1, 1000) for _ in range(n)]
-    values = [random.randint(1, 100) for _ in range(n)]
-    capacity = 20 * n
+def _generate_log() -> str:
+    import random
 
-    # Now we solve the problem
+    from ortools.sat.python import cp_model
+
+    rng = random.Random(1)
     model = cp_model.CpModel()
-    xs = [model.new_bool_var(f"x_{i}") for i in range(len(weights))]
-
-    model.add(sum(x * w for x, w in zip(xs, weights)) <= capacity)
-    model.maximize(sum(x * v for x, v in zip(xs, values)))
-
+    n = 300
+    xs = [model.new_bool_var(f"x{i}") for i in range(n)]
+    weights = [rng.randint(1, 100) for _ in range(n)]
+    values = [rng.randint(1, 100) for _ in range(n)]
+    model.add(sum(w * x for w, x in zip(weights, xs, strict=True)) <= sum(weights) // 3)
+    model.maximize(sum(v * x for v, x in zip(values, xs, strict=True)))
     solver = cp_model.CpSolver()
-    log = []
     solver.parameters.log_search_progress = True
-    solver.log_callback = lambda line: log.append(line)
+    solver.parameters.log_to_stdout = False
+    solver.parameters.max_time_in_seconds = 3
+    solver.parameters.num_workers = 4
+    lines: list[str] = []
+    solver.log_callback = lines.append
     solver.solve(model)
-    print("\n".join(log))
-    parser = LogParser("\n".join(log))
-    parser.get_block_of_type(SolverBlock).get_parameters()
-    try:
-        parser.get_block_of_type(SearchProgressBlock)
-    except KeyError:
-        parser.get_block_of_type(SequentialSearchProgressBlock)
-    parser.get_block_of_type(ResponseBlock)
+    return "\n".join(lines)
+
+
+def test_installed_ortools_log_parses() -> None:
+    log = parse_log(_generate_log())
+    assert log.solver is not None and log.solver.version is not None
+    assert log.solver.version.value == ortools.__version__
+    assert log.response is not None and log.response.status is not None
+    assert log.response.status.value in {"OPTIMAL", "FEASIBLE"}
+    assert log.search is not None and log.search.objective_sense == "maximize"
+    assert log.search.events_of_kind("solution")
+    assert log.stats.search_stats is not None
+    assert log.unparsed == [], [b.lines[0].value for b in log.unparsed]

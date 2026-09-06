@@ -1,0 +1,61 @@
+# Lint, type-check and test the parser. The weekly run additionally upgrades
+# OR-Tools to its newest release, which is how a changed log format shows up here
+# before a user reports it.
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * FRI"
+
+jobs:
+  test:
+    name: parser
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --all-groups
+      - name: Upgrade OR-Tools (weekly run only)
+        if: github.event_name == 'schedule'
+        run: uv sync --all-groups --upgrade-package ortools
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run ty check .
+      - run: uv run pytest -q
+      # The lock file resolves to the newest pydantic, so a wrong lower bound in
+      # pyproject.toml stays invisible until a user pins an older one. Run the
+      # suite against the floor we advertise as well. test_latest_version.py is
+      # excluded because it asserts the *newest* OR-Tools, which is the opposite
+      # question.
+      # 3.12 is pinned here because it is the floor this package advertises, and
+      # the oldest OR-Tools we support ships no wheel for anything newer.
+      - name: Tests against the oldest supported dependencies
+        run: |
+          uv run --isolated --python 3.12 --resolution lowest-direct --group dev \
+            pytest -q --ignore=tests/test_latest_version.py
+      # The package advertises 3.13 in its classifiers, so something has to run it.
+      - name: Tests on Python 3.13
+        run: |
+          uv run --isolated --python 3.13 --group dev \
+            pytest -q --ignore=tests/test_latest_version.py
+
+  build:
+    name: package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      # The same two artifacts the release workflow uploads to PyPI, checked on
+      # every push so a broken sdist is not discovered during a release.
+      - run: uv build
+      - run: uvx twine check dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

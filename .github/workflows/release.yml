@@ -1,3 +1,6 @@
+# Publishing happens on a published GitHub release, via PyPI trusted publishing
+# (no token in this repository). The version comes from pyproject.toml, so bump it
+# in the same commit you tag.
 name: Release
 
 on:
@@ -12,14 +15,21 @@ jobs:
       name: pypi
       url: https://pypi.org/p/cpsat-logutils
     permissions:
-      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write # mandatory for trusted publishing
     steps:
-      # retrieve your distributions here
-      - uses: actions/checkout@master
-        with:
-          lfs: false
-      - uses: actions/setup-python@v4
-      - name: Build SDist and wheel
-        run: pipx run build
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      # PyPI refuses a second upload of the same version, so a tag that disagrees
+      # with pyproject.toml has to fail here rather than burn the version number.
+      - name: Refuse to publish a version the tag does not match
+        run: |
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml","rb"))["project"]["version"])')
+          tag="${GITHUB_REF_NAME#v}"
+          echo "pyproject.toml: $version, tag: $tag"
+          test "$version" = "$tag"
+      - name: Build sdist and wheel
+        run: uv build
+      - name: Check the metadata renders on PyPI
+        run: uvx twine check dist/*
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
